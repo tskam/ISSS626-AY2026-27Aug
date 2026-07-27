@@ -4,6 +4,7 @@ subtitle: ""
 author: "Dr. Kam Tin Seong<br/>Assoc. Professor of Information Systems(Practice)"
 institute: "School of Computing and Information Systems,<br/>Singapore Management University"
 date: "`r Sys.Date()`"
+date-format: long
 format: 
   revealjs:
     width: 1600
@@ -11,7 +12,6 @@ format:
     show-notes: false
     slide-number: true
     show-slide-number: all
-date-format: "DD/MM/YYYY"
 execute:
   eval: false
   freeze: true
@@ -20,13 +20,13 @@ editor: visual
 
 ## Content
 
--   Introducing maps
--   Typology of maps
-    -   Reference maps
-    -   Thematic maps
--   Proportional Symbol Map
--   Choropleth Mapping
--   Introduction to tmap Methods
+- Introducing maps
+- Typology of maps
+  - Reference maps
+  - Thematic maps
+- Proportional Symbol Map
+- Choropleth Mapping
+- Introduction to tmap Methods
 
 ::: notes
 This lesson consists of two parts. First, I will share with you the concepts and design principles of choropleth maps. Next, I will introduce you to tmap, an R package specially designed for thematic mapping based on Layered Grammar of Graphics
@@ -68,7 +68,7 @@ An interface between geographical data and map users.
 
 ::::: columns
 ::: {.column width="30%"}
--   Reference maps emphasize the location of spatial phenomena, such buildings, roads, vegetations, rivers, etc. Some of popular reference maps are **topographical map** and internet map such as Google map.
+- Reference maps emphasize the location of spatial phenomena, such buildings, roads, vegetations, rivers, etc. Some of popular reference maps are **topographical map** and internet map such as Google map.
 :::
 
 ::: {.column width="65%"}
@@ -89,7 +89,7 @@ It is important to note that a map is merely a two or three dimensional represen
 
 :::::: columns
 :::: {.column width="50%"}
--   Thematic maps emphasize the spatial pattern of geographic attributes or statistics about places and relationships between places such as Life in Los Angeles.
+- Thematic maps emphasize the spatial pattern of geographic attributes or statistics about places and relationships between places such as Life in Los Angeles.
 
 ::: {style="font-size: 0.65em"}
 Source: [Life in Los Angeles](https://mapdesign.icaci.org/2014/12/mapcarte-353365-life-in-los-angeles-by-eugene-turner-1977/)
@@ -103,14 +103,14 @@ Source: [Life in Los Angeles](https://mapdesign.icaci.org/2014/12/mapcarte-35336
 
 ## Thematic Mapping: Principles and Methods
 
--   Displaying
-    -   Qualitative data
-    -   Quantitative data
--   Choosing -Appropriate classification method for displaying data
-    -   Appropriate number of classes
--   Techniques in data analysis
-    -   Using the classification histogram
-    -   Normalizing data
+- Displaying
+  - Qualitative data
+  - Quantitative data
+- Choosing -Appropriate classification method for displaying data
+  - Appropriate number of classes
+- Techniques in data analysis
+  - Using the classification histogram
+  - Normalizing data
 
 ## Qualitative Thematic Maps
 
@@ -118,10 +118,10 @@ Source: [Life in Los Angeles](https://mapdesign.icaci.org/2014/12/mapcarte-35336
 
 ::::: columns
 ::: {.column width="50%"}
--   Qualitative visual variables are used for nominal scale data.
--   The goal of qualitative visual variables is to show how entities differ from each other.
--   The visual variables that do a good job of showing ordinal differences are: colour value, colour saturation, size and texture/grain.\
--   Figure on the right for examples of these four ordinal visual variables used each in point, linear and areal symbols.
+- Qualitative visual variables are used for nominal scale data.
+- The goal of qualitative visual variables is to show how entities differ from each other.
+- The visual variables that do a good job of showing ordinal differences are: colour value, colour saturation, size and texture/grain.\
+- Figure on the right for examples of these four ordinal visual variables used each in point, linear and areal symbols.
 :::
 
 ::: {.column width="50%"}
@@ -135,7 +135,7 @@ Source: [Life in Los Angeles](https://mapdesign.icaci.org/2014/12/mapcarte-35336
 
 ::::: columns
 ::: {.column width="40%"}
--   Different point symbols are used to represent school types.
+- Different point symbols are used to represent school types.
 :::
 
 ::: {.column width="60%"}
@@ -149,7 +149,7 @@ Source: [Life in Los Angeles](https://mapdesign.icaci.org/2014/12/mapcarte-35336
 
 ::::: columns
 ::: {.column width="40%"}
--   A road map is an example of a thematic map. It shows the road network of an area. In this map, lines with different colour intensity and tickness are used to differentiate hierarchy of roads.
+- A road map is an example of a thematic map. It shows the road network of an area. In this map, lines with different colour intensity and tickness are used to differentiate hierarchy of roads.
 :::
 
 ::: {.column width="60%"}
@@ -163,7 +163,7 @@ Source: [Life in Los Angeles](https://mapdesign.icaci.org/2014/12/mapcarte-35336
 
 ::::: columns
 ::: {.column width="40%"}
--   Land use map below is a good example of a discrete thematic map. In this map, different colours are use to represent different land use types.
+- Land use map below is a good example of a discrete thematic map. In this map, different colours are use to represent different land use types.
 :::
 
 ::: {.column width="60%"}
@@ -177,10 +177,10 @@ Source: [Life in Los Angeles](https://mapdesign.icaci.org/2014/12/mapcarte-35336
 
 ::::: columns
 ::: {.column width="50%"}
--   Quantitative visual variables are used to display ordinal, interval or ratio scale data.\
--   The goal of the quantitative visual variable is to show relative magnitude or order between entities.
--   The visual variables that do a good job of showing ordinal differences are: colour value, colour saturation, size and texture/grain.\
--   Figure on the right shows of these four ordinal visual variables used each in point, linear and areal symbols.
+- Quantitative visual variables are used to display ordinal, interval or ratio scale data.\
+- The goal of the quantitative visual variable is to show relative magnitude or order between entities.
+- The visual variables that do a good job of showing ordinal differences are: colour value, colour saturation, size and texture/grain.\
+- Figure on the right shows of these four ordinal visual variables used each in point, linear and areal symbols.
 :::
 
 ::: {.column width="50%"}
@@ -190,7 +190,7 @@ Source: [Life in Los Angeles](https://mapdesign.icaci.org/2014/12/mapcarte-35336
 
 ## Proportional Symbol Map
 
--   The proportional symbol technique uses symbols of different sizes to represent data associated with different areas or locations within the map.
+- The proportional symbol technique uses symbols of different sizes to represent data associated with different areas or locations within the map.
 
 ![](img/image6-14.jpg)
 
@@ -298,8 +298,8 @@ A choropleth map is a type of thematic map in which areas are shaded or patterne
 
 ### Classified choropleth map
 
--   Choropleth maps can be either classified or unclassified.
--   A classed choropleth map combines areal units into a smaller number of groups. Interval levels may vary, but typically 4 to 7 are used in a map. There is different classification techniques used to divide up the intervals.
+- Choropleth maps can be either classified or unclassified.
+- A classed choropleth map combines areal units into a smaller number of groups. Interval levels may vary, but typically 4 to 7 are used in a map. There is different classification techniques used to divide up the intervals.
 
 ![](img/image3-8.jpg)
 
@@ -307,7 +307,7 @@ A choropleth map is a type of thematic map in which areas are shaded or patterne
 
 ### Unclassified choropleth map
 
--   Unclassed choropleth maps are similar to classed choropleth maps; however, unclassed choropleth maps do not have an averaged statistic towards each particular colour.
+- Unclassed choropleth maps are similar to classed choropleth maps; however, unclassed choropleth maps do not have an averaged statistic towards each particular colour.
 
 ![](img/image3-7.jpg)
 
@@ -333,18 +333,18 @@ Not sure how many classes to use? Have a look at the distribution of your data i
 
 ### Methods of choosing classes
 
--   Based on the nature of the distribution
-    -   quantile, equal interval, natural breaks, standard deviations, defined interval
--   Arbitrary
-    -   Can be based on round numbers.
-    -   Examples: Grouping according to age or census housing categories
-    -   Can result in empty categories
+- Based on the nature of the distribution
+  - quantile, equal interval, natural breaks, standard deviations, defined interval
+- Arbitrary
+  - Can be based on round numbers.
+  - Examples: Grouping according to age or census housing categories
+  - Can result in empty categories
 
 ------------------------------------------------------------------------
 
 ### Data classification method: Quantile
 
--   Same number of features per class.
+- Same number of features per class.
 
 ![](img/image3-11a.jpg){fig-align="center"}
 
@@ -354,7 +354,7 @@ Not sure how many classes to use? Have a look at the distribution of your data i
 
 :::::: columns
 ::: {.column width="70%"}
--   Divides the range of attribute values into equally sized classes.
+- Divides the range of attribute values into equally sized classes.
 
 ![](img/image3-11b.jpg){width="900"}
 :::
@@ -372,8 +372,8 @@ Avoid equal interval if your data are skewed to one end or if you have one or tw
 
 ### Data classification method: Jenks (also known as Natural breaks)
 
--   Default Jenk's statistical optimization
--   Finds natural groupings in the data
+- Default Jenk's statistical optimization
+- Finds natural groupings in the data
 
 ![](img/image3-11c.jpg)
 
@@ -381,8 +381,8 @@ Avoid equal interval if your data are skewed to one end or if you have one or tw
 
 ### Data classification: Standard deviation
 
--   A measure of dispersion.
--   Use if the distribution approximates a normal distribution (bell-shaped curve)
+- A measure of dispersion.
+- Use if the distribution approximates a normal distribution (bell-shaped curve)
 
 ![](img/image3-11d.jpg)
 
@@ -408,20 +408,20 @@ Avoid equal interval if your data are skewed to one end or if you have one or tw
 
 [CRAN Task View: Analysis of Spatial Data](https://cran.r-project.org/web/views/Spatial.html)
 
--   [tmap](https://cran.r-project.org/web/packages/tmap/index.html)
--   [mapsf](https://riatelab.github.io/mapsf/index.html)
--   [leaflet](https://cran.r-project.org/web/packages/leaflet/index.html)
--   [ggplot2](https://ggplot2.tidyverse.org/index.html). Read [Chapter 6: Maps](https://ggplot2-book.org/maps.html) of 'ggplot2: Elegant Graphics for Data Analysis' for more detail.
--   [ggmap](https://cran.r-project.org/web/packages/ggmap/index.html)
--   [quickmapr](https://cran.r-project.org/web/packages/quickmapr/index.html)
--   [mapview](https://cran.r-project.org/web/packages/mapview/index.html)
+- [tmap](https://cran.r-project.org/web/packages/tmap/index.html)
+- [mapsf](https://riatelab.github.io/mapsf/index.html)
+- [leaflet](https://cran.r-project.org/web/packages/leaflet/index.html)
+- [ggplot2](https://ggplot2.tidyverse.org/index.html). Read [Chapter 6: Maps](https://ggplot2-book.org/maps.html) of 'ggplot2: Elegant Graphics for Data Analysis' for more detail.
+- [ggmap](https://cran.r-project.org/web/packages/ggmap/index.html)
+- [quickmapr](https://cran.r-project.org/web/packages/quickmapr/index.html)
+- [mapview](https://cran.r-project.org/web/packages/mapview/index.html)
 :::
 
 ::: {.column width="50%"}
 ### Other packages
 
--   [RColorBrewer](https://cran.r-project.org/web/packages/RColorBrewer/index.html)
--   [classInt](https://cran.r-project.org/web/packages/classInt/index.html)
+- [RColorBrewer](https://cran.r-project.org/web/packages/RColorBrewer/index.html)
+- [classInt](https://cran.r-project.org/web/packages/classInt/index.html)
 :::
 :::::
 
@@ -429,10 +429,10 @@ Avoid equal interval if your data are skewed to one end or if you have one or tw
 
 ::::: columns
 ::: {.column width="50%"}
--   [**tmap**](https://r-tmap.github.io/tmap/index.html) is a R package specially designed for creating thematic maps using the pricinples of the **Grammar of Graphics**.
--   It offers a flexible, layer-based, and easy to use approach to create thematic maps, such as choropleths and proportional symbol maps.
--   It supports two modes: `tm_plot()` for static maps and `tm_view()` for interactive maps.
--   It provides shiny integration with  `renderTmap()`, `tmapOutput()`, `tmapProxy()` and `tm_remove_layer()`.
+- [**tmap**](https://r-tmap.github.io/tmap/index.html) is a R package specially designed for creating thematic maps using the pricinples of the **Grammar of Graphics**.
+- It offers a flexible, layer-based, and easy to use approach to create thematic maps, such as choropleths and proportional symbol maps.
+- It supports two modes: `tm_plot()` for static maps and `tm_view()` for interactive maps.
+- It provides shiny integration with `renderTmap()`, `tmapOutput()`, `tmapProxy()` and `tm_remove_layer()`.
 :::
 
 ::: {.column width="50%"}
@@ -446,28 +446,27 @@ Avoid equal interval if your data are skewed to one end or if you have one or tw
 
 **Core Reading**
 
--   [Choropleth Maps](https://www.axismaps.com/guide/univariate/choropleth/)
--   [The Basics of Data Classification](https://www.axismaps.com/guide/data/data-classification/)
+- [Choropleth Maps](https://www.axismaps.com/guide/univariate/choropleth/)
+- [The Basics of Data Classification](https://www.axismaps.com/guide/data/data-classification/)
 
 **Additional Readings**
 
--   [Choropleth Maps -- A Guide to Data Classification](https://gisgeography.com/choropleth-maps-data-classification/)
--   [Bivariate Choropleth](https://www.axismaps.com/guide/multivariate/bivariate-choropleth/)
--   [Value-by-alpha maps](http://andywoodruff.com/blog/value-by-alpha-maps/)
--   [What to consider when creating choropleth maps](https://blog.datawrapper.de/choroplethmaps/)
--   [Choropleth Mapping with Exploratory Data Analysis](https://www.directionsmag.com/article/3363)
+- [Choropleth Maps -- A Guide to Data Classification](https://gisgeography.com/choropleth-maps-data-classification/)
+- [Bivariate Choropleth](https://www.axismaps.com/guide/multivariate/bivariate-choropleth/)
+- [Value-by-alpha maps](http://andywoodruff.com/blog/value-by-alpha-maps/)
+- [What to consider when creating choropleth maps](https://blog.datawrapper.de/choroplethmaps/)
+- [Choropleth Mapping with Exploratory Data Analysis](https://www.directionsmag.com/article/3363)
 
 ## References
 
 ### All About **tmap** package
 
--   [tmap: Thematic Maps in R](https://www.jstatsoft.org/article/view/v084i06)
+- [tmap: Thematic Maps in R](https://www.jstatsoft.org/article/view/v084i06)
 
--   [tmap home page](https://r-tmap.github.io/tmap/index.html)
+- [tmap home page](https://r-tmap.github.io/tmap/index.html)
 
--   [Spatial Data Visualization with tmap: A Practical Guide to Thematic Mapping in R](https://tmap.geocompx.org/)
+- [Spatial Data Visualization with tmap: A Practical Guide to Thematic Mapping in R](https://tmap.geocompx.org/)
 
--   [tmap: creating thematic maps in a flexible way (useR!2015)](https://mtennekes.github.io/downloads/presentations/tmap_user2015.pdf)
+- [tmap: creating thematic maps in a flexible way (useR!2015)](https://mtennekes.github.io/downloads/presentations/tmap_user2015.pdf)
 
--   [Exploring and presenting maps with tmap (useR!2017)](https://mtennekes.github.io/downloads/presentations/tmap_user2017.pdf)
-
+- [Exploring and presenting maps with tmap (useR!2017)](https://mtennekes.github.io/downloads/presentations/tmap_user2017.pdf)

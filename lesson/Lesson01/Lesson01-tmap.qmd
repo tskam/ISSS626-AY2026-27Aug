@@ -1188,4 +1188,3 @@ tm_shape(mpszpop2020
 - [tmap: creating thematic maps in a flexible way (useR!2015)](https://mtennekes.github.io/downloads/presentations/tmap_user2015.pdf)
 
 - [Exploring and presenting maps with tmap (useR!2017)](https://mtennekes.github.io/downloads/presentations/tmap_user2017.pdf)
-

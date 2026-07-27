@@ -2,7 +2,8 @@
 title: 'Lesson 1: Introduction to Geospatial Analytics and Applications'
 author: "Dr. Kam Tin Seong<br/>Assoc. Professor of Information Systems (Practice)"
 institute: "School of Computing and Information Systems,<br/>Singapore Management University"
-date: "`r Sys.Date()`"
+date: "July 27, 2026"
+date-format: "DD/MM/YYYY"
 format: 
   revealjs:
     width: 1600
@@ -10,7 +11,6 @@ format:
     show-notes: false
     slide-number: true
     show-slide-number: all
-date-format: "DD/MM/YYYY"
 execute:
   eval: false
   freeze: true
@@ -140,5 +140,5 @@ The true power of geospatial analytics is to provide decision makers and planner
 
 ![](img/image1-12.jpg){fig-align="center" width="1015"}
 
-```{}
+```         
 ```
