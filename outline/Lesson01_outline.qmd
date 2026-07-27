@@ -1,0 +1,102 @@
+---
+title: "Lesson 1: Introduction to Geospatial Analytics"
+date: "July 21, 2024"
+date-modified: "last-modified"
+format: html
+toc: true
+execute: 
+  freeze: true
+---
+
+## Overview
+
+This lesson consists of three parts. First, it provides an overview of geospatial analytics. Second, it explains the popular geospatial models used to store geographical data. The methods used to import, integrate, wrangle, process geospatial data will be discussed too. Lastly, the basic principles and concepts of thematic mapping and geovisualisation will be introduced.
+
+The hands-on exercises will allow you to gaion hands-on experience on using:
+
+- [**sf**](https://r-spatial.github.io/sf/) package to import and wrangle vector-based data,
+- [**terra**](https://rspatial.github.io/terra/index.html) package to import and wrangle raster-based data, and
+- [**tmap**](https://r-tmap.github.io/tmap/) package to build cartographic quality thematic maps.
+
+## Content
+
+- Introduction to Geospatial Analytics
+  - Demystifying Geospatial Analytics
+  - Motivation of Geospatial Analytics
+  - A Tour Through the Geospatial Analytics Zoo
+  - Geospatial Analytics and Social Consciousness
+- Fundamentals of Geospatial Data Models
+  - Vector and raster data model
+  - Coordinate systems and map projection
+  - Handling and wrangling vector data in R: **sf** methods \`\`\`\`- Handling and wrangling raster data in R: **terra** methods
+- Fundamentals of Geospatial Data Visualisation and tmap Methods
+  - Classification of maps
+  - Principles of map design
+  - Thematic mapping techniques
+  - tmap methods
+
+## Lesson Slides
+
+- [Lesson 1: Introduction to Geospatial Analytics](..\lesson\Lesson01\Lesson01-Introduction_to_GAA.html) slides.
+- [Lesson 1: Fundamentals of Geospatial Data Models and Modelling](..\lesson\Lesson01\Lesson01-Geospatial_data.html) slides.
+- [Lesson 1: Fundamentals of Geospatial Data Visualisation and tmap Methods](..\lesson\Lesson01\Lesson01-GeoVis.html) slides.
+
+## Self-reading Before Lesson
+
+- ["Spatial Data, Spatial Analysis, Spatial Data Science"](https://www.youtube.com/watch?v=MmCYeJ27DsA) by Prof. Luc Anselin. (This is a long lecture 1hr 15minutes but don't turn away just because it is lengthy.)
+- Xie, Yiqun et. al. (2017) ["Transdisciplinary Foundations of Geospatial Data Science"](https://www.mdpi.com/2220-9964/6/12/395) *ISPRS International Journal of Geo-information*, 2017, Vol.6 (12), p.395.
+
+## Hands-on Exercise
+
+- Hands-on Exercise 1: [Geospatial Data Wrangling with R](https://r4gdsa.netlify.app/chap01.html)
+
+- Hands-on Exercise 1: [Choropleth Mapping with R](https://r4gdsa.netlify.app/chap02.html)
+
+## All About R
+
+### R packages for Data Science
+
+- [sf](https://r-spatial.github.io/sf/) package.
+
+  - [Simple Features for R](https://r-spatial.github.io/sf/articles/sf1.html)
+  - [Reading, Writing and Converting Simple Features](https://r-spatial.github.io/sf/articles/sf2.html)
+  - [Manipulating Simple Feature Geometries](https://r-spatial.github.io/sf/articles/sf3.html)
+  - [Manipulating Simple Features](https://r-spatial.github.io/sf/articles/sf4.html)
+
+- [tidyverse](https://www.tidyverse.org/): a family of modern R packages specially designed to meet the tasks of Data Science in R.
+
+  - [readr](https://readr.tidyverse.org/): a fast and effective library to parse csv, txt, and tsv files as [tibble data.frame](https://r4ds.had.co.nz/tibbles.html) in R. To get started, refer to Chapter 11 Data import of R for Data Science book.\
+  - [tidyr](https://tidyr.tidyverse.org/): an R package for tidying data. To get started, refer to [Chapter 5 Data tidying](https://r4ds.hadley.nz/data-tidy) of R for Data Science book.\
+  - [dplyr](https://dplyr.tidyverse.org/): a grammar of data manipulation. To get started, read articles under [Getting Started](https://dplyr.tidyverse.org/articles/dplyr.html) and Articles tabs.
+  - [ggplot2](https://ggplot2.tidyverse.org/): a grammar of graphics. To get started, read [Chapter 1: Data Visualization](https://r4ds.hadley.nz/data-visualize), [Chapter 10 Exploratory Data Analysis](https://r4ds.hadley.nz/eda) and [Chapter 11 Communication](https://r4ds.hadley.nz/communication) of R for Data Science (2ed) book.
+  - pipes: a powerful tool for clearly expressing a sequence of multiple operations. To get started, read [Chapter 5 Workflow: pipes](https://r4ds.had.co.nz/pipes.html) of R for Data Science (2ed) book.
+
+### R Package for GeoVisualisation and Thematic Mapping
+
+- Tennekes, M. (2018) "[tmap: Thematic Maps in R](https://www.jstatsoft.org/article/view/v084i06)", *Journal of Statistical Software*, Vol 84:6, 1-39.
+
+- [tmap: thematic maps in R](https://r-tmap.github.io/tmap/) package especially:
+
+  - [tmap: get started!](https://cran.r-project.org/web/packages/tmap/vignettes/tmap-getstarted.html),
+  - [tmap: version changes](https://cran.r-project.org/web/packages/tmap/vignettes/tmap-changes.html), and
+  - [Chapter 8 Making maps with R](https://geocompr.robinlovelace.net/adv-map.html) of Geocomputation with R.
+
+## References
+
+### Geospatial Analytics
+
+- Paez, A., and Scott, D.M. (2004) "Spatial statistics for urban analysis: A review of techniques with examples", *GeoJournal*, 61: 53-67. Available in SMU eLibrary.
+- ["Geospatial Analytics Will Eat The World, And You Won't Even Know It"](https://www.forbes.com/sites/forbestechcouncil/2018/07/16/geospatial-analytics-will-eat-the-world-and-you-wont-even-know-it/#31f961db726a).
+
+### GeoVisualisation and Thematic Mapping
+
+- [Proportional Symbols](https://www.axismaps.com/guide/univariate/proportional-symbols/)
+- [Choropleth Maps](https://en.wikipedia.org/wiki/Choropleth_map%20Choropleth%20map)
+- [The Basics of Data Classification](https://www.axismaps.com/guide/data/data-classification/)
+- [Choropleth Mapping with Exploratory Data Analysis](https://www.directionsmag.com/article/3363)
+- [The Concept of Map Symbols](https://www.yaaka.cc/unit/the-concept-of-map-symbols/)
+- [Choropleth map](https://en.wikipedia.org/wiki/Choropleth_map)
+- [Choropleth Maps -- A Guide to Data Classification](https://gisgeography.com/choropleth-maps-data-classification/)
+- [Bivariate Choropleth](https://www.axismaps.com/guide/multivariate/bivariate-choropleth/)
+- [Value-by-alpha maps](http://andywoodruff.com/blog/value-by-alpha-maps/)
+- [What to consider when creating choropleth maps](https://blog.datawrapper.de/choroplethmaps/)

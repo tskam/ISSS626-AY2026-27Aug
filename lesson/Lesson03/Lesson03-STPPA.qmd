@@ -1,0 +1,40 @@
+---
+title: "Lesson 3: <br/>Spatio-Temporal Point Patterns Analysis (STPPA)"
+author: "Dr. Kam Tin Seong<br/>Assoc. Professor of Information Systems (Practice)"
+institute: "School of Computing and Information Systems,<br/>Singapore Management University"
+date: "Sep 7, 2025"
+format: 
+  revealjs:
+    width: 1600
+    height: 900
+    show-notes: false
+    slide-number: true
+    show-slide-number: all
+date-format: "DD MMM YYYY"
+editor: visual
+---
+
+## Content
+
+- Basic concepts of Spatio-Temporal Point Process
+- Spatio-Temporal Kernel Density Estimation
+
+## What is a Spatio-Temporal Point Process
+
+A spatio-temporal point process (also called space-time or spatial-temporal point process) is a random collection of points, where each point represents the time and location of an event. Examples of events include incidence of disease, sightings or births of a species, or the occurrences of fires, earthquakes, lightning strikes, tsunamis, or volcanic eruptions. Typically the spatio-temporal point events are recorded in three-dimension, namely: longitude, latitude, and time as shown in the figure below.
+
+![](img/image4-1.jpg)
+
+------------------------------------------------------------------------
+
+### Real world spatio-temporal point events
+
+Snapshots of confirmed COVID-19 cases at four particular weeks in Cali, Columbia. Each dot represents the location of a confirmed case. Note that darker dots indicate multiple dots being overlapped
+
+![](img/image4-2.jpg)
+
+## Spatio-Temporal KDE (STKDE)
+
+Mathematically, STKDE is defined as
+
+![](img/image4-3.jpg)

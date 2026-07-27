@@ -1,0 +1,40 @@
+---
+title: "Lesson 3: Spatio-Temporal Point Patterns Analysis"
+date: "August 31, 2024"
+date-modified: "last-modified"
+format: html
+editor: visual
+---
+
+A spatio-temporal point process (also called space-time or spatial-temporal point process) is a random collection of points, where each point represents the time and location of an event. Examples of events include incidence of disease, sightings or births of a species, or the occurrences of fires, earthquakes, lightning strikes, tsunamis, or volcanic eruptions. In this lesson, you will learn the basic concepts and methods of Spatio-temporal Point Patterns Analysis. You will also gain hands-on experience on using these methods to discover real-world point processes.
+
+## Content
+
+-   Spatio-temporal Point Processes
+    -   Basic concepts of spatio-temporal point processes.
+    -   Examples of real-world spatio-temporal point processes.
+-   Spatio-temporal Point Patterns Analysis methods
+    -   Spatio-temporal Kernel Density Estimation (STKDE)
+    -   Spatio-temporal K-functions
+
+### Lesson Slides and Hands-on Notes
+
+-   [Lesson 3](../lesson/Lesson03/Lesson03-STPPA.html) slides
+
+-   [Hands-on Exercise 3: Spatio-Temporal Point Patterns Analysis](https://r4gdsa.netlify.app/chap06).
+
+## References
+
+-   Jonatan A. González, et. al. (2016) ["Spatio-temporal point process statistics: A review"](https://www.sciencedirect.com/science/article/abs/pii/S2211675316301130), *Spatial Statistics*, Volume 18, Part B, November 2016, Pages 505-544.
+-   Alexander Hohl et. al.["Spatiotemporal Point Pattern Analysis Using Ripley's K"](https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://pages.charlotte.edu/eric-delmelle/wp-content/uploads/sites/150/2019/09/Spatiotemporal-Point-Pattern-Analysis-Using-Ripleys-K-Function.pdf&ved=2ahUKEwiL24W_8qyIAxXzXGwGHe2RL8wQFnoECDAQAQ&usg=AOvVaw18Au9kh6LfNH_RJpPglq2J) in **Geospatial Data Science Techniques and Applications**.
+-   Tonini, Marj et. al. (2017) "Evolution of forest fires in Portugal: from spatio-temporal point events to smoothed density maps", *Natural hazards* (Dordrecht), 2017-02, Vol.85 (3), p.1489-1510. Available at SMU eJournal.
+-   Juan, P et. al. (2012) "Pinpointing spatio-temporal interactions in wildfire patterns", *Stochastic environmental research and risk assessment*, 2012-12, Vol.26 (8), p.1131-1150. Available at SMU eJournal.
+
+## All About R
+
+-   González & Moraga, "[Non-Parametric Analysis of Spatial and Spatio-Temporal Point Patterns](https://journal.r-project.org/articles/RJ-2023-025/)", The R Journal, 2023
+-   [stpp](https://cran.r-project.org/web/packages/stpp/index.html)
+    -   [stpp: An R Package for Plotting, Simulating and Analyzing Spatio-Temporal Point Patterns](https://www.jstatsoft.org/article/view/v053i02), Journal of Statistical Software (JSS), April 2013, Volume 53, Issue 2.
+-   [sparr: Spatial and Spatiotemporal Relative Risk](https://tilmandavies.github.io/sparr/index.html)
+-   [stopp](https://cran.r-project.org/web/packages/stopp/index.html)
+    -   [stpp: An R Package for Plotting, Simulating and Analysing Spatio-Temporal Point Patterns](https://csgb.au.dk/fileadmin/www.csgb.au.dk/Events/SummerSchool2013/Diggle_stpp_vignette.pdf)

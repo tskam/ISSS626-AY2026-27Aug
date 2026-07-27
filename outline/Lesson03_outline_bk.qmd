@@ -1,0 +1,44 @@
+---
+title: "Lesson 3: Advanced Spatial Point Patterns Analysis"
+date: "July 21, 2024"
+date-modified: "last-modified"
+format: html
+editor: visual
+execute: 
+  freeze: true
+---
+
+In this lesson, you will learn two advanced spatial point patterns analysis methods, they are: spatiotemporal KDE and the Network Constrained KDE. Using real-world use cases, you will also gain hands-on experience on using [spNetwork](https://jeremygelb.github.io/spNetwork/index.html) to analyse spatial point patterns and temporal spatial point event along networks.
+
+## Content
+
+-   Spatiotemporal Kernel Density Estimation
+-   Network Constrained Kernel Density Estimation (NCKDE)
+    -   Basic concepts of network constrained spatial point patterns
+    -   Network Constrained KDE methods
+    -   The Three versions of Network Constrained KDE
+-   Temporal Network Kernel Density Estimation (TNKED)
+    -   Temporal dimension
+    -   Spatial dimension
+    -   Spatiotemporal point patterns
+    -   The Temporal Network Kernel Density Estimation method
+
+### Lesson Slides and Hands-on Notes
+
+-   [Lesson 3](../lesson/Lesson03/Lesson03-Advanced_SPPA.html) slides
+
+-   [Hands-on Exercise 3: Network Constrained Spatial Point Patterns Analysis](https://r4gdsa.netlify.app/chap07).
+
+## References
+
+-   ATSUYUKI OKABE, TOSHIAKI SATOH & KOKICHI SUGIHARA (2009) "A kernel density estimation method for networks, its computational method and a GIS-based tool", *International Journal of Geographical Information Science*, Vol. 23, No. 1, January 2009, pp. 7–32.
+-   Ikuho Yamada & Jean-Claude Thill (2007) "Local Indicators of Network-Constrained Clusters in Spatial Point Patterns", *Geographical Analysis*, Vol. 39, pp 268–292.
+-   Jérémy Gelb & Philippe Apparicio (2023) ["Temporal Network Kernel Density Estimation"](https://onlinelibrary.wiley.com/doi/full/10.1111/gean.12368), Geographical Analysis. (Online open access version)
+
+## All About R
+
+-   [spNetwork](https://jeremygelb.github.io/spNetwork/index.html): An R package to perform spatial analysis on networks.
+    -   [Details about NKDE](https://jeremygelb.github.io/spNetwork/articles/web_vignettes/NKDEdetailed.html)
+    -   [Network k Functions](https://jeremygelb.github.io/spNetwork/articles/KNetworkFunctions.html)
+    -   [Network Kernel Density Estimate](https://jeremygelb.github.io/spNetwork/articles/NKDE.html)
+    -   [Temporal Network Kernel Density Estimate](https://jeremygelb.github.io/spNetwork/articles/TNKDE.html)

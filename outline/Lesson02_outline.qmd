@@ -1,0 +1,69 @@
+---
+title: "Lesson 2: Spatial Point Patterns Analysis"
+date: "July 21, 2024"
+date-modified: "last-modified"
+format: html
+editor: visual
+execute: 
+  freeze: true
+---
+
+Spatial Point Pattern Analysis is the evaluation of the pattern, or distribution, of a set of points on a surface. It can refer to the actual spatial or temporal location of these points or also include data from point sources. It is one of the most fundamental concepts in geography and spatial analysis. This lesson aims to share with you the basic concepts and methods of Spatial Point Pattern Analysis. You will also gain hands experience on using [spatstat](https://cran.r-project.org/web/packages/spatstat/index.html), an R package specially designed for Spatial Point Pattern Analysis.
+
+## Content
+
+-   Introducing Spatial Point Patterns
+    -   The basic concepts of spatial point patterns
+    -   Spatial Point Patterns in real world
+-   1st Order Spatial Point Patterns Analysis
+    -   Kernel Density Estimation (KDE)
+-   2nd Order Spatial Point Patterns Analysis
+    -   Nearest Neighbour Index
+    -   G-function
+    -   F-function
+    -   K-function
+    -   L-function
+
+## Lesson Slides
+
+-   [Lesson 2](..\lesson\Lesson02\Lesson02-SPPA.html) slides.
+
+## Hands-on Exercise
+
+-   [Chapter 4: 1st Order Spatial Point Patterns Analysis Methods](https://r4gdsa.netlify.app/chap04.html)
+
+-   [Chapter 5: 2nd Order Spatial Point Patterns Analysis Methods](https://r4gdsa.netlify.app/chap05.html)
+
+## Core Readings
+
+-   Yuan, Y., Qiang, Y., Bin Asad, K., and Chow, T. E. (2020). [Point Pattern Analysis](https://gistbok-ltb.ucgis.org/page/30/concept/9213). The Geographic Information Science & Technology Body of Knowledge (1st Quarter 2020 Edition), John P. Wilson (ed.). DOI: 10.22224/gistbok/2020.1.13
+-   Yin, P. (2020). [Kernels and Density Estimation](https://gistbok-ltb.ucgis.org/page/30/concept/9214). The Geographic Information Science & Technology Body of Knowledge (1st Quarter 2020 Edition), John P. Wilson (ed.). DOI: 10.22224/gistbok/2020.1.12
+-   [Chapter 4 Spatial distribution of points](https://www.insee.fr/en/statistiques/fichier/3635545/imet131-h-chapitre-4.pdf) of Floch, J.M., Marcon, E. and Puech, F. (2018) [Handbook of Spatial Analysis: Theory and Application with R](https://www.insee.fr/en/information/3635545).
+
+### Enrichment Resources
+
+Prof. Luc Anselin on point pattern analysis (YouTube):
+
+-   [Point Pattern Analysis Concepts](https://www.youtube.com/watch?v=BN94XXT6Io4)
+-   [Point Pattern Analysis: Clustered, Regular and Dispersed Patterns](https://www.youtube.com/watch?v=FdcTgcOdAUg)
+-   [Point Pattern Analysis: Nearest Neighbor Statistics](https://www.youtube.com/watch?v=npWXTbRNLtM)
+-   [Point Pattern Analysis: Quadrat Counts](https://www.youtube.com/watch?v=Ww95WKxUoZk)
+-   [Point Pattern Analysis: F and J Functions](https://www.youtube.com/watch?v=uNpbf7Y6WM8)
+-   [Point Pattern Analysis: K, L and Kd Functions](https://www.youtube.com/watch?v=oT_jMTkkld8)
+
+## References
+
+-   O'Sullivan, D., and Unwin, D. (2010) Geographic Information Analysis, Second Edition. John Wiley & Sons Inc., New Jersey, Canada. Chapter 5-6.
+-   Baddeley A., Rubak E. and Turner R. (2015) Spatial Point Patterns: Methodology and Applications with R, Chapman and Hall/CRC.
+-   Chapter 11 Point Pattern Analysis of Intro to GIS and Spatial Analysis. Section 11.2, 11.3, 11.3.1 and 11.4 • Ripley's K-function.
+
+### Applications
+
+-   Naveen Donthu and Roland T. Rust (1989) "Estimating Geographic Customer Densities Using Kernel Density Estimation", Marketing Science, Vol. 8, No. 2, pp. 191-203.
+-   Joseph Wartman and Nicholas E. Malasavage (2010). "[Spatial Analysis for Identifying Concentrations of Urban Damage](http://www.intechopen.com/books/methods-and-techniques-in-urban-engineering/spatial-analysis-for-identifying-concentrations-of-urban-damage)" in Methods and Techniques in Urban Engineering, Armando Carlos de Pina Filho and Aloisio Carlos dePina (Ed.), ISBN: 978-953-307-096-4, InTech.
+-   Giuseppe Borruso and Andrea Porceddu (2009) "A Tale of Two Cities: Density Analysis of CBD on Two Midsize Urban Areas in Northeastern Italy" in Murgante, Beniamino; Borruso, Giuseppe & Lapucci, Alessandra (2009) Studies in Computational Intelligence, Geocomputation and Urban Planning, pp.37-56.
+
+## All About R
+
+-   [spatstat](https://cran.r-project.org/web/packages/spatstat/index.html) at R Cran
+    -   [spatstat](https://spatstat.org/resources.html) resource.

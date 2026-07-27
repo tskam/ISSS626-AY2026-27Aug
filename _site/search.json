@@ -1,0 +1,1101 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "ISSS626 AY2026-27 August Term",
+    "section": "",
+    "text": "In this web site, you will find all course materials here.\nInstructor: Dr. Kam Tin Seong, Associate Professor of Information Systems (Practice)\nDate & Time: Saturday 12:30pm - 3:45pm\nVenue: SOE/SCIS2 Seminar Room 3-5\nPiazza link.\nConsultation booking link.\nVirtual Meeting Room: Zoom\n\n\nFor the next 10 weeks, your learning journey will be very bumpy, especially come to R programming.\n\nLearning R can be difficult at first. It is like learning a new language, just like Spanish, French, or Chinese. Hadley Wickham, the chief data scientist at RStudio and the author of some amazing R packages you’ll be using like ggplot2 made this wise observation:\n\nIt’s easy when you start out programming to get really frustrated and think, “Oh it’s me, I’m really stupid,” or, “I’m not made out to program.” But, that is absolutely not the case. Everyone gets frustrated. I still get frustrated occasionally when writing R code. It’s just a natural part of programming. So, it happens to everyone and gets less and less over time. Don’t blame yourself. Just take a break, do something fun, and then come back and try again later.\n\nEven experienced programmers find themselves bashing their heads against seemingly intractable errors.\n\nIf you’re finding yourself taking way too long hitting your head against a wall and not understanding, take a break, talk to classmates, and don’t hesitate to approach me.\nThe students who have a bad time in this course are the ones who don’t work with one another to learn. We are a learning community, and we should help each other to learn.\nIf you understand something and someone is struggling with it, try and help them. If you are struggling, take a breath, and try to pinpoint what you are struggling with.\nOur goal is to be better programmers each day, not to be the perfect programmer. There’s no such thing as a perfect programmer. I’ve been learning new things almost every day.\nI promise you can succeed in this class as long as you are willing to learn, practice, be open minded and don’t give up easily.\n\n\n\n\n\n\nAll acts of academic dishonesty (including, but not limited to, plagiarism, cheating, fabrication, facilitation of acts of academic dishonesty by others, unauthorized possession of exam questions, or tampering with the academic work of other students) are serious offences. All work (whether oral or written) submitted for purposes of assessment must be the student’s own work. Penalties for violation of the policy range from zero marks for the component assessment to expulsion, depending on the nature of the offense. When in doubt, students should consult the instructors of the course. Details on the SMU Code of Academic Integrity may be accessed at http://www.smuscd.org/resources.html\n\n\n\nCourse materials obtained during your course of study at SMU are meant for personal use only, namely, for the purposes of studying and research. You are strictly not permitted to make copies of or print additional copies or distribute such copies of the course materials or any parts thereof, for commercial gain or exchange. For example, offering such materials on the Internet through CourseHero, Carousell and the like, is strictly prohibited.\nThe selling of these materials and/or any copies thereof are strictly prohibited under Singapore copyright laws. Printed materials and electronic materials are both protected by copyright laws. All students are subject to Singapore copyright laws and must strictly adhere to SMU’s procedures and requirements relating to copyright.\nPlease also note that for some materials, the publishers may specifically state that each copy is for the personal use of one individual only and no further reprographic reproduction is allowed, including for personal use. These restrictions are spelt out clearly on these specific sets of resources and students are required to adhere to these rules.\nStudents who infringe any of the aforesaid rules, laws and requirements shall be liable to disciplinary action by SMU. In addition, such students may also leave themselves open to suits by copyright owners who are entitled to take legal action against persons who infringe their copyright.\nWe strongly urge all students to respect the copyright laws and abide by SMU’s procedures and requirements relating to copyright.\n\n\n\nSMU strives to make learning experiences accessible for all. If you anticipate or experience physical or academic barriers due to disability, please let the instructor know immediately. You are also welcome to contact the university’s disability support team if you have questions or concerns about academic accommodations:included@smu.edu.sg\nPlease be aware that the accessible tables in our seminar room should remain available for students who require them. Emergency\n\n\n\nAs part of emergency preparedness, Instructors may conduct lessons online via the WebEx platform during the term, to prepare students for online learning. During an actual emergency, students will be notified to access the WebEx platform for their online lessons. The class schedule will mirror the current face-to-face class timetable unless otherwise stated."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "index.html#words-of-encouragement",
+    "href": "index.html#words-of-encouragement",
+    "title": "ISSS626 AY2026-27 August Term",
+    "section": "",
+    "text": "For the next 10 weeks, your learning journey will be very bumpy, especially come to R programming.\n\nLearning R can be difficult at first. It is like learning a new language, just like Spanish, French, or Chinese. Hadley Wickham, the chief data scientist at RStudio and the author of some amazing R packages you’ll be using like ggplot2 made this wise observation:\n\nIt’s easy when you start out programming to get really frustrated and think, “Oh it’s me, I’m really stupid,” or, “I’m not made out to program.” But, that is absolutely not the case. Everyone gets frustrated. I still get frustrated occasionally when writing R code. It’s just a natural part of programming. So, it happens to everyone and gets less and less over time. Don’t blame yourself. Just take a break, do something fun, and then come back and try again later.\n\nEven experienced programmers find themselves bashing their heads against seemingly intractable errors.\n\nIf you’re finding yourself taking way too long hitting your head against a wall and not understanding, take a break, talk to classmates, and don’t hesitate to approach me.\nThe students who have a bad time in this course are the ones who don’t work with one another to learn. We are a learning community, and we should help each other to learn.\nIf you understand something and someone is struggling with it, try and help them. If you are struggling, take a breath, and try to pinpoint what you are struggling with.\nOur goal is to be better programmers each day, not to be the perfect programmer. There’s no such thing as a perfect programmer. I’ve been learning new things almost every day.\nI promise you can succeed in this class as long as you are willing to learn, practice, be open minded and don’t give up easily."
+  },
+  {
+    "objectID": "index.html#important-information",
+    "href": "index.html#important-information",
+    "title": "ISSS626 AY2026-27 August Term",
+    "section": "",
+    "text": "All acts of academic dishonesty (including, but not limited to, plagiarism, cheating, fabrication, facilitation of acts of academic dishonesty by others, unauthorized possession of exam questions, or tampering with the academic work of other students) are serious offences. All work (whether oral or written) submitted for purposes of assessment must be the student’s own work. Penalties for violation of the policy range from zero marks for the component assessment to expulsion, depending on the nature of the offense. When in doubt, students should consult the instructors of the course. Details on the SMU Code of Academic Integrity may be accessed at http://www.smuscd.org/resources.html\n\n\n\nCourse materials obtained during your course of study at SMU are meant for personal use only, namely, for the purposes of studying and research. You are strictly not permitted to make copies of or print additional copies or distribute such copies of the course materials or any parts thereof, for commercial gain or exchange. For example, offering such materials on the Internet through CourseHero, Carousell and the like, is strictly prohibited.\nThe selling of these materials and/or any copies thereof are strictly prohibited under Singapore copyright laws. Printed materials and electronic materials are both protected by copyright laws. All students are subject to Singapore copyright laws and must strictly adhere to SMU’s procedures and requirements relating to copyright.\nPlease also note that for some materials, the publishers may specifically state that each copy is for the personal use of one individual only and no further reprographic reproduction is allowed, including for personal use. These restrictions are spelt out clearly on these specific sets of resources and students are required to adhere to these rules.\nStudents who infringe any of the aforesaid rules, laws and requirements shall be liable to disciplinary action by SMU. In addition, such students may also leave themselves open to suits by copyright owners who are entitled to take legal action against persons who infringe their copyright.\nWe strongly urge all students to respect the copyright laws and abide by SMU’s procedures and requirements relating to copyright.\n\n\n\nSMU strives to make learning experiences accessible for all. If you anticipate or experience physical or academic barriers due to disability, please let the instructor know immediately. You are also welcome to contact the university’s disability support team if you have questions or concerns about academic accommodations:included@smu.edu.sg\nPlease be aware that the accessible tables in our seminar room should remain available for students who require them. Emergency\n\n\n\nAs part of emergency preparedness, Instructors may conduct lessons online via the WebEx platform during the term, to prepare students for online learning. During an actual emergency, students will be notified to access the WebEx platform for their online lessons. The class schedule will mirror the current face-to-face class timetable unless otherwise stated."
+  },
+  {
+    "objectID": "syllabus.html",
+    "href": "syllabus.html",
+    "title": "Synopsis",
+    "section": "",
+    "text": "Where should the next new business outlet be located in order to optimise the profit? What are the location factors that affect the resale prices of HDB housing units? Which are the economic or service activities such as IT professional firms, car workshops, fast food chains (ie. KFC, McDonalds), coffee outlets (Starbucks, Ya Kun Kaya Toast, Toast Box) that tend to be located close to one another and which are the ones that tend to be a distance apart? Do these observed patterns and processes occur at random or are they being constrained by geographical factors? These and many other related questions are the challenges faced by data scientists and data analysts today especially when geographical data are used.\nGeospatial Analytics offers the solutions to these questions by providing data scientists and analysts a problem-driven and data-centric analysis framework focusing on discovering actionable understanding from geographically referenced data. It makes extensive use of geospatial data wrangling, geoprocessing, spatial statistical, geospatial machine learning and spatial data visualisation techniques to support decision- and strategy-making.\nThis course provides students with an introduction to the concepts, principles and methods of geospatial analytics and their practical applications of geospatial analytics in real world operations. Emphasis will be placed on:\n\nperforming geospatial data science tasks such as importing, tidying, manipulating, transforming, projecting and processing geospatial data programmatically,\nvisualising, analysing and describing geographical patterns and processes using appropriate geovisualisation and thematic mapping techniques,\nconducting geospatial analysis by using appropriate spatial statistics and Geomachine learning methods and\ncommunicating the geospatial analysis pipeline in a reproducible report."
+  },
+  {
+    "objectID": "syllabus.html#course-structure",
+    "href": "syllabus.html#course-structure",
+    "title": "Synopsis",
+    "section": "Course structure",
+    "text": "Course structure\n\nBasic Modules\nThis course comprises ten integrated components as shown below:"
+  },
+  {
+    "objectID": "syllabus.html#grading-summary",
+    "href": "syllabus.html#grading-summary",
+    "title": "Synopsis",
+    "section": "Grading Summary",
+    "text": "Grading Summary\n\n\n\nAssignments / Assessment categories\nWeighting\n\n\n\n\nPre-lesson Learning and Hands-on Exercise (2.5% x 10)\n25%\n\n\nClass participation and In-class Exercise (1.0% x 10)\n10%\n\n\nTimed Individual Assessment\n20%\n\n\nTake-home Exercise (Not more than 3)\n45%\n\n\n\n\nPre-lesson Learning (5%)\nPre-lesson videos and recommended readings exercises will be released one week before the weekly lesson starts. A strict requirement for each class meeting is to complete the assigned readings and video before coming to class. Students are required write down at least one question or issue encountered while viewing the video or reading the recommended articles and post them on Piazza for discussion.\nStudent sharing of insights from readings of assigned materials on Piazza will form a large part of the learning in this course.\n\n\nHands-on Exercise (20%)\nHands-on exercises aim to provide students to gain hands-on experience on using R and R packages to perform geospatial analysis with real world use cases. It is important for students to complete the hands-on exercises before class.\n\n\nClass Participation and In-class Exercise (10%)\nIn-class exercise and discussion will extend the methods learned from the hands-on exercise to advanced modelling. The in-class discussion will also focus on how to interpret the analysis results and to communicate the analysis results by using appropriate map and data visualisation techniques. Students may also be quizzed in class and thereby contribute to in-class exercise.\n\n\nTimed Individual Assessment (20%)\nA timed individual assessment is designed to evaluate each student’s ability to complete an assignment within a specified time limit. The assessment will involve, but is not limited to, understanding the business problem, assembling the analytical sandbox, performing the analysis, and interpreting and communicating the results. It will be conducted in class and will not exceed 30 minutes.\n\n\nTake-home Exercise (45%)\nThere are three take-home exercises that are due throughout the term. They aim to provide students the opportunities to apply the methods learned in class by working through mini real-world cases. Each take-home exercise is an extension of the hands-on and in-class exercises. What this means is that, for example, in Lesson 2, students will learn the concept of spatial point processes and the hands-on exercise will provide students step-by-step guide on how to use R and R packages to perform spatial point patterns analysis. The in-class discussion, beside clarification of the concepts and usage of R packages syntax and argument, it will focus more on how to interpret and communicate the analysis results. Then the take-home exercise will require students to synthesise what they have learned from the readings, hands-on exercise and in-class exercise. The estimated workload will be about 6-8 hours per week.\nEach take-home exercise will carry a same weightage of 15%. The deliverable format of the take-home exercises and marking rubric of will be provided on the handout of the take-home exercise. Feedback on take-home exercise will be provided weekly before the weekly lesson starts. This is to ensure that students will learn from mistakes made in the earlier take-home exercise and improve their work progressively in the subsequent take-home exercises.\nStudents may work together to help one another with computer or geospatial issues and discuss the materials that constitute the take-home exercise. However, each student is required to prepare and submit the take-home exercise (including any computer work) on their own. Cheating is strictly prohibited. Cheating includes but not limited to: plagiarism and submission of work that is not the student’s.\n\n\nFinal Exam\nThere will be no final examination for this course."
+  },
+  {
+    "objectID": "syllabus.html#reference",
+    "href": "syllabus.html#reference",
+    "title": "Synopsis",
+    "section": "Reference",
+    "text": "Reference\n\nGimond, Manuel. (2018) Introduction to GIS and Spatial Analysis.\nFloch, J.M., Marcon, E. and Puech, F. (2018) Handbook of Spatial Analysis: Theory and Application with R.\nEdzer Pebesma & Roger Bivand (2025) Spatial Data Science with Applications in R.\nRobin Lovelace, Jakub Nowosad & Jannes Muenchow (2024) Geocomputation with R.\nMoraga, Paula. (2023). Spatial Statistics for Data Science: Theory and Practice with R. Chapman & Hall/CRC Data Science Series. ISBN 9781032633510"
+  },
+  {
+    "objectID": "Quarto.html",
+    "href": "Quarto.html",
+    "title": "All About Quarto",
+    "section": "",
+    "text": "Getting Started\nRStudio IDE\nUsing R\nHTML Basics"
+  },
+  {
+    "objectID": "Quarto.html#overview",
+    "href": "Quarto.html#overview",
+    "title": "All About Quarto",
+    "section": "",
+    "text": "Getting Started\nRStudio IDE\nUsing R\nHTML Basics"
+  },
+  {
+    "objectID": "Quarto.html#create-websites-and-blogs",
+    "href": "Quarto.html#create-websites-and-blogs",
+    "title": "All About Quarto",
+    "section": "Create websites and blogs",
+    "text": "Create websites and blogs\n\nCreating a Website\nWebsite Navigation\nDocument Listings"
+  },
+  {
+    "objectID": "Quarto.html#authoring-guide",
+    "href": "Quarto.html#authoring-guide",
+    "title": "All About Quarto",
+    "section": "Authoring Guide",
+    "text": "Authoring Guide\n\nMarkdown Basics\nFigures\nTables\nDiagrams\nCitations & Footnotes\nCross References\nArticle Layout"
+  },
+  {
+    "objectID": "Quarto.html#useful-web-resources",
+    "href": "Quarto.html#useful-web-resources",
+    "title": "All About Quarto",
+    "section": "Useful web resources",
+    "text": "Useful web resources\n\nAwesome Quarto. This github repository provides a comprehensive listing of Quarto resources. It should be the second stop (after Quarto homepage) if you need to look for revelent materials about Quarto."
+  },
+  {
+    "objectID": "lesson.html",
+    "href": "lesson.html",
+    "title": "Weekly Lesson Plan",
+    "section": "",
+    "text": "Week\nDate\nTopic\nStudent Assignment\n\n\n\n\n1\n29/8/2026\nIntroduction to Geospatial Analytics\n\n\n\n2\n5/9/2026\nSpatial Point Patterns Analysis (SPAA)\n\n\n\n3\n12/9/2026\nAdvanced Spatial Point Patterns Analysis\n\n\n\n4\n19/9/2026\nSpatial Weights and Applications\nTake-home Exercise 1 due\n\n\n5\n26/9/2026\nGlobal and Local Measures of Spatial Association\n\n\n\n6\n3/10/2026\nGeographic Segmentation\n\n\n\n\n10/10/2026\nRecess\nTake-home Exercise 2 due\n\n\n7\n17/10/2026\nGeographically Weighted Explanatory Models\n\n\n\n8\n24/10/2026\nGeographically Weighted Predictive Models\n\n\n\n9\n31/10/2026\nModelling Geographic of Accessibility\n\n\n\n10\n7/11/2026\nSpatial Interaction Models\nTimed Individual Assessment\n\n\n11\n14/11/2026\nPoster Presentation\nGeospatial Analytics Project due"
+  },
+  {
+    "objectID": "R.html",
+    "href": "R.html",
+    "title": "R Resources",
+    "section": "",
+    "text": "This page provides links to a selected resources to learn modern R packages, especially those related to tidyverse framework."
+  },
+  {
+    "objectID": "R.html#getting-started-with-r",
+    "href": "R.html#getting-started-with-r",
+    "title": "R Resources",
+    "section": "Getting Started with R",
+    "text": "Getting Started with R\n\nR for Data Science by Garrett Grolemund and Hadley Wickham.\nModern R with the tidyverse by Bruno Rodrigues. Chapter 2 provides a detail discussion on R data objects.\nBrendan R. E. Ansell Introduction to R - tidyverse\nThe Comprehensive Guide to Installing R Packages from CRAN, Bioconductor, GitHub and Co.. This article provides useful tips on how to install R packages from different sources.\nR Workflow"
+  },
+  {
+    "objectID": "R.html#blog-post",
+    "href": "R.html#blog-post",
+    "title": "R Resources",
+    "section": "Blog post",
+    "text": "Blog post\n\nR Workflow from Statistical Thinking."
+  },
+  {
+    "objectID": "outline/Lesson01_outline.html",
+    "href": "outline/Lesson01_outline.html",
+    "title": "Lesson 1: Introduction to Geospatial Analytics",
+    "section": "",
+    "text": "This lesson consists of three parts. First, it provides an overview of geospatial analytics. Second, it explains the popular geospatial models used to store geographical data. The methods used to import, integrate, wrangle, process geospatial data will be discussed too. Lastly, the basic principles and concepts of thematic mapping and geovisualisation will be introduced.\nThe hands-on exercises will allow you to gaion hands-on experience on using:\n\nsf package to import and wrangle vector-based data,\nterra package to import and wrangle raster-based data, and\ntmap package to build cartographic quality thematic maps."
+  },
+  {
+    "objectID": "outline/Lesson01_outline.html#overview",
+    "href": "outline/Lesson01_outline.html#overview",
+    "title": "Lesson 1: Introduction to Geospatial Analytics",
+    "section": "",
+    "text": "This lesson consists of three parts. First, it provides an overview of geospatial analytics. Second, it explains the popular geospatial models used to store geographical data. The methods used to import, integrate, wrangle, process geospatial data will be discussed too. Lastly, the basic principles and concepts of thematic mapping and geovisualisation will be introduced.\nThe hands-on exercises will allow you to gaion hands-on experience on using:\n\nsf package to import and wrangle vector-based data,\nterra package to import and wrangle raster-based data, and\ntmap package to build cartographic quality thematic maps."
+  },
+  {
+    "objectID": "outline/Lesson01_outline.html#content",
+    "href": "outline/Lesson01_outline.html#content",
+    "title": "Lesson 1: Introduction to Geospatial Analytics",
+    "section": "Content",
+    "text": "Content\n\nIntroduction to Geospatial Analytics\n\nDemystifying Geospatial Analytics\nMotivation of Geospatial Analytics\nA Tour Through the Geospatial Analytics Zoo\nGeospatial Analytics and Social Consciousness\n\nFundamentals of Geospatial Data Models\n\nVector and raster data model\nCoordinate systems and map projection\nHandling and wrangling vector data in R: sf methods ````- Handling and wrangling raster data in R: terra methods\n\nFundamentals of Geospatial Data Visualisation and tmap Methods\n\nClassification of maps\nPrinciples of map design\nThematic mapping techniques\ntmap methods"
+  },
+  {
+    "objectID": "outline/Lesson01_outline.html#lesson-slides",
+    "href": "outline/Lesson01_outline.html#lesson-slides",
+    "title": "Lesson 1: Introduction to Geospatial Analytics",
+    "section": "Lesson Slides",
+    "text": "Lesson Slides\n\nLesson 1: Introduction to Geospatial Analytics slides.\nLesson 1: Fundamentals of Geospatial Data Models and Modelling slides.\nLesson 1: Fundamentals of Geospatial Data Visualisation and tmap Methods slides."
+  },
+  {
+    "objectID": "outline/Lesson01_outline.html#self-reading-before-lesson",
+    "href": "outline/Lesson01_outline.html#self-reading-before-lesson",
+    "title": "Lesson 1: Introduction to Geospatial Analytics",
+    "section": "Self-reading Before Lesson",
+    "text": "Self-reading Before Lesson\n\n“Spatial Data, Spatial Analysis, Spatial Data Science” by Prof. Luc Anselin. (This is a long lecture 1hr 15minutes but don’t turn away just because it is lengthy.)\nXie, Yiqun et. al. (2017) “Transdisciplinary Foundations of Geospatial Data Science” ISPRS International Journal of Geo-information, 2017, Vol.6 (12), p.395."
+  },
+  {
+    "objectID": "outline/Lesson01_outline.html#hands-on-exercise",
+    "href": "outline/Lesson01_outline.html#hands-on-exercise",
+    "title": "Lesson 1: Introduction to Geospatial Analytics",
+    "section": "Hands-on Exercise",
+    "text": "Hands-on Exercise\n\nHands-on Exercise 1: Geospatial Data Wrangling with R\nHands-on Exercise 1: Choropleth Mapping with R"
+  },
+  {
+    "objectID": "outline/Lesson01_outline.html#all-about-r",
+    "href": "outline/Lesson01_outline.html#all-about-r",
+    "title": "Lesson 1: Introduction to Geospatial Analytics",
+    "section": "All About R",
+    "text": "All About R\n\nR packages for Data Science\n\nsf package.\n\nSimple Features for R\nReading, Writing and Converting Simple Features\nManipulating Simple Feature Geometries\nManipulating Simple Features\n\ntidyverse: a family of modern R packages specially designed to meet the tasks of Data Science in R.\n\nreadr: a fast and effective library to parse csv, txt, and tsv files as tibble data.frame in R. To get started, refer to Chapter 11 Data import of R for Data Science book.\n\ntidyr: an R package for tidying data. To get started, refer to Chapter 5 Data tidying of R for Data Science book.\n\ndplyr: a grammar of data manipulation. To get started, read articles under Getting Started and Articles tabs.\nggplot2: a grammar of graphics. To get started, read Chapter 1: Data Visualization, Chapter 10 Exploratory Data Analysis and Chapter 11 Communication of R for Data Science (2ed) book.\npipes: a powerful tool for clearly expressing a sequence of multiple operations. To get started, read Chapter 5 Workflow: pipes of R for Data Science (2ed) book.\n\n\n\n\nR Package for GeoVisualisation and Thematic Mapping\n\nTennekes, M. (2018) “tmap: Thematic Maps in R”, Journal of Statistical Software, Vol 84:6, 1-39.\ntmap: thematic maps in R package especially:\n\ntmap: get started!,\ntmap: version changes, and\nChapter 8 Making maps with R of Geocomputation with R."
+  },
+  {
+    "objectID": "outline/Lesson01_outline.html#references",
+    "href": "outline/Lesson01_outline.html#references",
+    "title": "Lesson 1: Introduction to Geospatial Analytics",
+    "section": "References",
+    "text": "References\n\nGeospatial Analytics\n\nPaez, A., and Scott, D.M. (2004) “Spatial statistics for urban analysis: A review of techniques with examples”, GeoJournal, 61: 53-67. Available in SMU eLibrary.\n“Geospatial Analytics Will Eat The World, And You Won’t Even Know It”.\n\n\n\nGeoVisualisation and Thematic Mapping\n\nProportional Symbols\nChoropleth Maps\nThe Basics of Data Classification\nChoropleth Mapping with Exploratory Data Analysis\nThe Concept of Map Symbols\nChoropleth map\nChoropleth Maps – A Guide to Data Classification\nBivariate Choropleth\nValue-by-alpha maps\nWhat to consider when creating choropleth maps"
+  },
+  {
+    "objectID": "outline/Lesson06_outline.html#content",
+    "href": "outline/Lesson06_outline.html#content",
+    "title": "Lesson 6: Geographic Segmentation with Spatially Constrained Cluster Analysis",
+    "section": "Content",
+    "text": "Content\n\nBasic concepts of geographic segmentation\nConventional cluster analysis techniques\nApproaches for clustering geographically referenced data\n\nHierarchical clustering with spatial constraints\nMinimum spanning trees\nClustGeo method"
+  },
+  {
+    "objectID": "outline/Lesson06_outline.html#lesson-slides",
+    "href": "outline/Lesson06_outline.html#lesson-slides",
+    "title": "Lesson 6: Geographic Segmentation with Spatially Constrained Cluster Analysis",
+    "section": "Lesson slides",
+    "text": "Lesson slides\n\nLesson 6: Geographic Segmentation with Spatially Constrained Cluster Analysis slides."
+  },
+  {
+    "objectID": "outline/Lesson06_outline.html#hands-on-exercise",
+    "href": "outline/Lesson06_outline.html#hands-on-exercise",
+    "title": "Lesson 6: Geographic Segmentation with Spatially Constrained Cluster Analysis",
+    "section": "Hands-on Exercise",
+    "text": "Hands-on Exercise\n\n12 Geographical Segmentation with Spatially Constrained Clustering Techniques\n\n\nSelf-reading Before Meet-up\nTo read before class:\n\nAssuncao, R. M., Neves, M.C., Camara, G. and Costa Freitas, C.D. 2006. “Efficient Regionalization Techniques for Socio-Economic Geographical Units Using Minimum Spanning Trees”. International Journal of Geographical Information Science 20: 797-811. (Available in SMU digital library)\nChavent, M., Kuentz-Simonet, V., Labenne,A. and Saracco, J. 2018. “ClustGeo: an R package for hierarchical clustering with spatial constraints” Computational Statistics, 33: 1799-1822. (Available in SMU digital library)\n\n\n\nReferences\n\nRovan, J. and Sambt, J. (2003) “Socio-economic Differences Among Slovenian Municipalities: A Cluster Analysis Approach”, Developments in Applied Statistics, pp. 265-278.\n\nDemeter, T. and Bratucu, G. (2013) “Statistical Analysis Of The EU Countries from A Touristic Point of View”, Bulletin of the Transilvania University of Braşov, 6(55): 121-130.\nBrown, N.S. & Watson, P. (2012) “What can a comprehensive plan really tell us about a region?: A cluster analysis of county comprehensive plans in Idaho”, Western Economics Forum. Pp.22-37.\nJaya, I.G.M., Ruchjana, B.N., Andriyana, Y. & Agata, R (2019) “Clustering with spatial constraints: The case of diarrhea in Bandung city, Indonesia”\nde Souza, D. C. & Taconeli, C. A. (2022) “Spatial and non-spatial clustering algorithm in the analysis of Brazilian educational data”, Communications in Statistics: Case Studies, Data Analysis, and Applications. Vol. 8, No. 4, 588-606. (Available in SMU digital library)\n\n\n\nAll About R\n\nHierarchical Cluster Analysis.\nskater: A function from spdep package that implements a SKATER procedure for spatial clustering analysis.\nClustGeo: Hierarchical Clustering with Spatial Constraints\n\nIntroduction to Clustgeo"
+  },
+  {
+    "objectID": "outline/Lesson07_outline.html",
+    "href": "outline/Lesson07_outline.html",
+    "title": "Lesson 7: Geographically Weighted Regression",
+    "section": "",
+    "text": "In this lesson, you will learn the basic concepts and methods of geographically weighted regression."
+  },
+  {
+    "objectID": "outline/Lesson07_outline.html#content",
+    "href": "outline/Lesson07_outline.html#content",
+    "title": "Lesson 7: Geographically Weighted Regression",
+    "section": "Content",
+    "text": "Content\n\nBasic concepts and principles of linear regression\n\nSimple linear regression\nMultiple linear regression\n\nThe spatial stationarity assumption of multiple linear regression.\nIntroducing Geographically Weighted Regression\n\nWeighting functions (kernel)\nWeighting schemes\nBandwidth\nInterpreting and Visualising"
+  },
+  {
+    "objectID": "outline/Lesson07_outline.html#lesson-slides-and-hands-on-notes",
+    "href": "outline/Lesson07_outline.html#lesson-slides-and-hands-on-notes",
+    "title": "Lesson 7: Geographically Weighted Regression",
+    "section": "Lesson Slides and Hands-on Notes",
+    "text": "Lesson Slides and Hands-on Notes\n\nLesson 7 slides.\nHands-on Exercise 7."
+  },
+  {
+    "objectID": "outline/Lesson07_outline.html#self-reading-before-meet-up",
+    "href": "outline/Lesson07_outline.html#self-reading-before-meet-up",
+    "title": "Lesson 7: Geographically Weighted Regression",
+    "section": "Self-reading Before Meet-up",
+    "text": "Self-reading Before Meet-up\nTo read before class:\n\nBrunsdon, C., Fotheringham, A.S., and Charlton, M. (2002) “Geographically weighted regression: A method for exploring spatial nonstationarity”. Geographical Analysis, 28: 281-289.\nBrunsdon, C., Fotheringham, A.S. and Charlton, M., (1999) “Some Notes on Parametric Significance Tests for Geographically Weighted Regression”. Journal of Regional Science, 39(3), 497-524."
+  },
+  {
+    "objectID": "outline/Lesson07_outline.html#references",
+    "href": "outline/Lesson07_outline.html#references",
+    "title": "Lesson 7: Geographically Weighted Regression",
+    "section": "References",
+    "text": "References\n\nMennis, Jeremy (2006) “Mapping the Results of Geographically Weighted Regression”, The Cartographic Journal, Vol.43 (2), p.171-179.\nStephen A. Matthews ; Tse-Chuan Yang (2012) “Mapping the results of local statistics: Using geographically weighted regression”, Demographic Research, Vol.26, p.151-166."
+  },
+  {
+    "objectID": "outline/Lesson07_outline.html#all-about-r",
+    "href": "outline/Lesson07_outline.html#all-about-r",
+    "title": "Lesson 7: Geographically Weighted Regression",
+    "section": "All About R",
+    "text": "All About R\n\nGWmodel package, especially\n\nGollini, I et. al. (2015) “GWmodel: An R Package for Exploring Spatial Heterogeneity Using Geographically Weighted Models”, Journal of Statistical Software, Volume 63, Issue 17 and\nBinbin Lu, Paul Harris, Martin Charlton & Chris Brunsdon (2014) “The GWmodel R package: further topics for exploring spatial heterogeneity using geographically weighted models”, Geo-spatial Information Science, 17:2, 85-101, DOI: 10.1080/10095020.2014.917453.\n\nlctools package especially gw() and gwr() related functions.\nspgwr implements of geographically weighted regression methods for exploring possible non-stationarity.\ngwrr: its geographically weighted regression (GWR) models and has tools to diagnose and remediate collinearity in the GWR models. Also fits geographically weighted ridge regression (GWRR) and geographically weighted lasso (GWL) models."
+  },
+  {
+    "objectID": "outline/Lesson08_outline.html",
+    "href": "outline/Lesson08_outline.html",
+    "title": "Lesson 8: Geographically Weighted Predictive Modelling",
+    "section": "",
+    "text": "What is Predictive Modelling?\nWhat is Geospatial Predictive Modelling\nIntroducing Recursive Partitioning\nAdvanced Recursive Partitioning: Random Forest\nIntroducing Geographically Weighted Random Forest"
+  },
+  {
+    "objectID": "outline/Lesson08_outline.html#content",
+    "href": "outline/Lesson08_outline.html#content",
+    "title": "Lesson 8: Geographically Weighted Predictive Modelling",
+    "section": "",
+    "text": "What is Predictive Modelling?\nWhat is Geospatial Predictive Modelling\nIntroducing Recursive Partitioning\nAdvanced Recursive Partitioning: Random Forest\nIntroducing Geographically Weighted Random Forest"
+  },
+  {
+    "objectID": "outline/Lesson08_outline.html#lesson-slides-and-hands-on-notes",
+    "href": "outline/Lesson08_outline.html#lesson-slides-and-hands-on-notes",
+    "title": "Lesson 8: Geographically Weighted Predictive Modelling",
+    "section": "Lesson Slides and Hands-on Notes",
+    "text": "Lesson Slides and Hands-on Notes\n\nLesson 8 slides.\nHandout of Hands-on Exercise 8.\n\n\nSelf-reading Before Meet-up\nTo read before class:\n\nStefanos Georganos et. al. (2019) “Geographical Random Forests: A Spatial Extension of the Random Forest Algorithm to Address Spatial Heterogeneity in Remote Sensing and Population Modelling”, Geocarto International, DOI: 10.1080/10106049.2019.1595177.\nGeorganos, S. and Kalogirou, S. (2022) “A Forest of Forests: A Spatially Weighted and Computationally Efficient Formulation of Geographical Random Forests”. ISPRS, International Journal of Geo-Information, 2022, 11, 471. https://www.mdpi.com/2220-9964/11/9/471\n\n\n\nReferences\n\nGeorge Grekousis et. al. (2022) “Ranking the importance of demographic, socioeconomic, and underlying health factors on US COVID-19 deaths: A geographical random forest approach”, Health and Place, vol. 74, pp. 1-12.\nYaowen Luo, Jianguo Yan & Stephen McClure. (2020) “Distribution of the environmental and socioeconomic risk factors on COVID-19 death rate across continental USA: a spatial nonlinear analysis”, Environmental Science and Pollution Research, 28:6587–6599.\nEun-Hee Koh, Eunhee Lee, & Kang-Kun Lee (2020) “Application of geographically weighted regression models to predict spatial characteristics of nitrate contamination: Implications for an effective groundwater management strategy”, Journal of Environmental Management. Vol. 268\n\n\n\nAll About R\n\nSpatialML"
+  },
+  {
+    "objectID": "outline/Lesson09_outline.html",
+    "href": "outline/Lesson09_outline.html",
+    "title": "Lesson 9: Modelling Geographic of Accessibility",
+    "section": "",
+    "text": "Basic Concepts of Geographic Accessibility\nGravitational Law and Distance Decay Function\nIntroducing Potential Models\n\nThe classic model\n\nHansen Potential Accessibility Model\nTwo-step Floating Catchment Area (2SFCA) Method\nKernel Density Two-Step Floating Catchment Area (KD2SFCA) Method\nInterpreting and Visualising Modelling Results"
+  },
+  {
+    "objectID": "outline/Lesson09_outline.html#content",
+    "href": "outline/Lesson09_outline.html#content",
+    "title": "Lesson 9: Modelling Geographic of Accessibility",
+    "section": "",
+    "text": "Basic Concepts of Geographic Accessibility\nGravitational Law and Distance Decay Function\nIntroducing Potential Models\n\nThe classic model\n\nHansen Potential Accessibility Model\nTwo-step Floating Catchment Area (2SFCA) Method\nKernel Density Two-Step Floating Catchment Area (KD2SFCA) Method\nInterpreting and Visualising Modelling Results"
+  },
+  {
+    "objectID": "outline/Lesson09_outline.html#lesson-slides-and-hands-on-notes",
+    "href": "outline/Lesson09_outline.html#lesson-slides-and-hands-on-notes",
+    "title": "Lesson 9: Modelling Geographic of Accessibility",
+    "section": "Lesson Slides and Hands-on Notes",
+    "text": "Lesson Slides and Hands-on Notes\n\nLesson 9 slides.\nHands-on Exercise 9 handout."
+  },
+  {
+    "objectID": "outline/Lesson09_outline.html#self-reading-before-meet-up",
+    "href": "outline/Lesson09_outline.html#self-reading-before-meet-up",
+    "title": "Lesson 9: Modelling Geographic of Accessibility",
+    "section": "Self-reading Before Meet-up",
+    "text": "Self-reading Before Meet-up\nRead before lesson:\n\nLong, J. (2017). Modelling Accessibility. The Geographic Information Science & Technology Body of Knowledge (3rd Quarter 2017 Edition), John P. Wilson (ed.).\nHansen, W. G. (1959): “How Accessibility Shapes Land Use”. Journal of the American Institute of Planners, 25, 2, p. 73-76.\nLuo, W.; Wang, F. (2003) “Measures of spatial accessibility to health care in a GIS environment: synthesis and a case study in the Chicago region”. Environment and Planning B: Planning and Design. 30 (6): 865–884. doi:10.1068/b29120.\nLuo, W.; Qi, Y. (2009). “An enhanced two-step floating catchment area (E2SFCA) method for measuring spatial accessibility to primary care physicians”. Health & Place. 15 (4): 1100–1107."
+  },
+  {
+    "objectID": "outline/Lesson09_outline.html#reference",
+    "href": "outline/Lesson09_outline.html#reference",
+    "title": "Lesson 9: Modelling Geographic of Accessibility",
+    "section": "Reference",
+    "text": "Reference\n\nSection on “Transportation and Accessibility” in The Geography of Transport Systems.\nRich, D.C. (1980) Potential Models in Human Geography.\nOrpana, T./Lampinen, J. (2003) “Building spatial choice models from aggregate data”. Journal of Regional Science,43, 2, p. 319-347.\nTwo-step floating catchment area method.\nCheng, Gang et. al. (2016) “Spatial difference analysis for accessibility to high level hospitals based on travel time in Shenzhen, China” Habitat International, Vol.53, p.485-494.\nPolzin, Pierre ; Borges, José ; Coelho, António (2014) “An Extended Kernel Density Two-Step Floating Catchment Area Method to Analyze Access to Health Care” Environment and planning. B, Planning & design, Vol.41 (4), p.717-735."
+  },
+  {
+    "objectID": "outline/Lesson09_outline.html#all-about-r",
+    "href": "outline/Lesson09_outline.html#all-about-r",
+    "title": "Lesson 9: Modelling Geographic of Accessibility",
+    "section": "All About R:",
+    "text": "All About R:\n\naccessibility\nSpatialAcc package.\nPotential package."
+  },
+  {
+    "objectID": "outline/Lesson10_outline.html",
+    "href": "outline/Lesson10_outline.html",
+    "title": "Lesson 10: Spatial Interaction Models",
+    "section": "",
+    "text": "In this lesson, you will learn the basic concepts and methods of Spatial Interaction Models."
+  },
+  {
+    "objectID": "outline/Lesson10_outline.html#content",
+    "href": "outline/Lesson10_outline.html#content",
+    "title": "Lesson 10: Spatial Interaction Models",
+    "section": "Content",
+    "text": "Content\n\nBasic Concepts of Spatial Interaction Models\n\nA Family of Gravity Models\n\nUnconstrained\nOrigin constrained\nDestination constrained\nDoubly constrained\n\nStatistical Approach\nInterpreting and Visualising Modelling Results\n\nSpatial Econometric Interaction Models\n\nThe general formula\n\nWhat is Econometrics?\nWhat is Spatial Econometrics?\n\nSpatial Econometric Interaction Model Specifications"
+  },
+  {
+    "objectID": "outline/Lesson10_outline.html#lesson-slides-and-hands-on-notes",
+    "href": "outline/Lesson10_outline.html#lesson-slides-and-hands-on-notes",
+    "title": "Lesson 10: Spatial Interaction Models",
+    "section": "Lesson Slides and Hands-on Notes",
+    "text": "Lesson Slides and Hands-on Notes\n\nLesson 10 slides in html format.\nHands-on Exercise 10a: Processing and Visualising Flow Data.\nHands-on Exercise 10b: Calibrating Spatial Interaction Models with R."
+  },
+  {
+    "objectID": "outline/Lesson10_outline.html#self-reading-before-meet-up",
+    "href": "outline/Lesson10_outline.html#self-reading-before-meet-up",
+    "title": "Lesson 10: Spatial Interaction Models",
+    "section": "Self-reading Before Meet-up",
+    "text": "Self-reading Before Meet-up\nRead before lesson:\n\nKingsley E. Haynes and A. Stewart Fotheringham (2020) Gravity and Spatial Interaction Models, Web Book of Regional Science. Chapter 1 and Sub-section 2.2.\nFarmer, C. and Oshan, T. (2017). “Spatial interaction”. The Geographic Information Science & Technology Body of Knowledge (4th Quarter 2017 Edition), John P. Wilson (ed.). DOI: 10.22224/gistbok/2017.4.5 (link is external)\nFlowerdew R, Aitkin M (1982) “A method of fitting the gravity model based on the Poisson distribution”. Journal of Regional Science, 22: 191–202.\n” Chapter 6. Spatial econometrics - common models”, Handbook of Spatial Analysis.\nJames P. LeSage and R. Kelley Pace (2008) “Spatial Econometric Modeling of Origin-Destination Flows”. Journal of Regional Science, Vol. 48, No. 5, pp. 941-967."
+  },
+  {
+    "objectID": "outline/Lesson10_outline.html#reference",
+    "href": "outline/Lesson10_outline.html#reference",
+    "title": "Lesson 10: Spatial Interaction Models",
+    "section": "Reference",
+    "text": "Reference\n\nPavel KLAPKA, et. al. (2013) “The Footfall of Shopping Centre in Olomouc (CZECH REPUBLIC): An Application of The Gravity Model”, Moravian Geographical Reports, Vol 21, pp. 12-26.\n\nYang Yue et. al. (2012) “Exploratory calibration of a spatial interaction model using taxi GPS trajectories”, Computers, Environment and Urban Systems, 36 (2012) 140–153.\nMorito Tsutsumi and Kazuki Tamesue (2012) “Intraregional flow problem in spatial econometric model for origin-destination flows”, Environment and Planning B: Planning and Design, Vol. 39, pp. 1006-1015. Access via SMU e-journal."
+  },
+  {
+    "objectID": "outline/Lesson10_outline.html#all-about-r",
+    "href": "outline/Lesson10_outline.html#all-about-r",
+    "title": "Lesson 10: Spatial Interaction Models",
+    "section": "All About R:",
+    "text": "All About R:\n\nPaul Roback and Julie Legler (2020) Beyond Multiple Linear Regression: Applied Generalized Linear Models and Multilevel Models in R, CRC Press. On line version (January 26, 2021). Chapter 4\nNegative Binomial Regression and Poisson Regression from UCLA Institute for Digital Research & Education.\nspflow\nHome-to-work commuting flows within the municipalities around Paris"
+  },
+  {
+    "objectID": "outline/Lesson05_outline.html",
+    "href": "outline/Lesson05_outline.html",
+    "title": "Lesson 5: Global and Local Measures of Spatial Autocorrelation",
+    "section": "",
+    "text": "In this lesson, you will learn a collection of geospatial statistical methods specially designed for measuring global and local spatial association.\nThese spatial statistics are well suited for:"
+  },
+  {
+    "objectID": "outline/Lesson05_outline.html#content",
+    "href": "outline/Lesson05_outline.html#content",
+    "title": "Lesson 5: Global and Local Measures of Spatial Autocorrelation",
+    "section": "Content",
+    "text": "Content\n\nWhat is Spatial Autocorrelation\n\nMeasures of Global Spatial Autocorrelation\nMeasures of Global High/Low Clustering\n\nIntroducing Localised Geospatial Analysis\n\nLocal Indicators of Spatial Association (LISA)\n\nCluster and Outlier Analysis\n\nLocal Moran and Local Geary\nMoran scatterplot\nLISA Cluster Map\n\nHot Spot and Cold Spot Areas Analysis\n\nGetis and Ord’s G-statistics\n\nEmerging Hot Spot Analysis (EHSA)"
+  },
+  {
+    "objectID": "outline/Lesson05_outline.html#lesson-slides-and-hands-on-notes",
+    "href": "outline/Lesson05_outline.html#lesson-slides-and-hands-on-notes",
+    "title": "Lesson 5: Global and Local Measures of Spatial Autocorrelation",
+    "section": "Lesson Slides and Hands-on Notes",
+    "text": "Lesson Slides and Hands-on Notes\n\nLesson 5 slides.\nHands-on Exercise 5: Global Measures of Spatial Autocorrelation.\nHands-on Exercise 5: Local Measures of Spatial Autocorrelation"
+  },
+  {
+    "objectID": "outline/Lesson05_outline.html#self-reading-before-meet-up",
+    "href": "outline/Lesson05_outline.html#self-reading-before-meet-up",
+    "title": "Lesson 5: Global and Local Measures of Spatial Autocorrelation",
+    "section": "Self-reading Before Meet-up",
+    "text": "Self-reading Before Meet-up\nTo read before class:\n\nMoran, P. A. P. (1950). “Notes on Continuous Stochastic Phenomena”. Biometrika. 37 (1): 17–23.\nGeary, R.C. (1954) “The Contiguity Ratio and Statistical Mapping”. The Incorporated Statistician, Vol. 5, No. 3, pp. 115-127.\nGetis, A., & Ord, K. (1992). “The Analysis of Spatial Association by Use of Distance Statistics”. Geographical Analysis, 24, 189–206.\nAnselin, L. (1995). “Local indicators of spatial association – LISA”. Geographical Analysis, 27(4): 93-115.\nGetis, A. and Ord, J.K. (1992) “The analysis of spatial association by use of distance statistics”. Geographical Analysis, 24(3): 189-206.\nOrd, J.K. and Getis, A. (2010) “Local spatial autocorrelation statistics: Distributional issues and an application”. Geographical Analysis, 27(4): 286-306.\n\nThese six papers are classics of Global and Local Spatial Autocorrelation. Be warned: All classic papers assume that the readers are academic researchers."
+  },
+  {
+    "objectID": "outline/Lesson05_outline.html#references",
+    "href": "outline/Lesson05_outline.html#references",
+    "title": "Lesson 5: Global and Local Measures of Spatial Autocorrelation",
+    "section": "References",
+    "text": "References\n\nD. A. Griffith (2009) “Spatial autocorrelation”.\nGetis, A., 2010 “B.3 Spatial Autocorrelation” in Fischer, M.M., and Getis, A. 2010 Handbook of Applied Spatial Analysis: Software Tools, Methods and Applications, Springer.\nAnselin, L. (1996) “The Moran scatterplot as an ESDA tool to assess local instability in spatial association”\nGriffith, Daniel (2009) “Modeling spatial autocorrelation in spatial interaction data: empirical evidence from 2002 Germany journey-to-work flows”. Journal of Geographical Systems, Vol.11(2), pp.117-140.\nCelebioglu, F., and Dall’erba, S. (2010) “Spatial disparities across the regions of Turkey: An exploratory spatial data analysis”. The Annals of Regional Science, 45:379–400.\nMack, Z.W.V. and Kam T.S. (2018) “Is There Space for Violence?: A Data-driven Approach to the Exploration of Spatial-Temporal Dimensions of Conflict” Proceedings of 2nd ACM SIGSPATIAL Workshop on Geospatial Humanities (ACM SIGSPATIAL’18). Seattle, Washington, USA, 10 pages.\nTAN, Yong Ying and KAM, Tin Seong (2019). “Exploring and Visualizing Household Electricity Consumption Patterns in Singapore: A Geospatial Analytics Approach”, Information in Contemporary Society: 14th International Conference, iConference 2019, Washington, DC, USA, March 31–April 3, 2019, Proceedings. Pp 785-796.\nSingh A., Pathak P.K., Chauhan R.K., and Pan, W. (2011) “Infant and Child Mortality in India in the Last Two Decades: A Geospatial Analysis”. PLoS ONE 6(11), 1:19."
+  },
+  {
+    "objectID": "lesson/Lesson01/Lesson01-GeoVis.html#content",
+    "href": "lesson/Lesson01/Lesson01-GeoVis.html#content",
+    "title": "Lesson 1: Fundamental of Geospatial Data Visualisation",
+    "section": "Content",
+    "text": "Content\n\nIntroducing maps\nTypology of maps\n\nReference maps\nThematic maps\n\nProportional Symbol Map\nChoropleth Mapping\nIntroduction to tmap Methods\n\n\nThis lesson consists of two parts. First, I will share with you the concepts and design principles of choropleth maps. Next, I will introduce you to tmap, an R package specially designed for thematic mapping based on Layered Grammar of Graphics"
+  },
+  {
+    "objectID": "lesson/Lesson01/Lesson01-GeoVis.html#what-is-a-map",
+    "href": "lesson/Lesson01/Lesson01-GeoVis.html#what-is-a-map",
+    "title": "Lesson 1: Fundamental of Geospatial Data Visualisation",
+    "section": "What is a Map?",
+    "text": "What is a Map?\nA model of real world depict by a collection of cartographic symbols or/and visual abstraction."
+  },
+  {
+    "objectID": "lesson/Lesson01/Lesson01-GeoVis.html#typology-of-maps",
+    "href": "lesson/Lesson01/Lesson01-GeoVis.html#typology-of-maps",
+    "title": "Lesson 1: Fundamental of Geospatial Data Visualisation",
+    "section": "Typology of Maps",
+    "text": "Typology of Maps"
+  },
+  {
+    "objectID": "lesson/Lesson01/Lesson01-GeoVis.html#thematic-mapping-principles-and-methods",
+    "href": "lesson/Lesson01/Lesson01-GeoVis.html#thematic-mapping-principles-and-methods",
+    "title": "Lesson 1: Fundamental of Geospatial Data Visualisation",
+    "section": "Thematic Mapping: Principles and Methods",
+    "text": "Thematic Mapping: Principles and Methods\n\nDisplaying\n\nQualitative data\nQuantitative data\n\nChoosing -Appropriate classification method for displaying data\n\nAppropriate number of classes\n\nTechniques in data analysis\n\nUsing the classification histogram\nNormalizing data"
+  },
+  {
+    "objectID": "lesson/Lesson01/Lesson01-GeoVis.html#qualitative-thematic-maps",
+    "href": "lesson/Lesson01/Lesson01-GeoVis.html#qualitative-thematic-maps",
+    "title": "Lesson 1: Fundamental of Geospatial Data Visualisation",
+    "section": "Qualitative Thematic Maps",
+    "text": "Qualitative Thematic Maps\nVisual Variables and Cartographic Symbols\n\n\n\nQualitative visual variables are used for nominal scale data.\nThe goal of qualitative visual variables is to show how entities differ from each other.\nThe visual variables that do a good job of showing ordinal differences are: colour value, colour saturation, size and texture/grain.\n\nFigure on the right for examples of these four ordinal visual variables used each in point, linear and areal symbols."
+  },
+  {
+    "objectID": "lesson/Lesson01/Lesson01-GeoVis.html#qualitative-thematic-map",
+    "href": "lesson/Lesson01/Lesson01-GeoVis.html#qualitative-thematic-map",
+    "title": "Lesson 1: Fundamental of Geospatial Data Visualisation",
+    "section": "Qualitative Thematic Map",
+    "text": "Qualitative Thematic Map\nPoint symbol map\n\n\n\nDifferent point symbols are used to represent school types."
+  },
+  {
+    "objectID": "lesson/Lesson01/Lesson01-GeoVis.html#qualitative-thematic-map-1",
+    "href": "lesson/Lesson01/Lesson01-GeoVis.html#qualitative-thematic-map-1",
+    "title": "Lesson 1: Fundamental of Geospatial Data Visualisation",
+    "section": "Qualitative Thematic Map",
+    "text": "Qualitative Thematic Map\nLine symbol map\n\n\n\nA road map is an example of a thematic map. It shows the road network of an area. In this map, lines with different colour intensity and tickness are used to differentiate hierarchy of roads."
+  },
+  {
+    "objectID": "lesson/Lesson01/Lesson01-GeoVis.html#qualitative-thematic-map-2",
+    "href": "lesson/Lesson01/Lesson01-GeoVis.html#qualitative-thematic-map-2",
+    "title": "Lesson 1: Fundamental of Geospatial Data Visualisation",
+    "section": "Qualitative Thematic Map",
+    "text": "Qualitative Thematic Map\nArea map\n\n\n\nLand use map below is a good example of a discrete thematic map. In this map, different colours are use to represent different land use types."
+  },
+  {
+    "objectID": "lesson/Lesson01/Lesson01-GeoVis.html#quantitative-thematic-map",
+    "href": "lesson/Lesson01/Lesson01-GeoVis.html#quantitative-thematic-map",
+    "title": "Lesson 1: Fundamental of Geospatial Data Visualisation",
+    "section": "Quantitative Thematic Map",
+    "text": "Quantitative Thematic Map\nVisual Variables and Cartographic Symbols\n\n\n\nQuantitative visual variables are used to display ordinal, interval or ratio scale data.\n\nThe goal of the quantitative visual variable is to show relative magnitude or order between entities.\nThe visual variables that do a good job of showing ordinal differences are: colour value, colour saturation, size and texture/grain.\n\nFigure on the right shows of these four ordinal visual variables used each in point, linear and areal symbols."
+  },
+  {
+    "objectID": "lesson/Lesson01/Lesson01-GeoVis.html#proportional-symbol-map",
+    "href": "lesson/Lesson01/Lesson01-GeoVis.html#proportional-symbol-map",
+    "title": "Lesson 1: Fundamental of Geospatial Data Visualisation",
+    "section": "Proportional Symbol Map",
+    "text": "Proportional Symbol Map\n\nThe proportional symbol technique uses symbols of different sizes to represent data associated with different areas or locations within the map.\n\n\n\nThe proportional symbol technique uses symbols of different sizes to represent data associated with different areas or locations within the map. For example, the proportional maps above use circle with different sizes to represent millions of people. There are two types of point features that are typically depicted with proportional symbols: features for which the data represents a geographic position directly (e.g., gallons of oil from individual oil wells), and features that are geographic areas to which data are aggregated and the data magnitudes are assigned to a representative point within the area (e.g., the geographic centroid of a state as in the examples above). In either case, the area of the symbol is scaled to represent the data magnitude, sometimes with a bit of exaggeration to adjust for a general tendency of human vision to underestimate differences in area. A variant on this direct data-to-symbol scaling groups values into categories first, then scales the symbol to represent the mean for the category, assigning a symbol to each place to represent the category range that the mean for the place falls within"
+  },
+  {
+    "objectID": "lesson/Lesson01/Lesson01-GeoVis.html#dot-density-map",
+    "href": "lesson/Lesson01/Lesson01-GeoVis.html#dot-density-map",
+    "title": "Lesson 1: Fundamental of Geospatial Data Visualisation",
+    "section": "Dot Density Map",
+    "text": "Dot Density Map\nA dot-density map is a type of thematic map that uses dots or other symbols on the map to show the values of one or more numeric data fields. Each dot on a dot-density map represents some amount of data.\n\n\nOne dot represent 100 households.\n\n\nReference: Dot distribution map at wiki and Dot Density Maps"
+  },
+  {
+    "objectID": "lesson/Lesson01/Lesson01-GeoVis.html#choropleth-map",
+    "href": "lesson/Lesson01/Lesson01-GeoVis.html#choropleth-map",
+    "title": "Lesson 1: Fundamental of Geospatial Data Visualisation",
+    "section": "Choropleth Map",
+    "text": "Choropleth Map\nA choropleth map is a type of thematic map in which areas are shaded or patterned in proportion to a statistical variable that represents an aggregate summary of a geographic characteristic within each area, such as population or per-capita income."
+  },
+  {
+    "objectID": "lesson/Lesson01/Lesson01-GeoVis.html#data-classification",
+    "href": "lesson/Lesson01/Lesson01-GeoVis.html#data-classification",
+    "title": "Lesson 1: Fundamental of Geospatial Data Visualisation",
+    "section": "Data classification",
+    "text": "Data classification\n\n\nNot sure how many classes to use? Have a look at the distribution of your data in a histogram (see examples below): Are there obvious clusters within your data? Are there large gaps in your data range that suggest nice compact data classes? If so, pick that number of classes and place those class breaks around those clusters."
+  },
+  {
+    "objectID": "lesson/Lesson01/Lesson01-GeoVis.html#colour-scheme",
+    "href": "lesson/Lesson01/Lesson01-GeoVis.html#colour-scheme",
+    "title": "Lesson 1: Fundamental of Geospatial Data Visualisation",
+    "section": "Colour scheme",
+    "text": "Colour scheme\nColorBrewer"
+  },
+  {
+    "objectID": "lesson/Lesson01/Lesson01-GeoVis.html#mapping-packages-in-r",
+    "href": "lesson/Lesson01/Lesson01-GeoVis.html#mapping-packages-in-r",
+    "title": "Lesson 1: Fundamental of Geospatial Data Visualisation",
+    "section": "Mapping packages in R",
+    "text": "Mapping packages in R\n\n\nSelected popular mapping packages\nCRAN Task View: Analysis of Spatial Data\n\ntmap\nmapsf\nleaflet\nggplot2. Read Chapter 6: Maps of ‘ggplot2: Elegant Graphics for Data Analysis’ for more detail.\nggmap\nquickmapr\nmapview\n\n\nOther packages\n\nRColorBrewer\nclassInt"
+  },
+  {
+    "objectID": "lesson/Lesson01/Lesson01-GeoVis.html#introducing-tmap",
+    "href": "lesson/Lesson01/Lesson01-GeoVis.html#introducing-tmap",
+    "title": "Lesson 1: Fundamental of Geospatial Data Visualisation",
+    "section": "Introducing tmap",
+    "text": "Introducing tmap\n\n\n\ntmap is a R package specially designed for creating thematic maps using the pricinples of the Grammar of Graphics.\nIt offers a flexible, layer-based, and easy to use approach to create thematic maps, such as choropleths and proportional symbol maps.\nIt supports two modes: tm_plot() for static maps and tm_view() for interactive maps.\nIt provides shiny integration with renderTmap(), tmapOutput(), tmapProxy() and tm_remove_layer()."
+  },
+  {
+    "objectID": "lesson/Lesson01/Lesson01-GeoVis.html#reference",
+    "href": "lesson/Lesson01/Lesson01-GeoVis.html#reference",
+    "title": "Lesson 1: Fundamental of Geospatial Data Visualisation",
+    "section": "Reference",
+    "text": "Reference\nPrinciples, Concepts and Methods of Choropleth Maps Design\nCore Reading\n\nChoropleth Maps\nThe Basics of Data Classification\n\nAdditional Readings\n\nChoropleth Maps – A Guide to Data Classification\nBivariate Choropleth\nValue-by-alpha maps\nWhat to consider when creating choropleth maps\nChoropleth Mapping with Exploratory Data Analysis"
+  },
+  {
+    "objectID": "lesson/Lesson01/Lesson01-GeoVis.html#references",
+    "href": "lesson/Lesson01/Lesson01-GeoVis.html#references",
+    "title": "Lesson 1: Fundamental of Geospatial Data Visualisation",
+    "section": "References",
+    "text": "References\nAll About tmap package\n\ntmap: Thematic Maps in R\ntmap home page\nSpatial Data Visualization with tmap: A Practical Guide to Thematic Mapping in R\ntmap: creating thematic maps in a flexible way (useR!2015)\nExploring and presenting maps with tmap (useR!2017)"
+  },
+  {
+    "objectID": "lesson/Lesson01/Lesson01-Introduction_to_GAA.html#demystifying-geospatial-analytics",
+    "href": "lesson/Lesson01/Lesson01-Introduction_to_GAA.html#demystifying-geospatial-analytics",
+    "title": "Lesson 1: Introduction to Geospatial Analytics and Applications",
+    "section": "Demystifying Geospatial Analytics",
+    "text": "Demystifying Geospatial Analytics\n\nA Geographical Information System (GIS) is a toolkit for creating, managing, analysing, visualising, and sharing data of any kind according to where it’s located.\n\n\n\nGeospatial analytics is more than a GIS."
+  },
+  {
+    "objectID": "lesson/Lesson01/Lesson01-Introduction_to_GAA.html#demystifying-geospatial-analytics-1",
+    "href": "lesson/Lesson01/Lesson01-Introduction_to_GAA.html#demystifying-geospatial-analytics-1",
+    "title": "Lesson 1: Introduction to Geospatial Analytics and Applications",
+    "section": "Demystifying Geospatial Analytics",
+    "text": "Demystifying Geospatial Analytics\n\nGeospatial analytics is more than data visualisation\n\n\n\n\n\nSource: Singapore’s first disease map delivers real-time information on infectious diseases"
+  },
+  {
+    "objectID": "lesson/Lesson01/Lesson01-Introduction_to_GAA.html#demystifying-geospatial-analytics-2",
+    "href": "lesson/Lesson01/Lesson01-Introduction_to_GAA.html#demystifying-geospatial-analytics-2",
+    "title": "Lesson 1: Introduction to Geospatial Analytics and Applications",
+    "section": "Demystifying Geospatial Analytics",
+    "text": "Demystifying Geospatial Analytics\n\nGeospatial analytics is more than just mapping."
+  },
+  {
+    "objectID": "lesson/Lesson01/Lesson01-Introduction_to_GAA.html#motivation-of-geospatial-analytics",
+    "href": "lesson/Lesson01/Lesson01-Introduction_to_GAA.html#motivation-of-geospatial-analytics",
+    "title": "Lesson 1: Introduction to Geospatial Analytics and Applications",
+    "section": "Motivation of Geospatial Analytics",
+    "text": "Motivation of Geospatial Analytics\n\nAbout 80% of all data maintained by organisations around the world has a location component.\n\n\n\n(Source: BusinessWeek Research Services, 2006)"
+  },
+  {
+    "objectID": "lesson/Lesson01/Lesson01-Introduction_to_GAA.html#motivation-of-geospatial-analytics-1",
+    "href": "lesson/Lesson01/Lesson01-Introduction_to_GAA.html#motivation-of-geospatial-analytics-1",
+    "title": "Lesson 1: Introduction to Geospatial Analytics and Applications",
+    "section": "Motivation of Geospatial Analytics",
+    "text": "Motivation of Geospatial Analytics\n\nGeospatial information in Smart Nation.\n\n\n\nSee more at this link"
+  },
+  {
+    "objectID": "lesson/Lesson01/Lesson01-Introduction_to_GAA.html#motivation-of-geospatial-analytics-2",
+    "href": "lesson/Lesson01/Lesson01-Introduction_to_GAA.html#motivation-of-geospatial-analytics-2",
+    "title": "Lesson 1: Introduction to Geospatial Analytics and Applications",
+    "section": "Motivation of Geospatial Analytics",
+    "text": "Motivation of Geospatial Analytics\n\nThe explosion in the availability of open geospatial data from both the public and private sectors at national and international levels."
+  },
+  {
+    "objectID": "lesson/Lesson01/Lesson01-Introduction_to_GAA.html#motivation-of-geospatial-analytics-3",
+    "href": "lesson/Lesson01/Lesson01-Introduction_to_GAA.html#motivation-of-geospatial-analytics-3",
+    "title": "Lesson 1: Introduction to Geospatial Analytics and Applications",
+    "section": "Motivation of Geospatial Analytics",
+    "text": "Motivation of Geospatial Analytics\n\nThe national geospatial master plan.\n\n\n\nSource: Singapore Geospatial Master Plan"
+  },
+  {
+    "objectID": "lesson/Lesson01/Lesson01-Introduction_to_GAA.html#the-role-of-geospatial-analytics",
+    "href": "lesson/Lesson01/Lesson01-Introduction_to_GAA.html#the-role-of-geospatial-analytics",
+    "title": "Lesson 1: Introduction to Geospatial Analytics and Applications",
+    "section": "The role of Geospatial Analytics",
+    "text": "The role of Geospatial Analytics\n\nUncovering insights not found in statistical graphs and tables.\n\n\n\nSource: SGSAS - Simple Geo-Spatial Analysis using R Shiny"
+  },
+  {
+    "objectID": "lesson/Lesson01/Lesson01-Introduction_to_GAA.html#the-role-of-geospatial-analytics-1",
+    "href": "lesson/Lesson01/Lesson01-Introduction_to_GAA.html#the-role-of-geospatial-analytics-1",
+    "title": "Lesson 1: Introduction to Geospatial Analytics and Applications",
+    "section": "The role of Geospatial Analytics",
+    "text": "The role of Geospatial Analytics\n\nTo reveal the untapped property of spatial contiguity in geographic knowledge discovery in databases.\n\n\n\nSource: SGSAS - Simple Geo-Spatial Analysis using R Shiny"
+  },
+  {
+    "objectID": "lesson/Lesson01/Lesson01-Introduction_to_GAA.html#the-role-of-geospatial-analytics-2",
+    "href": "lesson/Lesson01/Lesson01-Introduction_to_GAA.html#the-role-of-geospatial-analytics-2",
+    "title": "Lesson 1: Introduction to Geospatial Analytics and Applications",
+    "section": "The role of Geospatial Analytics",
+    "text": "The role of Geospatial Analytics\n\nTo uncover the complexity of the real world relationship.\n\n\n\nSource: SGSAS - Simple Geo-Spatial Analysis using R Shiny"
+  },
+  {
+    "objectID": "lesson/Lesson01/Lesson01-Introduction_to_GAA.html#the-role-of-geospatial-analytics-3",
+    "href": "lesson/Lesson01/Lesson01-Introduction_to_GAA.html#the-role-of-geospatial-analytics-3",
+    "title": "Lesson 1: Introduction to Geospatial Analytics and Applications",
+    "section": "The role of Geospatial Analytics",
+    "text": "The role of Geospatial Analytics\n\nTo model spatial interactions and flows.\n\n\n\nSource: IS415 Bus Rider Flow Project"
+  },
+  {
+    "objectID": "lesson/Lesson01/Lesson01-Introduction_to_GAA.html#geospatial-analytics-and-social-consciousness",
+    "href": "lesson/Lesson01/Lesson01-Introduction_to_GAA.html#geospatial-analytics-and-social-consciousness",
+    "title": "Lesson 1: Introduction to Geospatial Analytics and Applications",
+    "section": "Geospatial Analytics and Social Consciousness",
+    "text": "Geospatial Analytics and Social Consciousness\nThe true power of geospatial analytics is to provide decision makers and planners with data-driven and process information for better problem solving and more efficient use of resources."
+  },
+  {
+    "objectID": "lesson/Lesson02/Lesson02-SPPA.html#content",
+    "href": "lesson/Lesson02/Lesson02-SPPA.html#content",
+    "title": "Lesson 2: Spatial Point Patterns Analysis",
+    "section": "",
+    "text": "Introducing Spatial Point Patterns\n\nThe basic concepts of spatial point patterns\n1st Order versus 2nd Order\nSpatial Point Patterns in real world\n\n1st Order Spatial Point Patterns Analysis\n\nQuadrat analysis\nKernel density estimation\n\n\n\n\n2nd Order Spatial Point Patterns Analysis\n\nNearest Neighbour Index\nG-function\nF-function\nK-function\nL-function\n\n\n\n\n\nWelcome to Lesson 4: Spatial Point Pattern Analysis, a family of spatial statistics specially developed to model and to test distribution of spatial point events.\nThe lesson proceeding is divided into three main section. First, I will share with you what are real world spatial point events. This is followed by explaining the concepts and methods of 1st-order and 2nd-order spatial point patterns analysis."
+  },
+  {
+    "objectID": "lesson/Lesson02/Lesson02-SPPA.html#what-is-spatial-point-patterns",
+    "href": "lesson/Lesson02/Lesson02-SPPA.html#what-is-spatial-point-patterns",
+    "title": "Lesson 2: Spatial Point Patterns Analysis",
+    "section": "What is Spatial Point Patterns",
+    "text": "What is Spatial Point Patterns\n\nPoints as Events\nMapped pattern\n\nNot a sample\nSelection bias\n\nEvents are mapped, but non-events are not\n\n\n\nSpatial Point Patterns in Real World\n\nDistribution of dieses such as dengue fever.\n\n\n\n\n\nSpatial Point Patterns in Real World\n\nDistribution of car collisions.\n\n\n\n\n\n\n\n\n\nSpatial Point Patterns in Real World\n\nDistribution of crime incidents.\n\n\n\n\n\n\n\n\n\nSpatial Point Patterns in Real World\n\nDistribution of public services such as education institutions.\n\n\n\n\n\nSpatial Point Patterns in Real World\n\nLocations of the different channel stores.\n\n\n\n\n\n\n\n\n\nSpatial Point Patterns in Real World\n\nDistribution of social media data such as tweets."
+  },
+  {
+    "objectID": "lesson/Lesson02/Lesson02-SPPA.html#real-world-question",
+    "href": "lesson/Lesson02/Lesson02-SPPA.html#real-world-question",
+    "title": "Lesson 2: Spatial Point Patterns Analysis",
+    "section": "Real World Question",
+    "text": "Real World Question\n\nLocation only\n\nare points randomly located or patterned\n\nLocation and value\n\nmarked point pattern\nis combination of location and value random or patterned\n\nWhat is the underlying process?\n\n\nIt is important note that SPPA is exploratory and confirmatory in nature. They are specially developed for describing the spatial point pattern and for confirming the observed patterns statistically. However, they are explanatory nor for prediction."
+  },
+  {
+    "objectID": "lesson/Lesson02/Lesson02-SPPA.html#points-on-a-plane",
+    "href": "lesson/Lesson02/Lesson02-SPPA.html#points-on-a-plane",
+    "title": "Lesson 2: Spatial Point Patterns Analysis",
+    "section": "Points on a Plane",
+    "text": "Points on a Plane\n\nClassic point pattern analysis\n\npoints on an isotropic plane\nno effect of translation and rotation\nclassic examples: tree seedlings, rocks, etc\n\nDistance\n\nstraight line only\n\n\n\n\nReal world spatial point patterns\n\nIs this a random distribution?\n\n\n\n\n\nReal world spatial point patterns\n\nIs this a random distribution?"
+  },
+  {
+    "objectID": "lesson/Lesson02/Lesson02-SPPA.html#spatial-point-patterns-analysis",
+    "href": "lesson/Lesson02/Lesson02-SPPA.html#spatial-point-patterns-analysis",
+    "title": "Lesson 2: Spatial Point Patterns Analysis",
+    "section": "Spatial Point Patterns Analysis",
+    "text": "Spatial Point Patterns Analysis\n\nPoint pattern analysis (PPA) is the study of the spatial arrangements of points in (usually 2-dimensional) space.\nThe simplest formulation is a set X = {x ∈ D} where D, which can be called the study region, is a subset of Rn, a n-dimensional Euclidean space.\nA fundamental problem of PPA is inferring whether a given arrangement is merely random or the result of some process."
+  },
+  {
+    "objectID": "lesson/Lesson02/Lesson02-SPPA.html#homogeneous-spatial-point-patterns",
+    "href": "lesson/Lesson02/Lesson02-SPPA.html#homogeneous-spatial-point-patterns",
+    "title": "Lesson 2: Spatial Point Patterns Analysis",
+    "section": "Homogeneous Spatial Point Patterns",
+    "text": "Homogeneous Spatial Point Patterns\n\n\nA homogeneous spatial point pattern assumes that the points are distributed uniformly across the study area. The intensity (expected number of points per unit area) is constant throughout the region.\n\n\nCharacteristics:\n\nThe probability of observing a point is the same across the entire space.\nThe process generating the points does not depend on location.\nThe points are randomly and independently distributed across the space, leading to a uniform density.\n\nModel:\n\nTypically modeled by a Homogeneous Poisson Process, where the intensity λ (the number of points per unit area) is constant."
+  },
+  {
+    "objectID": "lesson/Lesson02/Lesson02-SPPA.html#heterogeneous-spatial-point-patterns",
+    "href": "lesson/Lesson02/Lesson02-SPPA.html#heterogeneous-spatial-point-patterns",
+    "title": "Lesson 2: Spatial Point Patterns Analysis",
+    "section": "Heterogeneous Spatial Point Patterns",
+    "text": "Heterogeneous Spatial Point Patterns\n\n\nA heterogeneous spatial point pattern assumes that the intensity of points varies across the study area. The intensity function is not constant and may depend on spatial covariates, leading to non-uniform distribution.\n\n\nCharacteristics:\n\nThe probability of observing a point varies across the space, often depending on underlying factors like geography, environmental conditions, or other spatial variables.\nThe density of points can be higher in some regions and lower in others, leading to clusters or dispersed patterns.\nModeled by an Inhomogeneous Poisson Process (IPP), where the intensity function λ(x,y) varies with location. The intensity can be a function of spatial covariates or other influences."
+  },
+  {
+    "objectID": "lesson/Lesson02/Lesson02-SPPA.html#spatial-point-patterns-analysis-techniques",
+    "href": "lesson/Lesson02/Lesson02-SPPA.html#spatial-point-patterns-analysis-techniques",
+    "title": "Lesson 2: Spatial Point Patterns Analysis",
+    "section": "Spatial Point Patterns Analysis Techniques",
+    "text": "Spatial Point Patterns Analysis Techniques\n\nFirst-order vs Second-order Analysis of spatial point patterns.\n\n\nReference: 11.4 First and second order effects of Intro to GIS and Spatial Analysis\n\nThe first-order properties describe the way in which the expected value (mean or average) of the spatial point pattern varies across space (i.e., the intensity of the spatial point pattern). Such properties are usually measured with the so-called quadrat analysis, nearest neighbour index and kernel estimation. Second-order properties describe the covariance (or correlation) between values of the spatial point pattern at different regions in space and are usually measured with the G function, K function and L function. Applied to point event data, both properties could be used to explore the spatial variation in the risk of being victimized by a crime, spatial and space-time clustering of criminal activities, and the raised incidence of criminal activities around point sources, such as robberies around ATM machines, subway entrances and exits, etc.\n\n\n\nFirst-order Spatial Point Patterns Analysis Techniques\n\nDensity-based\n\nKernel density estimation\nQuadrat analysis,\n\nDistance-based\n\nNearest Neighbour Index\n\n\n\n\n\nBasic concept of density-based measures"
+  },
+  {
+    "objectID": "lesson/Lesson02/Lesson02-SPPA.html#kernel-density-estimation-silverman-1986",
+    "href": "lesson/Lesson02/Lesson02-SPPA.html#kernel-density-estimation-silverman-1986",
+    "title": "Lesson 2: Spatial Point Patterns Analysis",
+    "section": "Kernel density estimation (Silverman 1986)",
+    "text": "Kernel density estimation (Silverman 1986)\n\nA method to compute the intensity of a point distribution.\n\n\n\nThe general formula:\n\n\nGraphically\n\n\n\n\n\nKDE Step 1: Computing point intensity\n\n\n\n\nKDE Step 2: Spatial interpolation using kernel function\n\n\n\n\nKDE Map of Childcare Services, Singapore\n\n\n\n\nAdaptive Bandwidth\n\n\nAdaptive schemes adjust itself according to the density of data: - Shorter bandwidths where data are dense and longer where sparse.\n\nFinding nearest neighbors are one of the often used approaches.\n\n\n\n\n\n\n\n\nFixed bandwidth\n\n\n\nMight produce large estimate variances where data are sparse, while mask subtle local variations where data are dense.\nIn extreme condition, fixed schemes might not be able to calibrate in local areas where data are too sparse to satisfy the calibration requirements (observations must be more than parameters).\n\n\n\n\n\n\n\n\nQuadrat Analysis – Step 1\n\n\n\nDivide the study area into subregion of equal size,\n\noften squares, but don’t have to be.\n\n\n\n\n\n\n\n\nQuadrat Analysis – Step 2\n\n\n\nCount the frequency of events in each region.\n\n\n\n\n\n\n\nQuadrat Analysis – Step 3\n\n\n\nCalculate the intensity of events in each region.\n\n\n\n\n\n\n\nQuadrat Analysis – Step 4\n\nCalculate the quadrat statistics and perform CSR test.\n\n\n\n\n\nQuadrat Analysis – Variance-Mean Ratio (VMR)\n\nFor an uniform distribution, the variance is zero, - therefore, we expect a variance-mean ratio close to 0.\nFor a random distribution, the variance and mean are the same,\n\ntherefore, we expect a variance-mean ratio close to 1.\n\nFor a cluster distribution, the variance is relatively large,\n\ntherefore, we expect a variance-mean ratio greater than 1.]\n\n\n\n\n\nComplete Spatial Randomness (CSR)\n\n\n\nCSR/IRP satisfy two conditions:\n\nAny event has equal probability of being in any location, a 1st order effect.\nThe location of one event is independent of the location of another event, a 2nd order effect.\n\n\nReference: Chapter 12 Hypothesis testing of Intro to GIS and Spatial Analysis\n\n\n\n\n\n\n\nQuadrat Analysis: The interpretation\n\n\n\n\n\n\n\n\nWeaknesses of quadrat analysis\n\n\n\nIt is sensitive to the quadrat size.\n\nIf the quadrat size is too small, they may contain only a couple of points, and\nIf the quadrat size is too large, they may contain too many points.\n\nIt is a measure of dispersion rather than a measure of pattern.\nIt results in a single measure for the entire distribution, so variation within the region are not recognised."
+  },
+  {
+    "objectID": "lesson/Lesson02/Lesson02-SPPA.html#distance-based-nearest-neighbour-index",
+    "href": "lesson/Lesson02/Lesson02-SPPA.html#distance-based-nearest-neighbour-index",
+    "title": "Lesson 2: Spatial Point Patterns Analysis",
+    "section": "Distance-based: Nearest Neighbour Index",
+    "text": "Distance-based: Nearest Neighbour Index\n\nWhat is Nearest Neighbour?\nDirect distance from a point to its nearest neighbour."
+  },
+  {
+    "objectID": "lesson/Lesson02/Lesson02-SPPA.html#nearest-neighbour-index",
+    "href": "lesson/Lesson02/Lesson02-SPPA.html#nearest-neighbour-index",
+    "title": "Lesson 2: Spatial Point Patterns Analysis",
+    "section": "Nearest Neighbour Index",
+    "text": "Nearest Neighbour Index\nThe Nearest Neighbour Index is expressed as the ratio of the Observed Mean Distance to the Expected Mean Distance.\n\n\n\nCalculating Nearest Neighbour Index\n\n\n\n\nInterpreting Nearest Neighbour Index\nThe expected distance is the average distance between neighbours in a hypothetical random distribution.\n\nIf the index is less than 1, the pattern exhibits clustering,\nIf the index is equal to 1, the patterns exhibits random, and\nIf the index is greater than 1, the trend is toward dispersion or competition.\n\n\n\n\n\n\n\n\n\nThe test statistics\n\n\n\nNull Hypothesis: Points are randomly distributed\nTest statistics:\n\n\n\nReject the null hypothesis if the z-score is large and p-value is smaller than the alpha value.\n\n\n\n\n\n\nInterpreting Nearest Neighbour Index\n\n\n\nThe p-value is smaller than 0.05 =&gt; Reject the null hypothesis that the point patterns are randomly distributed."
+  },
+  {
+    "objectID": "lesson/Lesson02/Lesson02-SPPA.html#g-function",
+    "href": "lesson/Lesson02/Lesson02-SPPA.html#g-function",
+    "title": "Lesson 2: Spatial Point Patterns Analysis",
+    "section": "G function",
+    "text": "G function\n\n\nThe formula\n\n\n\n\n\n\n\nInterpretation of G-function\n\n\nThe shape of G-function tells us the way the events are spaced in a point pattern.\n\nClustered: G increases rapidly at short distance.\nEvenness: G increases slowly up to distance where most events spaced, then increases rapidly.\n\n\n\n\n\n\n\n\nHow do we tell if G is significant?\n\n\n\nThe significant of any departure from CSR (either cluster or regularity) can be evaluated using simulated “confidence envelopes”\n\n\n\n\n\n\n\n\nMonte Carlo simulation test of CSR\n\nPerform m independent simulation of n events (i.e. 999) in the study region.\nFor each simulated point pattern, estimate G(r) and use the maximum (95th) and minimum (5th) of these functions for the simulated patterns to define an upper and lower simulation envelope.\nIf the estimated G(r) lies above the upper envelope or below the lower envelope, the estimated G(r) is statistically significant.\n\n\n\n\nThe significant test of G-function"
+  },
+  {
+    "objectID": "lesson/Lesson02/Lesson02-SPPA.html#f-function",
+    "href": "lesson/Lesson02/Lesson02-SPPA.html#f-function",
+    "title": "Lesson 2: Spatial Point Patterns Analysis",
+    "section": "F function",
+    "text": "F function\n\nSelect a sample of point locations anywhere in the study region at random\n\nDetermine minimum distance from each point to any event in the study area.\n\nThree steps:\n\nRandomly select m points (p1, p2, ….., pn),\nCalculate dmin(pi,s) as the minimum distance from location pi to any event in the point patterns, and\nCalculate F(d).\n\n\n\n\nThe F function formula\n\n\n\n\n\n\n\n\nInterpretation of F-function\n\nClustered = F(r) rises slowly at first, but more rapidly at longer distances.\nEvenness = F(r) rises rapidly at first, then slowly at longer distances.\n\n\n\n\nThe significant test of F-function\n\n\n\n\nComparison between G and F"
+  },
+  {
+    "objectID": "lesson/Lesson02/Lesson02-SPPA.html#ripleys-k-function-ripley-1981",
+    "href": "lesson/Lesson02/Lesson02-SPPA.html#ripleys-k-function-ripley-1981",
+    "title": "Lesson 2: Spatial Point Patterns Analysis",
+    "section": "Ripley’s K function (Ripley, 1981)",
+    "text": "Ripley’s K function (Ripley, 1981)\n\nLimitation of nearest neighbor distance method is that it uses only nearest distance\nConsiders only the shortest scales of variation.\nK function uses more points.\n\nProvides an estimate of spatial dependence over a wider range of scales.\nBased on all the distances between events in the study area.\nAssumes isotropy over the region.\n\n\n\n\nCalculating the K function\n\n\n\nConstruct a circle of radius h around each point event(i).\nCount the number of other events (j) that fall inside this circle.\nRepeat these two steps for all points (i) and sum results.\nIncrement h by a small amount and repeat the calculation.\n\n\n\n\n\n\n\n\nK function\n\n\nThe formula:\n\n\n\n\n\n\nThe K function complete spatial randomness test\n\nK(h) can be plotted against different values of h.\nBut what should K look like for no spatial dependence?\nConsider what K(h) should look like for a random point process (CSR)\n\nThe probability of an event at any point in R is independent of what other events have occurred and equally likely anywhere in R\n\n\n\n\n\nInterpreting the K function complete spatial randomness test\n\n\nUnder the assumption of CSR, the expected number of events within distance h of an event is:\n\nCompare K(h) to 𝜋ℎ^2\n\nK(h) &lt; 𝜋ℎ^2 if point pattern is regular\nK(h) &gt; 𝜋ℎ^2 if point pattern is clustered\n\n\n\n\nAbove the envelop: significant cluster pattern\nBelow the envelop: significant regular\nInside the envelop: CSR"
+  },
+  {
+    "objectID": "lesson/Lesson02/Lesson02-SPPA.html#the-l-function-besag-1977",
+    "href": "lesson/Lesson02/Lesson02-SPPA.html#the-l-function-besag-1977",
+    "title": "Lesson 2: Spatial Point Patterns Analysis",
+    "section": "The L function (Besag 1977)",
+    "text": "The L function (Besag 1977)\n\n\nIn practice, K function will be normalised to obtained a benchmark of zero.\nThe formula:\n\n\n\n\n\nInterpreting the L function complete spatial randomness test\n\n\n\n\nWhen an observed L value is greater than its corresponding L(theo)(i.e. red break line) value for a particular distance and above the upper confidence envelop, spatial clustering for that distance is statistically significant (e.g. distance beyond C).\nWhen an observed L value is greater than its corresponding L(theo) value for a particular distance and lower than the upper confidence envelop, spatial clustering for that distance is statistically NOT significant (e.g. distance between B and C).\nWhen an observed L value is smaller than its corresponding L(theo) value for a particular distance and beyond the lower confidence envelop, spatial dispersion for that distance is statistically significant. - When an observed L value is smaller than its corresponding L(theo) value for a particular distance and within the lower confidence envelop, spatial dispersion for that distance is statistically NOT significant (e.g. distance between A and B).\n\n\n\n\n\nThe grey zone indicates the confident envelop (i.e. 95%).\n\n\n\n\n\n\n\n\nThe L function (Besag 1977)\n\n\nThe modified L function\n\n\nL(r)&gt;0 indicates that the observed distribution is geographically concentrated.\nL(r)&lt;0 implies dispersion.\nL(r)=0 indicates complete spatial randomness (CRS)."
+  },
+  {
+    "objectID": "lesson/Lesson02/Lesson02-SPPA.html#monte-carlo-hypothesis-testing-in-spatstat",
+    "href": "lesson/Lesson02/Lesson02-SPPA.html#monte-carlo-hypothesis-testing-in-spatstat",
+    "title": "Lesson 2: Spatial Point Patterns Analysis",
+    "section": "Monte Carlo hypothesis testing in spatstat",
+    "text": "Monte Carlo hypothesis testing in spatstat\n\nIn spatial point pattern analysis, we usually test whether the observed pattern is consistent with some null model (e.g., Complete Spatial Randomness, CSR).\nspatstat does this by simulating nsim realisations of the null model.\nFor each simulation, it computes the test statistic (e.g., K-function, L-function, G-function, etc.) and compares it with the observed data.\n\n\n\nRole of nsim\n\nnsim is the number of simulated patterns generated under the null hypothesis.\nA higher nsim means more accurate estimation of the sampling distribution, and more precise p-values.\nBut p-values in Monte Carlo tests are discrete, and the smallest achievable p-value is\n\n\nFor example:\n\nIf nsim = 99, the smallest p-value you can report is 0.01.\nIf nsim = 999, the smallest possible p-value is 0.001.\n\nSo, larger nsim = finer resolution of p-values.\n\n\n\nConfidence level and envelopes in spatstat\nWhen you use envelope():\n\nBy default, you get pointwise simulation envelopes at a certain confidence level (e.g., 95%).\nThe confidence level is related to how wide the simulation band is. For a 95% envelope:\nYou drop the top 2.5% and bottom 2.5% of simulated values at each distance r.\n\nThe achievable confidence level is constrained by nsim:\n\nFor example, if nsim = 99, the finest possible two-tailed envelope is at 98% confidence (exclude the most extreme 1 value in each tail).\nTo get a “true” 95% envelope, you’d need nsim divisible appropriately (but spatstat interpolates when necessary).\n\n\n\n\nConfidence level and envelopes in spatstat\nSo the relationship is:\n\n\n\n\nRule of thumb in practice\n\nUse at least nsim = 99 for quick tests, but prefer nsim = 999 or more if you want stable p-values and smooth envelopes.\nReport p-values in terms of Monte Carlo resolution (e.g., “p &lt; 0.05, based on 99 simulations” or “p &lt; 0.001, based on 999 simulations”)."
+  },
+  {
+    "objectID": "lesson/Lesson02/Lesson02-SPPA.html#references",
+    "href": "lesson/Lesson02/Lesson02-SPPA.html#references",
+    "title": "Lesson 2: Spatial Point Patterns Analysis",
+    "section": "References",
+    "text": "References\n\nChapter 11 Point Pattern Analysis of Intro to GIS and Spatial Analysis. Section 11.2, 11.3, 11.3.1 and 11.4\nGIS&T Body of Knowledge AM-07-Point Pattern Analysis\nGIS&T Body of Knowledge AM-08-Kernels and Density Estimation\nAnalyzing Patterns in Business Point Data, Directions Magazine March 17, 2005.\nO’Sullivan, D., and Unwin, D. (2010) Geographic Information Analysis, Second Edition. John Wiley & Sons Inc., New Jersey, Canada. Chapter 5-6.\nBaddeley A., Rubak E. and Turner R. (2015) Spatial Point Patterns: Methodology and Applications with R, Chapman and Hall/CRC."
+  },
+  {
+    "objectID": "lesson/Lesson03/Lesson03-STPPA.html#content",
+    "href": "lesson/Lesson03/Lesson03-STPPA.html#content",
+    "title": "Lesson 3: Spatio-Temporal Point Patterns Analysis (STPPA)",
+    "section": "Content",
+    "text": "Content\n\nBasic concepts of Spatio-Temporal Point Process\nSpatio-Temporal Kernel Density Estimation"
+  },
+  {
+    "objectID": "lesson/Lesson03/Lesson03-STPPA.html#what-is-a-spatio-temporal-point-process",
+    "href": "lesson/Lesson03/Lesson03-STPPA.html#what-is-a-spatio-temporal-point-process",
+    "title": "Lesson 3: Spatio-Temporal Point Patterns Analysis (STPPA)",
+    "section": "What is a Spatio-Temporal Point Process",
+    "text": "What is a Spatio-Temporal Point Process\nA spatio-temporal point process (also called space-time or spatial-temporal point process) is a random collection of points, where each point represents the time and location of an event. Examples of events include incidence of disease, sightings or births of a species, or the occurrences of fires, earthquakes, lightning strikes, tsunamis, or volcanic eruptions. Typically the spatio-temporal point events are recorded in three-dimension, namely: longitude, latitude, and time as shown in the figure below."
+  },
+  {
+    "objectID": "lesson/Lesson03/Lesson03-STPPA.html#spatio-temporal-kde-stkde",
+    "href": "lesson/Lesson03/Lesson03-STPPA.html#spatio-temporal-kde-stkde",
+    "title": "Lesson 3: Spatio-Temporal Point Patterns Analysis (STPPA)",
+    "section": "Spatio-Temporal KDE (STKDE)",
+    "text": "Spatio-Temporal KDE (STKDE)\nMathematically, STKDE is defined as"
+  },
+  {
+    "objectID": "lesson/Lesson03_ASPPA/Lesson03-Advanced_SPPA.html#content",
+    "href": "lesson/Lesson03_ASPPA/Lesson03-Advanced_SPPA.html#content",
+    "title": "Lesson 3: Advanced Spatial Point Patterns Analysis",
+    "section": "Content",
+    "text": "Content\n\nNetwork Constrained Kernel Density Estimation (NCKDE)\n\nBasic concepts of network constrained spatial point patterns\nNetwork Constrained KDE methods\nThe Three versions of Network Constrained KDE\n\nTemporal Network Kernel Density Estimation (TNKED)\n\nTemporal dimension\nSpatial dimension\nSpatio-temporal point patterns\n\n\n\nWelcome to Lesson 3: Spatial Point Pattern Analysis, a family of spatial statistics specially developed to model and to test distribution of spatial point events.\nThe lesson proceeding is divided into three main section. First, I will share with you what are real world spatial point events. This is followed by explaining the concepts and methods of 1st-order and 2nd-order spatial point patterns analysis."
+  },
+  {
+    "objectID": "lesson/Lesson03_ASPPA/Lesson03-Advanced_SPPA.html#network-constrained-point-processes",
+    "href": "lesson/Lesson03_ASPPA/Lesson03-Advanced_SPPA.html#network-constrained-point-processes",
+    "title": "Lesson 3: Advanced Spatial Point Patterns Analysis",
+    "section": "Network Constrained Point Processes",
+    "text": "Network Constrained Point Processes\nMany real world point event are not randomly distributed. Their distribution, on the other hand, are constrained by network such as roads, rivers, and fault lines just to name a few of them.\n\n\nRoad traffic accidents within Bangkok City. \n\nLocation of banks at Central, Hong Kong"
+  },
+  {
+    "objectID": "lesson/Lesson03_ASPPA/Lesson03-Advanced_SPPA.html#network-constrained-kernel-density-estimation-nkde",
+    "href": "lesson/Lesson03_ASPPA/Lesson03-Advanced_SPPA.html#network-constrained-kernel-density-estimation-nkde",
+    "title": "Lesson 3: Advanced Spatial Point Patterns Analysis",
+    "section": "Network Constrained Kernel Density Estimation (NKDE)",
+    "text": "Network Constrained Kernel Density Estimation (NKDE)\nNetwork Kernel Density Estimation, in short, NKDE is a geospatial analytics methods specially designed to computer intensity of spatial point event either located along or occurred along linear networks.\n\n\nMathematically, NKDE can be defined as: \nwhere K must be a probability density function and verifies the two following conditions:"
+  },
+  {
+    "objectID": "lesson/Lesson03_ASPPA/Lesson03-Advanced_SPPA.html#network-constrained-kernel-density-estimation-nkde-1",
+    "href": "lesson/Lesson03_ASPPA/Lesson03-Advanced_SPPA.html#network-constrained-kernel-density-estimation-nkde-1",
+    "title": "Lesson 3: Advanced Spatial Point Patterns Analysis",
+    "section": "Network Constrained Kernel Density Estimation (NKDE)",
+    "text": "Network Constrained Kernel Density Estimation (NKDE)\nPlanar KDE versus NKDE\n\n\nFigure on the right shows the basic differences between the Planar KDE and Network KDE for the same spatial point event data. To estimate th density values at a focal point X, the planar KDE treats the whole 2-D space as the context and finds four point events (black circle) within a search bandwidth (i.e. h), whereas the Network KDE only finds two point events within the same bandwidth in the network space based on network distance."
+  },
+  {
+    "objectID": "lesson/Lesson03_ASPPA/Lesson03-Advanced_SPPA.html#the-three-version-of-nkde",
+    "href": "lesson/Lesson03_ASPPA/Lesson03-Advanced_SPPA.html#the-three-version-of-nkde",
+    "title": "Lesson 3: Advanced Spatial Point Patterns Analysis",
+    "section": "The Three version of NKDE",
+    "text": "The Three version of NKDE\nSimple method\n\n\nThe first method was proposed by Xie and Yan (2008). Considering the planar KDE, they defined the NKDE with the following formula:\n\n\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\nThis method remains useful for two reasons:\n\nFor quick data visualization. With big datasets, it might be useful to use this simple method to do a primary investigation.\nIn a purely geographical view, this method is intuitive. In the case of crime analysis for example, one could argue that the strength of an event should not be affected by intersections on the network. In that case, the kernel function is seen as a distance decaying function."
+  },
+  {
+    "objectID": "lesson/Lesson03_ASPPA/Lesson03-Advanced_SPPA.html#the-three-version-of-nkde-1",
+    "href": "lesson/Lesson03_ASPPA/Lesson03-Advanced_SPPA.html#the-three-version-of-nkde-1",
+    "title": "Lesson 3: Advanced Spatial Point Patterns Analysis",
+    "section": "The Three version of NKDE",
+    "text": "The Three version of NKDE\nDiscontinuous method\n\n\nThis method is introduced by Okabe and Sugihara (2012). The discontinuous NKDE is easily presented by a figure:\n Note that the density of the kernel function is equally divided at intersections.\n\n\n\n\n\n\n\nWarning\n\n\nAs one can see, the values of the NKDE are split at intersections to avoid the multiplication of the mass observed in the simple version. However, this creates a discontinuous NKDE, which is counter-intuitive. It leads to sharp differences between density values in the network, and could be problematic in networks with many intersections."
+  },
+  {
+    "objectID": "lesson/Lesson03_ASPPA/Lesson03-Advanced_SPPA.html#the-three-version-of-nkde-2",
+    "href": "lesson/Lesson03_ASPPA/Lesson03-Advanced_SPPA.html#the-three-version-of-nkde-2",
+    "title": "Lesson 3: Advanced Spatial Point Patterns Analysis",
+    "section": "The Three version of NKDE",
+    "text": "The Three version of NKDE\nContinue method\n\n\nThe method merges the best of the two worlds: it adjusts the values of the NKDE at intersections to ensure that it integrates to 1 on its domain, and applies a backward correction to force the density values to be continuous.\nThis process is accomplished by a recursive function. This function is more time consuming, so it might be necessary to stop it when the recursion is too deep. Considering that the kernel density is divided at each intersection, stopping the function at deep level 16 should give results almost identical to the true values.\n\n\nNote that there are three different equations to calculate the kernel density depending on the situation (here, q1, q2, q3).\n\n\n\n\n\n\nNote\n\n\nAs one can see, the values of the NKDE are continuous, and the density values close to the events have been adjusted. This leads to smoother results than the discontinuous method."
+  },
+  {
+    "objectID": "lesson/Lesson03_ASPPA/Lesson03-Advanced_SPPA.html#temporal-network-kernel-density-estimate",
+    "href": "lesson/Lesson03_ASPPA/Lesson03-Advanced_SPPA.html#temporal-network-kernel-density-estimate",
+    "title": "Lesson 3: Advanced Spatial Point Patterns Analysis",
+    "section": "Temporal Network Kernel Density Estimate",
+    "text": "Temporal Network Kernel Density Estimate\n\n\nEvents recorded on a network often have a temporal dimension. In that context, one could estimate the density of events in both time and network spaces.\nThe spatio-temporal kernel is calculated as the product of the network kernel density and the time kernel density.\n\nFor a sample point at location l and time t, the Temporal Network Kernel Density Estimate (TNKDE) is calculated as follows:"
+  },
+  {
+    "objectID": "lesson/Lesson03_ASPPA/Lesson03-Advanced_SPPA.html#references",
+    "href": "lesson/Lesson03_ASPPA/Lesson03-Advanced_SPPA.html#references",
+    "title": "Lesson 3: Advanced Spatial Point Patterns Analysis",
+    "section": "References",
+    "text": "References\n\nNetwork Kernel Density Estimate\nTemporal Network Kernel Density Estimate"
+  },
+  {
+    "objectID": "outline/workshop.html",
+    "href": "outline/workshop.html",
+    "title": "Workshop on Building Web-enabled Geospatial Analytics Applications with R Shiny",
+    "section": "",
+    "text": "Motivation of developing web-enabled applications\n\nBasic principles of web applications\n\nIntroducing R Shiny\n\nGetting to know Shiny\nArchitecture of Shiny\nBuilding block of Shiny app\n\nAdvanced R Shiny\n\nReactive feature of Shiny\nBuild interactive Shiny application by using plotly R\nBuild static, interactive and reactive geovisualisation application by using tmap\n\nManaging R Shiny Project\n\nThe basic development cycle of creating apps\nDebug errors in the codes\nBuild complex Shiny application using module\nImprove the productivity of Shiny applications development\n\nDeploying Shiny Application\n\nDeploy to the cloud: shinyapps.io\nDeploy on-premises (open source): Shiny Server\nDeploy on-premises (commercial): RStudio Connect"
+  },
+  {
+    "objectID": "outline/workshop.html#content",
+    "href": "outline/workshop.html#content",
+    "title": "Workshop on Building Web-enabled Geospatial Analytics Applications with R Shiny",
+    "section": "",
+    "text": "Motivation of developing web-enabled applications\n\nBasic principles of web applications\n\nIntroducing R Shiny\n\nGetting to know Shiny\nArchitecture of Shiny\nBuilding block of Shiny app\n\nAdvanced R Shiny\n\nReactive feature of Shiny\nBuild interactive Shiny application by using plotly R\nBuild static, interactive and reactive geovisualisation application by using tmap\n\nManaging R Shiny Project\n\nThe basic development cycle of creating apps\nDebug errors in the codes\nBuild complex Shiny application using module\nImprove the productivity of Shiny applications development\n\nDeploying Shiny Application\n\nDeploy to the cloud: shinyapps.io\nDeploy on-premises (open source): Shiny Server\nDeploy on-premises (commercial): RStudio Connect"
+  },
+  {
+    "objectID": "outline/workshop.html#workshop-slides-and-hands-on-notes",
+    "href": "outline/workshop.html#workshop-slides-and-hands-on-notes",
+    "title": "Workshop on Building Web-enabled Geospatial Analytics Applications with R Shiny",
+    "section": "Workshop Slides and Hands-on Notes",
+    "text": "Workshop Slides and Hands-on Notes\n\nIntroducing R Shiny slides in html and pdf formats\nAdvanced R Shiny I slides in html and pdf formats\nManaging R Shiny Project slides in html and pdf formats"
+  },
+  {
+    "objectID": "outline/workshop.html#must-do",
+    "href": "outline/workshop.html#must-do",
+    "title": "Workshop on Building Web-enabled Geospatial Analytics Applications with R Shiny",
+    "section": "Must Do!",
+    "text": "Must Do!\n\nView the three parts series of Shiny Tutorial at this link."
+  },
+  {
+    "objectID": "outline/workshop.html#readings",
+    "href": "outline/workshop.html#readings",
+    "title": "Workshop on Building Web-enabled Geospatial Analytics Applications with R Shiny",
+    "section": "Readings",
+    "text": "Readings\n\nCore Readings\n\nShiny reference guide at CRAN.\nHadley Wickham (2021) Mastering Shiny, O’Reilly Media. This is a highly recommended book. You can find the online version with this link.\nPaula Moraga (2020) Geospatial Health Data: Modeling and Visualization with R-INLA and Shiny, Chapman & Hall/CRC. Chapter 13, 14 and 15.\n\n\n\nAdditional references\n\nColin Fay, Sébastien Rochette, Vincent Guyader, Cervan Girard (2020), Engineering Production-Grade Shiny Apps, Chapman & Hall. You can find the online version with this link.\nOutstanding User Interfaces with Shiny.\nHow to Build a Shiny Application from Scratch.\n\n\n\nDeploying Shiny Application on shinyapps.io\n\nGetting started with shinyapps.io\nshinyapps.io user guide"
+  },
+  {
+    "objectID": "outline/workshop.html#gallery",
+    "href": "outline/workshop.html#gallery",
+    "title": "Workshop on Building Web-enabled Geospatial Analytics Applications with R Shiny",
+    "section": "Gallery",
+    "text": "Gallery\n\nWinners of the 1st Shiny Contest\nWinners of the 2nd Annual Shiny Contest\nWinners of the 3rd annual Shiny Contest\nShiny Gallery\nFifteen New Zealand government Shiny web apps\nShinyApps Gallery\ndreamRs shiny gallery\nTools for Teaching Quantitative Thinking"
+  },
+  {
+    "objectID": "lesson/Lesson02/Lesson02-SPPA.html",
+    "href": "lesson/Lesson02/Lesson02-SPPA.html",
+    "title": "Lesson 2: Spatial Point Patterns Analysis",
+    "section": "",
+    "text": "Introducing Spatial Point Patterns\n\nThe basic concepts of spatial point patterns\n1st Order versus 2nd Order\nSpatial Point Patterns in real world\n\n1st Order Spatial Point Patterns Analysis\n\nQuadrat analysis\nKernel density estimation\n\n\n\n\n2nd Order Spatial Point Patterns Analysis\n\nNearest Neighbour Index\nG-function\nF-function\nK-function\nL-function\n\n\n\n\n\nWelcome to Lesson 4: Spatial Point Pattern Analysis, a family of spatial statistics specially developed to model and to test distribution of spatial point events.\nThe lesson proceeding is divided into three main section. First, I will share with you what are real world spatial point events. This is followed by explaining the concepts and methods of 1st-order and 2nd-order spatial point patterns analysis."
+  },
+  {
+    "objectID": "lesson/Lesson01/Lesson01-Geospatial_Data.html",
+    "href": "lesson/Lesson01/Lesson01-Geospatial_Data.html",
+    "title": "Lesson 1: Fundamental of Geospatial Data Models and Modelling",
+    "section": "",
+    "text": "An Overview of Geospatial Data Models\n\nVector and raster data model\nCoordinate systems and map projection\n\nVector Data Wrangling and Analysis Methods\nRaster Data Wrangling and Analysis Methods\n\n\nThis lesson consists of two parts. First, I will talk about Geospatial Data Models. For students who have taken SMT201 GIS for Urban Planning, this is not new at all. However, for students who did not read SMT201, this will be new. Anyway, the focus of this section will be on R. Hence, even for students who have taken SMT201 before, this will be a good revision.\nIn part two of this lesson, I will introduce sp package. It is a relatively new R package specially developed to handle geospatial data R using tidyverse principle."
+  },
+  {
+    "objectID": "lesson/Lesson01/Lesson01-Geospatial_Data.html#content",
+    "href": "lesson/Lesson01/Lesson01-Geospatial_Data.html#content",
+    "title": "Lesson 1: Fundamental of Geospatial Data Models and Modelling",
+    "section": "",
+    "text": "An Overview of Geospatial Data Models\n\nVector and raster data model\nCoordinate systems and map projection\n\nVector Data Wrangling and Analysis Methods\nRaster Data Wrangling and Analysis Methods\n\n\nThis lesson consists of two parts. First, I will talk about Geospatial Data Models. For students who have taken SMT201 GIS for Urban Planning, this is not new at all. However, for students who did not read SMT201, this will be new. Anyway, the focus of this section will be on R. Hence, even for students who have taken SMT201 before, this will be a good revision.\nIn part two of this lesson, I will introduce sp package. It is a relatively new R package specially developed to handle geospatial data R using tidyverse principle."
+  },
+  {
+    "objectID": "lesson/Lesson01/Lesson01-Geospatial_Data.html#geospatial-data-models",
+    "href": "lesson/Lesson01/Lesson01-Geospatial_Data.html#geospatial-data-models",
+    "title": "Lesson 1: Fundamental of Geospatial Data Models and Modelling",
+    "section": "Geospatial Data Models",
+    "text": "Geospatial Data Models\n\nWhy should we worry about?\n\n\nIt is important for us to note that what ever data capture in a database is a model of the real world. When we say model, this means that it is a simplify version of the real world and not the real world themselves."
+  },
+  {
+    "objectID": "lesson/Lesson01/Lesson01-Geospatial_Data.html#basic-spatial-data-models",
+    "href": "lesson/Lesson01/Lesson01-Geospatial_Data.html#basic-spatial-data-models",
+    "title": "Lesson 1: Fundamental of Geospatial Data Models and Modelling",
+    "section": "Basic Spatial Data Models",
+    "text": "Basic Spatial Data Models\n\nVector - implementation of discrete object conceptual model\n\nPoint, line and polygon representations.\nWidely used in cartography, and network analysis.\n\nRaster – implementation of field conceptual model\n\nArray of cells used to represent objects.\nUseful as background maps and for spatial analysis.\n\n\n\nIn general, there are two types of geospatial data models, namely vector and raster data models.\nVector data model tends to be used to store geospatial data that are discrete in nature. For example bus stop, building footprint, planning area.\nRaster data model, one the other hands, are used to store continuous fenomena such as air polution, elevation and precipitation.\n\n\n\nVector Data Models\n\nThere are three basic geometric primitives, namely: points, lines (or polylines) and polygons.\n\n\n\nFor vector data model, there are three most commonly used geometric primitives, namely: points, lines and polygons.\nIn this figure, building footprints are represented by polygon features, road reserves represented by polyline features, and convenient stores are represented by point features.\nIt it important to note that the geospatial information content of these three features are not the same.\n\nA point is composed of one coordinate pair representing a specific location in a coordinate system.\nA line or polyline is composed of a sequence of two or more coordinate pairs called vertices. For line beside the location information we also know the length.\nA polygon is composed of three or more line segments whose starting and ending coordinate pairs are the same. For polygon, we know location, length (i.e. parameter) and area.\n\n\n\n\n\nRaster Data Models\n\nAll raster formats are basically the same\n\nCells organized in a matrix of rows and columns.\nContent is more important than format: data or picture?\n\n\n\n\nDifferent from vector data model, a single feature type is used to represent the real world. The most commonly used geometric is grid. Also note that in raster data model, the observed values (i.e. precipitation) are encoded explicitly on the cells. In general a value between 0-255 (binary data strcuture) is used. If the value is greater than 255, streching will be applied."
+  },
+  {
+    "objectID": "lesson/Lesson01/Lesson01-Geospatial_Data.html#coordinate-systems-and-map-projections",
+    "href": "lesson/Lesson01/Lesson01-Geospatial_Data.html#coordinate-systems-and-map-projections",
+    "title": "Lesson 1: Fundamental of Geospatial Data Models and Modelling",
+    "section": "Coordinate Systems and Map Projections",
+    "text": "Coordinate Systems and Map Projections\n\nWhat is a coordinate system?\n\n\nA coordinate system is an important property of an geospatial data. It provides a location reference to the geospatial data.\n\nThere are two common types of coordinate systems used in mapping, namely: geographic coordinate systems and projected coordinate system.\n\n\n\n\n\n\n\nTipFurther Reading\n\n\n\n\nRefer to this article and Chapter 9 Coordinate Systems to learn more about map projection.\n\n\n\n\n\n\n\n\n\nA coordinate system is a reference system used to represent the locations of geographic features, imagery, and observations such as GPS locations within a common geographic framework.\nEach coordinate system is defined by:\n\nIts measurement framework which is either geographic (in which spherical coordinates are measured from the earth’s center) or planimetric (in which the earth’s coordinates are projected onto a two-dimensional planar surface).\nUnit of measurement (typically feet or meters for projected coordinate systems or decimal degrees for latitude–longitude).\nThe definition of the map projection for projected coordinate systems.\nOther measurement system properties such as a spheroid of reference, a datum, and projection parameters like one or more standard parallels, a central meridian, and possible shifts in the x- and y-directions.\n\n\n\n\n\n\nGeographical Coordinate Systems\n\n\n\nGCS define locations on the earth using a three-dimensional spherical surface. For example, WGS84.\nThey provides accuracy position information. Unit of measurement will be in either decimal degree or degree-minute-second format.\nGCS, however, are not appropriate for distance and area measurements. In this figure, it is clear that 1 degree distance at the north pole is relatively shorter than 1 degree at the equator.\n\n\n\n\n\n\n\n\n\n\n\n\n\nTipFurther Reading\n\n\n\n\nRefer to 9.1 Geographic Coordinate Systems to learn more about GCS.\n\n\n\n\n\n\n\n\nProjected Coordinate Systems (PCS)\n\n\n\nBased on a map projection such as transverse Mercator, Albers equal area, or Robinson.\nPCS provides consistent length and area measurement across space. Hence, it is important to transform a geospatial data from GCS to PCS before performing geospatial analysis.\n\n\n\n\n\n\n\n\n\n\n\n\n\nTipFurther Reading\n\n\n\n\nRefer to 9.2 Projected Coordinate Systems to learn more about GCS.\n\n\n\n\n\n\nA projected coordinate system based on a map projection such as transverse Mercator, Albers equal area, or Robinson, all of which (along with numerous other map projection models) provide various mechanisms to project maps of the earth’s spherical surface onto a two-dimensional Cartesian coordinate plane.\nProjected coordinate systems are sometimes referred to as map projections. For example, SVY21, the national projected coordinate system of Singapore.\n\n\n\n\nSingapore Projected Coordinate System\n\n\n\n\n\nepsg.io provides a comprehensive list of country coordinate systems such as svy21.\n\nEach country will have her own projected coordinate system. Some country have more than one type of Project Coordinate Systems.\nThere are at least three coordinate systems commonly used in Singapore. They are svy21, Kertau Cassini 1968, and Rectified Skewed Orthomorphic (RSO). RSO is used in military and topographical mapping and svy21 is used for land and engineering surveying, cadastre, landuse and infrastructure mapping.\n\n\n\n\nCoordinates Reference Systems in R\n\nIn R, the notation used to describe the CRS is proj4string from the PROJ.4 library. It looks like this:\n\n\n+proj=tmerc +lat_0=1.366666666666667 +lon_0=103.8333333333333 +k=1 +x_0=28001.642 +y_0=38744.572 +ellps=WGS84 +units=m +no_defs\n\n\nThis library is interfaced with R in the rgdal package, and the CRS class is defined partly in sp, partly in rgdal.\nA CRS object is defined as a character NA string or a valid PROJ.4 CRS definition.\n\n\nYou can break down the proj4 string into its individual components (again, separated by + signs) as follows:\n\n+proj=tmerc: the projection is Transverse Mercator\n+lat_0: Latitude of origin\n+lon_0: Central meridian\n+k: Scaling factor\n+x_0: False easting\n+y_0: False northing\n+units=m: the units for the coordinates are in METERS\n+ellps=WGS84: the ellipsoid (how the earth’s roundness is calculated) for the data is WGS84\nThe EPSG list among other sources is used in the workhorse PROJ.4 library, which as implemented by Frank Warmerdam handles transformation of spatial positions between different CRS."
+  },
+  {
+    "objectID": "lesson/Lesson01/Lesson01-Geospatial_Data.html#standard-for-geospatial-data-handling-and-analysis",
+    "href": "lesson/Lesson01/Lesson01-Geospatial_Data.html#standard-for-geospatial-data-handling-and-analysis",
+    "title": "Lesson 1: Fundamental of Geospatial Data Models and Modelling",
+    "section": "Standard for Geospatial Data Handling and Analysis",
+    "text": "Standard for Geospatial Data Handling and Analysis\n\n\n\n\n\n\n\nTipFurther Reading\n\n\n\nFor more information, visit this link.\n\n\n\nThe OGC OpenGIS Implementation Standard for Geographic Information / ISO 19125 defines:\n\nGeometric objects which can be of type point, line, polygon, multi-point, etc, and are associated to a given Coordinate Reference System;\nMethods on geometric objects return properties like dimension, boundary, area, centroid, etc;\nMethods for testing spatial relations between geometric objects equals, disjoint, intersects, touches, crosses, within, contains, overlaps and relate, which returns TRUE or FALSE;\nMethods that support spatial analysis distance, which returns a distance, and buffer, convex hull, intersection, union, difference, and symmetric difference, which returns new geometric objects.\n\nSource: www.opengeospatial.org/standards/sfa"
+  },
+  {
+    "objectID": "lesson/Lesson01/Lesson01-Geospatial_Data.html#an-introduction-to-simple-features",
+    "href": "lesson/Lesson01/Lesson01-Geospatial_Data.html#an-introduction-to-simple-features",
+    "title": "Lesson 1: Fundamental of Geospatial Data Models and Modelling",
+    "section": "An introduction to simple features",
+    "text": "An introduction to simple features\n\nfeature: abstraction of real world phenomena (type or instance); has a geometry and other attributes (properties)\nsimple feature: feature with all geometric attributes described piecewise by straight line or planar interpolation between sets of points (no curves)\nIt is a hierarchical data model that simplifies geographic data by condensing a complex range of geographic forms into a single geometry class.\n\n\n\nSimple features specification\n\nSimple features specification is an open standard developed and endorsed by the Open Geospatial Consortium (OGC) to represent a wide range of geographic information.\n\n\n\n\n\n\n\nThere are a total of 17 geometric types in OGC Simple Features specification. They are:\n\n\n\n\nCommonly used simple features\n\n\n\n\n\n\nOnly 7 out of 17 possible types of simple feature are currently used in the vast majority of GIS operations. They are:\n\n\n\n\nSimple Features: How they look like?\n\n\n\n\nSimple Features: How they look like?\n\n\n\n\nSimple Features: How they look like?\n\nGeometry collection: GEOMETRYCOLLECTION (MULTIPOINT (5 2, 1 3, 3 4, 3 2), LINESTRING (1 5, 4 4, 4 1, 2 2, 3 2))"
+  },
+  {
+    "objectID": "lesson/Lesson01/Lesson01-Geospatial_Data.html#geospatial-data-object-framework",
+    "href": "lesson/Lesson01/Lesson01-Geospatial_Data.html#geospatial-data-object-framework",
+    "title": "Lesson 1: Fundamental of Geospatial Data Models and Modelling",
+    "section": "Geospatial Data Object Framework",
+    "text": "Geospatial Data Object Framework\n\nTo begin with, all contributed packages for handling spatial data in R had different representations of the data. This made it difficult to exchange data both within R between packages, and between R and external le formats and applications.\nThe first general package to provide classes and methods for spatial data types that was developed for R is called sp. It was first released on CRAN in 2005.\nIn late October 2016, sf was first released on CRAN to provide standardised support for vector data in R."
+  },
+  {
+    "objectID": "lesson/Lesson01/Lesson01-Geospatial_Data.html#r-packages-that-support-spatial-classes",
+    "href": "lesson/Lesson01/Lesson01-Geospatial_Data.html#r-packages-that-support-spatial-classes",
+    "title": "Lesson 1: Fundamental of Geospatial Data Models and Modelling",
+    "section": "R packages that support spatial classes",
+    "text": "R packages that support spatial classes\nIn general, three R packages will be used to handle vector-based geospatial data in spatial classes, they are:\n\nsp provides classes and methods for dealing with spatial data in R.\nrgdal allows R to understand the structure of a geospatial data file by providing functions to read and convert geospatial data into easy-to-work-with R dataframes.\nrgeos implements the methods of the OGC standard."
+  },
+  {
+    "objectID": "lesson/Lesson01/Lesson01-Geospatial_Data.html#introducing-sf-package",
+    "href": "lesson/Lesson01/Lesson01-Geospatial_Data.html#introducing-sf-package",
+    "title": "Lesson 1: Fundamental of Geospatial Data Models and Modelling",
+    "section": "Introducing sf Package",
+    "text": "Introducing sf Package\n\nsf package provides a syntax and data-structures which are coherent with the tidyverse.\nA quick introduction can be found here.\nFor more detail, visit this link.\n\n\n\n\nsf package dependencies\n\nSource: Tidy spatial data analysis\n\nThe sf package depends on several external software components (installed along with the R package27), most importantly GDAL, GEOS and PROJ (Figure 7.3). These well-tested and popular open-source components are common to numerous open-source and commercial software for spatial analysis, such as QGIS and PostGIS.\n\n\n\n\nsf & tidyverse\n\nsf spatial objects are data.frames (or tibbles)\nyou can always un-sf, and work with tbl_df or data.frame having an sfc list-column\nsf methods for filter, arrange, distinct, group_by, ungroup, mutate, select have sticky geometry\nst_join() joins tables based on a spatial predicate\nsummarise unions geometry by group (or altogether)\n\n\nAnother important feature of sf package is that it is designed base on tidyverse philosophy.\n\n\n\n\nWhat is so special about sf?\n\nIt builds upon the simple features standard (not R specific!), represents natively in R all 17 simple feature types for all dimensions (XY, XYZ, XYM, XYZM),\nuses S3 classes: simple features are data.frame objects (or tibbles) that have a geometry list-column,\ninterfaces to GEOS to support the DE9-IM,\ninterfaces to GDAL with driver dependent dataset or layer creation options, Date and DateTime (POSIXct) columns, and coordinate reference system,\ntransformations through PROJ.4,\nprovides fast I/O with GDAL and GEOS using well-known-binary written in C++/Rcpp, and\ndirectly reads from and writes to spatial databases such as PostGIS using DBI.\n\n\n\n\nsfg : geometry for one feature\n\n\n\n\nsf: objects with simple features\n\n\n\nIn green a simple feature: a single record, or data.frame row, consisting of attributes and geometry.\nIn blue a single simple feature geometry (an object of class sfg).\nIn red a simple feature list-column (an object of class sfc, which is a column in the data.frame).\n\nOne of the attributes of a geometry list-column (sfc) is the precision: a double number that, when non-zero, causes some rounding during conversion to WKB, which might help certain geometrical operations succeed that would otherwise fail due to floating point representation.\nThe model is that of GEOS, which copies from the Java Topology Suite (JTS), and works like this:\n\nif precision is zero (default, unspecified), nothing is modified.\nnegative values convert to float (4-byte real) precision.\npositive values convert to round(x*precision)/precision."
+  },
+  {
+    "objectID": "lesson/Lesson01/Lesson01-Geospatial_Data.html#sf-functions",
+    "href": "lesson/Lesson01/Lesson01-Geospatial_Data.html#sf-functions",
+    "title": "Lesson 1: Fundamental of Geospatial Data Models and Modelling",
+    "section": "sf functions",
+    "text": "sf functions\n\nGeospatial data handling\nGeometric confirmation\nGeometric operations\nGeometry creation\nGeometry operations\nGeometric measurement\n\n\n\nGeospatial data handling functions\n\nst_read & read_sf: read simple features from file or database, or retrieve layer names and their geometry type(s)\nst_write & write_sf: write simple features object to file or database\nst_as_sf: convert a sf object from a non-geospatial tabular data frame\nst_as_text: convert to Well Known Text(WKT)\nst_as_binary: convert to Well Known Binary(WKB)\nst_as_sfc: convert geometries to sfc (e.g., from WKT, WKB) as(x, “Spatial”): convert to Spatial*\nst_transform(x, crs, …): convert coordinates of x to a different coordinate reference system\n\n\n\n\nPopular geospatial data format supported by read_st(): ESRI shapefile\n\n\n\nA shapefile is a simple, non-topological format for storing the geometric location and attribute information of geographic features.\nGeographic features in a shapefile can be represented by points, lines, or polygons (areas).\n\nSample code chunk:\n\nsf_mpsz = st_read(dsn = \"data/geospatial\", \n                  layer = \"MP14_SUBZONE\")\n\nand\n\nst_write(st_poly, \"data/my_poly.shp\")\n\n\n\n\n\n\n\n\nOther vector GIS formats\n\nMapInfo TAB format - MapInfo’s vector data format using TAB, DAT, ID and MAP files.\nPersonal Geodatabase - Esri’s closed, integrated vector data storage strategy using Microsoft’s Access MDB format\nKeyhole Markup Language (KML) - XML based open standard (by OpenGIS) for GIS data exchange.\nGeography Markup Language (GML) - XML based open standard (by OpenGIS) for GIS data exchange.\nGeoJSON - a lightweight format based on JSON, used by many open source GIS packages.\nTopoJSON, an extension of GeoJSON that encodes topology.\n\nSample code chunk to import kml file:\n\nsf_preschool = st_read(\"data/geospatial/pre-schools-location-kml.kml\")\n\n\n\n\nGeometric confirmation\nThe commands below compare two sf data object and return a sparse matrix with matching (TRUE) indexes, or a full logical matrix.\n\n\n\n\nst_intersects: touch or overlap\nst_disjoint: !intersects\nst_touches: touch\nst_crosses: cross (don’t touch)\nst_within: within\nst_contains: contains\nst_overlaps: overlaps\nst_covers: cover\nst_covered_by: covered by\nst_equals: equals\nst_equals_exact: equals, with some fuzz returns a sparse (default) or dense logical matrix\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\n\nThese functions return a logical matrix indicating whether each geometry pair meeting the logical operation.\n\n\n\n\n\n\n\n\nsf Methods\n\nGeometry generating logical operators\n\nThese commands overlay two sf data frames.\n\nst_union: union of several geometries\nst_intersection: intersection of pairs of geometries\nst_difference: difference between pairs of geometries\nst_sym_difference: symmetric difference (xor)\n\n\n\n\n\n\n\n\n\nsf Methods\n\nHigher-level operations: summarise, interpolate, aggregate, st_join\n\n\n\naggregate and summarise use st_union (by default) to group feature geometries\nst_interpolate_aw: area-weighted interpolation, uses st_intersection to interpolate or redistribute attribute values, based on area of overlap:\nst_join uses one of the logical binary geometry predicates (default: st_intersects) to join records in table pairs.\n\n\n\nrd_joined = st_join(random_points, world) \n\n\n\n\n\n\n\n\n\n\n\n\nManipulating geometries\nThe commands below perform unary operations on simple feature geometry sets.\n\n\n\n\nst_line_merge: merges lines\nst_segmentize: adds points to straight lines\nst_voronoi: creates voronoi tesselation\nst_centroid: gives centroid of geometry\nst_convex_hull: creates convex hull of set of points\nst_triangulate: triangulates set of points (not constrained)\nst_polygonize: creates polygon from lines that form a closed ring\nst_simplify: simplifies lines by removing vertices\nst_split: split a polygon given line geometry\nst_buffer: compute a buffer around this geometry/each geometry\nst_make_valid: tries to make an invalid geometry valid (requires lwgeom)\nst_boundary: return the boundary of a geometry\n\n\n\n\ncentroid_poly &lt;- st_centroid(poly)\n\n\n\n\n\n\n\nbuf_poly &lt;- st_buffer(poly, 5)\n\n\n\n\n\n\n\n\n\n\n\nConvenience functions\n\n\n\nst_zm: sets or removes z and/or m geometry\nst_coordinates: retrieve coordinates in a matrix or data.frame\nst_geometry: set, or retrieve sfc from an sf object\nst_is: check whether geometry is of a particular type"
+  },
+  {
+    "objectID": "lesson/Lesson01/Lesson01-Geospatial_Data.html#references",
+    "href": "lesson/Lesson01/Lesson01-Geospatial_Data.html#references",
+    "title": "Lesson 1: Fundamental of Geospatial Data Models and Modelling",
+    "section": "References",
+    "text": "References\n\nAll About sf package\n\n\nReference manual\nTidy spatial data analysis\n\nVignettes:\n\nSimple Features for R\nReading, Writing and Converting Simple Features\nManipulating Simple Feature Geometries\nManipulating Simple Features\nPlotting Simple Features\nMiscellaneous\nSpherical geometry in sf using s2geometry\n\nOthers:\n\nR spatial follows GDAL and PROJ development"
+  },
+  {
+    "objectID": "lesson/Lesson01/Lesson01-tmap.html",
+    "href": "lesson/Lesson01/Lesson01-tmap.html",
+    "title": "Lesson 1: Fundamental of Geospatial Data Visualisation and tmap Methods",
+    "section": "",
+    "text": "Introducing maps\nTypology of maps\n\nReference maps\nThematic maps\n\nProportional Symbol Map\nChoropleth Mapping\nIntroduction to tmap Methods\n\n\nThis lesson consists of two parts. First, I will share with you the concepts and design principles of choropleth maps. Next, I will introduce you to tmap, an R package specially designed for thematic mapping based on Layered Grammar of Graphics"
+  },
+  {
+    "objectID": "lesson/Lesson01/Lesson01-tmap.html#content",
+    "href": "lesson/Lesson01/Lesson01-tmap.html#content",
+    "title": "Lesson 1: Fundamental of Geospatial Data Visualisation and tmap Methods",
+    "section": "",
+    "text": "Introducing maps\nTypology of maps\n\nReference maps\nThematic maps\n\nProportional Symbol Map\nChoropleth Mapping\nIntroduction to tmap Methods\n\n\nThis lesson consists of two parts. First, I will share with you the concepts and design principles of choropleth maps. Next, I will introduce you to tmap, an R package specially designed for thematic mapping based on Layered Grammar of Graphics"
+  },
+  {
+    "objectID": "lesson/Lesson01/Lesson01-tmap.html#what-is-a-map",
+    "href": "lesson/Lesson01/Lesson01-tmap.html#what-is-a-map",
+    "title": "Lesson 1: Fundamental of Geospatial Data Visualisation and tmap Methods",
+    "section": "What is a Map?",
+    "text": "What is a Map?\nA model of real world depict by a collection of cartographic symbols or/and visual abstraction.\n\n\n\nWhat is a Map?\nAn interface between geographical data and map users.\n\n\n\n\nA Map and Geographical Data\n\n\n\n\nTypes of geographical data"
+  },
+  {
+    "objectID": "lesson/Lesson01/Lesson01-tmap.html#typology-of-maps",
+    "href": "lesson/Lesson01/Lesson01-tmap.html#typology-of-maps",
+    "title": "Lesson 1: Fundamental of Geospatial Data Visualisation and tmap Methods",
+    "section": "Typology of Maps",
+    "text": "Typology of Maps\n\n\n\nReference maps\n\n\n\nReference maps emphasize the location of spatial phenomena, such buildings, roads, vegetations, rivers, etc. Some of popular reference maps are topographical map and internet map such as Google map.\n\n\n\n\n\n\nTopographic maps are detailed, accurate graphic representations of features that appear on the Earth’s surface. These features include: cultural: roads, buildings, urban development, railways, airports, names of places and geographic features, administrative boundaries, state and international borders, reserves hydrography: lakes, rivers, streams, swamps, coastal flats relief: mountains, valleys, slopes, depressions vegetation: wooded and cleared areas, vineyards and orchards.\nA map legend (or key) lists the features shown on that map, and their corresponding symbols. Topographic maps usually show a geographic graticule and a coordinate grid, so you can determine relative and absolute positions of mapped features.\nIt is important to note that a map is merely a two or three dimensional representation of the physical environment at a given time. Therefore, a map will never be entirely up to date. Changes to the landscape and cultural features regularly occur (such as roads, vegetation, and buildings), resulting in maps becoming dated, although the rate of obsolescence varies depending upon location. Traditionally present in paper printed format.\n\n\n\n\nThematic Map\n\n\n\nThematic maps emphasize the spatial pattern of geographic attributes or statistics about places and relationships between places such as Life in Los Angeles.\n\n\nSource: Life in Los Angeles"
+  },
+  {
+    "objectID": "lesson/Lesson01/Lesson01-tmap.html#thematic-mapping-principles-and-methods",
+    "href": "lesson/Lesson01/Lesson01-tmap.html#thematic-mapping-principles-and-methods",
+    "title": "Lesson 1: Fundamental of Geospatial Data Visualisation and tmap Methods",
+    "section": "Thematic Mapping: Principles and Methods",
+    "text": "Thematic Mapping: Principles and Methods\n\nDisplaying\n\nQualitative data\nQuantitative data\n\nChoosing -Appropriate classification method for displaying data\n\nAppropriate number of classes\n\nTechniques in data analysis\n\nUsing the classification histogram\nNormalizing data"
+  },
+  {
+    "objectID": "lesson/Lesson01/Lesson01-tmap.html#qualitative-thematic-maps",
+    "href": "lesson/Lesson01/Lesson01-tmap.html#qualitative-thematic-maps",
+    "title": "Lesson 1: Fundamental of Geospatial Data Visualisation and tmap Methods",
+    "section": "Qualitative Thematic Maps",
+    "text": "Qualitative Thematic Maps\n\nVisual Variables and Cartographic Symbols\n\n\n\nQualitative visual variables are used for nominal scale data.\nThe goal of qualitative visual variables is to show how entities differ from each other.\nThe visual variables that do a good job of showing ordinal differences are: colour value, colour saturation, size and texture/grain.\n\nFigure on the right for examples of these four ordinal visual variables used each in point, linear and areal symbols."
+  },
+  {
+    "objectID": "lesson/Lesson01/Lesson01-tmap.html#qualitative-thematic-map",
+    "href": "lesson/Lesson01/Lesson01-tmap.html#qualitative-thematic-map",
+    "title": "Lesson 1: Fundamental of Geospatial Data Visualisation and tmap Methods",
+    "section": "Qualitative Thematic Map",
+    "text": "Qualitative Thematic Map\n\nPoint symbol map\n\n\n\nDifferent point symbols are used to represent school types."
+  },
+  {
+    "objectID": "lesson/Lesson01/Lesson01-tmap.html#qualitative-thematic-map-1",
+    "href": "lesson/Lesson01/Lesson01-tmap.html#qualitative-thematic-map-1",
+    "title": "Lesson 1: Fundamental of Geospatial Data Visualisation and tmap Methods",
+    "section": "Qualitative Thematic Map",
+    "text": "Qualitative Thematic Map\n\nLine symbol map\n\n\n\nA road map is an example of a thematic map. It shows the road network of an area. In this map, lines with different colour intensity and tickness are used to differentiate hierarchy of roads."
+  },
+  {
+    "objectID": "lesson/Lesson01/Lesson01-tmap.html#qualitative-thematic-map-2",
+    "href": "lesson/Lesson01/Lesson01-tmap.html#qualitative-thematic-map-2",
+    "title": "Lesson 1: Fundamental of Geospatial Data Visualisation and tmap Methods",
+    "section": "Qualitative Thematic Map",
+    "text": "Qualitative Thematic Map\n\nArea map\n\n\n\nLand use map below is a good example of a discrete thematic map. In this map, different colours are use to represent different land use types."
+  },
+  {
+    "objectID": "lesson/Lesson01/Lesson01-tmap.html#quantitative-thematic-map",
+    "href": "lesson/Lesson01/Lesson01-tmap.html#quantitative-thematic-map",
+    "title": "Lesson 1: Fundamental of Geospatial Data Visualisation and tmap Methods",
+    "section": "Quantitative Thematic Map",
+    "text": "Quantitative Thematic Map\n\nVisual Variables and Cartographic Symbols\n\n\n\nQuantitative visual variables are used to display ordinal, interval or ratio scale data.\n\nThe goal of the quantitative visual variable is to show relative magnitude or order between entities.\nThe visual variables that do a good job of showing ordinal differences are: colour value, colour saturation, size and texture/grain.\n\nFigure on the right shows of these four ordinal visual variables used each in point, linear and areal symbols."
+  },
+  {
+    "objectID": "lesson/Lesson01/Lesson01-tmap.html#proportional-symbol-map",
+    "href": "lesson/Lesson01/Lesson01-tmap.html#proportional-symbol-map",
+    "title": "Lesson 1: Fundamental of Geospatial Data Visualisation and tmap Methods",
+    "section": "Proportional Symbol Map",
+    "text": "Proportional Symbol Map\n\nThe proportional symbol technique uses symbols of different sizes to represent data associated with different areas or locations within the map.\n\n\n\nThe proportional symbol technique uses symbols of different sizes to represent data associated with different areas or locations within the map. For example, the proportional maps above use circle with different sizes to represent millions of people. There are two types of point features that are typically depicted with proportional symbols: features for which the data represents a geographic position directly (e.g., gallons of oil from individual oil wells), and features that are geographic areas to which data are aggregated and the data magnitudes are assigned to a representative point within the area (e.g., the geographic centroid of a state as in the examples above). In either case, the area of the symbol is scaled to represent the data magnitude, sometimes with a bit of exaggeration to adjust for a general tendency of human vision to underestimate differences in area. A variant on this direct data-to-symbol scaling groups values into categories first, then scales the symbol to represent the mean for the category, assigning a symbol to each place to represent the category range that the mean for the place falls within\n\n\n\nHow to size circles incorrectly and correctly?\nFigure below explains how attribute values are map on circles. One strategy to overcome this problem is to use square instead of circle.\n\n\n\n\nHow to make proportional symbol maps clearer?\nWhen designing a proportional symbol map, one of the important consideration is to avoid the circles blocking each other. One possible strategy to overcome this problem is to applying opacity (also known as transparency).\n\n\n\n\nProportional Symbol Map: Pie Chart Map\nOne important characteristic of proportional symbols is that they can easily be designed to represent more than one data value per location. Among the most common example is a pie chart map in which a circle is scaled proportionally to some total, and the size of wedges within the circle is scaled to depict a proportion of a total for two or more sub-categories.\n\n\nOne important characteristic of proportional symbols is that they can easily be designed to represent more than one data value per location. Among the most common example is a “pie chart map” in which a circle is scaled proportionally to some total, and the size of wedges within the circle is scaled to depict a proportion of a total for two or more sub-categories. The map above uses circle size to depict total sales in each city, and the pie slices then depict proportion of the three shipping modes, namely: delivery truck, express air and regular air.\n\n\n\n\nProportional Symbol Map: Bar Chart Map\nProportional side-by-side bar map places side-by-side bar chart on a map based on the location of the observations.\n\n\n\n\nProportional Symbol Map - Junk Map\nWhen preparing a proportional symbol map, it is important to ensure that the geographical level used is the same.\n\n\nSource: COVID-19 Dashboard\n\n\n\n\nAltertive of Proportional Symbol Map: Bricks Map\nBricks Map aims to provide better ways to encode quantitative information graphically—ways that can be easily, efficiently, and accurately decoded.\n\n\nSource: Building insight with bricks.\n\n\n\n\nBricks Map versus Proportional Symbol Map\nBy plotting a proportional symbol map and a bricks map side-by-side as shown below, it is clear that bubbles of graduated sizes proportional to the value ranges that they represent can be difficult to distinguish than the bricks."
+  },
+  {
+    "objectID": "lesson/Lesson01/Lesson01-tmap.html#dot-density-map",
+    "href": "lesson/Lesson01/Lesson01-tmap.html#dot-density-map",
+    "title": "Lesson 1: Fundamental of Geospatial Data Visualisation and tmap Methods",
+    "section": "Dot Density Map",
+    "text": "Dot Density Map\nA dot-density map is a type of thematic map that uses dots or other symbols on the map to show the values of one or more numeric data fields. Each dot on a dot-density map represents some amount of data.\n\n\nOne dot represent 100 households.\n\n\nReference: Dot distribution map at wiki and Dot Density Maps"
+  },
+  {
+    "objectID": "lesson/Lesson01/Lesson01-tmap.html#choropleth-map",
+    "href": "lesson/Lesson01/Lesson01-tmap.html#choropleth-map",
+    "title": "Lesson 1: Fundamental of Geospatial Data Visualisation and tmap Methods",
+    "section": "Choropleth Map",
+    "text": "Choropleth Map\nA choropleth map is a type of thematic map in which areas are shaded or patterned in proportion to a statistical variable that represents an aggregate summary of a geographic characteristic within each area, such as population or per-capita income.\n\n\n\nClassified choropleth map\n\nChoropleth maps can be either classified or unclassified.\nA classed choropleth map combines areal units into a smaller number of groups. Interval levels may vary, but typically 4 to 7 are used in a map. There is different classification techniques used to divide up the intervals.\n\n\n\n\n\nUnclassified choropleth map\n\nUnclassed choropleth maps are similar to classed choropleth maps; however, unclassed choropleth maps do not have an averaged statistic towards each particular colour.\n\n\n\n\n\nChoosing an appropriate number of classes\n\n\nThe more classes you use, the less data generalization (which is good), but this comes at the expense of legibility and the associated risk of map reading errors since more colors are harder to see and print reliably (which is bad). The key question is how much generalization do you want? A map with 3 classes/colors (e.g., low, medium, high) will be easy to see and remember, but may gloss over some very important aspects of the data and create artificial geographic patterns by lumping together many places that are in fact quite different. There is no ideal number of classes for a map, so experiment."
+  },
+  {
+    "objectID": "lesson/Lesson01/Lesson01-tmap.html#data-classification",
+    "href": "lesson/Lesson01/Lesson01-tmap.html#data-classification",
+    "title": "Lesson 1: Fundamental of Geospatial Data Visualisation and tmap Methods",
+    "section": "Data classification",
+    "text": "Data classification\n\n\nNot sure how many classes to use? Have a look at the distribution of your data in a histogram (see examples below): Are there obvious clusters within your data? Are there large gaps in your data range that suggest nice compact data classes? If so, pick that number of classes and place those class breaks around those clusters.\n\n\n\nMethods of choosing classes\n\nBased on the nature of the distribution\n\nquantile, equal interval, natural breaks, standard deviations, defined interval\n\nArbitrary\n\nCan be based on round numbers.\nExamples: Grouping according to age or census housing categories\nCan result in empty categories\n\n\n\n\n\nData classification method: Quantile\n\nSame number of features per class.\n\n\n\n\n\n\n\n\n\nData classification method: Equal interval\n\n\n\nDivides the range of attribute values into equally sized classes.\n\n\n\n\n\n\n\n\n\nCautionCaution\n\n\n\nAvoid equal interval if your data are skewed to one end or if you have one or two really large outlier values. Outliers in that case will likely produce empty classes, wasting perfectly good classes with no observations in them. Since the hotel data above doesn’t have really large outliers, this is a data distribution that works well with equal interval.\n\n\n\n\n\n\n\nData classification method: Jenks (also known as Natural breaks)\n\nDefault Jenk’s statistical optimization\nFinds natural groupings in the data\n\n\n\n\n\nData classification: Standard deviation\n\nA measure of dispersion.\nUse if the distribution approximates a normal distribution (bell-shaped curve)"
+  },
+  {
+    "objectID": "lesson/Lesson01/Lesson01-tmap.html#colour-scheme",
+    "href": "lesson/Lesson01/Lesson01-tmap.html#colour-scheme",
+    "title": "Lesson 1: Fundamental of Geospatial Data Visualisation and tmap Methods",
+    "section": "Colour scheme",
+    "text": "Colour scheme\nColorBrewer"
+  },
+  {
+    "objectID": "lesson/Lesson01/Lesson01-tmap.html#mapping-packages-in-r",
+    "href": "lesson/Lesson01/Lesson01-tmap.html#mapping-packages-in-r",
+    "title": "Lesson 1: Fundamental of Geospatial Data Visualisation and tmap Methods",
+    "section": "Mapping packages in R",
+    "text": "Mapping packages in R\n\n\n\nSelected popular mapping packages\nCRAN Task View: Analysis of Spatial Data\n\ntmap\nmapsf\nleaflet\nggplot2. Read Chapter 6: Maps of ‘ggplot2: Elegant Graphics for Data Analysis’ for more detail.\nggmap\nquickmapr\nmapview\n\n\n\n\nOther packages\n\nRColorBrewer\nclassInt"
+  },
+  {
+    "objectID": "lesson/Lesson01/Lesson01-tmap.html#introducing-tmap",
+    "href": "lesson/Lesson01/Lesson01-tmap.html#introducing-tmap",
+    "title": "Lesson 1: Fundamental of Geospatial Data Visualisation and tmap Methods",
+    "section": "Introducing tmap",
+    "text": "Introducing tmap\n\n\n\ntmap is a R package specially designed for creating thematic maps using the pricinples of the Grammar of Graphics.\nIt offers a flexible, layer-based, and easy to use approach to create thematic maps, such as choropleths and proportional symbol maps.\nIt supports two modes: tm_plot() for static maps and tm_view() for interactive maps.\nIt provides shiny integration with renderTmap(), tmapOutput(), tmapProxy() and tm_remove_layer().\n\n\n\n\n\n\n\nShape objects\n\ntmap supports simple features from the new sf package.\nIt also supports the class Spatial and Raster, respectively from the sp and the raster package. The supported subclasses are:\n\n\n\n\n\nPlotting functions of tmap\nTwo approaches can be used to prepare thematic map using tmap, they are:\n\nPlotting a thematic map quickly by using qtm().\nPlotting highly customisable thematic map by using tmap elements.\n\n\n\n\nPlotting a choropleth map quickly by using qtm()\n\n\nThe easiest and quickest to draw a choropleth map using tmap is using qtm(). It is concise and provides a good default visualisation in many cases.\n\ntmap_mode() with “plot” option is used to produce a static map. For interactive mode, “view” option should be used.\nfill argument is used to map the attribute (i.e. DEPENDENCY)\n\n\n\n\ntmap_mode(\"plot\")\nqtm(mpszpop2020, \n    fill = \"DEPENDENCY\")"
+  },
+  {
+    "objectID": "lesson/Lesson01/Lesson01-tmap.html#tmap-elements",
+    "href": "lesson/Lesson01/Lesson01-tmap.html#tmap-elements",
+    "title": "Lesson 1: Fundamental of Geospatial Data Visualisation and tmap Methods",
+    "section": "tmap elements",
+    "text": "tmap elements\n\ntm_shape()\n\nThe first element to start with is tm_shape(), which specifies the shape object."
+  },
+  {
+    "objectID": "lesson/Lesson01/Lesson01-tmap.html#tmap-elements-1",
+    "href": "lesson/Lesson01/Lesson01-tmap.html#tmap-elements-1",
+    "title": "Lesson 1: Fundamental of Geospatial Data Visualisation and tmap Methods",
+    "section": "tmap elements",
+    "text": "tmap elements\n\nBase layers\n\nNext, one, or a combination of the following drawing layers should be specified:\n\n\n\nLinks to tm_polygons(), tm_symbols(), tm_lines(), tm_raster() and tm_text()"
+  },
+  {
+    "objectID": "lesson/Lesson01/Lesson01-tmap.html#tmap-elements-2",
+    "href": "lesson/Lesson01/Lesson01-tmap.html#tmap-elements-2",
+    "title": "Lesson 1: Fundamental of Geospatial Data Visualisation and tmap Methods",
+    "section": "tmap elements",
+    "text": "tmap elements\n\nBase layers\n\nEach of these functions specifies the geometry, mapping, and scaling component of the LGTM.\nAn aesthetic can take a constant value, a data variable name, or a vector consisting of values or variable names.\nIf a data variable is provided, the scale is automatically configured according to the values of this variable, but can be adjusted with several arguments. For instance, the main scaling arguments for a color aesthetic are color palette, the preferred number of classes, and a style to create classes.\nAlso, for each aesthetic, except for the text labels, a legend is automatically created.\nIf a vector of variable names is provided, small multiples are created, which will be explained further below."
+  },
+  {
+    "objectID": "lesson/Lesson01/Lesson01-tmap.html#tmap-elements-3",
+    "href": "lesson/Lesson01/Lesson01-tmap.html#tmap-elements-3",
+    "title": "Lesson 1: Fundamental of Geospatial Data Visualisation and tmap Methods",
+    "section": "tmap elements",
+    "text": "tmap elements\n\nDerived layers\n\n\nEach aesthetic can take a constant value or a data variable name. For instance, tm_fill(col=\"blue\") colors all polygons blue, while tm_fill(col=\"var1\"), where “var1” is the name of a data variable in the shape object, creates a choropleth.\n\nThe supported derived layers are as follows:\n\n\n\n\n\n\nDrawing a base map\n\n\nThe basic building block of tmap is tm_shape() followed by one or more layer elements such as tm_fill() and tm_polygons().\n\n\n\n\n\n\nWarningBe warned\n\n\n\nThe “+” sign should be place at the end of a code line and not at the front of a code line.\n\n\n\n\n\ntm_shape(mpszpop2020) +\n  tm_polygons()\n\n\n\n\n\n\n\nDrawing a choropleth map using tm_polygons()\n\n\nTo draw a choropleth map showing the geographical distribution of a selected variable by planning subzone, we just need to assign the target variable such as DEPENDENCY to tm_polygons().\n\n\n\n\n\n\nTipThings to learn from tm_polygons():\n\n\n\n\nBy default, 5 bins will be used.\nThe default data classification method used is called “pretty”.\nThe default colour scheme used is “YlOrRd” of ColorBrewer. You will learn more about the color palette later.\nBy default, Missing value will be shaded in gray.\n\n\n\n\n\n\ntm_shape(mpszpop2020)+\n  tm_polygons(\"DEPENDENCY\")\n\n\n\n\n\n\n\nDrawing a choropleth map using tm_fill() and tm_border()\n\n\n\n\n\n\n\n\nNote\n\n\n\n\nActually, tm_polygons() is a wrapper of tm_fill() and tm_border().\ntm_fill() shades the polygons by using the default colour scheme.\ntm_borders() adds the borders of the shapefile onto the choropleth map.\nNotice that the planning subzones are shared according to the respective dependency values\n\n\n\n\n\n\ntm_shape(mpszpop2020) +\n  tm_fill(\"DEPENDENCY\")\n\n\n\n\n\n\n\nDrawing a choropleth map using tm_border()\n\n\nTo add the boundary of the planning subzones, tm_border() will be used.\n\n\ntm_shape(mpszpop2020)+\n  tm_fill(\"DEPENDENCY\") +\n  tm_borders(lwd = 0.1,   \n             alpha = 1) \n\n\n\n\n\n\n\n\nNote\n\n\n\nNotice that light-gray border lines have been added on the choropleth map.\n\nlwd = border line width. The default is 1,\nalpha = transparency number between 0 (totally transparent) and 1 (not transparent). By default, the alpha value of the col is used (normally 1),\ncol = border colour, and\nlty = border line type. The default is “solid”.\n\n\n\n\n\n\ntm_shape(mpszpop2020)+\n  tm_fill(\"DEPENDENCY\") +\n  tm_borders(lwd = 0.1,  \n             alpha = 1)"
+  },
+  {
+    "objectID": "lesson/Lesson01/Lesson01-tmap.html#data-classification-methods-of-tmap",
+    "href": "lesson/Lesson01/Lesson01-tmap.html#data-classification-methods-of-tmap",
+    "title": "Lesson 1: Fundamental of Geospatial Data Visualisation and tmap Methods",
+    "section": "Data classification methods of tmap",
+    "text": "Data classification methods of tmap\n\n\nMost choropleth maps employ some method of data classification. The point of classification is to take a large number of observations and group them into data ranges or classes.\n\n\n\n\n\n\nNote\n\n\n\n\ntmap provides a total ten data classification methods, namely: fixed, sd, equal, pretty (default), quantile, kmeans, hclust, bclust, fisher, and jenks.\nTo define a data classification method, the style argument of tm_fill() or tm_polygons() will be used.\nThe choropleth map on the right shows a quantile data classification with 8 classes are used.\n\n\n\n\n\n\ntm_shape(mpszpop2020)+\n  tm_fill(\"DEPENDENCY\",\n          n = 8,\n          style = \"quantile\") +\n  tm_borders(alpha = 0.5)\n\n\n\n\n\n\nComparing Quantile and Equal Interval\nChoropleth maps on the left and right below show quantile and equal data classification methods are used.\n\nNotice that the distribution of quantile data classification method are more evenly distributed then equal data classification method.\n\n\n\n\n\ntm_shape(mpszpop2020)+\n  tm_fill(\"DEPENDENCY\",\n          n = 6,\n          style = \"quantile\") +\n  tm_borders(alpha = 0.5)\n\n\n\n\n\ntm_shape(mpszpop2020)+\n  tm_fill(\"DEPENDENCY\",\n          n = 6,\n          style = \"equal\") +\n  tm_borders(alpha = 0.5)"
+  },
+  {
+    "objectID": "lesson/Lesson01/Lesson01-tmap.html#colour-scheme-1",
+    "href": "lesson/Lesson01/Lesson01-tmap.html#colour-scheme-1",
+    "title": "Lesson 1: Fundamental of Geospatial Data Visualisation and tmap Methods",
+    "section": "Colour Scheme",
+    "text": "Colour Scheme\n\n\ntmap supports colour ramps either defined by the user or a set of predefined colour ramps from the RColorBrewer package.\n\n\n\n\n\n\nNote\n\n\n\n\nTo change the colour, we assign the preferred colour to palette argument of tm_fill().\nNotice that the word blues is used instead of blue and the alphabet b is in uppercase.\n\n\n\n\n\n\ntm_shape(mpszpop2020)+\n  tm_fill(\"DEPENDENCY\",\n          n = 6,\n          style = \"quantile\",\n          palette = \"Blues\") +\n  tm_borders(alpha = 0.5)\n\n\n\n\n\n\nMore about colour\n\n\n\n\n\n\n\n\nNote\n\n\n\n\nTo reverse the colour shading, add a “-” prefix.\n\n\n\n\n\n\ntm_shape(mpszpop2020)+\n  tm_fill(\"DEPENDENCY\",\n          style = \"quantile\",\n          palette = \"-Blues\") +\n  tm_borders(alpha = 0.5)\n\n\nNotice that the colour scheme has been reversed.\n\n\n\n\n\ntmap Layouts\n\n\nMap layout refers to the combination of all map elements into a cohensive map.\n\nMap elements include among others the objects to be mapped, the title, the scale bar, the compass, margins and aspects ratios, while the colour settings and data classification methods covered in the previous section relate to the palette and break-points used to affect how the map looks.\n\n\n\n\n\n\ntmap Legend\n\n\nIn tmap, several legend options are provided to change the placement, format and appearance of the legend.\n\n\ntm_shape(mpszpop2020)+\n  tm_fill(\"DEPENDENCY\", \n          style = \"jenks\", \n          palette = \"Blues\", \n          legend.hist = TRUE, \n          legend.is.portrait = TRUE,\n          legend.hist.z = 0.1) +\n  tm_layout(main.title = \"Distribution of Dependency Ratio by planning subzone \\n(Jenks classification)\", \n            main.title.position = \"center\", \n            main.title.size = 1, \n            legend.height = 0.45, \n            legend.width = 0.35, \n            legend.outside = FALSE, \n            legend.position = c(\"right\", \"bottom\"), \n            frame = FALSE) + \n  tm_borders(alpha = 0.5)\n\n\n\n\n\n\n\n\n\ntmap style\n\n\ntmap allows a wide variety of layout settings to be changed. They can be called by using tmap_style().\n\n\n\n\n\n\nNote\n\n\n\n\n“white”: White background, commonly used colors (default)\n“gray”/“grey”: Grey background, useful to highlight sequential palettes (e.g. in choropleths)\n“natural”: Emulation of natural view: blue waters and green land\n“bw”: Greyscale, obviously useful for greyscale printing\n“classic”: Classic styled maps (recommended)\n“cobalt”: Inspired by latex beamer style cobalt\n“albatross”: Inspired by latex beamer style albatross\n“beaver”: Inspired by latex beamer style beaver\n\n\n\n\nChloropleth map below is plotted by using classic style.\n\n\ntm_shape(mpszpop2020)+\n  tm_fill(\"DEPENDENCY\", \n          style = \"quantile\", \n          palette = \"-Greens\") +\n  tm_borders(alpha = 0.5) +\n  tmap_style(\"classic\")\n\n\n\n\n\n\n\nCartographic Furniture\n\nBeside map style, tmap also also provides arguments to draw other map furniture such as compass, scale bar and grid lines. In the choropleth below, tm_compass(), tm_scale_bar() and tm_grid() are used to add compass, scale bar and grid lines onto the choropleth map.\n\n\nThe codeThe map\n\n\n\ntm_shape(mpszpop2020)+\n  tm_fill(\"DEPENDENCY\", \n          style = \"quantile\", \n          palette = \"Blues\",\n          title = \"No. of persons\") +\n  tm_layout(main.title = \"Distribution of Dependency Ratio \\nby planning subzone\",\n            main.title.position = \"center\",\n            main.title.size = 1.2,\n            legend.height = 0.45, \n            legend.width = 0.35,\n            frame = TRUE) +\n  tm_borders(alpha = 0.5) +\n  tm_compass(type=\"8star\", size = 2) +\n  tm_scale_bar(width = 0.15) +\n  tm_grid(lwd = 0.1, alpha = 0.2) + \n  tm_credits(\"Source: Planning Sub-zone boundary from Urban Redevelopment Authorithy (URA)\\n and Population data from Department of Statistics DOS\",\n             position = c(\"left\", \"bottom\"))\n\n\n\n\n\n\n\n\n\n\nDrawing Small Multiple Choropleth Maps\nSmall multiple maps, also refered to facet maps, are composed of many maps arrange side-by-side, and sometimes stacked vertically. Small multiple maps enable the visualisation of how spatial relationships change with respect to another variable, such as time.\nIn tmap, small multiple maps can be plotted in three ways:\n\nby assigning multiple values to at least one of the asthetic arguments,\nby defining a group-by variable in tm_facets(), and\nby creating multiple stand-alone maps with tmap_arrange().\n\n\n\n\nBy assigning multiple values to at least one of the aesthetic arguments\nIn this example, small multiple choropleth maps are created by defining ncols in tm_fill().\n\n\ntm_shape(mpszpop2020)+\n  tm_fill(c(\"YOUNG\", \"AGED\"),\n          style = \"equal\", \n          palette = \"Blues\") +\n  tm_layout(legend.position = c(\"right\", \"bottom\")) +\n  tm_borders(alpha = 0.5) +\n  tmap_style(\"white\")\n\n\n\n\n\nBy assigning multiple values to at least one of the aesthetic arguments\nIn this example, small multiple choropleth maps are created by assigning multiple values to at least one of the aesthetic arguments\n\n\ntm_shape(mpszpop2020)+ \n  tm_polygons(c(\"DEPENDENCY\",\"AGED\"),\n          style = c(\"equal\", \"quantile\"), \n          palette = list(\"Blues\",\"Greens\")) +\n  tm_layout(legend.position = c(\"right\", \"bottom\"))\n\n\n\n\n\nBy creating multiple stand-alone maps with tmap_arrange()\n\n\nIn this example, multiple small choropleth maps are created by creating multiple stand-alone maps with tmap_arrange().\n\n\nyoungmap &lt;- tm_shape(mpszpop2020)+ \n  tm_polygons(\"YOUNG\", \n              style = \"quantile\", \n              palette = \"Blues\")\n\nagedmap &lt;- tm_shape(mpszpop2020)+ \n  tm_polygons(\"AGED\", \n              style = \"quantile\", \n              palette = \"Blues\")\n\ntmap_arrange(youngmap, \n             agedmap, \n             ncol=1)\n\n\n\n\n\n\n\n\n\nBy defining a group-by variable in tm_facets()\n\n\nIn this example, multiple small choropleth maps are created by using tm_facets().\n\n\ntm_shape(mpszpop2020) +\n  tm_fill(\"DEPENDENCY\",\n          style = \"quantile\",\n          palette = \"Blues\",\n          thres.poly = 0) + \n  tm_facets(by=\"REGION_N\", \n            free.coords=TRUE, \n            drop.shapes=TRUE) + \n  tm_layout(legend.show = FALSE,\n            title.position = c(\"center\",\n                               \"center\"), \n            title.size = 20) +\n  tm_borders(alpha = 0.5)\n\n\n\n\n\n\n\n\n\nMappping Spatial Object Meeting a Selection Criterion\n\n\nInstead of creating small multiple choropleth map, you can also use selection function to map spatial objects meeting the selection criterion.\n\n\ntm_shape(mpszpop2020\n         [mpszpop2020$REGION_N==\"CENTRAL REGION\", ]) + \n  tm_fill(\"DEPENDENCY\", \n          style = \"quantile\", \n          palette = \"Blues\", \n          legend.hist = TRUE, \n          legend.is.portrait = TRUE,\n          legend.hist.z = 0.1) +\n  tm_layout(legend.outside = TRUE,\n            legend.height = 0.45, \n            legend.width = 5.0,\n            legend.position = c(\"right\", \n                                \"bottom\"),\n            frame = FALSE) +\n  tm_borders(alpha = 0.5)"
+  },
+  {
+    "objectID": "lesson/Lesson01/Lesson01-tmap.html#reference",
+    "href": "lesson/Lesson01/Lesson01-tmap.html#reference",
+    "title": "Lesson 1: Fundamental of Geospatial Data Visualisation and tmap Methods",
+    "section": "Reference",
+    "text": "Reference\n\nPrinciples, Concepts and Methods of Choropleth Maps Design\nCore Reading\n\nChoropleth Maps\nThe Basics of Data Classification\n\nAdditional Readings\n\nChoropleth Maps – A Guide to Data Classification\nBivariate Choropleth\nValue-by-alpha maps\nWhat to consider when creating choropleth maps\nChoropleth Mapping with Exploratory Data Analysis"
+  },
+  {
+    "objectID": "lesson/Lesson01/Lesson01-tmap.html#references",
+    "href": "lesson/Lesson01/Lesson01-tmap.html#references",
+    "title": "Lesson 1: Fundamental of Geospatial Data Visualisation and tmap Methods",
+    "section": "References",
+    "text": "References\n\nAll About tmap package\n\ntmap: Thematic Maps in R\nDevelopment site\ntmap Reference\ntmap: get started!\ntmap: version changes\ntmap: creating thematic maps in a flexible way (useR!2015)\nExploring and presenting maps with tmap (useR!2017)"
+  }
+]

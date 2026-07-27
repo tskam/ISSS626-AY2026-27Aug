@@ -1,0 +1,21 @@
+---
+title: "Weekly Lesson Plan"
+execute: 
+  freeze: true
+editor: visual
+---
+
+| Week | Date | Topic | Student Assignment |
+|------------------|------------------|-------------------|------------------|
+| 1 | 29/8/2026 | [Introduction to Geospatial Analytics](outline/Lesson01_outline.html) |  |
+| 2 | 5/9/2026 | [Spatial Point Patterns Analysis (SPAA)](outline/Lesson02_outline.html) |  |
+| 3 | 12/9/2026 | [Advanced Spatial Point Patterns Analysis](outline/Lesson03_outline.html) |  |
+| 4 | 19/9/2026 | [Spatial Weights and Applications](outline/Lesson04_outline.html) | Take-home Exercise 1 due |
+| 5 | 26/9/2026 | [Global and Local Measures of Spatial Association](outline/Lesson05_outline.html) |  |
+| 6 | 3/10/2026 | [Geographic Segmentation](outline/Lesson06_outline.html) |  |
+|  | 10/10/2026 | Recess | Take-home Exercise 2 due |
+| 7 | 17/10/2026 | [Geographically Weighted Explanatory Models](outline/Lesson07_outline.html) |  |
+| 8 | 24/10/2026 | [Geographically Weighted Predictive Models](outline/Lesson08_outline.html) |  |
+| 9 | 31/10/2026 | [Modelling Geographic of Accessibility](outline/Lesson09_outline.html) |  |
+| 10 | 7/11/2026 | [Spatial Interaction Models](outline/Lesson10_outline.html) | Timed Individual Assessment |
+| 11 | 14/11/2026 | Poster Presentation | Geospatial Analytics Project due |

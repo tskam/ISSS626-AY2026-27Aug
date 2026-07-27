@@ -1,0 +1,1494 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.26">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Dr.&nbsp;Kam Tin Seong Assoc. Professor of Information Systems(Practice)">
+
+<title>Lesson 2: Spatial Point Patterns Analysis – ISSS626 Geospatial Analytics</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-5f49f16f97b4b358d01fa7acc334a7f0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">ISSS626 Geospatial Analytics</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../syllabus.html"> 
+<span class="menu-text">Syllabus</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../lesson.html"> 
+<span class="menu-text">Lesson Plan</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-in-class-exercise" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">In-class Exercise</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-in-class-exercise">    
+        <li>
+    <a class="dropdown-item" href="../../In-class_Ex/In-class_Ex01/In-class_Ex01.html">
+ <span class="dropdown-text">In-class Exercise 1</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../In-class_Ex/In-class_Ex02/In-class_Ex02-SPPA.html">
+ <span class="dropdown-text">In-class Exercise 2</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../In-class_Ex/In-class_Ex03/In-class_Ex03a.html">
+ <span class="dropdown-text">In-class Exercise 3a</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../In-class_Ex/In-class_Ex03/In-class_Ex03b.html">
+ <span class="dropdown-text">In-class Exercise 3b</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../In-class_Ex/In-class_Ex04/In-class_Ex04.html">
+ <span class="dropdown-text">In-class Exercise 4</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../In-class_Ex/In-class_Ex05/In-class_Ex05-EHSA.html">
+ <span class="dropdown-text">In-class Exercise 5</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../In-class_Ex/In-class_Ex06/In-class_Ex06-KickStarter.html">
+ <span class="dropdown-text">In-class Exercise 6</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../In-class_Ex/In-class_Ex07/In-class_Ex07-gwr.html">
+ <span class="dropdown-text">In-class Exercise 7</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../In-class_Ex/In-class_Ex08/In-class_Ex08.html">
+ <span class="dropdown-text">In-class Exercise 8</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../In-class_Ex/In-class_Ex09/In-class_Ex09.html">
+ <span class="dropdown-text">In-class Exercise 9</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../In-class_Ex/In-class_Ex10/In-class_Ex10.html">
+ <span class="dropdown-text">In-class Exercise 10</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-take-home-exercise" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Take-home Exercise</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-take-home-exercise">    
+        <li>
+    <a class="dropdown-item" href="../../Take-home_Ex01.html">
+ <span class="dropdown-text">Take-home Exercise 1</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../Take-home_Ex02.html">
+ <span class="dropdown-text">Take-home Exercise 2</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../Take-home_Ex03a.html">
+ <span class="dropdown-text">Take-home Exercise 3a</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../Take-home_Ex03b.html">
+ <span class="dropdown-text">Take-home Exercise 3b</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-all-about-r" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">All About R</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-all-about-r">    
+        <li>
+    <a class="dropdown-item" href="../../R.html">
+ <span class="dropdown-text">R Resouces</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../Quarto.html">
+ <span class="dropdown-text">Quarto</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../git.html">
+ <span class="dropdown-text">git and github</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#content" id="toc-content" class="nav-link active" data-scroll-target="#content">Content</a></li>
+  <li><a href="#what-is-spatial-point-patterns" id="toc-what-is-spatial-point-patterns" class="nav-link" data-scroll-target="#what-is-spatial-point-patterns">What is Spatial Point Patterns</a>
+  <ul class="collapse">
+  <li><a href="#spatial-point-patterns-in-real-world" id="toc-spatial-point-patterns-in-real-world" class="nav-link" data-scroll-target="#spatial-point-patterns-in-real-world">Spatial Point Patterns in Real World</a></li>
+  <li><a href="#spatial-point-patterns-in-real-world-1" id="toc-spatial-point-patterns-in-real-world-1" class="nav-link" data-scroll-target="#spatial-point-patterns-in-real-world-1">Spatial Point Patterns in Real World</a></li>
+  <li><a href="#spatial-point-patterns-in-real-world-2" id="toc-spatial-point-patterns-in-real-world-2" class="nav-link" data-scroll-target="#spatial-point-patterns-in-real-world-2">Spatial Point Patterns in Real World</a></li>
+  <li><a href="#spatial-point-patterns-in-real-world-3" id="toc-spatial-point-patterns-in-real-world-3" class="nav-link" data-scroll-target="#spatial-point-patterns-in-real-world-3">Spatial Point Patterns in Real World</a></li>
+  <li><a href="#spatial-point-patterns-in-real-world-4" id="toc-spatial-point-patterns-in-real-world-4" class="nav-link" data-scroll-target="#spatial-point-patterns-in-real-world-4">Spatial Point Patterns in Real World</a></li>
+  <li><a href="#spatial-point-patterns-in-real-world-5" id="toc-spatial-point-patterns-in-real-world-5" class="nav-link" data-scroll-target="#spatial-point-patterns-in-real-world-5">Spatial Point Patterns in Real World</a></li>
+  </ul></li>
+  <li><a href="#real-world-question" id="toc-real-world-question" class="nav-link" data-scroll-target="#real-world-question">Real World Question</a></li>
+  <li><a href="#points-on-a-plane" id="toc-points-on-a-plane" class="nav-link" data-scroll-target="#points-on-a-plane">Points on a Plane</a>
+  <ul class="collapse">
+  <li><a href="#real-world-spatial-point-patterns" id="toc-real-world-spatial-point-patterns" class="nav-link" data-scroll-target="#real-world-spatial-point-patterns">Real world spatial point patterns</a></li>
+  <li><a href="#real-world-spatial-point-patterns-1" id="toc-real-world-spatial-point-patterns-1" class="nav-link" data-scroll-target="#real-world-spatial-point-patterns-1">Real world spatial point patterns</a></li>
+  </ul></li>
+  <li><a href="#spatial-point-patterns-analysis" id="toc-spatial-point-patterns-analysis" class="nav-link" data-scroll-target="#spatial-point-patterns-analysis">Spatial Point Patterns Analysis</a></li>
+  <li><a href="#homogeneous-spatial-point-patterns" id="toc-homogeneous-spatial-point-patterns" class="nav-link" data-scroll-target="#homogeneous-spatial-point-patterns">Homogeneous Spatial Point Patterns</a></li>
+  <li><a href="#heterogeneous-spatial-point-patterns" id="toc-heterogeneous-spatial-point-patterns" class="nav-link" data-scroll-target="#heterogeneous-spatial-point-patterns">Heterogeneous Spatial Point Patterns</a></li>
+  <li><a href="#spatial-point-patterns-analysis-techniques" id="toc-spatial-point-patterns-analysis-techniques" class="nav-link" data-scroll-target="#spatial-point-patterns-analysis-techniques">Spatial Point Patterns Analysis Techniques</a>
+  <ul class="collapse">
+  <li><a href="#first-order-spatial-point-patterns-analysis-techniques" id="toc-first-order-spatial-point-patterns-analysis-techniques" class="nav-link" data-scroll-target="#first-order-spatial-point-patterns-analysis-techniques">First-order Spatial Point Patterns Analysis Techniques</a></li>
+  <li><a href="#basic-concept-of-density-based-measures" id="toc-basic-concept-of-density-based-measures" class="nav-link" data-scroll-target="#basic-concept-of-density-based-measures">Basic concept of density-based measures</a></li>
+  </ul></li>
+  <li><a href="#kernel-density-estimation-silverman-1986" id="toc-kernel-density-estimation-silverman-1986" class="nav-link" data-scroll-target="#kernel-density-estimation-silverman-1986">Kernel density estimation (Silverman 1986)</a>
+  <ul class="collapse">
+  <li><a href="#kde-step-1-computing-point-intensity" id="toc-kde-step-1-computing-point-intensity" class="nav-link" data-scroll-target="#kde-step-1-computing-point-intensity">KDE Step 1: Computing point intensity</a></li>
+  <li><a href="#kde-step-2-spatial-interpolation-using-kernel-function" id="toc-kde-step-2-spatial-interpolation-using-kernel-function" class="nav-link" data-scroll-target="#kde-step-2-spatial-interpolation-using-kernel-function">KDE Step 2: Spatial interpolation using kernel function</a></li>
+  <li><a href="#kde-map-of-childcare-services-singapore" id="toc-kde-map-of-childcare-services-singapore" class="nav-link" data-scroll-target="#kde-map-of-childcare-services-singapore">KDE Map of Childcare Services, Singapore</a></li>
+  <li><a href="#adaptive-bandwidth" id="toc-adaptive-bandwidth" class="nav-link" data-scroll-target="#adaptive-bandwidth">Adaptive Bandwidth</a></li>
+  <li><a href="#fixed-bandwidth" id="toc-fixed-bandwidth" class="nav-link" data-scroll-target="#fixed-bandwidth">Fixed bandwidth</a></li>
+  <li><a href="#quadrat-analysis-step-1" id="toc-quadrat-analysis-step-1" class="nav-link" data-scroll-target="#quadrat-analysis-step-1">Quadrat Analysis – Step 1</a></li>
+  <li><a href="#quadrat-analysis-step-2" id="toc-quadrat-analysis-step-2" class="nav-link" data-scroll-target="#quadrat-analysis-step-2">Quadrat Analysis – Step 2</a></li>
+  <li><a href="#quadrat-analysis-step-3" id="toc-quadrat-analysis-step-3" class="nav-link" data-scroll-target="#quadrat-analysis-step-3">Quadrat Analysis – Step 3</a></li>
+  <li><a href="#quadrat-analysis-step-4" id="toc-quadrat-analysis-step-4" class="nav-link" data-scroll-target="#quadrat-analysis-step-4">Quadrat Analysis – Step 4</a></li>
+  <li><a href="#quadrat-analysis-variance-mean-ratio-vmr" id="toc-quadrat-analysis-variance-mean-ratio-vmr" class="nav-link" data-scroll-target="#quadrat-analysis-variance-mean-ratio-vmr">Quadrat Analysis – Variance-Mean Ratio (VMR)</a></li>
+  <li><a href="#complete-spatial-randomness-csr" id="toc-complete-spatial-randomness-csr" class="nav-link" data-scroll-target="#complete-spatial-randomness-csr">Complete Spatial Randomness (CSR)</a></li>
+  <li><a href="#quadrat-analysis-the-interpretation" id="toc-quadrat-analysis-the-interpretation" class="nav-link" data-scroll-target="#quadrat-analysis-the-interpretation">Quadrat Analysis: The interpretation</a></li>
+  <li><a href="#weaknesses-of-quadrat-analysis" id="toc-weaknesses-of-quadrat-analysis" class="nav-link" data-scroll-target="#weaknesses-of-quadrat-analysis">Weaknesses of quadrat analysis</a></li>
+  </ul></li>
+  <li><a href="#distance-based-nearest-neighbour-index" id="toc-distance-based-nearest-neighbour-index" class="nav-link" data-scroll-target="#distance-based-nearest-neighbour-index">Distance-based: Nearest Neighbour Index</a>
+  <ul class="collapse">
+  <li><a href="#what-is-nearest-neighbour" id="toc-what-is-nearest-neighbour" class="nav-link" data-scroll-target="#what-is-nearest-neighbour">What is Nearest Neighbour?</a></li>
+  </ul></li>
+  <li><a href="#nearest-neighbour-index" id="toc-nearest-neighbour-index" class="nav-link" data-scroll-target="#nearest-neighbour-index">Nearest Neighbour Index</a>
+  <ul class="collapse">
+  <li><a href="#calculating-nearest-neighbour-index" id="toc-calculating-nearest-neighbour-index" class="nav-link" data-scroll-target="#calculating-nearest-neighbour-index">Calculating Nearest Neighbour Index</a></li>
+  <li><a href="#interpreting-nearest-neighbour-index" id="toc-interpreting-nearest-neighbour-index" class="nav-link" data-scroll-target="#interpreting-nearest-neighbour-index">Interpreting Nearest Neighbour Index</a></li>
+  <li><a href="#the-test-statistics" id="toc-the-test-statistics" class="nav-link" data-scroll-target="#the-test-statistics">The test statistics</a></li>
+  <li><a href="#interpreting-nearest-neighbour-index-1" id="toc-interpreting-nearest-neighbour-index-1" class="nav-link" data-scroll-target="#interpreting-nearest-neighbour-index-1">Interpreting Nearest Neighbour Index</a></li>
+  </ul></li>
+  <li><a href="#g-function" id="toc-g-function" class="nav-link" data-scroll-target="#g-function">G function</a>
+  <ul class="collapse">
+  <li><a href="#interpretation-of-g-function" id="toc-interpretation-of-g-function" class="nav-link" data-scroll-target="#interpretation-of-g-function">Interpretation of G-function</a></li>
+  <li><a href="#how-do-we-tell-if-g-is-significant" id="toc-how-do-we-tell-if-g-is-significant" class="nav-link" data-scroll-target="#how-do-we-tell-if-g-is-significant">How do we tell if G is significant?</a></li>
+  <li><a href="#monte-carlo-simulation-test-of-csr" id="toc-monte-carlo-simulation-test-of-csr" class="nav-link" data-scroll-target="#monte-carlo-simulation-test-of-csr">Monte Carlo simulation test of CSR</a></li>
+  <li><a href="#the-significant-test-of-g-function" id="toc-the-significant-test-of-g-function" class="nav-link" data-scroll-target="#the-significant-test-of-g-function">The significant test of G-function</a></li>
+  </ul></li>
+  <li><a href="#f-function" id="toc-f-function" class="nav-link" data-scroll-target="#f-function">F function</a>
+  <ul class="collapse">
+  <li><a href="#the-f-function-formula" id="toc-the-f-function-formula" class="nav-link" data-scroll-target="#the-f-function-formula">The F function formula</a></li>
+  <li><a href="#interpretation-of-f-function" id="toc-interpretation-of-f-function" class="nav-link" data-scroll-target="#interpretation-of-f-function">Interpretation of F-function</a></li>
+  <li><a href="#the-significant-test-of-f-function" id="toc-the-significant-test-of-f-function" class="nav-link" data-scroll-target="#the-significant-test-of-f-function">The significant test of F-function</a></li>
+  <li><a href="#comparison-between-g-and-f" id="toc-comparison-between-g-and-f" class="nav-link" data-scroll-target="#comparison-between-g-and-f">Comparison between G and F</a></li>
+  </ul></li>
+  <li><a href="#ripleys-k-function-ripley-1981" id="toc-ripleys-k-function-ripley-1981" class="nav-link" data-scroll-target="#ripleys-k-function-ripley-1981">Ripley’s K function (Ripley, 1981)</a>
+  <ul class="collapse">
+  <li><a href="#calculating-the-k-function" id="toc-calculating-the-k-function" class="nav-link" data-scroll-target="#calculating-the-k-function">Calculating the K function</a></li>
+  <li><a href="#k-function" id="toc-k-function" class="nav-link" data-scroll-target="#k-function">K function</a></li>
+  <li><a href="#the-k-function-complete-spatial-randomness-test" id="toc-the-k-function-complete-spatial-randomness-test" class="nav-link" data-scroll-target="#the-k-function-complete-spatial-randomness-test">The K function complete spatial randomness test</a></li>
+  <li><a href="#interpreting-the-k-function-complete-spatial-randomness-test" id="toc-interpreting-the-k-function-complete-spatial-randomness-test" class="nav-link" data-scroll-target="#interpreting-the-k-function-complete-spatial-randomness-test">Interpreting the K function complete spatial randomness test</a></li>
+  </ul></li>
+  <li><a href="#the-l-function-besag-1977" id="toc-the-l-function-besag-1977" class="nav-link" data-scroll-target="#the-l-function-besag-1977">The L function (Besag 1977)</a>
+  <ul class="collapse">
+  <li><a href="#interpreting-the-l-function-complete-spatial-randomness-test" id="toc-interpreting-the-l-function-complete-spatial-randomness-test" class="nav-link" data-scroll-target="#interpreting-the-l-function-complete-spatial-randomness-test">Interpreting the L function complete spatial randomness test</a></li>
+  <li><a href="#the-l-function-besag-1977-1" id="toc-the-l-function-besag-1977-1" class="nav-link" data-scroll-target="#the-l-function-besag-1977-1">The L function (Besag 1977)</a></li>
+  </ul></li>
+  <li><a href="#monte-carlo-hypothesis-testing-in-spatstat" id="toc-monte-carlo-hypothesis-testing-in-spatstat" class="nav-link" data-scroll-target="#monte-carlo-hypothesis-testing-in-spatstat">Monte Carlo hypothesis testing in spatstat</a>
+  <ul class="collapse">
+  <li><a href="#role-of-nsim" id="toc-role-of-nsim" class="nav-link" data-scroll-target="#role-of-nsim">Role of nsim</a></li>
+  <li><a href="#confidence-level-and-envelopes-in-spatstat" id="toc-confidence-level-and-envelopes-in-spatstat" class="nav-link" data-scroll-target="#confidence-level-and-envelopes-in-spatstat">Confidence level and envelopes in spatstat</a></li>
+  <li><a href="#confidence-level-and-envelopes-in-spatstat-1" id="toc-confidence-level-and-envelopes-in-spatstat-1" class="nav-link" data-scroll-target="#confidence-level-and-envelopes-in-spatstat-1">Confidence level and envelopes in spatstat</a></li>
+  <li><a href="#rule-of-thumb-in-practice" id="toc-rule-of-thumb-in-practice" class="nav-link" data-scroll-target="#rule-of-thumb-in-practice">Rule of thumb in practice</a></li>
+  </ul></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="Lesson02-SPPA.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Lesson 2: Spatial Point Patterns Analysis</h1>
+</div>
+
+
+<div class="quarto-title-meta-author">
+  <div class="quarto-title-meta-heading">Author</div>
+  <div class="quarto-title-meta-heading">Affiliation</div>
+  
+    <div class="quarto-title-meta-contents">
+    <p class="author">Dr.&nbsp;Kam Tin Seong<br>Assoc. Professor of Information Systems(Practice) </p>
+  </div>
+  <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            School of Computing and Information Systems,<br>Singapore Management University
+          </p>
+      </div>
+  </div>
+
+<div class="quarto-title-meta">
+
+      
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">Invalid Date</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="content" class="level2">
+<h2 class="anchored" data-anchor-id="content">Content</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>Introducing Spatial Point Patterns
+<ul>
+<li>The basic concepts of spatial point patterns</li>
+<li>1st Order versus 2nd Order</li>
+<li>Spatial Point Patterns in real world</li>
+</ul></li>
+<li>1st Order Spatial Point Patterns Analysis
+<ul>
+<li>Quadrat analysis</li>
+<li>Kernel density estimation</li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<ul>
+<li>2nd Order Spatial Point Patterns Analysis
+<ul>
+<li>Nearest Neighbour Index</li>
+<li>G-function</li>
+<li>F-function</li>
+<li>K-function</li>
+<li>L-function</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div class="notes">
+<p>Welcome to Lesson 4: Spatial Point Pattern Analysis, a family of spatial statistics specially developed to model and to test distribution of spatial point events.</p>
+<p>The lesson proceeding is divided into three main section. First, I will share with you what are real world spatial point events. This is followed by explaining the concepts and methods of 1st-order and 2nd-order spatial point patterns analysis.</p>
+</div>
+</section>
+<section id="what-is-spatial-point-patterns" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-spatial-point-patterns">What is Spatial Point Patterns</h2>
+<ul>
+<li><p>Points as Events</p></li>
+<li><p>Mapped pattern</p>
+<ul>
+<li>Not a sample</li>
+<li>Selection bias</li>
+</ul></li>
+<li><p>Events are mapped, but non-events are not</p></li>
+</ul>
+<hr>
+<section id="spatial-point-patterns-in-real-world" class="level3">
+<h3 class="anchored" data-anchor-id="spatial-point-patterns-in-real-world">Spatial Point Patterns in Real World</h3>
+<ul>
+<li>Distribution of dieses such as dengue fever.</li>
+</ul>
+<p><img src="img/image4-1.jpg" class="img-fluid"></p>
+<hr>
+</section>
+<section id="spatial-point-patterns-in-real-world-1" class="level3">
+<h3 class="anchored" data-anchor-id="spatial-point-patterns-in-real-world-1">Spatial Point Patterns in Real World</h3>
+<ul>
+<li>Distribution of car collisions.</li>
+</ul>
+<div class="quarto-figure quarto-figure-left">
+<figure class="figure">
+<p><img src="img/image4-2.jpg" class="img-fluid quarto-figure quarto-figure-left figure-img" width="400"></p>
+</figure>
+</div>
+<hr>
+</section>
+<section id="spatial-point-patterns-in-real-world-2" class="level3">
+<h3 class="anchored" data-anchor-id="spatial-point-patterns-in-real-world-2">Spatial Point Patterns in Real World</h3>
+<ul>
+<li>Distribution of crime incidents.</li>
+</ul>
+<div class="quarto-figure quarto-figure-left">
+<figure class="figure">
+<p><img src="img/image4-3.jpg" class="img-fluid quarto-figure quarto-figure-left figure-img"></p>
+</figure>
+</div>
+<hr>
+</section>
+<section id="spatial-point-patterns-in-real-world-3" class="level3">
+<h3 class="anchored" data-anchor-id="spatial-point-patterns-in-real-world-3">Spatial Point Patterns in Real World</h3>
+<ul>
+<li>Distribution of public services such as education institutions.</li>
+</ul>
+<p><img src="img/image4-4.jpg" class="img-fluid"></p>
+<hr>
+</section>
+<section id="spatial-point-patterns-in-real-world-4" class="level3">
+<h3 class="anchored" data-anchor-id="spatial-point-patterns-in-real-world-4">Spatial Point Patterns in Real World</h3>
+<ul>
+<li>Locations of the different channel stores.</li>
+</ul>
+<div class="quarto-figure quarto-figure-left">
+<figure class="figure">
+<p><img src="img/image4-5.jpg" class="img-fluid quarto-figure quarto-figure-left figure-img"></p>
+</figure>
+</div>
+<hr>
+</section>
+<section id="spatial-point-patterns-in-real-world-5" class="level3">
+<h3 class="anchored" data-anchor-id="spatial-point-patterns-in-real-world-5">Spatial Point Patterns in Real World</h3>
+<ul>
+<li>Distribution of social media data such as tweets.</li>
+</ul>
+<p><img src="img/image4-6.jpg" class="img-fluid"></p>
+</section>
+</section>
+<section id="real-world-question" class="level2">
+<h2 class="anchored" data-anchor-id="real-world-question">Real World Question</h2>
+<ul>
+<li>Location only
+<ul>
+<li>are points randomly located or patterned</li>
+</ul></li>
+<li>Location and value
+<ul>
+<li>marked point pattern</li>
+<li>is combination of location and value random or patterned</li>
+</ul></li>
+<li>What is the underlying process?</li>
+</ul>
+<div class="notes">
+<p>It is important note that SPPA is exploratory and confirmatory in nature. They are specially developed for describing the spatial point pattern and for confirming the observed patterns statistically. However, they are explanatory nor for prediction.</p>
+</div>
+</section>
+<section id="points-on-a-plane" class="level2">
+<h2 class="anchored" data-anchor-id="points-on-a-plane">Points on a Plane</h2>
+<ul>
+<li>Classic point pattern analysis
+<ul>
+<li>points on an isotropic plane</li>
+<li>no effect of translation and rotation</li>
+<li>classic examples: tree seedlings, rocks, etc</li>
+</ul></li>
+<li>Distance
+<ul>
+<li>straight line only</li>
+</ul></li>
+</ul>
+<hr>
+<section id="real-world-spatial-point-patterns" class="level3">
+<h3 class="anchored" data-anchor-id="real-world-spatial-point-patterns">Real world spatial point patterns</h3>
+<ul>
+<li>Is this a random distribution?</li>
+</ul>
+<p><img src="img/image4-7.jpg" class="img-fluid"></p>
+<hr>
+</section>
+<section id="real-world-spatial-point-patterns-1" class="level3">
+<h3 class="anchored" data-anchor-id="real-world-spatial-point-patterns-1">Real world spatial point patterns</h3>
+<ul>
+<li>Is this a random distribution?</li>
+</ul>
+<p><img src="img/image4-8.jpg" class="img-fluid"></p>
+</section>
+</section>
+<section id="spatial-point-patterns-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="spatial-point-patterns-analysis">Spatial Point Patterns Analysis</h2>
+<ul>
+<li>Point pattern analysis (PPA) is the study of the spatial arrangements of points in (usually 2-dimensional) space.</li>
+<li>The simplest formulation is a set X = {x ∈ D} where D, which can be called the <strong>study region</strong>, is a subset of Rn, a n-dimensional <strong>Euclidean space</strong>.</li>
+<li>A fundamental problem of PPA is inferring whether a given arrangement is merely <strong>random</strong> or the result of some process.</li>
+</ul>
+<p><img src="img/image4-9.jpg" class="img-fluid"></p>
+</section>
+<section id="homogeneous-spatial-point-patterns" class="level2">
+<h2 class="anchored" data-anchor-id="homogeneous-spatial-point-patterns">Homogeneous Spatial Point Patterns</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p>A homogeneous spatial point pattern assumes that the points are distributed uniformly across the study area. The intensity (expected number of points per unit area) is constant throughout the region.</p>
+<p><img src="img/image2-1a.png" class="img-fluid" width="500"></p>
+</div><div class="column" style="width:50%;">
+<p>Characteristics:</p>
+<ul>
+<li>The probability of observing a point is the same across the entire space.</li>
+<li>The process generating the points does not depend on location.</li>
+<li>The points are randomly and independently distributed across the space, leading to a uniform density.</li>
+</ul>
+<p>Model:</p>
+<ul>
+<li>Typically modeled by a Homogeneous Poisson Process, where the intensity λ (the number of points per unit area) is constant.</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="heterogeneous-spatial-point-patterns" class="level2">
+<h2 class="anchored" data-anchor-id="heterogeneous-spatial-point-patterns">Heterogeneous Spatial Point Patterns</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p>A heterogeneous spatial point pattern assumes that the intensity of points varies across the study area. The intensity function is not constant and may depend on spatial covariates, leading to non-uniform distribution.</p>
+<p><img src="img/image2-1b.png" class="img-fluid" width="500"></p>
+</div><div class="column" style="width:50%;">
+<p>Characteristics:</p>
+<ul>
+<li>The probability of observing a point varies across the space, often depending on underlying factors like geography, environmental conditions, or other spatial variables.</li>
+<li>The density of points can be higher in some regions and lower in others, leading to clusters or dispersed patterns.</li>
+<li>Modeled by an Inhomogeneous Poisson Process (IPP), where the intensity function λ(x,y) varies with location. The intensity can be a function of spatial covariates or other influences.</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="spatial-point-patterns-analysis-techniques" class="level2">
+<h2 class="anchored" data-anchor-id="spatial-point-patterns-analysis-techniques">Spatial Point Patterns Analysis Techniques</h2>
+<ul>
+<li>First-order vs Second-order Analysis of spatial point patterns.</li>
+</ul>
+<p><img src="img/image4-10.jpg" class="img-fluid"></p>
+<p>Reference: <a href="https://mgimond.github.io/Spatial/point-pattern-analysis.html#first-and-second-order-effects">11.4 First and second order effects of Intro to GIS and Spatial Analysis</a></p>
+<div class="notes">
+<p>The first-order properties describe the way in which the expected value (mean or average) of the spatial point pattern varies across space (i.e., the intensity of the spatial point pattern). Such properties are usually measured with the so-called quadrat analysis, nearest neighbour index and kernel estimation. Second-order properties describe the covariance (or correlation) between values of the spatial point pattern at different regions in space and are usually measured with the G function, K function and L function. Applied to point event data, both properties could be used to explore the spatial variation in the risk of being victimized by a crime, spatial and space-time clustering of criminal activities, and the raised incidence of criminal activities around point sources, such as robberies around ATM machines, subway entrances and exits, etc.</p>
+</div>
+<hr>
+<section id="first-order-spatial-point-patterns-analysis-techniques" class="level3">
+<h3 class="anchored" data-anchor-id="first-order-spatial-point-patterns-analysis-techniques">First-order Spatial Point Patterns Analysis Techniques</h3>
+<ul>
+<li>Density-based
+<ul>
+<li>Kernel density estimation</li>
+<li>Quadrat analysis,</li>
+</ul></li>
+<li>Distance-based
+<ul>
+<li>Nearest Neighbour Index</li>
+</ul></li>
+</ul>
+<hr>
+</section>
+<section id="basic-concept-of-density-based-measures" class="level3">
+<h3 class="anchored" data-anchor-id="basic-concept-of-density-based-measures">Basic concept of density-based measures</h3>
+<p><img src="img/image4-11.jpg" class="img-fluid"></p>
+</section>
+</section>
+<section id="kernel-density-estimation-silverman-1986" class="level2">
+<h2 class="anchored" data-anchor-id="kernel-density-estimation-silverman-1986">Kernel density estimation (Silverman 1986)</h2>
+<ul>
+<li>A method to compute the intensity of a point distribution.</li>
+</ul>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p>The general formula:</p>
+<p><img src="img/image4-19.jpg" class="img-fluid" width="450"></p>
+</div><div class="column" style="width:50%;">
+<p>Graphically</p>
+<p><img src="img/image4-20.jpg" class="img-fluid"></p>
+</div>
+</div>
+<hr>
+<section id="kde-step-1-computing-point-intensity" class="level3">
+<h3 class="anchored" data-anchor-id="kde-step-1-computing-point-intensity">KDE Step 1: Computing point intensity</h3>
+<p><img src="img/image4-21.jpg" class="img-fluid" width="317"></p>
+<hr>
+</section>
+<section id="kde-step-2-spatial-interpolation-using-kernel-function" class="level3">
+<h3 class="anchored" data-anchor-id="kde-step-2-spatial-interpolation-using-kernel-function">KDE Step 2: Spatial interpolation using kernel function</h3>
+<p><img src="img/image4-22.jpg" class="img-fluid"></p>
+<hr>
+</section>
+<section id="kde-map-of-childcare-services-singapore" class="level3">
+<h3 class="anchored" data-anchor-id="kde-map-of-childcare-services-singapore">KDE Map of Childcare Services, Singapore</h3>
+<p><img src="img/image4-20b.png" class="img-fluid"></p>
+<hr>
+</section>
+<section id="adaptive-bandwidth" class="level3">
+<h3 class="anchored" data-anchor-id="adaptive-bandwidth">Adaptive Bandwidth</h3>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p>Adaptive schemes adjust itself according to the density of data: - Shorter bandwidths where data are dense and longer where sparse.</p>
+<ul>
+<li>Finding nearest neighbors are one of the often used approaches.</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><img src="img/image4-24.jpg" class="img-fluid"></p>
+</div>
+</div>
+<hr>
+</section>
+<section id="fixed-bandwidth" class="level3">
+<h3 class="anchored" data-anchor-id="fixed-bandwidth">Fixed bandwidth</h3>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li><p>Might produce large estimate variances where data are sparse, while mask subtle local variations where data are dense.</p></li>
+<li><p>In extreme condition, fixed schemes might not be able to calibrate in local areas where data are too sparse to satisfy the calibration requirements (observations must be more than parameters).</p></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><img src="img/image4-23.jpg" class="img-fluid"></p>
+</div>
+</div>
+<hr>
+</section>
+<section id="quadrat-analysis-step-1" class="level3">
+<h3 class="anchored" data-anchor-id="quadrat-analysis-step-1">Quadrat Analysis – Step 1</h3>
+<div class="columns">
+<div class="column" style="width:70%;">
+<ul>
+<li>Divide the study area into subregion of equal size,
+<ul>
+<li>often squares, but don’t have to be.</li>
+</ul></li>
+</ul>
+<p><img src="img/image4-12.jpg" class="img-fluid" width="1007"></p>
+</div>
+</div>
+<hr>
+</section>
+<section id="quadrat-analysis-step-2" class="level3">
+<h3 class="anchored" data-anchor-id="quadrat-analysis-step-2">Quadrat Analysis – Step 2</h3>
+<div class="columns">
+<div class="column" style="width:70%;">
+<ul>
+<li>Count the frequency of events in each region.</li>
+</ul>
+<p><img src="img/image4-13.jpg" class="img-fluid" width="1214"></p>
+</div>
+</div>
+<hr>
+</section>
+<section id="quadrat-analysis-step-3" class="level3">
+<h3 class="anchored" data-anchor-id="quadrat-analysis-step-3">Quadrat Analysis – Step 3</h3>
+<div class="columns">
+<div class="column" style="width:70%;">
+<ul>
+<li>Calculate the intensity of events in each region.</li>
+</ul>
+<p><img src="img/image4-14.jpg" class="img-fluid"></p>
+</div>
+</div>
+<hr>
+</section>
+<section id="quadrat-analysis-step-4" class="level3">
+<h3 class="anchored" data-anchor-id="quadrat-analysis-step-4">Quadrat Analysis – Step 4</h3>
+<ul>
+<li>Calculate the quadrat statistics and perform CSR test.</li>
+</ul>
+<p><img src="img/image4-15.jpg" class="img-fluid"></p>
+<hr>
+</section>
+<section id="quadrat-analysis-variance-mean-ratio-vmr" class="level3">
+<h3 class="anchored" data-anchor-id="quadrat-analysis-variance-mean-ratio-vmr">Quadrat Analysis – Variance-Mean Ratio (VMR)</h3>
+<ul>
+<li><p>For an <strong>uniform</strong> distribution, the variance is zero, - therefore, we expect a variance-mean ratio <strong>close to 0</strong>.</p></li>
+<li><p>For a <strong>random</strong> distribution, the variance and mean are the same,</p>
+<ul>
+<li>therefore, we expect a variance-mean ratio <strong>close to 1</strong>.</li>
+</ul></li>
+<li><p>For a <strong>cluster</strong> distribution, the variance is relatively large,</p>
+<ul>
+<li>therefore, we expect a variance-mean ratio <strong>greater than 1</strong>.]</li>
+</ul></li>
+</ul>
+<hr>
+</section>
+<section id="complete-spatial-randomness-csr" class="level3">
+<h3 class="anchored" data-anchor-id="complete-spatial-randomness-csr">Complete Spatial Randomness (CSR)</h3>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li><p>CSR/IRP satisfy two conditions:</p>
+<ul>
+<li><p>Any event has equal probability of being in any location, a <strong>1st order</strong> effect.</p></li>
+<li><p>The location of one event is independent of the location of another event, a <strong>2nd order</strong> effect.</p></li>
+</ul></li>
+</ul>
+<p>Reference: <a href="https://mgimond.github.io/Spatial/hypothesis-testing.html">Chapter 12 Hypothesis testing of Intro to GIS and Spatial Analysis</a></p>
+</div><div class="column" style="width:50%;">
+<p><img src="img/image4-16.jpg" class="img-fluid"></p>
+</div>
+</div>
+<hr>
+</section>
+<section id="quadrat-analysis-the-interpretation" class="level3">
+<h3 class="anchored" data-anchor-id="quadrat-analysis-the-interpretation">Quadrat Analysis: The interpretation</h3>
+<div class="columns">
+<div class="column" style="width:70%;">
+<p><img src="img/image4-17.jpg" class="img-fluid"></p>
+</div>
+</div>
+<hr>
+</section>
+<section id="weaknesses-of-quadrat-analysis" class="level3">
+<h3 class="anchored" data-anchor-id="weaknesses-of-quadrat-analysis">Weaknesses of quadrat analysis</h3>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li><p>It is sensitive to the quadrat size.</p>
+<ul>
+<li>If the quadrat size is too small, they may contain only a couple of points, and</li>
+<li>If the quadrat size is too large, they may contain too many points.</li>
+</ul></li>
+<li><p>It is a measure of <strong>dispersion</strong> rather than a measure of <strong>pattern</strong>.</p></li>
+<li><p>It results in a single measure for the entire distribution, so variation within the region are not recognised.</p></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><img src="img/image4-18.jpg" class="img-fluid"></p>
+</div>
+</div>
+</section>
+</section>
+<section id="distance-based-nearest-neighbour-index" class="level2">
+<h2 class="anchored" data-anchor-id="distance-based-nearest-neighbour-index">Distance-based: Nearest Neighbour Index</h2>
+<section id="what-is-nearest-neighbour" class="level3">
+<h3 class="anchored" data-anchor-id="what-is-nearest-neighbour">What is Nearest Neighbour?</h3>
+<p>Direct distance from a point to its nearest neighbour.</p>
+<p><img src="img/image4-25.jpg" class="img-fluid"></p>
+</section>
+</section>
+<section id="nearest-neighbour-index" class="level2">
+<h2 class="anchored" data-anchor-id="nearest-neighbour-index">Nearest Neighbour Index</h2>
+<p>The Nearest Neighbour Index is expressed as the ratio of the <strong>Observed Mean Distance</strong> to the <strong>Expected Mean Distance</strong>.</p>
+<p><img src="img/image4-26.jpg" class="img-fluid"></p>
+<hr>
+<section id="calculating-nearest-neighbour-index" class="level3">
+<h3 class="anchored" data-anchor-id="calculating-nearest-neighbour-index">Calculating Nearest Neighbour Index</h3>
+<p><img src="img/image4-27.jpg" class="img-fluid"></p>
+<hr>
+</section>
+<section id="interpreting-nearest-neighbour-index" class="level3">
+<h3 class="anchored" data-anchor-id="interpreting-nearest-neighbour-index">Interpreting Nearest Neighbour Index</h3>
+<p>The expected distance is the average distance between neighbours in a hypothetical random distribution.</p>
+<ul>
+<li>If the index is less than 1, the pattern exhibits clustering,</li>
+<li>If the index is equal to 1, the patterns exhibits random, and</li>
+<li>If the index is greater than 1, the trend is toward dispersion or competition.</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/image4-28.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img" width="350"></p>
+</figure>
+</div>
+<hr>
+</section>
+<section id="the-test-statistics" class="level3">
+<h3 class="anchored" data-anchor-id="the-test-statistics">The test statistics</h3>
+<div class="columns">
+<div class="column" style="width:80%;">
+<ul>
+<li><p>Null Hypothesis: Points are randomly distributed</p></li>
+<li><p>Test statistics:</p></li>
+</ul>
+<p><img src="img/image4-29.jpg" class="img-fluid" width="295"></p>
+<ul>
+<li>Reject the null hypothesis if the z-score is large and p-value is smaller than the alpha value.</li>
+</ul>
+</div>
+</div>
+<hr>
+</section>
+<section id="interpreting-nearest-neighbour-index-1" class="level3">
+<h3 class="anchored" data-anchor-id="interpreting-nearest-neighbour-index-1">Interpreting Nearest Neighbour Index</h3>
+<div class="columns">
+<div class="column" style="width:70%;">
+<p><img src="img/image4-30.jpg" class="img-fluid"></p>
+<p>The p-value is smaller than 0.05 =&gt; Reject the null hypothesis that the point patterns are randomly distributed.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="g-function" class="level2">
+<h2 class="anchored" data-anchor-id="g-function">G function</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p>The formula</p>
+<p><img src="img/image4-31.jpg" class="img-fluid" width="505"></p>
+</div><div class="column" style="width:50%;">
+<p><img src="img/image4-32.jpg" class="img-fluid" width="502"></p>
+</div>
+</div>
+<hr>
+<section id="interpretation-of-g-function" class="level3">
+<h3 class="anchored" data-anchor-id="interpretation-of-g-function">Interpretation of G-function</h3>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p>The shape of G-function tells us the way the events are spaced in a point pattern.</p>
+<ul>
+<li><p>Clustered: G increases rapidly at short distance.</p></li>
+<li><p>Evenness: G increases slowly up to distance where most events spaced, then increases rapidly.</p></li>
+</ul>
+</div><div class="column">
+<p><img src="img/image4-33.jpg" class="img-fluid"></p>
+</div>
+</div>
+<hr>
+</section>
+<section id="how-do-we-tell-if-g-is-significant" class="level3">
+<h3 class="anchored" data-anchor-id="how-do-we-tell-if-g-is-significant">How do we tell if G is significant?</h3>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>The significant of any departure from CSR (either cluster or regularity) can be evaluated using simulated “confidence envelopes”</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><img src="img/image4-34.jpg" class="img-fluid"></p>
+</div>
+</div>
+<hr>
+</section>
+<section id="monte-carlo-simulation-test-of-csr" class="level3">
+<h3 class="anchored" data-anchor-id="monte-carlo-simulation-test-of-csr">Monte Carlo simulation test of CSR</h3>
+<ul>
+<li><p>Perform m independent simulation of n events (i.e.&nbsp;999) in the study region.</p></li>
+<li><p>For each simulated point pattern, estimate G(r) and use the maximum (95th) and minimum (5th) of these functions for the simulated patterns to define an upper and lower simulation envelope.</p></li>
+<li><p>If the estimated G(r) lies above the upper envelope or below the lower envelope, the estimated G(r) is statistically significant.</p></li>
+</ul>
+<hr>
+</section>
+<section id="the-significant-test-of-g-function" class="level3">
+<h3 class="anchored" data-anchor-id="the-significant-test-of-g-function">The significant test of G-function</h3>
+<p><img src="img/image4-35.jpg" class="img-fluid"></p>
+</section>
+</section>
+<section id="f-function" class="level2">
+<h2 class="anchored" data-anchor-id="f-function">F function</h2>
+<ul>
+<li>Select a sample of point locations anywhere in the study region at random
+<ul>
+<li>Determine minimum distance from each point to any event in the study area.</li>
+</ul></li>
+<li>Three steps:
+<ul>
+<li><p>Randomly select m points (p1, p2, ….., pn),</p></li>
+<li><p>Calculate dmin(pi,s) as the minimum distance from location pi to any event in the point patterns, and</p></li>
+<li><p>Calculate F(d).</p></li>
+</ul></li>
+</ul>
+<hr>
+<section id="the-f-function-formula" class="level3">
+<h3 class="anchored" data-anchor-id="the-f-function-formula">The F function formula</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/image4-36.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+<hr>
+</section>
+<section id="interpretation-of-f-function" class="level3">
+<h3 class="anchored" data-anchor-id="interpretation-of-f-function">Interpretation of F-function</h3>
+<ul>
+<li><p>Clustered = F(r) rises slowly at first, but more rapidly at longer distances.</p></li>
+<li><p>Evenness = F(r) rises rapidly at first, then slowly at longer distances.</p></li>
+</ul>
+<hr>
+</section>
+<section id="the-significant-test-of-f-function" class="level3">
+<h3 class="anchored" data-anchor-id="the-significant-test-of-f-function">The significant test of F-function</h3>
+<p><img src="img/image4-37.jpg" class="img-fluid"></p>
+<hr>
+</section>
+<section id="comparison-between-g-and-f" class="level3">
+<h3 class="anchored" data-anchor-id="comparison-between-g-and-f">Comparison between G and F</h3>
+<p><img src="img/image4-38.jpg" class="img-fluid"></p>
+</section>
+</section>
+<section id="ripleys-k-function-ripley-1981" class="level2">
+<h2 class="anchored" data-anchor-id="ripleys-k-function-ripley-1981">Ripley’s K function (Ripley, 1981)</h2>
+<ul>
+<li><p>Limitation of nearest neighbor distance method is that it uses only nearest distance</p></li>
+<li><p>Considers only the shortest scales of variation.</p></li>
+<li><p>K function uses more points.</p>
+<ul>
+<li>Provides an estimate of spatial dependence over a wider range of scales.</li>
+<li>Based on all the distances between events in the study area.</li>
+<li>Assumes isotropy over the region.</li>
+</ul></li>
+</ul>
+<hr>
+<section id="calculating-the-k-function" class="level3">
+<h3 class="anchored" data-anchor-id="calculating-the-k-function">Calculating the K function</h3>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li><p>Construct a circle of radius h around each point event(i).</p></li>
+<li><p>Count the number of other events (j) that fall inside this circle.</p></li>
+<li><p>Repeat these two steps for all points (i) and sum results.</p></li>
+<li><p>Increment h by a small amount and repeat the calculation.</p></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><img src="img/image4-39.jpg" class="img-fluid"></p>
+</div>
+</div>
+<hr>
+</section>
+<section id="k-function" class="level3">
+<h3 class="anchored" data-anchor-id="k-function">K function</h3>
+<div class="columns">
+<div class="column" style="width:90%;">
+<p>The formula:</p>
+<p><img src="img/image4-40.jpg" class="img-fluid" width="1153"></p>
+</div>
+</div>
+<hr>
+</section>
+<section id="the-k-function-complete-spatial-randomness-test" class="level3">
+<h3 class="anchored" data-anchor-id="the-k-function-complete-spatial-randomness-test">The K function complete spatial randomness test</h3>
+<ul>
+<li><p>K(h) can be plotted against different values of h.</p></li>
+<li><p>But what should K look like for no spatial dependence?</p></li>
+<li><p>Consider what K(h) should look like for a random point process (CSR)</p>
+<ul>
+<li>The probability of an event at any point in R is independent of what other events have occurred and equally likely anywhere in R</li>
+</ul></li>
+</ul>
+<hr>
+</section>
+<section id="interpreting-the-k-function-complete-spatial-randomness-test" class="level3">
+<h3 class="anchored" data-anchor-id="interpreting-the-k-function-complete-spatial-randomness-test">Interpreting the K function complete spatial randomness test</h3>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p>Under the assumption of CSR, the expected number of events within distance h of an event is:</p>
+<p><img src="img/image4-41.jpg" class="img-fluid"></p>
+<p>Compare K(h) to 𝜋ℎ^2</p>
+<ul>
+<li>K(h) &lt; 𝜋ℎ^2 if point pattern is regular</li>
+<li>K(h) &gt; 𝜋ℎ^2 if point pattern is clustered</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><img src="img/image4-42.jpg" class="img-fluid"></p>
+<ul>
+<li>Above the envelop: significant cluster pattern</li>
+<li>Below the envelop: significant regular</li>
+<li>Inside the envelop: CSR</li>
+</ul>
+</div>
+</div>
+<hr>
+</section>
+</section>
+<section id="the-l-function-besag-1977" class="level2">
+<h2 class="anchored" data-anchor-id="the-l-function-besag-1977">The L function (Besag 1977)</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p>In practice, K function will be normalised to obtained a benchmark of zero.</p>
+<p>The formula:</p>
+<p><img src="img/image4-43.jpg" class="img-fluid" width="448"></p>
+</div>
+</div>
+<hr>
+<section id="interpreting-the-l-function-complete-spatial-randomness-test" class="level3">
+<h3 class="anchored" data-anchor-id="interpreting-the-l-function-complete-spatial-randomness-test">Interpreting the L function complete spatial randomness test</h3>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div style="font-size: 0.80em">
+<ul>
+<li>When an observed L value is greater than its corresponding L(theo)(i.e.&nbsp;red break line) value for a particular distance and above the upper confidence envelop, spatial clustering for that distance is statistically significant (e.g.&nbsp;distance beyond C).</li>
+<li>When an observed L value is greater than its corresponding L(theo) value for a particular distance and lower than the upper confidence envelop, spatial clustering for that distance is statistically NOT significant (e.g.&nbsp;distance between B and C).</li>
+<li>When an observed L value is smaller than its corresponding L(theo) value for a particular distance and beyond the lower confidence envelop, spatial dispersion for that distance is statistically significant. - When an observed L value is smaller than its corresponding L(theo) value for a particular distance and within the lower confidence envelop, spatial dispersion for that distance is statistically NOT significant (e.g.&nbsp;distance between A and B).</li>
+</ul>
+</div>
+</div><div class="column" style="width:50%;">
+<div style="font-size: 0.80em">
+<ul>
+<li>The grey zone indicates the confident envelop (i.e.&nbsp;95%).</li>
+</ul>
+</div>
+<p><img src="img/image4-44.jpg" class="img-fluid"></p>
+</div>
+</div>
+<hr>
+</section>
+<section id="the-l-function-besag-1977-1" class="level3">
+<h3 class="anchored" data-anchor-id="the-l-function-besag-1977-1">The L function (Besag 1977)</h3>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p>The modified L function</p>
+<p><img src="img/image4-45.jpg" class="img-fluid" width="458"></p>
+<ul>
+<li><p>L(r)&gt;0 indicates that the observed distribution is geographically concentrated.</p></li>
+<li><p>L(r)&lt;0 implies dispersion.</p></li>
+<li><p>L(r)=0 indicates complete spatial randomness (CRS).</p></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><img src="img/image4-46.jpg" class="img-fluid"></p>
+</div>
+</div>
+</section>
+</section>
+<section id="monte-carlo-hypothesis-testing-in-spatstat" class="level2">
+<h2 class="anchored" data-anchor-id="monte-carlo-hypothesis-testing-in-spatstat">Monte Carlo hypothesis testing in spatstat</h2>
+<ul>
+<li>In spatial point pattern analysis, we usually test whether the observed pattern is consistent with some null model (e.g., Complete Spatial Randomness, CSR).</li>
+<li><strong>spatstat</strong> does this by simulating <code>nsim</code> realisations of the null model.</li>
+<li>For each simulation, it computes the test statistic (e.g., K-function, L-function, G-function, etc.) and compares it with the observed data.</li>
+</ul>
+<hr>
+<section id="role-of-nsim" class="level3">
+<h3 class="anchored" data-anchor-id="role-of-nsim">Role of nsim</h3>
+<ul>
+<li>nsim is the number of simulated patterns generated under the null hypothesis.</li>
+<li>A higher nsim means more accurate estimation of the sampling distribution, and more precise p-values.</li>
+<li>But p-values in Monte Carlo tests are discrete, and the smallest achievable p-value is</li>
+</ul>
+<p><img src="img/image4-47.jpg" class="img-fluid"></p>
+<p>For example:</p>
+<ul>
+<li>If nsim = 99, the smallest p-value you can report is 0.01.</li>
+<li>If nsim = 999, the smallest possible p-value is 0.001.</li>
+</ul>
+<p>So, larger nsim = finer resolution of p-values.</p>
+<hr>
+</section>
+<section id="confidence-level-and-envelopes-in-spatstat" class="level3">
+<h3 class="anchored" data-anchor-id="confidence-level-and-envelopes-in-spatstat">Confidence level and envelopes in spatstat</h3>
+<p>When you use <code>envelope()</code>:</p>
+<ul>
+<li>By default, you get pointwise simulation envelopes at a certain confidence level (e.g., 95%).</li>
+<li>The confidence level is related to how wide the simulation band is. For a 95% envelope:</li>
+<li>You drop the top 2.5% and bottom 2.5% of simulated values at each distance r.</li>
+</ul>
+<p>The achievable confidence level is constrained by nsim:</p>
+<ul>
+<li>For example, if nsim = 99, the finest possible two-tailed envelope is at 98% confidence (exclude the most extreme 1 value in each tail).</li>
+<li>To get a “true” 95% envelope, you’d need nsim divisible appropriately (but spatstat interpolates when necessary).</li>
+</ul>
+<hr>
+</section>
+<section id="confidence-level-and-envelopes-in-spatstat-1" class="level3">
+<h3 class="anchored" data-anchor-id="confidence-level-and-envelopes-in-spatstat-1">Confidence level and envelopes in spatstat</h3>
+<p>So the relationship is:</p>
+<p><img src="img/image4-48.jpg" class="img-fluid" width="265"></p>
+<hr>
+</section>
+<section id="rule-of-thumb-in-practice" class="level3">
+<h3 class="anchored" data-anchor-id="rule-of-thumb-in-practice">Rule of thumb in practice</h3>
+<ul>
+<li>Use at least nsim = 99 for quick tests, but prefer nsim = 999 or more if you want stable p-values and smooth envelopes.</li>
+<li>Report p-values in terms of Monte Carlo resolution (e.g., “p &lt; 0.05, based on 99 simulations” or “p &lt; 0.001, based on 999 simulations”).</li>
+</ul>
+</section>
+</section>
+<section id="references" class="level2">
+<h2 class="anchored" data-anchor-id="references">References</h2>
+<ul>
+<li><p><a href="https://mgimond.github.io/Spatial/point-pattern-analysis.html">Chapter 11 Point Pattern Analysis</a> of <strong>Intro to GIS and Spatial Analysis</strong>. Section 11.2, 11.3, 11.3.1 and 11.4</p></li>
+<li><p>GIS&amp;T Body of Knowledge <a href="https://gistbok.ucgis.org/bok-basic-page/welcome-gist-body-knowledge">AM-07-Point Pattern Analysis</a></p></li>
+<li><p>GIS&amp;T Body of Knowledge <a href="https://gistbok.ucgis.org/bok-topics/kernels-and-density-estimation">AM-08-Kernels and Density Estimation</a></p></li>
+<li><p><a href="https://www.directionsmag.com/article/3289">Analyzing Patterns in Business Point Data</a>, Directions Magazine March 17, 2005.</p></li>
+<li><p>O’Sullivan, D., and Unwin, D. (2010) <strong>Geographic Information Analysis</strong>, Second Edition. John Wiley &amp; Sons Inc., New Jersey, Canada. Chapter 5-6.</p></li>
+<li><p>Baddeley A., Rubak E. and Turner R. (2015) <strong>Spatial Point Patterns: Methodology and Applications with R</strong>, Chapman and Hall/CRC.</p></li>
+</ul>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

@@ -1,0 +1,66 @@
+project:
+  type: website
+
+website:
+  title: "ISSS626"
+  navbar:
+    background: "#e0ae24"
+    left:
+    - text: "Syllabus"
+      href: syllabus.qmd
+    - text: "Lesson Plan"
+      href: lesson.qmd
+    - text: "In-class Exercise"
+      menu:
+      - text: "In-class Exercise 1"
+        href: "In-class_Ex/In-class_Ex01/In-class_Ex01.html"
+      - text: "In-class Exercise 2"
+        href: "In-class_Ex/In-class_Ex02/In-class_Ex02-SPPA.html"
+      - text: "In-class Exercise 3a"
+        href: "In-class_Ex/In-class_Ex03/In-class_Ex03a.html"
+      - text: "In-class Exercise 3b"
+        href: "In-class_Ex/In-class_Ex03/In-class_Ex03b.html"  
+      - text: "In-class Exercise 4"
+        href: "In-class_Ex/In-class_Ex04/In-class_Ex04.html"
+      - text: "In-class Exercise 5"
+        href: "In-class_Ex/In-class_Ex05/In-class_Ex05-EHSA.html"
+      - text: "In-class Exercise 6"
+        href: "In-class_Ex/In-class_Ex06/In-class_Ex06-KickStarter.html"
+      - text: "In-class Exercise 7"
+        href: "In-class_Ex/In-class_Ex07/In-class_Ex07-gwr.html"
+      - text: "In-class Exercise 8"
+        href: "In-class_Ex/In-class_Ex08/In-class_Ex08.html"
+      - text: "In-class Exercise 9"
+        href: "In-class_Ex/In-class_Ex09/In-class_Ex09.html"
+      - text: "In-class Exercise 10"
+        href: "In-class_Ex/In-class_Ex10/In-class_Ex10.html"
+    - text: "Take-home Exercise"
+      menu:
+      - text: "Take-home Exercise 1"
+        href: Take-home_Ex01.html
+      - text: "Take-home Exercise 2"
+        href: Take-home_Ex02.html
+      - text: "Take-home Exercise 3a"
+        href: Take-home_Ex03a.html
+      - text: "Take-home Exercise 3b"
+        href: Take-home_Ex03b.html
+    right:
+    - text: "All About R"
+      menu: 
+        - text: "R Resouces"
+          href: R.html
+        - text: "Quarto"
+          href: Quarto.html
+        - text: "git and github"
+          href: git.html
+    - text: "Home"
+      href: index.qmd
+
+format:
+  html:
+    theme: flatly
+    css: styles.css
+    toc: true
+
+editor: visual
+

@@ -1,0 +1,60 @@
+---
+title: "Lesson 10: Spatial Interaction Models"
+date: "July 21, 2024"
+date-modified: "last-modified"
+output:
+  html:
+    toc: true
+    toc_depth: 3
+execute: 
+  freeze: true
+---
+
+In this lesson, you will learn the basic concepts and methods of Spatial Interaction Models.
+
+## Content
+
+- Basic Concepts of Spatial Interaction Models
+  - A Family of Gravity Models
+    - Unconstrained
+    - Origin constrained
+    - Destination constrained
+    - Doubly constrained
+  - Statistical Approach
+  - Interpreting and Visualising Modelling Results
+- Spatial Econometric Interaction Models
+  - The general formula
+    - What is Econometrics?
+    - What is Spatial Econometrics?
+  - Spatial Econometric Interaction Model Specifications
+
+## Lesson Slides and Hands-on Notes
+
+- Lesson 10 slides in [html](../lesson/Lesson10/Lesson10-SIM.html) format.
+
+- [Hands-on Exercise 10a: Processing and Visualising Flow Data](https://r4gdsa.netlify.app/chap15).
+
+- [Hands-on Exercise 10b: Calibrating Spatial Interaction Models with R](https://r4gdsa.netlify.app/chap16).
+
+## Self-reading Before Meet-up
+
+Read before lesson:
+
+- Kingsley E. Haynes and A. Stewart Fotheringham (2020) [**Gravity and Spatial Interaction Models**](https://researchrepository.wvu.edu/rri-web-book/16/), Web Book of Regional Science. Chapter 1 and Sub-section 2.2.
+- Farmer, C. and Oshan, T. (2017). ["Spatial interaction"](https://gistbok.ucgis.org/bok-topics/spatial-interaction). **The Geographic Information Science & Technology Body of Knowledge** (4th Quarter 2017 Edition), John P. Wilson (ed.). DOI: 10.22224/gistbok/2017.4.5 (link is external)
+- Flowerdew R, Aitkin M (1982) ["A method of fitting the gravity model based on the Poisson distribution"](https://www.academia.edu/38321611/A_Method_of_Fitting_the_Gravity_Model_Based_on_the_Poisson_Distribution_). *Journal of Regional Science*, 22: 191--202.
+- [" Chapter 6. Spatial econometrics - common models"](https://www.insee.fr/en/statistiques/fichier/3635545/imet131-j-chapitre-6.pdf), Handbook of Spatial Analysis.
+- James P. LeSage and R. Kelley Pace (2008) ["Spatial Econometric Modeling of Origin-Destination Flows"](https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1467-9787.2008.00573.x). *Journal of Regional Science*, Vol. 48, No. 5, pp. 941-967.
+
+## Reference
+
+- Pavel KLAPKA, et. al. (2013) ["The Footfall of Shopping Centre in Olomouc (CZECH REPUBLIC): An Application of The Gravity Model"](https://sciendo.com/de/article/10.2478/mgr-2013-0013), *Moravian Geographical Reports*, Vol 21, pp. 12-26.\
+- Yang Yue et. al. (2012) "Exploratory calibration of a spatial interaction model using taxi GPS trajectories", *Computers, Environment and Urban Systems*, 36 (2012) 140--153.
+- Morito Tsutsumi and Kazuki Tamesue (2012) "Intraregional flow problem in spatial econometric model for origin-destination flows", *Environment and Planning B: Planning and Design*, Vol. 39, pp. 1006-1015. Access via SMU e-journal.
+
+## All About R:
+
+- Paul Roback and Julie Legler (2020) **Beyond Multiple Linear Regression: Applied Generalized Linear Models and Multilevel Models in R**, CRC Press. On line version (January 26, 2021). [Chapter 4](https://bookdown.org/roback/bookdown-BeyondMLR/ch-poissonreg.html)
+- [Negative Binomial Regression](https://stats.idre.ucla.edu/r/dae/negative-binomial-regression/) and [Poisson Regression](https://stats.idre.ucla.edu/r/dae/poisson-regression/) from UCLA Institute for Digital Research & Education.
+- [spflow](https://lukece.github.io/spflow/index.html)
+- [Home-to-work commuting flows within the municipalities around Paris](https://lukece.github.io/spflow/articles/paris_commute_flows.html)

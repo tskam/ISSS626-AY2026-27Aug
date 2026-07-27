@@ -1,0 +1,1395 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.26">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Dr.&nbsp;Kam Tin Seong Assoc. Professor of Information Systems(Practice)">
+
+<title>Lesson 1: Fundamental of Geospatial Data Models and Modelling – ISSS626 Geospatial Analytics</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-5f49f16f97b4b358d01fa7acc334a7f0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">ISSS626 Geospatial Analytics</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../syllabus.html"> 
+<span class="menu-text">Syllabus</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../lesson.html"> 
+<span class="menu-text">Lesson Plan</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-in-class-exercise" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">In-class Exercise</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-in-class-exercise">    
+        <li>
+    <a class="dropdown-item" href="../../In-class_Ex/In-class_Ex01/In-class_Ex01.html">
+ <span class="dropdown-text">In-class Exercise 1</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../In-class_Ex/In-class_Ex02/In-class_Ex02-SPPA.html">
+ <span class="dropdown-text">In-class Exercise 2</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../In-class_Ex/In-class_Ex03/In-class_Ex03a.html">
+ <span class="dropdown-text">In-class Exercise 3a</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../In-class_Ex/In-class_Ex03/In-class_Ex03b.html">
+ <span class="dropdown-text">In-class Exercise 3b</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../In-class_Ex/In-class_Ex04/In-class_Ex04.html">
+ <span class="dropdown-text">In-class Exercise 4</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../In-class_Ex/In-class_Ex05/In-class_Ex05-EHSA.html">
+ <span class="dropdown-text">In-class Exercise 5</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../In-class_Ex/In-class_Ex06/In-class_Ex06-KickStarter.html">
+ <span class="dropdown-text">In-class Exercise 6</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../In-class_Ex/In-class_Ex07/In-class_Ex07-gwr.html">
+ <span class="dropdown-text">In-class Exercise 7</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../In-class_Ex/In-class_Ex08/In-class_Ex08.html">
+ <span class="dropdown-text">In-class Exercise 8</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../In-class_Ex/In-class_Ex09/In-class_Ex09.html">
+ <span class="dropdown-text">In-class Exercise 9</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../In-class_Ex/In-class_Ex10/In-class_Ex10.html">
+ <span class="dropdown-text">In-class Exercise 10</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-take-home-exercise" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Take-home Exercise</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-take-home-exercise">    
+        <li>
+    <a class="dropdown-item" href="../../Take-home_Ex01.html">
+ <span class="dropdown-text">Take-home Exercise 1</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../Take-home_Ex02.html">
+ <span class="dropdown-text">Take-home Exercise 2</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../Take-home_Ex03a.html">
+ <span class="dropdown-text">Take-home Exercise 3a</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../Take-home_Ex03b.html">
+ <span class="dropdown-text">Take-home Exercise 3b</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-all-about-r" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">All About R</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-all-about-r">    
+        <li>
+    <a class="dropdown-item" href="../../R.html">
+ <span class="dropdown-text">R Resouces</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../Quarto.html">
+ <span class="dropdown-text">Quarto</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../git.html">
+ <span class="dropdown-text">git and github</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#content" id="toc-content" class="nav-link active" data-scroll-target="#content">Content</a></li>
+  <li><a href="#geospatial-data-models" id="toc-geospatial-data-models" class="nav-link" data-scroll-target="#geospatial-data-models">Geospatial Data Models</a>
+  <ul class="collapse">
+  <li><a href="#why-should-we-worry-about" id="toc-why-should-we-worry-about" class="nav-link" data-scroll-target="#why-should-we-worry-about">Why should we worry about?</a></li>
+  </ul></li>
+  <li><a href="#basic-spatial-data-models" id="toc-basic-spatial-data-models" class="nav-link" data-scroll-target="#basic-spatial-data-models">Basic Spatial Data Models</a>
+  <ul class="collapse">
+  <li><a href="#vector-data-models" id="toc-vector-data-models" class="nav-link" data-scroll-target="#vector-data-models">Vector Data Models</a></li>
+  <li><a href="#raster-data-models" id="toc-raster-data-models" class="nav-link" data-scroll-target="#raster-data-models">Raster Data Models</a></li>
+  </ul></li>
+  <li><a href="#coordinate-systems-and-map-projections" id="toc-coordinate-systems-and-map-projections" class="nav-link" data-scroll-target="#coordinate-systems-and-map-projections">Coordinate Systems and Map Projections</a>
+  <ul class="collapse">
+  <li><a href="#what-is-a-coordinate-system" id="toc-what-is-a-coordinate-system" class="nav-link" data-scroll-target="#what-is-a-coordinate-system">What is a coordinate system?</a></li>
+  <li><a href="#geographical-coordinate-systems" id="toc-geographical-coordinate-systems" class="nav-link" data-scroll-target="#geographical-coordinate-systems">Geographical Coordinate Systems</a></li>
+  <li><a href="#projected-coordinate-systems-pcs" id="toc-projected-coordinate-systems-pcs" class="nav-link" data-scroll-target="#projected-coordinate-systems-pcs">Projected Coordinate Systems (PCS)</a></li>
+  <li><a href="#singapore-projected-coordinate-system" id="toc-singapore-projected-coordinate-system" class="nav-link" data-scroll-target="#singapore-projected-coordinate-system">Singapore Projected Coordinate System</a></li>
+  <li><a href="#coordinates-reference-systems-in-r" id="toc-coordinates-reference-systems-in-r" class="nav-link" data-scroll-target="#coordinates-reference-systems-in-r">Coordinates Reference Systems in R</a></li>
+  </ul></li>
+  <li><a href="#standard-for-geospatial-data-handling-and-analysis" id="toc-standard-for-geospatial-data-handling-and-analysis" class="nav-link" data-scroll-target="#standard-for-geospatial-data-handling-and-analysis">Standard for Geospatial Data Handling and Analysis</a></li>
+  <li><a href="#an-introduction-to-simple-features" id="toc-an-introduction-to-simple-features" class="nav-link" data-scroll-target="#an-introduction-to-simple-features">An introduction to simple features</a>
+  <ul class="collapse">
+  <li><a href="#simple-features-specification" id="toc-simple-features-specification" class="nav-link" data-scroll-target="#simple-features-specification">Simple features specification</a></li>
+  <li><a href="#commonly-used-simple-features" id="toc-commonly-used-simple-features" class="nav-link" data-scroll-target="#commonly-used-simple-features">Commonly used simple features</a></li>
+  <li><a href="#simple-features-how-they-look-like" id="toc-simple-features-how-they-look-like" class="nav-link" data-scroll-target="#simple-features-how-they-look-like">Simple Features: How they look like?</a></li>
+  <li><a href="#simple-features-how-they-look-like-1" id="toc-simple-features-how-they-look-like-1" class="nav-link" data-scroll-target="#simple-features-how-they-look-like-1">Simple Features: How they look like?</a></li>
+  <li><a href="#simple-features-how-they-look-like-2" id="toc-simple-features-how-they-look-like-2" class="nav-link" data-scroll-target="#simple-features-how-they-look-like-2">Simple Features: How they look like?</a></li>
+  </ul></li>
+  <li><a href="#geospatial-data-object-framework" id="toc-geospatial-data-object-framework" class="nav-link" data-scroll-target="#geospatial-data-object-framework">Geospatial Data Object Framework</a></li>
+  <li><a href="#r-packages-that-support-spatial-classes" id="toc-r-packages-that-support-spatial-classes" class="nav-link" data-scroll-target="#r-packages-that-support-spatial-classes">R packages that support spatial classes</a></li>
+  <li><a href="#introducing-sf-package" id="toc-introducing-sf-package" class="nav-link" data-scroll-target="#introducing-sf-package">Introducing sf Package</a>
+  <ul class="collapse">
+  <li><a href="#sf-package-dependencies" id="toc-sf-package-dependencies" class="nav-link" data-scroll-target="#sf-package-dependencies">sf package dependencies</a></li>
+  <li><a href="#sf-tidyverse" id="toc-sf-tidyverse" class="nav-link" data-scroll-target="#sf-tidyverse">sf &amp; tidyverse</a></li>
+  <li><a href="#what-is-so-special-about-sf" id="toc-what-is-so-special-about-sf" class="nav-link" data-scroll-target="#what-is-so-special-about-sf">What is so special about sf?</a></li>
+  <li><a href="#sfg-geometry-for-one-feature" id="toc-sfg-geometry-for-one-feature" class="nav-link" data-scroll-target="#sfg-geometry-for-one-feature">sfg : geometry for one feature</a></li>
+  <li><a href="#sf-objects-with-simple-features" id="toc-sf-objects-with-simple-features" class="nav-link" data-scroll-target="#sf-objects-with-simple-features">sf: objects with simple features</a></li>
+  </ul></li>
+  <li><a href="#sf-functions" id="toc-sf-functions" class="nav-link" data-scroll-target="#sf-functions">sf functions</a>
+  <ul class="collapse">
+  <li><a href="#geospatial-data-handling-functions" id="toc-geospatial-data-handling-functions" class="nav-link" data-scroll-target="#geospatial-data-handling-functions">Geospatial data handling functions</a></li>
+  <li><a href="#popular-geospatial-data-format-supported-by-read_st-esri-shapefile" id="toc-popular-geospatial-data-format-supported-by-read_st-esri-shapefile" class="nav-link" data-scroll-target="#popular-geospatial-data-format-supported-by-read_st-esri-shapefile">Popular geospatial data format supported by <em>read_st()</em>: ESRI shapefile</a></li>
+  <li><a href="#other-vector-gis-formats" id="toc-other-vector-gis-formats" class="nav-link" data-scroll-target="#other-vector-gis-formats">Other vector GIS formats</a></li>
+  <li><a href="#geometric-confirmation" id="toc-geometric-confirmation" class="nav-link" data-scroll-target="#geometric-confirmation">Geometric confirmation</a></li>
+  <li><a href="#sf-methods" id="toc-sf-methods" class="nav-link" data-scroll-target="#sf-methods">sf Methods</a></li>
+  <li><a href="#sf-methods-1" id="toc-sf-methods-1" class="nav-link" data-scroll-target="#sf-methods-1">sf Methods</a></li>
+  <li><a href="#manipulating-geometries" id="toc-manipulating-geometries" class="nav-link" data-scroll-target="#manipulating-geometries">Manipulating geometries</a></li>
+  <li><a href="#convenience-functions" id="toc-convenience-functions" class="nav-link" data-scroll-target="#convenience-functions">Convenience functions</a></li>
+  </ul></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a>
+  <ul class="collapse">
+  <li><a href="#all-about-sf-package" id="toc-all-about-sf-package" class="nav-link" data-scroll-target="#all-about-sf-package">All About <strong>sf</strong> package</a></li>
+  </ul></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="Lesson01-Geospatial_Data.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Lesson 1: Fundamental of Geospatial Data Models and Modelling</h1>
+</div>
+
+
+<div class="quarto-title-meta-author">
+  <div class="quarto-title-meta-heading">Author</div>
+  <div class="quarto-title-meta-heading">Affiliation</div>
+  
+    <div class="quarto-title-meta-contents">
+    <p class="author">Dr.&nbsp;Kam Tin Seong<br>Assoc. Professor of Information Systems(Practice) </p>
+  </div>
+  <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            School of Computing and Information Systems,<br>Singapore Management University
+          </p>
+      </div>
+  </div>
+
+<div class="quarto-title-meta">
+
+      
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">21/07/2026</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="content" class="level2">
+<h2 class="anchored" data-anchor-id="content">Content</h2>
+<ul>
+<li><p>An Overview of Geospatial Data Models</p>
+<ul>
+<li>Vector and raster data model</li>
+<li>Coordinate systems and map projection</li>
+</ul></li>
+<li><p>Vector Data Wrangling and Analysis Methods</p></li>
+<li><p>Raster Data Wrangling and Analysis Methods</p></li>
+</ul>
+<div class="notes">
+<p>This lesson consists of two parts. First, I will talk about Geospatial Data Models. For students who have taken SMT201 GIS for Urban Planning, this is not new at all. However, for students who did not read SMT201, this will be new. Anyway, the focus of this section will be on R. Hence, even for students who have taken SMT201 before, this will be a good revision.</p>
+<p>In part two of this lesson, I will introduce sp package. It is a relatively new R package specially developed to handle geospatial data R using tidyverse principle.</p>
+</div>
+</section>
+<section id="geospatial-data-models" class="level2">
+<h2 class="anchored" data-anchor-id="geospatial-data-models">Geospatial Data Models</h2>
+<section id="why-should-we-worry-about" class="level3">
+<h3 class="anchored" data-anchor-id="why-should-we-worry-about">Why should we worry about?</h3>
+<p><img src="img/image2-1.jpg" class="img-fluid"></p>
+<div class="notes">
+<p>It is important for us to note that what ever data capture in a database is a model of the real world. When we say model, this means that it is a simplify version of the real world and not the real world themselves.</p>
+</div>
+</section>
+</section>
+<section id="basic-spatial-data-models" class="level2">
+<h2 class="anchored" data-anchor-id="basic-spatial-data-models">Basic Spatial Data Models</h2>
+<ul>
+<li>Vector - implementation of discrete object conceptual model
+<ul>
+<li>Point, line and polygon representations.</li>
+<li>Widely used in cartography, and network analysis.</li>
+</ul></li>
+<li>Raster – implementation of field conceptual model
+<ul>
+<li>Array of cells used to represent objects.</li>
+<li>Useful as background maps and for spatial analysis.</li>
+</ul></li>
+</ul>
+<div class="notes">
+<p>In general, there are two types of geospatial data models, namely vector and raster data models.</p>
+<p>Vector data model tends to be used to store geospatial data that are discrete in nature. For example bus stop, building footprint, planning area.</p>
+<p>Raster data model, one the other hands, are used to store continuous fenomena such as air polution, elevation and precipitation.</p>
+</div>
+<hr>
+<section id="vector-data-models" class="level3">
+<h3 class="anchored" data-anchor-id="vector-data-models">Vector Data Models</h3>
+<ul>
+<li>There are three basic geometric primitives, namely: <strong>points</strong>, <strong>lines (or polylines)</strong> and <strong>polygons</strong>.</li>
+</ul>
+<p><img src="img/image2-2.jpg" class="img-fluid"></p>
+<div class="notes">
+<p>For vector data model, there are three most commonly used geometric primitives, namely: points, lines and polygons.</p>
+<p>In this figure, building footprints are represented by polygon features, road reserves represented by polyline features, and convenient stores are represented by point features.</p>
+<p>It it important to note that the geospatial information content of these three features are not the same.</p>
+<ul>
+<li>A point is composed of one coordinate pair representing a specific location in a coordinate system.</li>
+<li>A line or polyline is composed of a sequence of two or more coordinate pairs called vertices. For line beside the location information we also know the length.</li>
+<li>A polygon is composed of three or more line segments whose starting and ending coordinate pairs are the same. For polygon, we know location, length (i.e.&nbsp;parameter) and area.</li>
+</ul>
+</div>
+<hr>
+</section>
+<section id="raster-data-models" class="level3">
+<h3 class="anchored" data-anchor-id="raster-data-models">Raster Data Models</h3>
+<ul>
+<li>All raster formats are basically the same
+<ul>
+<li>Cells organized in a matrix of rows and columns.</li>
+<li>Content is more important than format: data or picture?</li>
+</ul></li>
+</ul>
+<p><img src="img/image2-3.jpg" class="img-fluid"></p>
+<div class="notes">
+<p>Different from vector data model, a single feature type is used to represent the real world. The most commonly used geometric is grid. Also note that in raster data model, the observed values (i.e.&nbsp;precipitation) are encoded explicitly on the cells. In general a value between 0-255 (binary data strcuture) is used. If the value is greater than 255, streching will be applied.</p>
+</div>
+</section>
+</section>
+<section id="coordinate-systems-and-map-projections" class="level2">
+<h2 class="anchored" data-anchor-id="coordinate-systems-and-map-projections">Coordinate Systems and Map Projections</h2>
+<section id="what-is-a-coordinate-system" class="level3">
+<h3 class="anchored" data-anchor-id="what-is-a-coordinate-system">What is a coordinate system?</h3>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p>A coordinate system is an important property of an geospatial data. It provides a location reference to the geospatial data.</p>
+<ul>
+<li>There are two common types of coordinate systems used in mapping, namely: <strong>geographic coordinate systems</strong> and <strong>projected coordinate system</strong>.</li>
+</ul>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Further Reading
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Refer to this <a href="http://en.wikipedia.org/wiki/Map_projection">article</a> and <a href="https://mgimond.github.io/Spatial/chp09_0.html">Chapter 9 Coordinate Systems</a> to learn more about map projection.</li>
+</ul>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<p><img src="img/image2-4a.jpg" class="img-fluid"></p>
+</div>
+</div>
+<div class="notes">
+<ul>
+<li><p>A coordinate system is a reference system used to represent the locations of geographic features, imagery, and observations such as GPS locations within a common geographic framework.</p></li>
+<li><p>Each coordinate system is defined by:</p>
+<ul>
+<li>Its measurement framework which is either geographic (in which spherical coordinates are measured from the earth’s center) or planimetric (in which the earth’s coordinates are projected onto a two-dimensional planar surface).</li>
+<li>Unit of measurement (typically feet or meters for projected coordinate systems or decimal degrees for latitude–longitude).</li>
+<li>The definition of the map projection for projected coordinate systems.</li>
+<li>Other measurement system properties such as a spheroid of reference, a datum, and projection parameters like one or more standard parallels, a central meridian, and possible shifts in the x- and y-directions.</li>
+</ul></li>
+</ul>
+</div>
+<hr>
+</section>
+<section id="geographical-coordinate-systems" class="level3">
+<h3 class="anchored" data-anchor-id="geographical-coordinate-systems">Geographical Coordinate Systems</h3>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li><p>GCS define locations on the earth using a three-dimensional spherical surface. For example, WGS84.</p></li>
+<li><p>They provides accuracy position information. Unit of measurement will be in either decimal degree or degree-minute-second format.</p></li>
+<li><p>GCS, however, are not appropriate for distance and area measurements. In this figure, it is clear that 1 degree distance at the north pole is relatively shorter than 1 degree at the equator.</p></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/image2-4.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Further Reading
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Refer to <a href="https://mgimond.github.io/Spatial/chp09_0.html#geographic-coordinate-systems">9.1 Geographic Coordinate Systems</a> to learn more about GCS.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<hr>
+</section>
+<section id="projected-coordinate-systems-pcs" class="level3">
+<h3 class="anchored" data-anchor-id="projected-coordinate-systems-pcs">Projected Coordinate Systems (PCS)</h3>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li><p>Based on a map projection such as transverse Mercator, Albers equal area, or Robinson.</p></li>
+<li><p>PCS provides consistent length and area measurement across space. Hence, it is important to transform a geospatial data from GCS to PCS before performing geospatial analysis.</p></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/image2-5.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Further Reading
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Refer to <a href="https://mgimond.github.io/Spatial/chp09_0.html#projected-coordinate-systems">9.2 Projected Coordinate Systems</a> to learn more about GCS.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="notes">
+<p>A <strong>projected coordinate system</strong> based on a map projection such as transverse Mercator, Albers equal area, or Robinson, all of which (along with numerous other map projection models) provide various mechanisms to project maps of the earth’s spherical surface onto a two-dimensional Cartesian coordinate plane.</p>
+<p>Projected coordinate systems are sometimes referred to as <strong>map projections</strong>. For example, SVY21, the national projected coordinate system of Singapore.</p>
+</div>
+<hr>
+</section>
+<section id="singapore-projected-coordinate-system" class="level3">
+<h3 class="anchored" data-anchor-id="singapore-projected-coordinate-system">Singapore Projected Coordinate System</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/image2-6.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img" width="640"></p>
+</figure>
+</div>
+<p><a href="https://epsg.io/">epsg.io</a> provides a comprehensive list of country coordinate systems such as <a href="https://epsg.io/3414">svy21</a>.</p>
+<div class="notes">
+<p>Each country will have her own projected coordinate system. Some country have more than one type of Project Coordinate Systems.</p>
+<p>There are at least three coordinate systems commonly used in Singapore. They are svy21, Kertau Cassini 1968, and Rectified Skewed Orthomorphic (RSO). RSO is used in military and topographical mapping and svy21 is used for land and engineering surveying, cadastre, landuse and infrastructure mapping.</p>
+</div>
+<hr>
+</section>
+<section id="coordinates-reference-systems-in-r" class="level3">
+<h3 class="anchored" data-anchor-id="coordinates-reference-systems-in-r">Coordinates Reference Systems in R</h3>
+<ul>
+<li>In R, the notation used to describe the CRS is <strong>proj4string</strong> from the <strong>PROJ.4</strong> library. It looks like this:</li>
+</ul>
+<blockquote class="blockquote">
+<p>+proj=tmerc +lat_0=1.366666666666667 +lon_0=103.8333333333333 +k=1 +x_0=28001.642 +y_0=38744.572 +ellps=WGS84 +units=m +no_defs</p>
+</blockquote>
+<ul>
+<li>This library is interfaced with R in the <a href="http://rgdal.r-forge.r-project.org/"><strong>rgdal</strong></a> package, and the CRS class is defined partly in <strong>sp</strong>, partly in <strong>rgdal</strong>.</li>
+<li>A <strong>CRS</strong> object is defined as a character NA string or a valid PROJ.4 CRS definition.</li>
+</ul>
+<div class="notes">
+<p>You can break down the proj4 string into its individual components (again, separated by + signs) as follows:</p>
+<ul>
+<li>+proj=tmerc: the projection is Transverse Mercator</li>
+<li>+lat_0: Latitude of origin</li>
+<li>+lon_0: Central meridian</li>
+<li>+k: Scaling factor</li>
+<li>+x_0: False easting</li>
+<li>+y_0: False northing</li>
+<li>+units=m: the units for the coordinates are in METERS</li>
+<li>+ellps=WGS84: the ellipsoid (how the earth’s roundness is calculated) for the data is WGS84</li>
+<li>The EPSG list among other sources is used in the workhorse PROJ.4 library, which as implemented by Frank Warmerdam handles transformation of spatial positions between different CRS.</li>
+</ul>
+</div>
+</section>
+</section>
+<section id="standard-for-geospatial-data-handling-and-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="standard-for-geospatial-data-handling-and-analysis">Standard for Geospatial Data Handling and Analysis</h2>
+<p><img src="img/image2-20.jpg" class="img-fluid"></p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Further Reading
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>For more information, visit this <a href="https://www.ogc.org/standards/sfa#overview">link</a>.</p>
+</div>
+</div>
+<div class="notes">
+<p>The OGC OpenGIS Implementation Standard for Geographic Information / ISO 19125 defines:</p>
+<ul>
+<li><strong>Geometric objects</strong> which can be of type point, line, polygon, multi-point, etc, and are associated to a given Coordinate Reference System;</li>
+<li><strong>Methods on geometric objects</strong> return properties like dimension, boundary, area, centroid, etc;</li>
+<li><strong>Methods for testing spatial relations between geometric objects</strong> equals, disjoint, intersects, touches, crosses, within, contains, overlaps and relate, which returns TRUE or FALSE;</li>
+<li><strong>Methods that support spatial analysis</strong> distance, which returns a distance, and buffer, convex hull, intersection, union, difference, and symmetric difference, which returns new geometric objects.</li>
+</ul>
+<p>Source: www.opengeospatial.org/standards/sfa</p>
+</div>
+</section>
+<section id="an-introduction-to-simple-features" class="level2">
+<h2 class="anchored" data-anchor-id="an-introduction-to-simple-features">An introduction to simple features</h2>
+<ul>
+<li><p><strong>feature</strong>: abstraction of real world phenomena (type or instance); has a geometry and other attributes (properties)</p></li>
+<li><p><strong>simple feature</strong>: feature with all geometric attributes described piecewise by straight line or planar interpolation between sets of points (no curves)</p></li>
+<li><p>It is a hierarchical data model that simplifies geographic data by condensing a complex range of geographic forms into a single geometry class.</p></li>
+</ul>
+<hr>
+<section id="simple-features-specification" class="level3">
+<h3 class="anchored" data-anchor-id="simple-features-specification">Simple features specification</h3>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Simple_Features"><em>Simple features specification</em></a> is an open standard developed and endorsed by the Open Geospatial Consortium (OGC) to represent a wide range of geographic information.</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/image2-8.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+<div class="notes">
+<p>There are a total of 17 geometric types in OGC Simple Features specification. They are:</p>
+</div>
+<hr>
+</section>
+<section id="commonly-used-simple-features" class="level3">
+<h3 class="anchored" data-anchor-id="commonly-used-simple-features">Commonly used simple features</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/image2-9.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+<div class="notes">
+<p>Only 7 out of 17 possible types of simple feature are currently used in the vast majority of GIS operations. They are:</p>
+</div>
+<hr>
+</section>
+<section id="simple-features-how-they-look-like" class="level3">
+<h3 class="anchored" data-anchor-id="simple-features-how-they-look-like">Simple Features: How they look like?</h3>
+<p><img src="img/image2-11.jpg" class="img-fluid"></p>
+<hr>
+</section>
+<section id="simple-features-how-they-look-like-1" class="level3">
+<h3 class="anchored" data-anchor-id="simple-features-how-they-look-like-1">Simple Features: How they look like?</h3>
+<p><img src="img/image2-12.jpg" class="img-fluid"></p>
+<hr>
+</section>
+<section id="simple-features-how-they-look-like-2" class="level3">
+<h3 class="anchored" data-anchor-id="simple-features-how-they-look-like-2">Simple Features: How they look like?</h3>
+<ul>
+<li>Geometry collection: <span style="font-family: Courier New; font-size: 0.85em">GEOMETRYCOLLECTION (MULTIPOINT (5 2, 1 3, 3 4, 3 2), LINESTRING (1 5, 4 4, 4 1, 2 2, 3 2))</span></li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/image2-12.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+</section>
+</section>
+<section id="geospatial-data-object-framework" class="level2">
+<h2 class="anchored" data-anchor-id="geospatial-data-object-framework">Geospatial Data Object Framework</h2>
+<ul>
+<li><p>To begin with, all contributed packages for handling spatial data in R had different representations of the data. This made it difficult to exchange data both within R between packages, and between R and external le formats and applications.</p></li>
+<li><p>The first general package to provide classes and methods for spatial data types that was developed for R is called <a href="https://cran.r-project.org/web/packages/sp/vignettes/intro_sp.pdf"><strong>sp</strong></a>. It was first released on CRAN in 2005.</p></li>
+<li><p>In late October 2016, <a href="https://journal.r-project.org/archive/2018/RJ-2018-009/RJ-2018-009.pdf"><strong>sf</strong></a> was first released on CRAN to provide standardised support for vector data in R.</p></li>
+</ul>
+</section>
+<section id="r-packages-that-support-spatial-classes" class="level2">
+<h2 class="anchored" data-anchor-id="r-packages-that-support-spatial-classes">R packages that support spatial classes</h2>
+<p>In general, three R packages will be used to handle vector-based geospatial data in spatial classes, they are:</p>
+<ul>
+<li><p><a href="https://cran.r-project.org/web/packages/sp/index.html"><strong>sp</strong></a> provides classes and methods for dealing with spatial data in R.</p></li>
+<li><p><a href="https://cran.r-project.org/web/packages/rgdal/index.html"><strong>rgdal</strong></a> allows R to understand the structure of a geospatial data file by providing functions to read and convert geospatial data into easy-to-work-with R dataframes.</p></li>
+<li><p><a href="https://cran.r-project.org/web/packages/rgeos/index.html"><strong>rgeos</strong></a> implements the methods of the OGC standard.</p></li>
+</ul>
+</section>
+<section id="introducing-sf-package" class="level2">
+<h2 class="anchored" data-anchor-id="introducing-sf-package">Introducing sf Package</h2>
+<ul>
+<li><a href="https://cran.r-project.org/web/packages/sf/index.html"><strong>sf</strong></a> package provides a syntax and data-structures which are coherent with the <a href="https://www.tidyverse.org/">tidyverse</a>.</li>
+<li>A quick introduction can be found <a href="https://journal.r-project.org/archive/2018/RJ-2018-009/index.html">here</a>.</li>
+<li>For more detail, visit this <a href="https://r-spatial.github.io/sf/">link</a>.</li>
+</ul>
+<p><img src="img/image2-10.jpg" class="img-fluid"></p>
+<hr>
+<section id="sf-package-dependencies" class="level3">
+<h3 class="anchored" data-anchor-id="sf-package-dependencies">sf package dependencies</h3>
+<p><img src="img/image2-22.jpg" class="img-fluid"></p>
+<p>Source: <a href="https://github.com/edzer/rstudio_conf">Tidy spatial data analysis</a></p>
+<div class="notes">
+<p>The sf package depends on several external software components (installed along with the R package27), most importantly GDAL, GEOS and PROJ (Figure 7.3). These well-tested and popular open-source components are common to numerous open-source and commercial software for spatial analysis, such as QGIS and PostGIS.</p>
+</div>
+<hr>
+</section>
+<section id="sf-tidyverse" class="level3">
+<h3 class="anchored" data-anchor-id="sf-tidyverse">sf &amp; tidyverse</h3>
+<ul>
+<li>sf spatial objects are data.frames (or tibbles)</li>
+<li>you can always un-sf, and work with tbl_df or data.frame having an sfc list-column</li>
+<li>sf methods for filter, arrange, distinct, group_by, ungroup, mutate, select have sticky geometry</li>
+<li><em>st_join()</em> joins tables based on a spatial predicate</li>
+<li>summarise unions geometry by group (or altogether)</li>
+</ul>
+<div class="notes">
+<p>Another important feature of sf package is that it is designed base on tidyverse philosophy.</p>
+</div>
+<hr>
+</section>
+<section id="what-is-so-special-about-sf" class="level3">
+<h3 class="anchored" data-anchor-id="what-is-so-special-about-sf">What is so special about sf?</h3>
+<ul>
+<li>It builds upon the <a href="https://en.wikipedia.org/wiki/Simple_Features">simple features standard</a> (not R specific!), represents natively in R all 17 simple feature types for all dimensions (XY, XYZ, XYM, XYZM),</li>
+<li>uses S3 classes: simple features are data.frame objects (or tibbles) that have a geometry list-column,</li>
+<li>interfaces to GEOS to support the DE9-IM,</li>
+<li>interfaces to GDAL with driver dependent dataset or layer creation options, Date and DateTime (POSIXct) columns, and coordinate reference system,</li>
+<li>transformations through PROJ.4,</li>
+<li>provides fast I/O with GDAL and GEOS using well-known-binary written in C++/Rcpp, and</li>
+<li>directly reads from and writes to spatial databases such as PostGIS using DBI.</li>
+</ul>
+<hr>
+</section>
+<section id="sfg-geometry-for-one-feature" class="level3">
+<h3 class="anchored" data-anchor-id="sfg-geometry-for-one-feature">sfg : geometry for one feature</h3>
+<p><img src="img/image2-13.jpg" class="img-fluid"></p>
+<hr>
+</section>
+<section id="sf-objects-with-simple-features" class="level3">
+<h3 class="anchored" data-anchor-id="sf-objects-with-simple-features">sf: objects with simple features</h3>
+<p><img src="img/image2-14.jpg" class="img-fluid"></p>
+<div class="notes">
+<ul>
+<li>In green a <strong>simple feature</strong>: a single record, or data.frame row, consisting of attributes and geometry.</li>
+<li>In blue a single <strong>simple feature geometry</strong> (an object of class <strong>sfg</strong>).</li>
+<li>In red a <strong>simple feature list-column</strong> (an object of class <strong>sfc</strong>, which is a column in the data.frame).</li>
+</ul>
+<p>One of the attributes of a geometry list-column (sfc) is the precision: a double number that, when non-zero, causes some rounding during conversion to WKB, which might help certain geometrical operations succeed that would otherwise fail due to floating point representation.</p>
+<p>The model is that of GEOS, which copies from the Java Topology Suite (JTS), and works like this:</p>
+<ul>
+<li>if precision is zero (default, unspecified), nothing is modified.</li>
+<li>negative values convert to float (4-byte real) precision.</li>
+<li>positive values convert to round(x*precision)/precision.</li>
+</ul>
+</div>
+<hr>
+</section>
+</section>
+<section id="sf-functions" class="level2">
+<h2 class="anchored" data-anchor-id="sf-functions">sf functions</h2>
+<ul>
+<li><p>Geospatial data handling</p></li>
+<li><p>Geometric confirmation</p></li>
+<li><p>Geometric operations</p></li>
+<li><p>Geometry creation</p></li>
+<li><p>Geometry operations</p></li>
+<li><p>Geometric measurement</p></li>
+</ul>
+<hr>
+<section id="geospatial-data-handling-functions" class="level3">
+<h3 class="anchored" data-anchor-id="geospatial-data-handling-functions">Geospatial data handling functions</h3>
+<ul>
+<li><a href="https://r-spatial.github.io/sf/reference/st_read.html"><em>st_read</em></a> &amp; <em>read_sf</em>: read simple features from file or database, or retrieve layer names and their geometry type(s)</li>
+<li><a href="https://r-spatial.github.io/sf/reference/st_write.html"><em>st_write</em></a> &amp; <em>write_sf</em>: write simple features object to file or database</li>
+<li><a href="https://r-spatial.github.io/sf/reference/st_as_sf.html"><em>st_as_sf</em></a>: convert a sf object from a non-geospatial tabular data frame</li>
+<li><a href="https://r-spatial.github.io/sf/reference/st_as_text.html"><em>st_as_text</em></a>: convert to Well Known Text(WKT)</li>
+<li><a href="https://r-spatial.github.io/sf/reference/st_as_binary.html"><em>st_as_binary</em></a>: convert to Well Known Binary(WKB)</li>
+<li><a href="https://r-spatial.github.io/sf/reference/st_as_sfc.html"><em>st_as_sfc</em></a>: convert geometries to sfc (e.g., from WKT, WKB) as(x, “Spatial”): convert to Spatial*</li>
+<li><a href="https://r-spatial.github.io/sf/reference/st_transform.html"><em>st_transform</em></a>(x, crs, …): convert coordinates of x to a different coordinate reference system</li>
+</ul>
+<hr>
+</section>
+<section id="popular-geospatial-data-format-supported-by-read_st-esri-shapefile" class="level3">
+<h3 class="anchored" data-anchor-id="popular-geospatial-data-format-supported-by-read_st-esri-shapefile">Popular geospatial data format supported by <em>read_st()</em>: ESRI shapefile</h3>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>A <a href="http://www.esri.com/library/whitepapers/pdfs/shapefile.pdf">shapefile</a> is a simple, non-topological format for storing the geometric location and attribute information of geographic features.</li>
+<li>Geographic features in a shapefile can be represented by points, lines, or polygons (areas).</li>
+</ul>
+<p>Sample code chunk:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>sf_mpsz <span class="ot">=</span> <span class="fu">st_read</span>(<span class="at">dsn =</span> <span class="st">"data/geospatial"</span>, </span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>                  <span class="at">layer =</span> <span class="st">"MP14_SUBZONE"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>and</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">st_write</span>(st_poly, <span class="st">"data/my_poly.shp"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div><div class="column" style="width:50%;">
+<p><img src="img/image2-7.jpg" class="img-fluid"></p>
+</div>
+</div>
+<hr>
+</section>
+<section id="other-vector-gis-formats" class="level3">
+<h3 class="anchored" data-anchor-id="other-vector-gis-formats">Other vector GIS formats</h3>
+<ul>
+<li>MapInfo <a href="https://en.wikipedia.org/wiki/MapInfo_TAB_format">TAB</a> format - MapInfo’s vector data format using TAB, DAT, ID and MAP files.</li>
+<li><a href="https://desktop.arcgis.com/en/arcmap/latest/manage-data/administer-file-gdbs/personal-geodatabases.htm">Personal Geodatabase</a> - Esri’s closed, integrated vector data storage strategy using Microsoft’s Access MDB format</li>
+<li><a href="https://en.wikipedia.org/wiki/Keyhole_Markup_Language">Keyhole Markup Language (KML)</a> - XML based open standard (by OpenGIS) for GIS data exchange.</li>
+<li><a href="http://en.wikipedia.org/wiki/Geography_Markup_Language">Geography Markup Language (GML)</a> - XML based open standard (by OpenGIS) for GIS data exchange.</li>
+<li><a href="https://en.wikipedia.org/wiki/GeoJSON">GeoJSON</a> - a lightweight format based on JSON, used by many open source GIS packages.</li>
+<li><a href="https://github.com/topojson/topojson">TopoJSON</a>, an extension of GeoJSON that encodes topology.</li>
+</ul>
+<p>Sample code chunk to import kml file:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>sf_preschool <span class="ot">=</span> <span class="fu">st_read</span>(<span class="st">"data/geospatial/pre-schools-location-kml.kml"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<hr>
+</section>
+<section id="geometric-confirmation" class="level3">
+<h3 class="anchored" data-anchor-id="geometric-confirmation">Geometric confirmation</h3>
+<p>The <a href="https://r-spatial.github.io/sf/reference/geos_binary_pred.html">commands</a> below compare two sf data object and return a sparse matrix with matching (TRUE) indexes, or a full logical matrix.</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div style="font-size: 0.75em">
+<ul>
+<li><em>st_intersects</em>: touch or overlap</li>
+<li><em>st_disjoint</em>: !intersects</li>
+<li><em>st_touches</em>: touch</li>
+<li><em>st_crosses</em>: cross (don’t touch)</li>
+<li><em>st_within</em>: within</li>
+<li><em>st_contains</em>: contains</li>
+<li><em>st_overlaps</em>: overlaps</li>
+<li><em>st_covers</em>: cover</li>
+<li><em>st_covered_by</em>: covered by</li>
+<li><em>st_equals</em>: equals</li>
+<li><em>st_equals_exact</em>: equals, with some fuzz returns a sparse (default) or dense logical matrix</li>
+</ul>
+</div>
+</div><div class="column" style="width:50%;">
+<p><img src="img/image2-15.jpg" class="img-fluid"></p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div style="font-size: 0.95em">
+<p>These functions return a logical matrix indicating whether each geometry pair meeting the logical operation.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<hr>
+</section>
+<section id="sf-methods" class="level3">
+<h3 class="anchored" data-anchor-id="sf-methods">sf Methods</h3>
+<section id="geometry-generating-logical-operators" class="level4">
+<h4 class="anchored" data-anchor-id="geometry-generating-logical-operators">Geometry generating logical operators</h4>
+<div class="columns">
+<p>These <a href="https://r-spatial.github.io/sf/reference/geos_binary_ops.html">commands</a> overlay two sf data frames.</p><div class="column" style="width:50%;">
+<ul>
+<li>st_union: union of several geometries</li>
+<li>st_intersection: intersection of pairs of geometries</li>
+<li>st_difference: difference between pairs of geometries</li>
+<li>st_sym_difference: symmetric difference (xor)</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><img src="img/image2-18.jpg" class="img-fluid"></p>
+</div>
+</div>
+<hr>
+</section>
+</section>
+<section id="sf-methods-1" class="level3">
+<h3 class="anchored" data-anchor-id="sf-methods-1">sf Methods</h3>
+<section id="higher-level-operations-summarise-interpolate-aggregate-st_join" class="level4">
+<h4 class="anchored" data-anchor-id="higher-level-operations-summarise-interpolate-aggregate-st_join">Higher-level operations: summarise, interpolate, aggregate, st_join</h4>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>aggregate and summarise use <em>st_union</em> (by default) to group feature geometries</li>
+<li><em>st_interpolate_aw</em>: area-weighted interpolation, uses st_intersection to interpolate or redistribute attribute values, based on area of overlap:</li>
+<li><em>st_join</em> uses one of the logical binary geometry predicates (default: st_intersects) to join records in table pairs.</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>rd_joined <span class="ot">=</span> <span class="fu">st_join</span>(random_points, world) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/image2-21.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img" width="441"></p>
+</figure>
+</div>
+</div>
+</div>
+<hr>
+</section>
+</section>
+<section id="manipulating-geometries" class="level3">
+<h3 class="anchored" data-anchor-id="manipulating-geometries">Manipulating geometries</h3>
+<p>The <a href="https://r-spatial.github.io/sf/reference/geos_unary.html">commands</a> below perform unary operations on simple feature geometry sets.</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div style="font-size: 0.75em">
+<ul>
+<li><em>st_line_merge</em>: merges lines</li>
+<li><em>st_segmentize</em>: adds points to straight lines</li>
+<li><em>st_voronoi</em>: creates voronoi tesselation</li>
+<li><em>st_centroid</em>: gives centroid of geometry</li>
+<li><em>st_convex_hull</em>: creates convex hull of set of points</li>
+<li><em>st_triangulate</em>: triangulates set of points (not constrained)</li>
+<li><em>st_polygonize</em>: creates polygon from lines that form a closed ring</li>
+<li><em>st_simplify</em>: simplifies lines by removing vertices</li>
+<li><em>st_split</em>: split a polygon given line geometry</li>
+<li><em>st_buffer</em>: compute a buffer around this geometry/each geometry</li>
+<li><em>st_make_valid</em>: tries to make an invalid geometry valid (requires lwgeom)</li>
+<li><em>st_boundary</em>: return the boundary of a geometry</li>
+</ul>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>centroid_poly <span class="ot">&lt;-</span> <span class="fu">st_centroid</span>(poly)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/image2-16.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img" width="300"></p>
+</figure>
+</div>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>buf_poly <span class="ot">&lt;-</span> <span class="fu">st_buffer</span>(poly, <span class="dv">5</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/image2-17.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img" width="300"></p>
+</figure>
+</div>
+</div>
+</div>
+<hr>
+</section>
+<section id="convenience-functions" class="level3">
+<h3 class="anchored" data-anchor-id="convenience-functions">Convenience functions</h3>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li><em>st_zm</em>: sets or removes z and/or m geometry</li>
+<li><em>st_coordinates</em>: retrieve coordinates in a matrix or data.frame</li>
+<li><em>st_geometry</em>: set, or retrieve sfc from an sf object</li>
+<li><em>st_is</em>: check whether geometry is of a particular type</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><img src="img/image2-19.jpg" class="img-fluid"></p>
+</div>
+</div>
+</section>
+</section>
+<section id="references" class="level2">
+<h2 class="anchored" data-anchor-id="references">References</h2>
+<section id="all-about-sf-package" class="level3">
+<h3 class="anchored" data-anchor-id="all-about-sf-package">All About <strong>sf</strong> package</h3>
+<div style="font-size: 0.75em">
+<ul>
+<li><a href="https://r-spatial.github.io/sf/reference/index.html">Reference manual</a></li>
+<li><a href="https://www.rstudio.com/resources/rstudioconf-2018/tidy-spatial-data-analysis/">Tidy spatial data analysis</a></li>
+</ul>
+<p><strong>Vignettes:</strong></p>
+<ol type="1">
+<li><a href="https://cran.r-project.org/web/packages/sf/vignettes/sf1.html">Simple Features for R</a></li>
+<li><a href="https://cran.r-project.org/web/packages/sf/vignettes/sf2.html">Reading, Writing and Converting Simple Features</a></li>
+<li><a href="https://cran.r-project.org/web/packages/sf/vignettes/sf3.html">Manipulating Simple Feature Geometries</a></li>
+<li><a href="https://cran.r-project.org/web/packages/sf/vignettes/sf4.html">Manipulating Simple Features</a></li>
+<li><a href="https://cran.r-project.org/web/packages/sf/vignettes/sf5.html">Plotting Simple Features</a></li>
+<li><a href="https://cran.r-project.org/web/packages/sf/vignettes/sf6.html">Miscellaneous</a></li>
+<li><a href="https://r-spatial.github.io/sf/articles/sf7.html">Spherical geometry in sf using s2geometry</a></li>
+</ol>
+<p><strong>Others:</strong></p>
+<ol type="1">
+<li><a href="https://www.r-spatial.org/r/2020/03/17/wkt.html">R spatial follows GDAL and PROJ development</a></li>
+</ol>
+</div>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
