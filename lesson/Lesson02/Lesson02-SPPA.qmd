@@ -3,6 +3,7 @@ title: "Lesson 2: Spatial Point Patterns Analysis"
 author: "Dr. Kam Tin Seong<br/>Assoc. Professor of Information Systems(Practice)"
 institute: "School of Computing and Information Systems,<br/>Singapore Management University"
 date: "`r Sys.Date()`"
+date-format: "long"
 format: 
   revealjs:
     width: 1600
@@ -10,7 +11,6 @@ format:
     show-notes: false
     slide-number: true
     show-slide-number: all
-date-format: "DD MMM YYYY"
 editor: visual
 ---
 
