@@ -11,23 +11,23 @@ Geospatial Analytics offers the solutions to these questions by providing data s
 
 This course provides students with an introduction to the concepts, principles and methods of geospatial analytics and their practical applications of geospatial analytics in real world operations. Emphasis will be placed on:
 
--   performing geospatial data science tasks such as importing, tidying, manipulating, transforming, projecting and processing geospatial data programmatically,
+- performing geospatial data science tasks such as importing, tidying, manipulating, transforming, projecting and processing geospatial data programmatically,
 
--   visualising, analysing and describing geographical patterns and processes using appropriate geovisualisation and thematic mapping techniques,
+- visualising, analysing and describing geographical patterns and processes using appropriate geovisualisation and thematic mapping techniques,
 
--   conducting geospatial analysis by using appropriate spatial statistics and Geomachine learning methods and
+- conducting geospatial analysis by using appropriate spatial statistics and Geomachine learning methods and
 
--   communicating the geospatial analysis pipeline in a reproducible report.
+- communicating the geospatial analysis pipeline in a reproducible report.
 
 # Objectives
 
 Upon completion of the course, students will be able to:
 
--   Provide accurate explanation of the Mathematical and input data requirements of the analysis method(s) used,
--   Import, extract, process, transform and assemble geospatial analytical sandbox programmatically,
--   Apply appropriate geospatial analysis methods in addressing specific analysis needs,
--   Document the entire geospatial analytics process in a reproducible manner, and
--   Communicate the analysis results effectively and in an easy to understand manner with the help of appropriate geo- and data visualisation techniques.
+- Provide accurate explanation of the Mathematical and input data requirements of the analysis method(s) used,
+- Import, extract, process, transform and assemble geospatial analytical sandbox programmatically,
+- Apply appropriate geospatial analysis methods in addressing specific analysis needs,
+- Document the entire geospatial analytics process in a reproducible manner, and
+- Communicate the analysis results effectively and in an easy to understand manner with the help of appropriate geo- and data visualisation techniques.
 
 ## Course structure
 
@@ -41,8 +41,8 @@ This course comprises ten integrated components as shown below:
 
 | Assignments / Assessment categories                   | Weighting |
 |-------------------------------------------------------|-----------|
-| Pre-lesson Learning and Hands-on Exercise (2.5% x 10) | 25%       |
-| Class participation and In-class Exercise (1.0% x 10) | 10%       |
+| Pre-lesson Learning and Hands-on Exercise (2.0% x 10) | 20%       |
+| Class participation and In-class Exercise (1.5% x 10) | 15%       |
 | Timed Individual Assessment                           | 20%       |
 | Take-home Exercise (Not more than 3)                  | 45%       |
 
@@ -52,11 +52,11 @@ Pre-lesson videos and recommended readings exercises will be released one week b
 
 Student sharing of insights from readings of assigned materials on Piazza will form a large part of the learning in this course.
 
-### Hands-on Exercise (20%)
+### Hands-on Exercise (15%)
 
 Hands-on exercises aim to provide students to gain hands-on experience on using R and R packages to perform geospatial analysis with real world use cases. It is important for students to complete the hands-on exercises before class.
 
-### Class Participation and In-class Exercise (10%)
+### Class Participation and In-class Exercise (15%)
 
 In-class exercise and discussion will extend the methods learned from the hands-on exercise to advanced modelling. The in-class discussion will also focus on how to interpret the analysis results and to communicate the analysis results by using appropriate map and data visualisation techniques. Students may also be quizzed in class and thereby contribute to in-class exercise.
 
@@ -78,8 +78,8 @@ There will be no final examination for this course.
 
 ## Reference
 
--   Gimond, Manuel. (2018) [Introduction to GIS and Spatial Analysis](https://mgimond.github.io/Spatial/).
--   Floch, J.M., Marcon, E. and Puech, F. (2018) [Handbook of Spatial Analysis: Theory and Application with R](https://www.insee.fr/en/information/3635545).
--   Edzer Pebesma & Roger Bivand (2025) [Spatial Data Science with Applications in R](https://r-spatial.org/book/).
--   Robin Lovelace, Jakub Nowosad & Jannes Muenchow (2024) [Geocomputation with R](https://r.geocompx.org/index.html).
--   Moraga, Paula. (2023). [Spatial Statistics for Data Science: Theory and Practice with R](https://www.paulamoraga.com/book-spatial/index.html). Chapman & Hall/CRC Data Science Series. ISBN 9781032633510
+- Gimond, Manuel. (2018) [Introduction to GIS and Spatial Analysis](https://mgimond.github.io/Spatial/).
+- Floch, J.M., Marcon, E. and Puech, F. (2018) [Handbook of Spatial Analysis: Theory and Application with R](https://www.insee.fr/en/information/3635545).
+- Edzer Pebesma & Roger Bivand (2025) [Spatial Data Science with Applications in R](https://r-spatial.org/book/).
+- Robin Lovelace, Jakub Nowosad & Jannes Muenchow (2024) [Geocomputation with R](https://r.geocompx.org/index.html).
+- Moraga, Paula. (2023). [Spatial Statistics for Data Science: Theory and Practice with R](https://www.paulamoraga.com/book-spatial/index.html). Chapman & Hall/CRC Data Science Series. ISBN 9781032633510

@@ -90,13 +90,16 @@ The hands-on exercises will allow you to gaion hands-on experience on using:
 
 ### GeoVisualisation and Thematic Mapping
 
-- [Proportional Symbols](https://www.axismaps.com/guide/univariate/proportional-symbols/)
-- [Choropleth Maps](https://en.wikipedia.org/wiki/Choropleth_map%20Choropleth%20map)
-- [The Basics of Data Classification](https://www.axismaps.com/guide/data/data-classification/)
-- [Choropleth Mapping with Exploratory Data Analysis](https://www.directionsmag.com/article/3363)
+- [Proportional Symbols](https://www.axismaps.com/guide/proportional-symbols)
 - [The Concept of Map Symbols](https://www.yaaka.cc/unit/the-concept-of-map-symbols/)
+- [Choropleth Maps](https://www.axismaps.com/guide/choropleth)
 - [Choropleth map](https://en.wikipedia.org/wiki/Choropleth_map)
+- [What to consider when creating choropleth maps](https://blog.datawrapper.de/choroplethmaps/)
+- [The Basics of Data Classification](https://www.axismaps.com/guide/data-classification)
 - [Choropleth Maps -- A Guide to Data Classification](https://gisgeography.com/choropleth-maps-data-classification/)
+- [Choropleth Maps: Classification Revisited](http://geoanalytics.net/and/papers/ica01.pdf)
+- [Using Exploratory Data Analysis to Improve Choropleth Map Design](https://www.directionsmag.com/article/3363)
+- [Exploropleth: Exploratory Analysis of Data Binning Methods in Choropleth Maps](https://arxiv.org/pdf/2511.20655)
 - [Bivariate Choropleth](https://www.axismaps.com/guide/multivariate/bivariate-choropleth/)
 - [Value-by-alpha maps](http://andywoodruff.com/blog/value-by-alpha-maps/)
-- [What to consider when creating choropleth maps](https://blog.datawrapper.de/choroplethmaps/)
+

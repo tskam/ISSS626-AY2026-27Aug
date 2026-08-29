@@ -34,19 +34,15 @@ This lesson consists of two parts. First, I will share with you the concepts and
 
 ## What is a Map?
 
-A model of real world depict by a collection of cartographic symbols or/and visual abstraction.
+- A model of real world depict by a collection of cartographic symbols or/and visual abstraction.
 
-![](img/image6-1.jpg)
-
-------------------------------------------------------------------------
-
-### What is a Map?
-
-An interface between geographical data and map users.
+- An interface between geographical data and map users.
 
 ![](img/image6-1b.jpg)
 
 ------------------------------------------------------------------------
+
+### What is a Map?
 
 ### A Map and Geographical Data
 
@@ -408,13 +404,14 @@ Avoid equal interval if your data are skewed to one end or if you have one or tw
 
 [CRAN Task View: Analysis of Spatial Data](https://cran.r-project.org/web/views/Spatial.html)
 
-- [tmap](https://cran.r-project.org/web/packages/tmap/index.html)
+- [tmap](https://r-tmap.github.io/tmap/index.html)
+- [mapgl](https://walker-data.com/mapgl/index.html)
 - [mapsf](https://riatelab.github.io/mapsf/index.html)
 - [leaflet](https://cran.r-project.org/web/packages/leaflet/index.html)
+- [mapview](https://cran.r-project.org/web/packages/mapview/index.html)
 - [ggplot2](https://ggplot2.tidyverse.org/index.html). Read [Chapter 6: Maps](https://ggplot2-book.org/maps.html) of 'ggplot2: Elegant Graphics for Data Analysis' for more detail.
 - [ggmap](https://cran.r-project.org/web/packages/ggmap/index.html)
-- [quickmapr](https://cran.r-project.org/web/packages/quickmapr/index.html)
-- [mapview](https://cran.r-project.org/web/packages/mapview/index.html)
+
 :::
 
 ::: {.column width="50%"}
