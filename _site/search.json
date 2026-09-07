@@ -704,7 +704,7 @@
     "href": "lesson/Lesson02/Lesson02-SPPA.html#references",
     "title": "Lesson 2: Spatial Point Patterns Analysis",
     "section": "References",
-    "text": "References\n\nChapter 11 Point Pattern Analysis of Intro to GIS and Spatial Analysis. Section 11.2, 11.3, 11.3.1 and 11.4\nGIS&T Body of Knowledge AM-07-Point Pattern Analysis\nGIS&T Body of Knowledge AM-08-Kernels and Density Estimation\nAnalyzing Patterns in Business Point Data, Directions Magazine March 17, 2005.\nO’Sullivan, D., and Unwin, D. (2010) Geographic Information Analysis, Second Edition. John Wiley & Sons Inc., New Jersey, Canada. Chapter 5-6.\nBaddeley A., Rubak E. and Turner R. (2015) Spatial Point Patterns: Methodology and Applications with R, Chapman and Hall/CRC."
+    "text": "References\n\n14 First-Order Point Pattern Analysis and 15 Second-Order Point Pattern Analysis of Introduction to GIS and Spatial Analysis.\nGIS&T Body of Knowledge AM-07-Point Pattern Analysis\nGIS&T Body of Knowledge AM-08-Kernels and Density Estimation\nBaddeley A., Rubak E. and Turner R. (2015) Spatial Point Patterns: Methodology and Applications with R, Chapman and Hall/CRC."
   },
   {
     "objectID": "lesson/Lesson03/Lesson03-STPPA.html#content",
@@ -1097,5 +1097,75 @@
     "title": "Lesson 1: Fundamental of Geospatial Data Visualisation and tmap Methods",
     "section": "References",
     "text": "References\n\nAll About tmap package\n\ntmap: Thematic Maps in R\nDevelopment site\ntmap Reference\ntmap: get started!\ntmap: version changes\ntmap: creating thematic maps in a flexible way (useR!2015)\nExploring and presenting maps with tmap (useR!2017)"
+  },
+  {
+    "objectID": "Take-home_Ex01.html",
+    "href": "Take-home_Ex01.html",
+    "title": "Take-home Exercise 1: Geospatial Analytics for Piblic Safety",
+    "section": "",
+    "text": "Public safety refers to the protection of the general public, communities, and national infrastructure from crimes, disasters, accidents, and other major threats through organized government and agency action.\nGeospatial analytics, powered by big and multisouces geospatial data, geospatial data science and analytics methods, transforms raw location data into visual maps and actionable insights, serving a vital role across law enforcement, emergency management, and disaster response.\nA spatial point pattern is a set of geographic locations where specific events such a forest fire and road accident occur, while a spatio-temporal point pattern adds a time dimension to those locations, recording both where and when each event happens.\nStudying the spatial and spatio-temporal patterns of natural hazards like forest fires and environmental health issues like road accidents helps experts predict, prevent, and respond to emergencies more effectively.\n\n\n\nIdentifies Risk Hotspots: Maps show exact locations where forest fires start often or where road accidents happen repeatedly.\nTracks Changes Over Time: Spatio-temporal analysis adds time to the map, showing how hazards spread across seasons, days, or hours.\nOptimizes Resource Placement: Emergency teams can place fire trucks, ambulances, and police patrols near high-risk zones before disasters happen.\nUncovers Hidden Causes: Researchers can link patterns to underlying factors like weather, road design, dry vegetation, or heavy traffic times.\nImproves Public Policy: Planners and enforcement bodies use this data to build safer roads, set fire-safe zoning laws, and issue timely public warnings.\n\nBy understanding where and when a businesses locate and operate, urban planners can design cities more effectively, anticipate growth, ensure resource efficiency, and tailor infrastructure to support economic vitality and community well-being."
+  },
+  {
+    "objectID": "Take-home_Ex01.html#setting-the-scene",
+    "href": "Take-home_Ex01.html#setting-the-scene",
+    "title": "Take-home Exercise 1: Geospatial Analytics for Piblic Safety",
+    "section": "",
+    "text": "Public safety refers to the protection of the general public, communities, and national infrastructure from crimes, disasters, accidents, and other major threats through organized government and agency action.\nGeospatial analytics, powered by big and multisouces geospatial data, geospatial data science and analytics methods, transforms raw location data into visual maps and actionable insights, serving a vital role across law enforcement, emergency management, and disaster response.\nA spatial point pattern is a set of geographic locations where specific events such a forest fire and road accident occur, while a spatio-temporal point pattern adds a time dimension to those locations, recording both where and when each event happens.\nStudying the spatial and spatio-temporal patterns of natural hazards like forest fires and environmental health issues like road accidents helps experts predict, prevent, and respond to emergencies more effectively.\n\n\n\nIdentifies Risk Hotspots: Maps show exact locations where forest fires start often or where road accidents happen repeatedly.\nTracks Changes Over Time: Spatio-temporal analysis adds time to the map, showing how hazards spread across seasons, days, or hours.\nOptimizes Resource Placement: Emergency teams can place fire trucks, ambulances, and police patrols near high-risk zones before disasters happen.\nUncovers Hidden Causes: Researchers can link patterns to underlying factors like weather, road design, dry vegetation, or heavy traffic times.\nImproves Public Policy: Planners and enforcement bodies use this data to build safer roads, set fire-safe zoning laws, and issue timely public warnings.\n\nBy understanding where and when a businesses locate and operate, urban planners can design cities more effectively, anticipate growth, ensure resource efficiency, and tailor infrastructure to support economic vitality and community well-being."
+  },
+  {
+    "objectID": "Take-home_Ex01.html#objectives",
+    "href": "Take-home_Ex01.html#objectives",
+    "title": "Take-home Exercise 1: Geospatial Analytics for Piblic Safety",
+    "section": "Objectives",
+    "text": "Objectives\nIn this take-home exercise, we are interested to investigate the spatial and spatio-temporal patterns of either forest fire event in 2026 at Kalimantan, Indonesia or road traffic accidents within Bangkok Greater Metropolitan area of a selected year.\nThe specific objectives of this take-home exercise are as follows:\n\nTo identify the “where” and “when” of the spatial point events occur, revealing clusters, patterns, and trends that are crucial for informed public safety planning, prevention and management.\nTo identify complex interaction patterns and emergent phenomena in the distribution of the spatial point entities beyond simple proximity or density which are crucial for scientific public safety planning and policy-making.\n\nBy understanding where a natural hazard and environetal health issue are located and how their distribution changes over time, public safety planners and managers can unlock spatial intelligence, optimize operations, and create effective strategies to improve public safety and to promote sustainable development."
+  },
+  {
+    "objectID": "Take-home_Ex01.html#the-tasks",
+    "href": "Take-home_Ex01.html#the-tasks",
+    "title": "Take-home Exercise 1: Geospatial Analytics for Piblic Safety",
+    "section": "The Tasks",
+    "text": "The Tasks\nThe specific tasks of this hands-on exercise are as follow:\n\nDownload the core data sets from the data sources provided above.\nPrepare and tidy the data by applying appropriate data wrangling method.\nPerform First-order spatial and spatio-temporal Point Patterns Analysis by using the tidied data.\nPerform Second-order spatial and spatio-temporal point patterns analysis on the tidied data.\nDescribe and discuss the analysis results obtained from Step 3 and 4.\nFor each geovisualisation prepared, write a short report of not more than 150 words describing the spatio-temporal patterns revealed by the geovisualisation and statistical graphics.\nWith reference to the analysis results above, discuss how these findings can be used to support urban land use planning and management. (Not more than 500 words)"
+  },
+  {
+    "objectID": "Take-home_Ex01.html#the-data",
+    "href": "Take-home_Ex01.html#the-data",
+    "title": "Take-home Exercise 1: Geospatial Analytics for Piblic Safety",
+    "section": "The Data",
+    "text": "The Data\n\nThe core data sets\n\nFor Forest Fire study:\n\nForest fire events data from Fire Information for Resource Management System.\nAdministrative boundary data set of Indonesia from from Indonesia Geospatial portal. Kalimatan is a big area. There are 5 provinces and 47 regencies (kabupaten). Hence, it is wiser to select one regency for this take-home exercise.\n\nFor Road Traffic Accident study\n\nThailand Road Accident Fatalities 2024 or Thailand Road Accident [2019-2022]. Note: Be caution, the 2024 data set is in Thai language. If 2019-2022 data set is used, focus on 2022.\nAdministrative boundary data set of Thailand from geoBoundaries\n\n\n\n\n\n\n\n\nTipUseful additional data link\n\n\n\nStudents are free to include other data sets to support the analysis. One of the highly recommended data source is OpenStreetMap(osm) data sets from Geofabrik. The recommended file format to be used is ESRI compatible shape files."
+  },
+  {
+    "objectID": "Take-home_Ex01.html#grading-criteria",
+    "href": "Take-home_Ex01.html#grading-criteria",
+    "title": "Take-home Exercise 1: Geospatial Analytics for Piblic Safety",
+    "section": "Grading Criteria",
+    "text": "Grading Criteria\nThis exercise will be graded by using the following criteria:\n\nGeospatial Data Wrangling (20 marks): This is an important aspect of geospatial analytics. You will be assessed on your ability to employ appropriate R functions from various R packages specifically designed for modern data science such as readr, tidyverse (tidyr, dplyr, ggplot2), sf just to mention a few of them, to perform the entire geospatial data wrangling processes, including. This is not limited to data import, data extraction, data cleaning and data transformation. Besides assessing your ability to use the R functions, this criterion also includes your ability to clean and derive appropriate variables to meet the analysis need.\n\n\n\n\n\n\n\nWarning\n\n\n\nAll data are like vast grassland full of land mines. Your job is to clear those mines and not to step on them).\n\n\n\nGeospatial Analysis (25%): In this exercise, you are expected to utilize the geospatial analytics methods introduced in class, along with the R packages provided during the hands-on exercises, to perform your analysis. You will be assessed on your ability to apply these methods correctly and to provide accurate interpretations and discussions of the analysis results.\nGeovisualisation and Geocommunication (25% marks): In this section, your ability to effectively communicate complex geospatial analysis results through user-friendly visual representations will be assessed. Since this course is focused on geospatial analysis, it is crucial that you demonstrate proficiency in using appropriate geovisualization techniques to clearly convey the findings of your analysis.\nReproducibility (25%): This is a key learning outcome of this course. You will be assessed on your ability to thoroughly document the analysis procedures using code chunks within Quarto. It is important to note that simply providing the code chunks is insufficient; you must also include explanations of the purpose behind each step and the R function(s) used.\nValue-Added Analysis and Presentation (15%): Demonstrate your ability to employ methods beyond what you had learned in class to gain insights from the data. The methods used must be geospatial in nature."
+  },
+  {
+    "objectID": "Take-home_Ex01.html#submission-instructions",
+    "href": "Take-home_Ex01.html#submission-instructions",
+    "title": "Take-home Exercise 1: Geospatial Analytics for Piblic Safety",
+    "section": "Submission Instructions",
+    "text": "Submission Instructions\n\nAn Executive Summary of not more than ten slides excluding the cover page and content page prepared by using revealjs of Quarto. You are required to publish the write-up on Vercel or others web hosting services.\nA Technical Report provide a comprehensive write-up of the take-home exercise in Quarto html document format. You are required to publish the write-up on Vercel or others web hosting services.\nThe R project of the take-home exercise must be pushed onto your Github repository.\nUpdate the links of the Executive Summary and Technical Report on the coursework web site and provide the links on eLearn."
+  },
+  {
+    "objectID": "Take-home_Ex01.html#due-date",
+    "href": "Take-home_Ex01.html#due-date",
+    "title": "Take-home Exercise 1: Geospatial Analytics for Piblic Safety",
+    "section": "Due Date",
+    "text": "Due Date\n27th September 2026 (Sunday), 11.59pm (midnight)."
+  },
+  {
+    "objectID": "Take-home_Ex01.html#references",
+    "href": "Take-home_Ex01.html#references",
+    "title": "Take-home Exercise 1: Geospatial Analytics for Piblic Safety",
+    "section": "References",
+    "text": "References"
+  },
+  {
+    "objectID": "Take-home_Ex01.html#peer-learning",
+    "href": "Take-home_Ex01.html#peer-learning",
+    "title": "Take-home Exercise 1: Geospatial Analytics for Piblic Safety",
+    "section": "Peer Learning",
+    "text": "Peer Learning"
   }
 ]

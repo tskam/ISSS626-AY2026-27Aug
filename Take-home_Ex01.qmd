@@ -1,0 +1,106 @@
+---
+title: "Take-home Exercise 1: Geospatial Analytics for Piblic Safety"
+editor: visual
+---
+
+## Setting the Scene
+
+Public safety refers to the protection of the general public, communities, and national infrastructure from crimes, disasters, accidents, and other major threats through organized government and agency action.
+
+Geospatial analytics, powered by big and multisouces geospatial data, geospatial data science and analytics methods, transforms raw location data into visual maps and actionable insights, serving a vital role across law enforcement, emergency management, and disaster response. 
+
+A spatial point pattern is a set of geographic locations where specific events such a forest fire and road accident occur, while a spatio-temporal point pattern adds a time dimension to those locations, recording both where and when each event happens.
+
+Studying the spatial and spatio-temporal patterns of natural hazards like forest fires and environmental health issues like road accidents helps experts predict, prevent, and respond to emergencies more effectively.
+
+### Why Spatial and Spatio-Temporal Analysis of Point Event Matters?
+
+- Identifies Risk Hotspots: Maps show exact locations where forest fires start often or where road accidents happen repeatedly.
+- Tracks Changes Over Time: Spatio-temporal analysis adds time to the map, showing how hazards spread across seasons, days, or hours.
+- Optimizes Resource Placement: Emergency teams can place fire trucks, ambulances, and police patrols near high-risk zones before disasters happen.
+- Uncovers Hidden Causes: Researchers can link patterns to underlying factors like weather, road design, dry vegetation, or heavy traffic times.
+- Improves Public Policy: Planners and enforcement bodies use this data to build safer roads, set fire-safe zoning laws, and issue timely public warnings.
+
+By understanding where and when a businesses locate and operate, urban planners can design cities more effectively, anticipate growth, ensure resource efficiency, and tailor infrastructure to support economic vitality and community well-being.
+
+## Objectives
+
+In this take-home exercise, we are interested to investigate the spatial and spatio-temporal patterns of either **forest fire event in 2026 at Kalimantan, Indonesia** or **road traffic accidents within Bangkok Greater Metropolitan area of a selected year**.
+
+The specific objectives of this take-home exercise are as follows:
+
+- To identify the "where" and "when" of the spatial point events occur, revealing clusters, patterns, and trends that are crucial for informed public safety planning, prevention and management.
+- To identify complex interaction patterns and emergent phenomena in the distribution of the spatial point entities beyond simple proximity or density which are crucial for scientific public safety planning and policy-making.
+
+By understanding where a natural hazard and environetal health issue are located and how their distribution changes over time, public safety planners and managers can unlock spatial intelligence, optimize operations, and create effective strategies to improve public safety and to promote sustainable development.
+
+## The Data
+
+### The core data sets
+
+- For Forest Fire study:
+  - Forest fire events data from [Fire Information for Resource Management System](https://firms.modaps.eosdis.nasa.gov/download/). 
+  - Administrative boundary data set of Indonesia from from [Indonesia Geospatial](https://www.indonesia-geospasial.com/2023/05/download-shapefile-batas-administrasi.html) portal. Kalimatan is a big area.  There are 5 provinces and 47 regencies (kabupaten).  Hence, it is wiser to select one regency for this take-home exercise.
+
+- For Road Traffic Accident study
+  - [Thailand Road Accident Fatalities 2024](https://www.kaggle.com/datasets/pornsakkamchan/thailand-road-accident-fatalities-2024) or [Thailand Road Accident [2019-2022]](https://www.kaggle.com/datasets/thaweewatboy/thailand-road-accident-2019-2022). Note: Be caution, the 2024 data set is in Thai language.  If 2019-2022 data set is used, focus on 2022.
+  - Administrative boundary data set of Thailand from [geoBoundaries](https://www.geoboundaries.org/)
+
+::: {.callout-tip}
+### Useful additional data link
+Students are free to include other data sets to support the analysis. One of the highly recommended data source is OpenStreetMap(osm) data sets from [Geofabrik ](https://www.geofabrik.de/geofabrik/openstreetmap.html).  The recommended file format to be used is ESRI compatible shape files.
+:::
+
+## The Tasks
+
+The specific tasks of this hands-on exercise are as follow:
+
+1.  Download the **core data sets** from the data sources provided above.
+
+2.  Prepare and tidy the data by applying appropriate data wrangling method.
+
+3.  Perform First-order spatial and spatio-temporal Point Patterns Analysis by using the tidied data.
+
+4.  Perform Second-order spatial and spatio-temporal point patterns analysis on the tidied data.
+
+5.  Describe and discuss the analysis results obtained from Step 3 and 4.
+
+6.  For each geovisualisation prepared, write a short report of not more than 150 words describing the spatio-temporal patterns revealed by the geovisualisation and statistical graphics.
+
+7.  With reference to the analysis results above, discuss how these findings can be used to support urban land use planning and management. (Not more than 500 words)
+
+
+## Grading Criteria
+
+This exercise will be graded by using the following criteria:
+
+- **Geospatial Data Wrangling (20 marks):** This is an important aspect of geospatial analytics. You will be assessed on your ability to employ appropriate R functions from various R packages specifically designed for modern data science such as readr, tidyverse (tidyr, dplyr, ggplot2), sf just to mention a few of them, to perform the entire geospatial data wrangling processes, including. This is not limited to data import, data extraction, data cleaning and data transformation. Besides assessing your ability to use the R functions, this criterion also includes your ability to clean and derive appropriate variables to meet the analysis need.
+
+::: callout-warning
+All data are like vast grassland full of land mines. Your job is to clear those mines and not to step on them).
+:::
+
+- **Geospatial Analysis (25%):** In this exercise, you are expected to utilize the geospatial analytics methods introduced in class, along with the R packages provided during the hands-on exercises, to perform your analysis. You will be assessed on your ability to apply these methods correctly and to provide accurate interpretations and discussions of the analysis results.
+
+- **Geovisualisation and Geocommunication (25% marks):** In this section, your ability to effectively communicate complex geospatial analysis results through user-friendly visual representations will be assessed. Since this course is focused on geospatial analysis, it is crucial that you demonstrate proficiency in using appropriate geovisualization techniques to clearly convey the findings of your analysis.
+
+- **Reproducibility (25%):** This is a key learning outcome of this course. You will be assessed on your ability to thoroughly document the analysis procedures using code chunks within Quarto. It is important to note that simply providing the code chunks is insufficient; you must also include explanations of the purpose behind each step and the R function(s) used.
+
+- **Value-Added Analysis and Presentation (15%):** Demonstrate your ability to employ methods beyond what you had learned in class to gain insights from the data. The methods used must be geospatial in nature.
+
+## Submission Instructions
+
+- An Executive Summary of not more than ten slides excluding the cover page and content page prepared by using [revealjs](https://quarto.org/docs/presentations/revealjs/) of Quarto.  You are required to publish the write-up on [**Vercel**](https://vercel.com/) or others web hosting services.
+- A Technical Report provide a comprehensive write-up of the take-home exercise in **Quarto html document** format. You are required to publish the write-up on [**Vercel**](https://vercel.com/) or others web hosting services.
+- The R project of the take-home exercise must be pushed onto your [Github](https://github.com/) repository.
+- Update the links of the Executive Summary and Technical Report on the coursework web site and  provide the links on eLearn.
+
+## Due Date
+
+**27th September 2026 (Sunday), 11.59pm (midnight)**.
+
+## References
+
+## Peer Learning
+
+

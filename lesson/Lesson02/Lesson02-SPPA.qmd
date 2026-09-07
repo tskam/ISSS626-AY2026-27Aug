@@ -2,7 +2,7 @@
 title: "Lesson 2: Spatial Point Patterns Analysis"
 author: "Dr. Kam Tin Seong<br/>Assoc. Professor of Information Systems(Practice)"
 institute: "School of Computing and Information Systems,<br/>Singapore Management University"
-date: "`r Sys.Date()`"
+date: today
 date-format: "long"
 format: 
   revealjs:
@@ -355,7 +355,7 @@ Adaptive schemes adjust itself according to the density of data: - Shorter bandw
 
   - The location of one event is independent of the location of another event, a **2nd order** effect.
 
-Reference: [Chapter 12 Hypothesis testing of Intro to GIS and Spatial Analysis](https://mgimond.github.io/Spatial/hypothesis-testing.html)
+Reference: [11.2 From Maps to Models: Defining Spatial Patterns Statistically](https://mgimond.github.io/Spatial/11_intro_spatial.html#from-maps-to-models-defining-spatial-patterns-statistically)
 :::
 
 ::: {.column width="50%"}
@@ -747,14 +747,10 @@ So the relationship is:
 
 ## References
 
-- [Chapter 11 Point Pattern Analysis](https://mgimond.github.io/Spatial/point-pattern-analysis.html) of **Intro to GIS and Spatial Analysis**. Section 11.2, 11.3, 11.3.1 and 11.4
+- [14  First-Order Point Pattern Analysis](https://mgimond.github.io/Spatial/14_ppa_1st.html) and [15  Second-Order Point Pattern Analysis](https://mgimond.github.io/Spatial/15_ppa_2nd.html) of **Introduction to GIS and Spatial Analysis**.
 
-- GIS&T Body of Knowledge [AM-07-Point Pattern Analysis](https://gistbok.ucgis.org/bok-basic-page/welcome-gist-body-knowledge)
+- GIS&T Body of Knowledge [AM-07-Point Pattern Analysis](https://gistbok-ltb.ucgis.org/page/current/concept/AM-03-007)
 
-- GIS&T Body of Knowledge [AM-08-Kernels and Density Estimation](https://gistbok.ucgis.org/bok-topics/kernels-and-density-estimation)
-
-- [Analyzing Patterns in Business Point Data](https://www.directionsmag.com/article/3289), Directions Magazine March 17, 2005.
-
-- O'Sullivan, D., and Unwin, D. (2010) **Geographic Information Analysis**, Second Edition. John Wiley & Sons Inc., New Jersey, Canada. Chapter 5-6.
+- GIS&T Body of Knowledge [AM-08-Kernels and Density Estimation](https://gistbok-ltb.ucgis.org/page/current/concept/AM-03-008)
 
 - Baddeley A., Rubak E. and Turner R. (2015) **Spatial Point Patterns: Methodology and Applications with R**, Chapman and Hall/CRC.
