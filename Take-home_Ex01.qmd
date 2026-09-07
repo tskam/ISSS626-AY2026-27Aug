@@ -1,99 +1,485 @@
 ---
 title: "Take-home Exercise 1: Geospatial Analytics for Piblic Safety"
+format: html
+toc: true
+toc-depth: 4
 editor: visual
 ---
 
 ## Setting the Scene
 
-Public safety refers to the protection of the general public, communities, and national infrastructure from crimes, disasters, accidents, and other major threats through organized government and agency action.
+Public safety refers to the protection of the general public, communities, and critical infrastructure from crimes, disasters, accidents, and other major threats through coordinated government and agency action.
 
-Geospatial analytics, powered by big and multisouces geospatial data, geospatial data science and analytics methods, transforms raw location data into visual maps and actionable insights, serving a vital role across law enforcement, emergency management, and disaster response. 
+Geospatial analytics, supported by multi-source geospatial data and geospatial data science and analysis methods, provides powerful means to transform location-based data into visual evidence, analytical insights, and decision support. It plays an important role in areas such as law enforcement, emergency management, disaster response, transportation safety, and environmental management.
 
-A spatial point pattern is a set of geographic locations where specific events such a forest fire and road accident occur, while a spatio-temporal point pattern adds a time dimension to those locations, recording both where and when each event happens.
+A spatial point pattern represents a collection of geographic locations at which particular events occur, such as forest-fire detections or road traffic accidents. A spatio-temporal point pattern extends this representation by incorporating the time at which each event occurs, allowing analysts to investigate how the distribution and interaction of events vary across both space and time.
 
-Studying the spatial and spatio-temporal patterns of natural hazards like forest fires and environmental health issues like road accidents helps experts predict, prevent, and respond to emergencies more effectively.
+Understanding where and when public-safety events occur can help planners and managers identify areas of concern, understand patterns of event occurrence, allocate resources, and develop evidence-informed strategies for prevention and response.
 
-### Why Spatial and Spatio-Temporal Analysis of Point Event Matters?
+### Why Does Spatial and Spatio-Temporal Point-Pattern Analysis Matter?
 
-- Identifies Risk Hotspots: Maps show exact locations where forest fires start often or where road accidents happen repeatedly.
-- Tracks Changes Over Time: Spatio-temporal analysis adds time to the map, showing how hazards spread across seasons, days, or hours.
-- Optimizes Resource Placement: Emergency teams can place fire trucks, ambulances, and police patrols near high-risk zones before disasters happen.
-- Uncovers Hidden Causes: Researchers can link patterns to underlying factors like weather, road design, dry vegetation, or heavy traffic times.
-- Improves Public Policy: Planners and enforcement bodies use this data to build safer roads, set fire-safe zoning laws, and issue timely public warnings.
+Spatial and spatio-temporal point-pattern analysis can help to:
 
-By understanding where and when a businesses locate and operate, urban planners can design cities more effectively, anticipate growth, ensure resource efficiency, and tailor infrastructure to support economic vitality and community well-being.
+- Identify spatial concentrations: Determine whether events are concentrated in particular areas rather than being distributed uniformly across the study area.
+- Understand temporal variation: Examine how event occurrence changes across days, months, seasons, or other relevant periods.
+- Investigate spatial interaction: Determine whether events exhibit evidence of clustering, inhibition, or approximate spatial randomness.
+- Identify emerging patterns: Examine whether the distribution or interaction of events changes over time.
+- Support resource allocation: Provide evidence that can inform the allocation of emergency services, prevention resources, infrastructure improvements, and other interventions.
+- Support planning and management: Translate spatial and spatio-temporal evidence into actionable insights for public-safety planning and management.
+
+Importantly, an observed concentration of events should not automatically be interpreted as higher risk. The interpretation of event patterns should consider the study population, observation process, exposure, data quality, study window, and other relevant contextual factors.
 
 ## Objectives
 
-In this take-home exercise, we are interested to investigate the spatial and spatio-temporal patterns of either **forest fire event in 2026 at Kalimantan, Indonesia** or **road traffic accidents within Bangkok Greater Metropolitan area of a selected year**.
+This take-home exercise investigates the spatial and/or spatio-temporal patterns of public-safety point events using one of the following case studies:
 
-The specific objectives of this take-home exercise are as follows:
+- **Forest-fire events** in a selected regency of Kalimantan, Indonesia, during the available observation period in 2026; or
+- **Road traffic accidents** within the Bangkok Greater Metropolitan Area for the selected study year.
 
-- To identify the "where" and "when" of the spatial point events occur, revealing clusters, patterns, and trends that are crucial for informed public safety planning, prevention and management.
-- To identify complex interaction patterns and emergent phenomena in the distribution of the spatial point entities beyond simple proximity or density which are crucial for scientific public safety planning and policy-making.
+The specific objectives are:
 
-By understanding where a natural hazard and environetal health issue are located and how their distribution changes over time, public safety planners and managers can unlock spatial intelligence, optimize operations, and create effective strategies to improve public safety and to promote sustainable development.
+- To prepare and integrate real-world geospatial and temporal data for spatial and spatio-temporal point-pattern analysis.
+- To investigate first-order properties of the point pattern by examining how the intensity or distribution of events varies across space and/or time.
+- To investigate second-order properties by examining whether events exhibit evidence of spatial or spatio-temporal interaction, such as clustering, inhibition, or approximate randomness.
+- To critically evaluate the analytical assumptions, methodological choices, and limitations associated with the selected point-pattern methods.
+- To communicate the analytical findings effectively through appropriate geovisualisation and geocommunication.
+- To translate the analytical evidence into meaningful implications for public-safety planning and management.
 
 ## The Data
 
-### The core data sets
+### Core Data
 
-- For Forest Fire study:
-  - Forest fire events data from [Fire Information for Resource Management System](https://firms.modaps.eosdis.nasa.gov/download/). 
-  - Administrative boundary data set of Indonesia from from [Indonesia Geospatial](https://www.indonesia-geospasial.com/2023/05/download-shapefile-batas-administrasi.html) portal. Kalimatan is a big area.  There are 5 provinces and 47 regencies (kabupaten).  Hence, it is wiser to select one regency for this take-home exercise.
+#### Option A: Forest-Fire Study
 
-- For Road Traffic Accident study
-  - [Thailand Road Accident Fatalities 2024](https://www.kaggle.com/datasets/pornsakkamchan/thailand-road-accident-fatalities-2024) or [Thailand Road Accident [2019-2022]](https://www.kaggle.com/datasets/thaweewatboy/thailand-road-accident-2019-2022). Note: Be caution, the 2024 data set is in Thai language.  If 2019-2022 data set is used, focus on 2022.
-  - Administrative boundary data set of Thailand from [geoBoundaries](https://www.geoboundaries.org/)
+Use:
 
-::: {.callout-tip}
-### Useful additional data link
-Students are free to include other data sets to support the analysis. One of the highly recommended data source is OpenStreetMap(osm) data sets from [Geofabrik ](https://www.geofabrik.de/geofabrik/openstreetmap.html).  The recommended file format to be used is ESRI compatible shape files.
+- Forest-fire event data from the [Fire Information for Resource Management System(FIRM)](https://firms.modaps.eosdis.nasa.gov/download/).
+- Administrative boundary data for Indonesia from the appropriate [Indonesia Geospatial data portal](https://www.indonesia-geospasial.com/2023/05/download-shapefile-batas-administrasi.html).
+
+Kalimantan is a large geographic area comprising five provinces and numerous regencies. For this exercise, students should select one regency as the study area.
+
+The analysis should use the fire-event observations available during the study period in 2026. Students should clearly state the observation period covered by their downloaded data.
+
+#### Option B: Road Traffic Accident Study
+
+Use one of the following datasets:
+
+- [Thailand Road Accident Fatalities 2024](https://www.kaggle.com/datasets/pornsakkamchan/thailand-road-accident-fatalities-2024), or
+- [Thailand Road Accident \[2019-2022\]](https://www.kaggle.com/datasets/thaweewatboy/thailand-road-accident-2019-2022).
+
+::: callout-warning
+- The 2024 dataset is provided in Thai.
+- If the 2019–2022 dataset is used, students should restrict the analysis to 2022.
 :::
+
+Use an appropriate administrative boundary dataset for Thailand, such as data from [geoBoundaries](https://www.geoboundaries.org/).
+
+Students selecting the Bangkok Greater Metropolitan Area should clearly define the geographic extent used as the study area and explain how the boundary was operationalised.
+
+### Additional Data
+
+Students are free to incorporate additional datasets that can provide useful contextual information or support interpretation of the point patterns.
+
+One recommended source is [OpenStreetMap (OSM)](https://welcome.openstreetmap.org/) data obtained through [Geofabrik](https://www.geofabrik.de/geofabrik/openstreetmap.html).
+
+Additional datasets are not required. They should only be incorporated when they have a clear analytical or interpretive purpose.
+
+The use of additional data does not automatically constitute **Value-Added Analysis**. What matters is whether the additional data contribute meaningful insight to the research question.
+
+## Study Design and Analytical Assumptions
+
+Before conducting the point-pattern analysis, students must clearly define the analytical study design.
+
+Your technical report must document:
+
+### Point Event Definition
+
+Clearly define what constitutes a point event in your selected dataset.
+
+Explain how you handle:
+
+- duplicate observations;
+- repeated observations or detections;
+- missing coordinates;
+- invalid coordinates or geometries;
+- observations outside the study area;
+- observations outside the selected temporal period; and
+- any other data-quality issues that may affect the point pattern.
+
+### Spatial Study Window
+
+- Clearly define the geographic area within which the point process is analysed.
+- Explain and justify the spatial boundary used.
+
+### Temporal Study Window
+
+For spatio-temporal analysis, clearly define the period covered by the analysis and justify any temporal aggregation used.
+
+### Analytical Assumptions
+
+For each major analytical method, explicitly state the assumptions underlying the method and discuss whether they are reasonable for your study.
+
+Where an assumption may not hold, explain how this could affect the results and conclusions.
+
+### Methodological Decisions
+
+Document and justify important analytical choices, including, where applicable:
+
+- coordinate reference system;
+- spatial or temporal aggregation;
+- bandwidth;
+- distance range;
+- temporal interval;
+- edge correction;
+- simulation settings;
+- reference or null model; and
+- other parameters that may materially affect the results.
+
+The objective is **not** to eliminate all assumptions. The objective is to demonstrate that you understand them and recognise their implications.
 
 ## The Tasks
 
-The specific tasks of this hands-on exercise are as follow:
+### Task 1: Data Preparation
 
-1.  Download the **core data sets** from the data sources provided above.
+#### Data Acquisition
 
-2.  Prepare and tidy the data by applying appropriate data wrangling method.
+Download the required core datasets from the data sources provided.
 
-3.  Perform First-order spatial and spatio-temporal Point Patterns Analysis by using the tidied data.
+Document the source, date of access, geographic coverage, temporal coverage, and relevant characteristics of each dataset.
 
-4.  Perform Second-order spatial and spatio-temporal point patterns analysis on the tidied data.
+#### Data Wrangling and Quality Assessment
 
-5.  Describe and discuss the analysis results obtained from Step 3 and 4.
+Prepare and tidy the datasets using appropriate R functions and packages.
 
-6.  For each geovisualisation prepared, write a short report of not more than 150 words describing the spatio-temporal patterns revealed by the geovisualisation and statistical graphics.
+Your data preparation should include, where appropriate:
 
-7.  With reference to the analysis results above, discuss how these findings can be used to support urban land use planning and management. (Not more than 500 words)
+- data import;
+- data inspection;
+- data cleaning;
+- handling missing or invalid observations; coordinate and geometry validation;
+- coordinate reference system transformation; spatial filtering;
+- temporal filtering;
+- variable transformation or derivation;
+- integration of relevant spatial datasets; and
+- create spatial objects.
 
+Document important data-quality problems and explain how they were addressed.
+
+### Task 2: First-Order Point-Pattern Analysis
+
+Conduct appropriate first-order spatial and/or spatio-temporal point-pattern analyses using the prepared data.
+
+Your analysis should investigate how the intensity or distribution of events varies across space and/or time.
+
+You should:
+
+- select appropriate analytical methods; justify why the selected methods are appropriate;
+- explain important analytical parameters and assumptions;
+- produce appropriate statistical graphics and geovisualisations; and
+- interpret the resulting patterns in the context of your selected public-safety problem.
+
+::: callout-warning
+Simply producing a density map or statistical graphic without explaining the analytical reasoning behind it is insufficient.
+:::
+
+### Task 3: Second-Order Point-Pattern Analysis
+
+Conduct appropriate second-order spatial and/or spatio-temporal point-pattern analyses to investigate the interaction among events.
+
+Your analysis should examine whether the observed pattern provides evidence of phenomena such as:
+
+- clustering;
+- inhibition/regularity; or
+- approximate randomness.
+
+For each major second-order analysis, you must:
+
+- State the research question being investigated.
+- Identify and justify the analytical method.
+- State the relevant assumptions.
+- Identify and justify the reference/null model against which the observed pattern is assessed.
+- Explain relevant analytical parameters and edge effects, where applicable.
+- Interpret the statistical results.
+- Discuss important limitations or caveats.
+
+::: callout-tip
+Remember that a pattern should not be labelled "clustered" merely because points appear visually concentrated on a map. The interpretation should be made relative to an appropriate analytical reference or null model.
+:::
+
+### Task 4: Integration and Interpretation
+
+Integrate the findings from the first-order and second-order analyses.
+
+Your discussion should address:
+
+- What does the first-order analysis reveal about event intensity or distribution?
+- What does the second-order analysis reveal about interaction among events?
+- How do the first-order and second-order findings complement each other?
+- Are the findings consistent across different analytical views?
+- What assumptions or limitations should be considered when interpreting the results?
+- Are there alternative explanations for the observed patterns?
+
+::: callout-tip
+Where appropriate, conduct a sensitivity or robustness analysis to determine whether important conclusions are sensitive to analytical choices such as bandwidth, distance range, temporal aggregation, or other parameters.
+:::
+
+### Task 5: Geovisualisation and Analytical Interpretation
+
+Prepare appropriate geovisualisations and statistical graphics to communicate the findings.
+
+For each major geovisualisation, provide a concise analytical interpretation of no more than 150 words.
+
+The interpretation should explain:
+
+- what the visualisation reveals;
+- what evidence supports the interpretation; and
+- any important limitations or caveats.
+
+The emphasis should be on analytical clarity and effective communication, rather than decorative or aesthetic complexity.
+
+### Task 6: Public-Safety Planning and Management
+
+With reference to the analytical findings, discuss how the results could support public-safety planning and management.
+
+Your discussion should be no more than 500 words.
+
+Depending on the selected case study, relevant implications may include:
+
+- land-use planning;
+- transportation and road-safety planning;
+- emergency response;
+- infrastructure planning;
+- environmental management;
+- resource allocation;
+- risk mitigation; and
+- public-safety policy.
+
+::: callout-important
+Your discussion should distinguish between evidence supported directly by the analysis and interpretations or recommendations that require additional information.
+
+Avoid making causal claims unless they are supported by appropriate evidence.
+:::
 
 ## Grading Criteria
 
-This exercise will be graded by using the following criteria:
+This exercise will be assessed using the following criteria:
 
-- **Geospatial Data Wrangling (20 marks):** This is an important aspect of geospatial analytics. You will be assessed on your ability to employ appropriate R functions from various R packages specifically designed for modern data science such as readr, tidyverse (tidyr, dplyr, ggplot2), sf just to mention a few of them, to perform the entire geospatial data wrangling processes, including. This is not limited to data import, data extraction, data cleaning and data transformation. Besides assessing your ability to use the R functions, this criterion also includes your ability to clean and derive appropriate variables to meet the analysis need.
+| Criteria                                                    | Weights |
+|-------------------------------------------------------------|---------|
+| Geospatial Data Wrangling and Data Quality                  | 20%     |
+| Geospatial Point-Pattern Analysis and Statistical Reasoning | 30%     |
+| Geovisualisation and Geocommunication                       | 20%     |
+| Reproducibility and Analytical Documentation                | 15%     |
+| Bonus: Value-Added Analysis                                 | 15%     |
+| Total                                                       | 100%    |
+
+### Geospatial Data Wrangling and Data Quality (20%)
+
+You will be assessed on your ability to employ appropriate R functions and packages for modern geospatial data science to conduct the complete data-wrangling process.
+
+This includes, but is not limited to:
+
+- data import;
+- data inspection;
+- data extraction;
+- data cleaning;
+- spatial transformation;
+- temporal transformation;
+- geometry validation;
+- variable derivation;
+- integration of datasets; and
+- spatial objects creastion
+
+Particular attention will be given to your ability to identify and appropriately address data-quality issues that could affect the subsequent analysis.
 
 ::: callout-warning
-All data are like vast grassland full of land mines. Your job is to clear those mines and not to step on them).
+Real-world geospatial data rarely arrive analysis-ready. Missing values, duplicate records, invalid geometries, inconsistent coordinate systems, inaccurate locations and other data-quality problems may affect your results. Your responsibility is to identify, diagnose and appropriately address these issues before conducting the analysis.
 :::
 
-- **Geospatial Analysis (25%):** In this exercise, you are expected to utilize the geospatial analytics methods introduced in class, along with the R packages provided during the hands-on exercises, to perform your analysis. You will be assessed on your ability to apply these methods correctly and to provide accurate interpretations and discussions of the analysis results.
+### Geospatial Analysis and Statistical Reasoning (30%)
 
-- **Geovisualisation and Geocommunication (25% marks):** In this section, your ability to effectively communicate complex geospatial analysis results through user-friendly visual representations will be assessed. Since this course is focused on geospatial analysis, it is crucial that you demonstrate proficiency in using appropriate geovisualization techniques to clearly convey the findings of your analysis.
+You will be assessed on your ability to:
 
-- **Reproducibility (25%):** This is a key learning outcome of this course. You will be assessed on your ability to thoroughly document the analysis procedures using code chunks within Quarto. It is important to note that simply providing the code chunks is insufficient; you must also include explanations of the purpose behind each step and the R function(s) used.
+- correctly apply appropriate first-order and second-order point-pattern methods;
+- distinguish between first-order and second-order properties;
+- formulate appropriate analytical questions;
+- justify methodological choices;
+- state and evaluate relevant assumptions;
+- identify and justify appropriate reference/null models;
+- interpret statistical results correctly;
+- evaluate limitations and uncertainty; and
+- integrate evidence from multiple analytical approaches.
 
-- **Value-Added Analysis and Presentation (15%):** Demonstrate your ability to employ methods beyond what you had learned in class to gain insights from the data. The methods used must be geospatial in nature.
+#### What does "excellent geospatial analysis" mean?
 
-## Submission Instructions
+An excellent submission does not simply demonstrate that you can run R functions and produce maps or statistical graphics. It demonstrates that you can think analytically.
 
-- An Executive Summary of not more than ten slides excluding the cover page and content page prepared by using [revealjs](https://quarto.org/docs/presentations/revealjs/) of Quarto.  You are required to publish the write-up on [**Vercel**](https://vercel.com/) or others web hosting services.
-- A Technical Report provide a comprehensive write-up of the take-home exercise in **Quarto html document** format. You are required to publish the write-up on [**Vercel**](https://vercel.com/) or others web hosting services.
-- The R project of the take-home exercise must be pushed onto your [Github](https://github.com/) repository.
-- Update the links of the Executive Summary and Technical Report on the coursework web site and  provide the links on eLearn.
+You should be able to explain:
+
+- What? — What pattern does the analysis reveal?
+- Why? — Why is this method appropriate?
+- Assumptions? — Under what assumptions should the result be interpreted?
+- Compared with what? — What reference or null model provides the basis for assessing the pattern?
+- So what? — Why does the finding matter for the public-safety problem?
+- How certain? — What limitations or alternative explanations should be considered?
+- Can others reproduce it? — Could another analyst understand and reproduce your workflow?
+
+::: callout-tip
+The emphasis is on analytical reasoning, not merely obtaining numerical or graphical output from R.
+:::
+
+### Geovisualisation and Geocommunication (20%)
+
+You will be assessed on your ability to communicate complex geospatial findings through effective visual representations.
+
+Assessment will consider:
+
+- analytical accuracy;
+- appropriate choice of visualisation;
+- spatial and temporal clarity;
+- effective visual encoding;
+- readability;
+- integration of statistical and cartographic evidence;
+- ability to highlight meaningful patterns; and quality of analytical interpretation.
+
+::: callout-tip
+Visual attractiveness alone will not constitute effective geovisualisation.
+:::
+
+### Reproducibility and Analytical Documentation (15%)
+
+Reproducibility is a key learning outcome of this course.
+
+Your Quarto technical report should document sufficient information for another analyst to understand and reproduce your analytical workflow.
+
+This includes:
+
+- data sources and acquisition;
+- data-preparation procedures;
+- data-quality decisions;
+- analytical methods;
+- analytical parameters;
+- assumptions;
+- reference/null models;
+- R packages and functions;
+- code;
+- outputs; and
+- interpretation of the analytical procedures.
+
+::: callout-tip
+Simply providing code chunks is insufficient. You must explain the purpose of each major analytical step, the function(s) used, the reason for the analytical decision, and any assumptions or limitations involved.
+:::
+
+### Bonus: Value-Added Analysis (15%)
+
+Students are encouraged to explore beyond the core methods covered in class.
+
+Students may extend their analysis using an appropriate geospatial analytical method not covered in the core exercise.
+
+A qualifying value-added analysis should:
+
+- address a meaningful analytical question;
+- be geospatial in nature;
+- be methodologically appropriate;
+- be clearly justified;
+- identify relevant assumptions and limitations; and
+- provide substantive additional insight.
+
+::: callout-note
+Simply applying an additional method or producing an additional visualisation without demonstrating its analytical contribution will not qualify for bonus marks.
+:::
+
+Examples may include, but are not limited to, an alternative spatial-statistical approach, advanced spatio-temporal analysis, simulation-based analysis, or another appropriately justified geospatial method.
+
+The bonus is intended to reward **meaningful analytical exploration**, not prior knowledge of advanced software or techniques.
+
+#### Qualitative grading rubric
+
+::: {style="font-size: 65%;"}
+| Criterion | Outstanding | Excellent | Good | Satisfactory | Needs Improvement |
+|------------|------------|------------|------------|------------|------------|
+| Geospatial Data Wrangling & Data Quality | Demonstrates highly proficient and thoughtful handling of complex geospatial data. Data-quality issues are systematically identified, diagnosed and appropriately addressed. Spatial/temporal transformations and derived variables are clearly justified. | Demonstrates strong proficiency in geospatial data preparation. Most important data-quality issues are identified and appropriately addressed. Transformations and derived variables are generally well justified. | Data are appropriately cleaned, transformed and prepared for analysis. Most important data-quality issues are addressed, although some decisions may lack depth of justification. | Data are sufficiently prepared for analysis, but important quality issues or processing decisions are incompletely addressed or documented. | Data preparation is incomplete, inappropriate or poorly documented. Important data-quality problems are overlooked, potentially compromising subsequent analysis. |
+| Geospatial Point-Pattern Analysis & Statistical Reasoning | Demonstrates sophisticated understanding of first- and second-order point-pattern analysis. Methods are carefully selected and justified. Assumptions, parameters and reference/null models are explicitly evaluated. Results are interpreted critically, with appropriate consideration of uncertainty, limitations and alternative explanations. | Demonstrates strong understanding of the analytical methods. Methods and parameters are appropriately justified. Assumptions and reference/null models are clearly addressed. Results are accurately interpreted with good critical discussion. | Applies appropriate point-pattern methods correctly and provides generally sound interpretation. Some methodological choices, assumptions or limitations are discussed, but critical evaluation could be deeper. | Demonstrates basic understanding and applies the principal methods with some success. Interpretation is largely descriptive and methodological justification, assumptions or limitations are limited. | Methods are incorrectly applied, poorly justified or misunderstood. Interpretation is inaccurate, superficial or unsupported by the analysis. |
+| Geovisualisation & Geocommunication | Produces highly effective, accurate and purposeful visualisations. Visual encodings are carefully chosen to reveal important spatial/spatio-temporal patterns. Statistical graphics and maps work together to communicate a coherent analytical story. | Produces clear, accurate and well-designed visualisations. Important patterns are effectively communicated and supported by appropriate analytical interpretation. | Visualisations are generally appropriate and understandable. Major findings can be identified, although some visual or communication choices could be improved. | Visualisations communicate basic findings but may suffer from inappropriate design, excessive complexity, weak hierarchy or limited analytical interpretation. | Visualisations are unclear, misleading, inaccurate or poorly matched to the analytical questions. |
+| Reproducibility & Analytical Documentation | Provides a highly transparent and reproducible workflow. Data sources, preparation decisions, assumptions, analytical parameters, methods, code and outputs are comprehensively documented. Explanations demonstrate clear understanding of *why* each major step is undertaken. | Provides a well-documented and reproducible workflow. Code, methods and major analytical decisions are clearly documented and explained. | Provides a generally reproducible workflow with appropriate code and documentation. Some analytical decisions or explanations are incomplete. | Code and workflow are present but documentation is limited. Another analyst may reproduce some, but not necessarily all, aspects of the analysis. | uate explanation or important components are missing. |
+:::
+
+#### Qualitative grading rubric of Value-Added Analysis
+
+::: {style="font-size: 75%;"}
+| Level | Descriptor |
+|-------------------------|-----------------------------------------------|
+| Exceptional Contribution | Introduces a well-chosen geospatial analytical approach beyond the core scope that addresses a meaningful additional question and generates substantive new insight. The method is appropriately justified, implemented and interpreted, with assumptions and limitations clearly considered. |
+| Meaningful Contribution | Extends the analysis using an appropriate additional geospatial method and provides useful additional insight. The method and findings are reasonably justified and interpreted. |
+| Limited / No Bonus | The extension adds limited analytical value, lacks sufficient methodological justification, or mainly duplicates the core analysis. No bonus is awarded where the additional method does not provide meaningful new insight. |
+:::
+
+
+::: callout-important
+Value-Added Analysis is not awarded for simply using a more advanced R package, producing additional visualisations, or applying a method that was not covered in class. Bonus credit is awarded for demonstrating meaningful additional analytical insight through an appropriately justified geospatial approach.
+:::
+
+
+
+
+## Submission Requirements
+
+### Executive Summary
+
+Prepare an Executive Summary of no more than 10 slides, excluding the cover page and content page.
+
+The Executive Summary must be prepared using Quarto [revealjs](https://quarto.org/docs/presentations/revealjs/).
+
+The presentation should communicate the essential:
+
+- research question;
+- study area and data;
+- analytical approach;
+- key findings;
+- important visual evidence;
+- limitations; and
+- public-safety implications.
+
+You are required to publish the Executive Summary on **Vercel** or another appropriate web-hosting service.
+
+### Technical Report
+
+Prepare a comprehensive Technical Report using Quarto in HTML format.
+
+The Technical Report should provide sufficient detail to document and reproduce the complete analytical workflow.
+
+It should include, where appropriate:
+
+- Introduction and study context
+- Research question and objectives
+- Data and study design
+- Data preparation and quality assessment
+- Analytical assumptions and methodological decisions
+- First-order Spatial Point Patterns analysis
+- Second-order Spatial Point Patterns analysis
+- Integrated findings and discussion
+- Geovisualisation and geocommunication
+- Public-safety planning and management implications
+- Limitations
+- References
+
+You are required to publish the Technical Report on Vercel or another appropriate web-hosting service.
+
+### Quarto Project and Reproducibility
+
+The complete Quarto project for the take-home exercise must be pushed to your GitHub repository.
+
+The repository should contain the necessary files to demonstrate the reproducibility of your analysis, subject to any data-licensing or redistribution restrictions.
+
+### Submission Links
+
+Update Take-home Exercise 1 links to the:
+
+- Executive Summary;
+- Technical Report; and
+- GitHub repository
+
+on the coursework website and provide the required links through eLearn.
 
 ## Due Date
 
@@ -103,4 +489,101 @@ All data are like vast grassland full of land mines. Your job is to clear those 
 
 ## Peer Learning
 
+Students are encouraged to consult appropriate academic references, official data documentation, package documentation, and other credible sources when conducting the analysis.
+
+Peer learning and discussion are encouraged. However, the submitted analysis, interpretation, code, visualisations and technical report must represent your own work.
+
+Where external sources, code, analytical methods, or ideas have materially informed your work, they should be appropriately acknowledged and referenced.
+
+## AI Tools: Responsible Use and Learning Policy
+
+AI tools, including generative AI tools such as ChatGPT, Claude, Gemini, Copilot and similar applications, are increasingly becoming part of professional data analytics practice. The purpose of this exercise is not to prohibit the use of AI tools, but to ensure that their use supports learning rather than substitutes for your own analytical thinking and judgement.
+
+You are responsible for all analysis, interpretation, conclusions, code and visualisations submitted for this exercise.
+
+### 1. Acceptable Use of AI Tools
+
+You may use AI tools for purposes that support your learning and communication, including:
+
+- improving the clarity, grammar and readability of your writing;
+- improving the structure and organisation of a draft technical report;
+- identifying unclear or ambiguous expressions in your own writing;
+- obtaining general explanations of statistical or geospatial concepts that you are trying to understand;
+- brainstorming possible questions or analytical perspectives before conducting your own analysis; and
+- assisting with language expression, particularly where English is not your first language.
+
+For example, after completing your own technical report, you may use an AI tool to improve the clarity and quality of the English. However, the analytical content, findings, interpretation and conclusions must originate from your own work.
+
+### 2. Use of AI Tools That Is Not Permitted
+
+You **must not** use AI tools as a substitute for performing or understanding the analysis yourself.
+
+In particular, you must not:
+
+- ask an AI tool to provide a direct code chunk that performs a specific analytical task required in this exercise, and then use that code as your own analytical solution;
+- provide your analysis output, statistical results, maps or graphs to an AI tool and ask it to interpret the results or write the interpretation for you;
+- ask an AI tool to determine what statistical or geospatial method should be used and then adopt its recommendation without independently understanding and justifying the method;
+- ask an AI tool to generate the analytical findings, discussion, conclusions or planning implications of your study;
+- submit AI-generated analytical reasoning or interpretation as your own work; or
+- use AI-generated content that you cannot explain or defend.
+
+The key principle is:
+
+AI may help you learn and communicate, but it must not do the analytical thinking for you.
+
+### 3. A Simple Test
+
+Before using an AI-generated response in your work, ask yourself:
+
+"Could I explain and defend this analysis, code, interpretation or conclusion to my instructor without relying on the AI tool?"
+
+If the answer is no, you should not use it in your submission.
+
+You should be able to explain:
+
+- what you did;
+- why you did it;
+- how the method works;
+- what assumptions it makes;
+- what the results mean;
+- what the limitations are; and
+- why your conclusions are supported by the evidence.
+
+### 4. AI and Your Technical Report
+
+The technical report must represent your own analytical work and judgement.
+
+Using AI to improve the language of a completed draft is acceptable. However, students should not use AI to generate the substantive analytical sections of the report, including:
+
+- methodological decisions;
+- assumptions;
+- statistical interpretation;
+- findings;
+- discussion;
+- conclusions; and
+- recommendations.
+
+In other words:
+
+Write the analysis yourself first. Use AI, if needed, to help communicate your analysis more clearly but not to create the analysis for you.
+
+### 5. Verification and Accuracy
+
+AI tools can produce inaccurate, incomplete or inappropriate information.
+
+If you use AI for learning or language assistance, you remain responsible for verifying the accuracy of the information and for ensuring that your submitted work reflects your actual analysis.
+
+Do not assume that an AI-generated explanation, R function, statistical interpretation or methodological recommendation is correct simply because it appears plausible.
+
+### 6. Transparency
+
+If AI tools are used substantially in preparing your submission, briefly disclose their use in the Technical Report.
+
+For example:
+
+::: callout-note
+AI Use Declaration: Generative AI was used to improve the English language, grammar and clarity of the technical report after completion of the student's own analysis. No AI-generated code, analytical interpretation or conclusions were used in the submitted work.
+:::
+
+Students who use AI for other permitted learning purposes should describe the purpose briefly.
 
