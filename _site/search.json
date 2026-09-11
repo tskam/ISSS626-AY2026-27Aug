@@ -710,15 +710,15 @@
     "objectID": "lesson/Lesson03/Lesson03-STPPA.html#content",
     "href": "lesson/Lesson03/Lesson03-STPPA.html#content",
     "title": "Lesson 3: Spatio-Temporal Point Patterns Analysis (STPPA)",
-    "section": "Content",
-    "text": "Content\n\nBasic concepts of Spatio-Temporal Point Process\nSpatio-Temporal Kernel Density Estimation"
+    "section": "",
+    "text": "Basic concepts of Spatio-Temporal Point Process\nSpatio-Temporal Kernel Density Estimation"
   },
   {
     "objectID": "lesson/Lesson03/Lesson03-STPPA.html#what-is-a-spatio-temporal-point-process",
     "href": "lesson/Lesson03/Lesson03-STPPA.html#what-is-a-spatio-temporal-point-process",
     "title": "Lesson 3: Spatio-Temporal Point Patterns Analysis (STPPA)",
     "section": "What is a Spatio-Temporal Point Process",
-    "text": "What is a Spatio-Temporal Point Process\nA spatio-temporal point process (also called space-time or spatial-temporal point process) is a random collection of points, where each point represents the time and location of an event. Examples of events include incidence of disease, sightings or births of a species, or the occurrences of fires, earthquakes, lightning strikes, tsunamis, or volcanic eruptions. Typically the spatio-temporal point events are recorded in three-dimension, namely: longitude, latitude, and time as shown in the figure below."
+    "text": "What is a Spatio-Temporal Point Process\nA spatio-temporal point process (also called space-time or spatial-temporal point process) is a random collection of points, where each point represents the time and location of an event. Examples of events include incidence of disease, sightings or births of a species, or the occurrences of fires, earthquakes, lightning strikes, tsunamis, or volcanic eruptions. Typically the spatio-temporal point events are recorded in three-dimension, namely: longitude, latitude, and time as shown in the figure below.\n\n\n\nReal world spatio-temporal point events\nSnapshots of confirmed COVID-19 cases at four particular weeks in Cali, Columbia. Each dot represents the location of a confirmed case. Note that darker dots indicate multiple dots being overlapped"
   },
   {
     "objectID": "lesson/Lesson03/Lesson03-STPPA.html#spatio-temporal-kde-stkde",
@@ -1293,5 +1293,40 @@
     "title": "Lesson 3: Advanced Spatial Point Patterns Analysis",
     "section": "Spatial-temporal point process data",
     "text": "Spatial-temporal point process data\nStatic two-panel plot of data from the forest fire events in Kepulauan Bangka Belitung, Indonesia from 1st January 2023 to 31st December 2023."
+  },
+  {
+    "objectID": "outline/Lesson03_outline.html",
+    "href": "outline/Lesson03_outline.html",
+    "title": "Lesson 3: Spatio-Temporal Point Patterns Analysis",
+    "section": "",
+    "text": "A spatio-temporal point process (also called space-time or spatial-temporal point process) is a random collection of points, where each point represents the time and location of an event. Examples of events include incidence of disease, sightings or births of a species, or the occurrences of fires, earthquakes, lightning strikes, tsunamis, or volcanic eruptions. In this lesson, you will learn the basic concepts and methods of Spatio-temporal Point Patterns Analysis. You will also gain hands-on experience on using these methods to discover real-world point processes."
+  },
+  {
+    "objectID": "outline/Lesson03_outline.html#content",
+    "href": "outline/Lesson03_outline.html#content",
+    "title": "Lesson 3: Spatio-Temporal Point Patterns Analysis",
+    "section": "Content",
+    "text": "Content\n\nSpatio-temporal Point Processes\n\nBasic concepts of spatio-temporal point processes.\nExamples of real-world spatio-temporal point processes.\n\nSpatio-temporal Point Patterns Analysis methods\n\nSpatio-temporal Kernel Density Estimation (STKDE)\nSpatio-temporal K-functions\n\nNetwork Constrained Point Patterns Analysis\n\nBasic concepts of network constrained spatial point patterns\n\nNetwork Constrained KDE methods\n\nThe Three versions of Network Constrained KDE\n\nTemporal Network Kernel Density Estimation (TNKED)\n\nTemporal dimension\nSpatial dimension\nSpatio-temporal point patterns\n\n\n\nLesson Slides and Hands-on Notes\n\nLesson 3 slides\nHands-on Exercise 3: Spatio-Temporal Point Patterns Analysis."
+  },
+  {
+    "objectID": "outline/Lesson03_outline.html#references",
+    "href": "outline/Lesson03_outline.html#references",
+    "title": "Lesson 3: Spatio-Temporal Point Patterns Analysis",
+    "section": "References",
+    "text": "References\n\nJonatan A. González, et. al. (2016) “Spatio-temporal point process statistics: A review”, Spatial Statistics, Volume 18, Part B, November 2016, Pages 505-544.\nAlexander Hohl et. al.“Spatiotemporal Point Pattern Analysis Using Ripley’s K” in Geospatial Data Science Techniques and Applications.\nTonini, Marj et. al. (2017) “Evolution of forest fires in Portugal: from spatio-temporal point events to smoothed density maps”, Natural hazards (Dordrecht), 2017-02, Vol.85 (3), p.1489-1510. Available at SMU eJournal.\nJuan, P et. al. (2012) “Pinpointing spatio-temporal interactions in wildfire patterns”, Stochastic environmental research and risk assessment, 2012-12, Vol.26 (8), p.1131-1150. Available at SMU eJournal."
+  },
+  {
+    "objectID": "outline/Lesson03_outline.html#all-about-r",
+    "href": "outline/Lesson03_outline.html#all-about-r",
+    "title": "Lesson 3: Spatio-Temporal Point Patterns Analysis",
+    "section": "All About R",
+    "text": "All About R\n\nGonzález & Moraga, “Non-Parametric Analysis of Spatial and Spatio-Temporal Point Patterns”, The R Journal, 2023\nstpp\n\nstpp: An R Package for Plotting, Simulating and Analyzing Spatio-Temporal Point Patterns, Journal of Statistical Software (JSS), April 2013, Volume 53, Issue 2.\n\nsparr: Spatial and Spatiotemporal Relative Risk\nstopp\n\nstpp: An R Package for Plotting, Simulating and Analysing Spatio-Temporal Point Patterns\n\nspNetwork\n\nspNetwork: A Package for Network Kernel Density Estimation, R Journal, 2021, Vol. 13/2\nspNetwork: A R package to perform spatial analysis on networks"
+  },
+  {
+    "objectID": "lesson/Lesson03/Lesson03-STPPA.html",
+    "href": "lesson/Lesson03/Lesson03-STPPA.html",
+    "title": "Lesson 3: Spatio-Temporal Point Patterns Analysis (STPPA)",
+    "section": "",
+    "text": "Basic concepts of Spatio-Temporal Point Process\nSpatio-Temporal Kernel Density Estimation"
   }
 ]
