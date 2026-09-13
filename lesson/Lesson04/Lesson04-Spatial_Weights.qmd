@@ -10,7 +10,12 @@ format:
     show-notes: false
     slide-number: true
     show-slide-number: all
-date-format: "DD MMM YYYY"
+execute:
+  echo: false
+  eval: true
+  message: false
+  warning: false
+  freeze: true
 editor: visual
 ---
 
@@ -29,16 +34,39 @@ This lesson consists of three main sections. First, I am going to explain the ba
 
 ## What is geographically referenced attribute?
 
+::::: columns
+::: {.column width="50%"}
+Geographically referenced attributes are descriptive data items linked to a specific physical location on the Earth's surface
+
+- Geographic Reference (Location): The coordinates, address, or boundary that place an object in a specific spot on the globe (e.g., county boundary).
+- Attributes (Characteristics): Descriptive information answering questions like who, what, when, or how much about that location (i.e. GDP per capita).
+:::
+
+::: {.column width="50%"}
 ```{r}
-#| echo: false
-#| eval: true
 pacman::p_load(ggstatsplot, DT, sf, tmap, tidyverse)
 ```
 
-```{r tx-wrangle, highlight.output = 9:13}
-geodemog <- read_rds("data/geodemog.RDS")
-glimpse(geodemog)
+```{r}
+#| output: false 
+hunan <- st_read(dsn = "data/geospatial", 
+                 layer = "Hunan")
+
+hunan2012 <- read_csv("data/aspatial/Hunan_2012.csv")
+
+hunan <- left_join(hunan,hunan2012) %>%
+  select(1:4, 7, 15)
 ```
+
+```{r}
+#| fig-width: 7
+#| fig-height: 9
+qtm(hunan, "GDPPC") +
+  tm_layout(
+    legend.position = c("left", "bottom"))
+```
+:::
+:::::
 
 ::: notes
 A kind of data that is very similar to an ordinary data. The only difference is that each observation is associated with some form of geography such as numbers of aged population by planning subzone.
@@ -51,9 +79,9 @@ A kind of data that is very similar to an ordinary data. The only difference is 
 The dependency ratio values by planning subzone are normally distributed.
 
 ```{r echo=FALSE, eval=TRUE, fig.width=8, fig.height=6}
-gghistostats(data = geodemog, 
-             x = DEPENDENCY,
-             xlab = "Dependency ratio",
+gghistostats(data = hunan, 
+             x = GDPPC,
+             xlab = "GDP Per Capita",
              centrality.parameter = "median",
              normal.curve = TRUE,
              normal.curve.args = list(color = "red", size = 1)
@@ -76,12 +104,12 @@ Are the planning subzones with high proportion of dependency ratio randomly dist
 #| eval: true
 #| fig-width: 15
 #| fig-height: 6
-tm_shape(geodemog)+
-  tm_fill("DEPENDENCY", 
+tm_shape(hunan)+
+  tm_fill("GDPPC", 
           style = "quantile", 
           palette = "Blues",
           title = "Dependency ratio") +
-  tm_layout(main.title = "Distribution of Dependency Ratio by planning subzone",
+  tm_layout(main.title = "Distribution of GDP per capita by county, Hunan Province, People Republic of China",
             main.title.position = "center",
             main.title.size = 1.2,
             legend.height = 0.45, 
@@ -101,16 +129,14 @@ When come of geographically referenced attributes, beside the distribution of th
 Are the planning subzones with high proportion of dependency ratio randomly distributed over space?
 
 ```{r}
-#| echo: false
-#| eval: true
 #| fig-width: 15
 #| fig-height: 6
-tm_shape(geodemog)+
-  tm_fill("DEPENDENCY", 
+tm_shape(hunan)+
+  tm_fill("GDPPC", 
           style = "jenks", 
           palette = "Blues",
           title = "Dependency ratio") +
-  tm_layout(main.title = "Distribution of Dependency Ratio by planning subzone",
+  tm_layout(main.title = "Distribution of GDP per capita by county, Hunan Province, People Republic of China",
             main.title.position = "center",
             main.title.size = 1.2,
             legend.height = 0.45, 
@@ -255,6 +281,41 @@ The spatial window sum uses and includes the diagonal element.
 ::: notes
 Spatial window sum, on the other hand, summed up the GDPPC of all neighbours and include the target location itself.
 :::
+
+## Geographical Weighted Summary Statistics
+
+The idea behind geographically weighted statistics is simple. For example, instead of calculating the (global) mean average for all of the data, and therefore for the whole map, a series of (local) averages are calculated for various sub-spaces within the map. Those location specific averages can then be compared.
+
+![](img/image6-21.png)
+
+## Geographically Weighted Robust Statistics
+
+::: columns
+:::: {.column width="50%"}
+
+- Geographically weighted robust statistics combine local spatial weighting with outlier-resistant calculations to geographically referenced data characteristics across space without being skewed by extreme values.
+
+- All robust statistics depend on the definition of a weighted p-quantile, where p is between 0 and 1. 
+- This definition is used to calculate the weighted median (p=0.5), first quartile (p=0.25), and third quartile (p=0.75). 
+::::
+
+:::: {.column width="50%"}
+
+The p-quantile for a given p is defined as the following:
+
+![](img/image6-22a.png)
+
+::::
+:::
+
+---
+
+### Geographically Weighted Robust Statistics
+
+Using the definition of the p-quantile in previous slide, the following table shows the weighted and unweighted version of each robust summary statistic. 
+
+![](img/image6-23.png)
+
 
 ## References
 

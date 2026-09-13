@@ -1334,7 +1334,7 @@
     "href": "lesson/Lesson04/Lesson04-Spatial_Weights.html#what-is-geographically-referenced-attribute",
     "title": "Lesson 4: Spatial Weights and Applications",
     "section": "What is geographically referenced attribute?",
-    "text": "What is geographically referenced attribute?\n\n\nRows: 323\nColumns: 12\n$ SUBZONE_N        &lt;chr&gt; \"MARINA SOUTH\", \"PEARL'S HILL\", \"BOAT QUAY\", \"HENDERS…\n$ SUBZONE_C        &lt;fct&gt; MSSZ01, OTSZ01, SRSZ03, BMSZ08, BMSZ03, BMSZ07, BMSZ0…\n$ PLN_AREA_N       &lt;fct&gt; MARINA SOUTH, OUTRAM, SINGAPORE RIVER, BUKIT MERAH, B…\n$ PLN_AREA_C       &lt;fct&gt; MS, OT, SR, BM, BM, BM, BM, SR, QT, QT, QT, BM, ME, R…\n$ REGION_N         &lt;fct&gt; CENTRAL REGION, CENTRAL REGION, CENTRAL REGION, CENTR…\n$ REGION_C         &lt;fct&gt; CR, CR, CR, CR, CR, CR, CR, CR, CR, CR, CR, CR, CR, C…\n$ YOUNG            &lt;dbl&gt; NA, 1100, 0, 2620, 2840, 2910, 2850, 0, 1120, 30, NA,…\n$ `ECONOMY ACTIVE` &lt;dbl&gt; NA, 3420, 50, 7500, 6260, 7560, 8340, 50, 2750, 210, …\n$ AGED             &lt;dbl&gt; NA, 2110, 20, 3260, 1630, 3310, 3590, 10, 560, 50, NA…\n$ TOTAL            &lt;dbl&gt; NA, 6630, 70, 13380, 10730, 13780, 14780, 60, 4430, 2…\n$ DEPENDENCY       &lt;dbl&gt; NA, 0.9385965, 0.4000000, 0.7840000, 0.7140575, 0.822…\n$ geometry         &lt;MULTIPOLYGON [m]&gt; MULTIPOLYGON (((31495.56 30..., MULTIPOL…\n\n\n\nA kind of data that is very similar to an ordinary data. The only difference is that each observation is associated with some form of geography such as numbers of aged population by planning subzone."
+    "text": "What is geographically referenced attribute?\n\n\nGeographically referenced attributes are descriptive data items linked to a specific physical location on the Earth’s surface\n\nGeographic Reference (Location): The coordinates, address, or boundary that place an object in a specific spot on the globe (e.g., county boundary).\nAttributes (Characteristics): Descriptive information answering questions like who, what, when, or how much about that location (i.e. GDP per capita).\n\n\n\n\n\n\n\n\n\n\n\n\n\nA kind of data that is very similar to an ordinary data. The only difference is that each observation is associated with some form of geography such as numbers of aged population by planning subzone."
   },
   {
     "objectID": "lesson/Lesson04/Lesson04-Spatial_Weights.html#what-are-spatial-weights-wij",
@@ -1356,5 +1356,19 @@
     "title": "Lesson 4: Spatial Weights and Applications",
     "section": "References",
     "text": "References\n\nChapter 2. Codifying the neighbourhood structure of Handbook of Spatial Analysis: Theory and Application with R.\nFrançois Bavaud (2010) “Models for Spatial Weights: A Systematic Look” Geographical Analysis, Vol. 30, No.2, pp 153-171.\nTony H. Grubesic and Andrea L. Rosso (2014) “The Use of Spatially Lagged Explanatory Variables for Modeling Neighborhood Amenities and Mobility in Older Adults”, Cityscape, Vol. 16, No. 2, pp. 205-214."
+  },
+  {
+    "objectID": "lesson/Lesson04/Lesson04-Spatial_Weights.html#geographical-weighted-summary-statistics",
+    "href": "lesson/Lesson04/Lesson04-Spatial_Weights.html#geographical-weighted-summary-statistics",
+    "title": "Lesson 4: Spatial Weights and Applications",
+    "section": "Geographical Weighted Summary Statistics",
+    "text": "Geographical Weighted Summary Statistics\nThe idea behind geographically weighted statistics is simple. For example, instead of calculating the (global) mean average for all of the data, and therefore for the whole map, a series of (local) averages are calculated for various sub-spaces within the map. Those location specific averages can then be compared."
+  },
+  {
+    "objectID": "lesson/Lesson04/Lesson04-Spatial_Weights.html#geographically-weighted-robust-statistics",
+    "href": "lesson/Lesson04/Lesson04-Spatial_Weights.html#geographically-weighted-robust-statistics",
+    "title": "Lesson 4: Spatial Weights and Applications",
+    "section": "Geographically Weighted Robust Statistics",
+    "text": "Geographically Weighted Robust Statistics\n\n\n\nGeographically weighted robust statistics combine local spatial weighting with outlier-resistant calculations to geographically referenced data characteristics across space without being skewed by extreme values.\nAll robust statistics depend on the definition of a weighted p-quantile, where p is between 0 and 1.\nThis definition is used to calculate the weighted median (p=0.5), first quartile (p=0.25), and third quartile (p=0.75).\n\n\nThe p-quantile for a given p is defined as the following:"
   }
 ]

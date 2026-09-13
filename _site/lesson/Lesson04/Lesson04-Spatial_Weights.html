@@ -10,7 +10,7 @@
   <meta name="generator" content="quarto-1.8.26">
 
   <meta name="author" content="Dr.&nbsp;Kam Tin Seong Assoc. Professor of Information Systems(Practice)">
-  <meta name="dcterms.date" content="2026-09-12">
+  <meta name="dcterms.date" content="2026-09-13">
   <title>ISSS626 – Lesson 4: Spatial Weights and Applications</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -141,7 +141,7 @@ Dr.&nbsp;Kam Tin Seong<br>Assoc. Professor of Information Systems(Practice)
     </div>
 </div>
 
-  <p class="date">12 Sep 2026</p>
+  <p class="date">2026-09-13</p>
 </section>
 <section>
 <section id="content" class="title-slide slide level1 center">
@@ -172,24 +172,24 @@ Dr.&nbsp;Kam Tin Seong<br>Assoc. Professor of Information Systems(Practice)
 </section>
 <section id="what-is-geographically-referenced-attribute" class="slide level2">
 <h2>What is geographically referenced attribute?</h2>
-<div class="cell" data-highlight.output="[9,10,11,12,13]">
-<div class="cell-output cell-output-stdout">
-<pre><code>Rows: 323
-Columns: 12
-$ SUBZONE_N        &lt;chr&gt; "MARINA SOUTH", "PEARL'S HILL", "BOAT QUAY", "HENDERS…
-$ SUBZONE_C        &lt;fct&gt; MSSZ01, OTSZ01, SRSZ03, BMSZ08, BMSZ03, BMSZ07, BMSZ0…
-$ PLN_AREA_N       &lt;fct&gt; MARINA SOUTH, OUTRAM, SINGAPORE RIVER, BUKIT MERAH, B…
-$ PLN_AREA_C       &lt;fct&gt; MS, OT, SR, BM, BM, BM, BM, SR, QT, QT, QT, BM, ME, R…
-$ REGION_N         &lt;fct&gt; CENTRAL REGION, CENTRAL REGION, CENTRAL REGION, CENTR…
-$ REGION_C         &lt;fct&gt; CR, CR, CR, CR, CR, CR, CR, CR, CR, CR, CR, CR, CR, C…
-$ YOUNG            &lt;dbl&gt; NA, 1100, 0, 2620, 2840, 2910, 2850, 0, 1120, 30, NA,…
-$ `ECONOMY ACTIVE` &lt;dbl&gt; NA, 3420, 50, 7500, 6260, 7560, 8340, 50, 2750, 210, …
-$ AGED             &lt;dbl&gt; NA, 2110, 20, 3260, 1630, 3310, 3590, 10, 560, 50, NA…
-$ TOTAL            &lt;dbl&gt; NA, 6630, 70, 13380, 10730, 13780, 14780, 60, 4430, 2…
-$ DEPENDENCY       &lt;dbl&gt; NA, 0.9385965, 0.4000000, 0.7840000, 0.7140575, 0.822…
-$ geometry         &lt;MULTIPOLYGON [m]&gt; MULTIPOLYGON (((31495.56 30..., MULTIPOL…</code></pre>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p>Geographically referenced attributes are descriptive data items linked to a specific physical location on the Earth’s surface</p>
+<ul>
+<li>Geographic Reference (Location): The coordinates, address, or boundary that place an object in a specific spot on the globe (e.g., county boundary).</li>
+<li>Attributes (Characteristics): Descriptive information answering questions like who, what, when, or how much about that location (i.e.&nbsp;GDP per capita).</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="Lesson04-Spatial_Weights_files/figure-revealjs/unnamed-chunk-3-1.png" width="672"></p>
+</figure>
 </div>
 </div>
+</div>
+</div></div>
 <aside class="notes">
 <p>A kind of data that is very similar to an ordinary data. The only difference is that each observation is associated with some form of geography such as numbers of aged population by planning subzone.</p>
 <style type="text/css">
@@ -209,7 +209,7 @@ $ geometry         &lt;MULTIPOLYGON [m]&gt; MULTIPOLYGON (((31495.56 30..., MULT
 <h3 id="describing-attribute-distribution">Describing attribute distribution</h3>
 <p>The dependency ratio values by planning subzone are normally distributed.</p>
 
-<img data-src="Lesson04-Spatial_Weights_files/figure-revealjs/unnamed-chunk-2-1.png" width="768" class="r-stretch"><aside class="notes">
+<img data-src="Lesson04-Spatial_Weights_files/figure-revealjs/unnamed-chunk-4-1.png" width="768" class="r-stretch"><aside class="notes">
 <p>In statistics, we are interested to study if the observed distribution resemble normal distribution. To provide an answer to the question, we have to go beyond EDA and apply Confirmatory Data Analysis or also know as statistical test to confirm the observated pattern is indeed resemble normal distribution.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -228,7 +228,7 @@ $ geometry         &lt;MULTIPOLYGON [m]&gt; MULTIPOLYGON (((31495.56 30..., MULT
 <h3 id="geographical-distribution-question">Geographical distribution question</h3>
 <p>Are the planning subzones with high proportion of dependency ratio randomly distributed over space?</p>
 
-<img data-src="Lesson04-Spatial_Weights_files/figure-revealjs/unnamed-chunk-3-1.png" width="1440" class="r-stretch"><aside class="notes">
+<img data-src="Lesson04-Spatial_Weights_files/figure-revealjs/unnamed-chunk-5-1.png" width="1440" class="r-stretch"><aside class="notes">
 <p>When come of geographically referenced attributes, beside the distribution of the value, we are also interested to find out if the observed geographical patterns are randomly distributed. Similarly to statistical, geovisualisation is not enough because the visual impression will change when different data classification methods is used.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -247,7 +247,7 @@ $ geometry         &lt;MULTIPOLYGON [m]&gt; MULTIPOLYGON (((31495.56 30..., MULT
 <h3 id="geographical-distribution-question-1">Geographical distribution question</h3>
 <p>Are the planning subzones with high proportion of dependency ratio randomly distributed over space?</p>
 
-<img data-src="Lesson04-Spatial_Weights_files/figure-revealjs/unnamed-chunk-4-1.png" width="1440" class="r-stretch"><aside class="notes">
+<img data-src="Lesson04-Spatial_Weights_files/figure-revealjs/unnamed-chunk-6-1.png" width="1440" class="r-stretch"><aside class="notes">
 <p>As a result, a formal statistical test of spatial randomness is needed.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -475,6 +475,31 @@ The main different between Queens and Rooks is that Rooks only consider geograph
           display:block!important;
       }</style></aside>
 </section>
+<section id="geographical-weighted-summary-statistics" class="slide level2">
+<h2>Geographical Weighted Summary Statistics</h2>
+<p>The idea behind geographically weighted statistics is simple. For example, instead of calculating the (global) mean average for all of the data, and therefore for the whole map, a series of (local) averages are calculated for various sub-spaces within the map. Those location specific averages can then be compared.</p>
+
+<img data-src="img/image6-21.png" class="r-stretch"></section>
+<section id="geographically-weighted-robust-statistics" class="slide level2">
+<h2>Geographically Weighted Robust Statistics</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li><p>Geographically weighted robust statistics combine local spatial weighting with outlier-resistant calculations to geographically referenced data characteristics across space without being skewed by extreme values.</p></li>
+<li><p>All robust statistics depend on the definition of a weighted p-quantile, where p is between 0 and 1.</p></li>
+<li><p>This definition is used to calculate the weighted median (p=0.5), first quartile (p=0.25), and third quartile (p=0.75).</p></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p>The p-quantile for a given p is defined as the following:</p>
+<p><img data-src="img/image6-22a.png"></p>
+</div></div>
+</section>
+<section class="slide level2">
+
+<h3 id="geographically-weighted-robust-statistics-1">Geographically Weighted Robust Statistics</h3>
+<p>Using the definition of the p-quantile in previous slide, the following table shows the weighted and unweighted version of each robust summary statistic.</p>
+
+<img data-src="img/image6-23.png" class="r-stretch"></section>
 <section id="references" class="slide level2">
 <h2>References</h2>
 <ul>
