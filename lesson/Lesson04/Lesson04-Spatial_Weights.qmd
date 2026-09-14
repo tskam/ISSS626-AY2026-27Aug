@@ -76,9 +76,12 @@ A kind of data that is very similar to an ordinary data. The only difference is 
 
 ### Describing attribute distribution
 
-The dependency ratio values by planning subzone are normally distributed.
+Are the distribution of GDP per capita by county resemble normally distributed?
 
-```{r echo=FALSE, eval=TRUE, fig.width=8, fig.height=6}
+```{r} 
+#| fig-width: 8
+#| fig-height: 6
+
 gghistostats(data = hunan, 
              x = GDPPC,
              xlab = "GDP Per Capita",
@@ -97,18 +100,16 @@ In statistics, we are interested to study if the observed distribution resemble 
 
 ### Geographical distribution question
 
-Are the planning subzones with high proportion of dependency ratio randomly distributed over space?
+Are the distribution of GDP per capita by country randomly distributed over space?
 
 ```{r}
-#| echo: false
-#| eval: true
 #| fig-width: 15
 #| fig-height: 6
 tm_shape(hunan)+
   tm_fill("GDPPC", 
           style = "quantile", 
           palette = "Blues",
-          title = "Dependency ratio") +
+          title = "GDPPC") +
   tm_layout(main.title = "Distribution of GDP per capita by county, Hunan Province, People Republic of China",
             main.title.position = "center",
             main.title.size = 1.2,
@@ -126,7 +127,7 @@ When come of geographically referenced attributes, beside the distribution of th
 
 ### Geographical distribution question
 
-Are the planning subzones with high proportion of dependency ratio randomly distributed over space?
+Are the distribution of GDP per capita by country randomly distributed over space?
 
 ```{r}
 #| fig-width: 15
@@ -135,7 +136,7 @@ tm_shape(hunan)+
   tm_fill("GDPPC", 
           style = "jenks", 
           palette = "Blues",
-          title = "Dependency ratio") +
+          title = "GDPPC") +
   tm_layout(main.title = "Distribution of GDP per capita by county, Hunan Province, People Republic of China",
             main.title.position = "center",
             main.title.size = 1.2,
@@ -288,6 +289,20 @@ The idea behind geographically weighted statistics is simple. For example, inste
 
 ![](img/image6-21.png)
 
+---
+
+### An example of Geographically Weighted Mean
+
+::: columns
+:::: {.column width="50%"}
+
+![](img/image6-21b.png)
+::::
+
+:::: {.column width="50%"}
+::::
+:::
+
 ## Geographically Weighted Robust Statistics
 
 ::: columns
@@ -303,7 +318,7 @@ The idea behind geographically weighted statistics is simple. For example, inste
 
 The p-quantile for a given p is defined as the following:
 
-![](img/image6-22a.png)
+![](img/image6-22.png)
 
 ::::
 :::

@@ -10,7 +10,7 @@
   <meta name="generator" content="quarto-1.8.26">
 
   <meta name="author" content="Dr.&nbsp;Kam Tin Seong Assoc. Professor of Information Systems(Practice)">
-  <meta name="dcterms.date" content="2026-09-13">
+  <meta name="dcterms.date" content="2026-09-14">
   <title>ISSS626 – Lesson 4: Spatial Weights and Applications</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -141,7 +141,7 @@ Dr.&nbsp;Kam Tin Seong<br>Assoc. Professor of Information Systems(Practice)
     </div>
 </div>
 
-  <p class="date">2026-09-13</p>
+  <p class="date">2026-09-14</p>
 </section>
 <section>
 <section id="content" class="title-slide slide level1 center">
@@ -207,7 +207,7 @@ Dr.&nbsp;Kam Tin Seong<br>Assoc. Professor of Information Systems(Practice)
 <section class="slide level2">
 
 <h3 id="describing-attribute-distribution">Describing attribute distribution</h3>
-<p>The dependency ratio values by planning subzone are normally distributed.</p>
+<p>Are the distribution of GDP per capita by county resemble normally distributed?</p>
 
 <img data-src="Lesson04-Spatial_Weights_files/figure-revealjs/unnamed-chunk-4-1.png" width="768" class="r-stretch"><aside class="notes">
 <p>In statistics, we are interested to study if the observed distribution resemble normal distribution. To provide an answer to the question, we have to go beyond EDA and apply Confirmatory Data Analysis or also know as statistical test to confirm the observated pattern is indeed resemble normal distribution.</p>
@@ -226,7 +226,7 @@ Dr.&nbsp;Kam Tin Seong<br>Assoc. Professor of Information Systems(Practice)
 <section class="slide level2">
 
 <h3 id="geographical-distribution-question">Geographical distribution question</h3>
-<p>Are the planning subzones with high proportion of dependency ratio randomly distributed over space?</p>
+<p>Are the distribution of GDP per capita by country randomly distributed over space?</p>
 
 <img data-src="Lesson04-Spatial_Weights_files/figure-revealjs/unnamed-chunk-5-1.png" width="1440" class="r-stretch"><aside class="notes">
 <p>When come of geographically referenced attributes, beside the distribution of the value, we are also interested to find out if the observed geographical patterns are randomly distributed. Similarly to statistical, geovisualisation is not enough because the visual impression will change when different data classification methods is used.</p>
@@ -245,7 +245,7 @@ Dr.&nbsp;Kam Tin Seong<br>Assoc. Professor of Information Systems(Practice)
 <section class="slide level2">
 
 <h3 id="geographical-distribution-question-1">Geographical distribution question</h3>
-<p>Are the planning subzones with high proportion of dependency ratio randomly distributed over space?</p>
+<p>Are the distribution of GDP per capita by country randomly distributed over space?</p>
 
 <img data-src="Lesson04-Spatial_Weights_files/figure-revealjs/unnamed-chunk-6-1.png" width="1440" class="r-stretch"><aside class="notes">
 <p>As a result, a formal statistical test of spatial randomness is needed.</p>
@@ -480,6 +480,16 @@ The main different between Queens and Rooks is that Rooks only consider geograph
 <p>The idea behind geographically weighted statistics is simple. For example, instead of calculating the (global) mean average for all of the data, and therefore for the whole map, a series of (local) averages are calculated for various sub-spaces within the map. Those location specific averages can then be compared.</p>
 
 <img data-src="img/image6-21.png" class="r-stretch"></section>
+<section class="slide level2">
+
+<h3 id="an-example-of-geographically-weighted-mean">An example of Geographically Weighted Mean</h3>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><img data-src="img/image6-21b.png"></p>
+</div><div class="column" style="width:50%;">
+
+</div></div>
+</section>
 <section id="geographically-weighted-robust-statistics" class="slide level2">
 <h2>Geographically Weighted Robust Statistics</h2>
 <div class="columns">
@@ -491,7 +501,7 @@ The main different between Queens and Rooks is that Rooks only consider geograph
 </ul>
 </div><div class="column" style="width:50%;">
 <p>The p-quantile for a given p is defined as the following:</p>
-<p><img data-src="img/image6-22a.png"></p>
+<p><img data-src="img/image6-22.png"></p>
 </div></div>
 </section>
 <section class="slide level2">
