@@ -1423,64 +1423,211 @@
   {
     "objectID": "In-class_Ex/In-class_Ex04/In-class_Ex04.html#overview",
     "href": "In-class_Ex/In-class_Ex04/In-class_Ex04.html#overview",
-    "title": "In-class Exercise 4: Geographically Weighted Summary Statistics - gwModel methods",
-    "section": "",
-    "text": "Geographically Weighted Summary Statistics (GWSS) are methods that calculate summary statistics (like mean, standard deviation, or median) for local areas within a dataset, rather than for the entire dataset globally.\nEach calculation assigns weights to nearby data points, with closer points receiving higher weights, using a specified kernel function (e.g., bisquare or Gaussian) and bandwidth to define the neighborhood’s influence. This allows for the detection of spatial heterogeneity, where statistical relationships and patterns vary across the study area, providing more detailed and localized insights than traditional global statistics.\n\n\n\n\n\nGWSS are applied to understand how relationships between variables vary across geographic space in fields like environmental science, health, and socio-economics.\nApplications include analyzing spatial variations in ecological processes, mapping health disparities, assessing the relationship between human activities and landscape changes, and identifying spatial patterns in geochemical anomalies.\nBy creating local models instead of a single global one, GWSS reveals localized relationships and spatial non-stationarity, leading to more targeted resource management and policy interventions.\n\n\n\n\n\nBy the end of this in-class exercise, you will gain hands-on experience in\n\nextracting and preparing geospatial analytics data by using appropriate fiunctions of sf, readr and dplyr packages.\ncomputing geographically weighted summaries statistics and correlation coefficients by using gwss() of GWmodel package,\nextracting, creating and integrating SDF data frame of gwss object with hunan sf data frame by using appropriate dplyr functions, and\nvisualising the output of gwss() using appropriate choropleth mapping functions of tmap package."
+    "title": "In-class Exercise 4: Geographically Weighted Summary Statistics",
+    "section": "Overview",
+    "text": "Overview\n\nGeographically Weighted Summary Statistics (GWSS) are methods that calculate summary statistics (like mean, standard deviation, or median) for local areas within a dataset, rather than for the entire dataset globally.\nEach calculation assigns weights to nearby data points, with closer points receiving higher weights, using a specified kernel function (e.g., bisquare or Gaussian) and bandwidth to define the neighborhood’s influence. This allows for the detection of spatial heterogeneity, where statistical relationships and patterns vary across the study area, providing more detailed and localized insights than traditional global statistics."
   },
   {
     "objectID": "In-class_Ex/In-class_Ex04/In-class_Ex04.html#loading-the-package",
     "href": "In-class_Ex/In-class_Ex04/In-class_Ex04.html#loading-the-package",
-    "title": "In-class Exercise 4: Geographically Weighted Summary Statistics - gwModel methods",
+    "title": "In-class Exercise 4: Geographically Weighted Summary Statistics",
     "section": "Loading the package",
-    "text": "Loading the package\nTo complete this exercise, sf, spdep, tmap, tidyverse, knitr and GWmodel will be used.\n\nDIYThe code\n\n\nUsing the step you leanred from previous hands-in, install and load the necessary R packages in R environment.\n\n\n\n\npacman::p_load(sf, ggstatsplot, tmap, tidyverse, knitr, GWmodel)"
+    "text": "Loading the package\nTo complete this exercise, sf, spdep, tmap, tidyverse, knitr and GWmodel will be used.\n\nDIYThe code\n\n\nUsing the step you learned from previous hands-in, install and load the necessary R packages in R environment.\n\n\n\n\npacman::p_load(sf, ggstatsplot, tmap, tidyverse, knitr, GWmodel)"
   },
   {
     "objectID": "In-class_Ex/In-class_Ex04/In-class_Ex04.html#preparing-the-data",
     "href": "In-class_Ex/In-class_Ex04/In-class_Ex04.html#preparing-the-data",
-    "title": "In-class Exercise 4: Geographically Weighted Summary Statistics - gwModel methods",
+    "title": "In-class Exercise 4: Geographically Weighted Summary Statistics",
     "section": "Preparing the Data",
-    "text": "Preparing the Data\nFor this in-class exercise, Hunan shapefile and Hunan_2012 data file will be used.\n\nDIYImporting Hunan shapefileImporting Hunan_2012 tableJoining Hunan and Hunan_2012\n\n\nUsing the steps you learned from previous hands-on, complete the following tasks:\n\nimport Hunan shapefile and parse it into a sf polygon feature object.\nimport Hunan_2012.csv file parse it into a tibble data.frame.\njoin Hunan and Hunan_2012 data.frames.\n\n\n\n\n\nhunan_sf &lt;- st_read(dsn = \"data/geospatial\", \n                 layer = \"Hunan\")\n\nReading layer `Hunan' from data source \n  `C:\\tskam\\ISSS626-AY2026-27Aug\\In-class_Ex\\In-class_Ex04\\data\\geospatial' \n  using driver `ESRI Shapefile'\nSimple feature collection with 88 features and 7 fields\nGeometry type: POLYGON\nDimension:     XY\nBounding box:  xmin: 108.7831 ymin: 24.6342 xmax: 114.2544 ymax: 30.12812\nGeodetic CRS:  WGS 84\n\n\n\n\n\n\n\nhunan2012 &lt;- read_csv(\"data/aspatial/Hunan_2012.csv\")\n\n\n\n\n\n\nhunan_sf &lt;- left_join(hunan_sf, hunan2012) %&gt;%\n  select(1:3, 7, 15, 16, 31, 32)"
+    "text": "Preparing the Data\nFor this in-class exercise, Hunan shapefile and Hunan_2012 data file will be used.\n\nDIYImporting Hunan shapefileImporting Hunan_2012 tableJoining Hunan and Hunan_2012\n\n\nUsing the steps you learned from previous hands-on, complete the following tasks:\n\nimport Hunan shapefile and parse it into a sf polygon feature object.\nimport Hunan_2012.csv file parse it into a tibble data.frame.\njoin Hunan and Hunan_2012 data.frames and tidy the data table by retaining NAME_2, ID_3, NAME_3, County, GDPPC, GIO, Agri and Service.\n\n\n\n\n\nhunan_sf &lt;- st_read(dsn = \"data/geospatial\", \n                 layer = \"Hunan\")\n\nReading layer `Hunan' from data source \n  `C:\\tskam\\ISSS626-AY2026-27Aug\\In-class_Ex\\In-class_Ex04\\data\\geospatial' \n  using driver `ESRI Shapefile'\nSimple feature collection with 88 features and 7 fields\nGeometry type: POLYGON\nDimension:     XY\nBounding box:  xmin: 108.7831 ymin: 24.6342 xmax: 114.2544 ymax: 30.12812\nGeodetic CRS:  WGS 84\n\n\n\n\n\n\n\nhunan2012 &lt;- read_csv(\"data/aspatial/Hunan_2012.csv\")\n\n\n\n\n\n\nhunan_sf &lt;- left_join(hunan_sf, hunan2012) %&gt;%\n  select(1:3, 7, 15, 16, 31, 32)"
   },
   {
     "objectID": "In-class_Ex/In-class_Ex04/In-class_Ex04.html#mapping-gdppc",
     "href": "In-class_Ex/In-class_Ex04/In-class_Ex04.html#mapping-gdppc",
-    "title": "In-class Exercise 4: Geographically Weighted Summary Statistics - gwModel methods",
+    "title": "In-class Exercise 4: Geographically Weighted Summary Statistics",
     "section": "Mapping GDPPC",
-    "text": "Mapping GDPPC\n\nDIYThe code\n\n\nUsing the steps you learned from Hands-on Exercise 5, prepare a choropleth map showing the geographic distribution of GDPPC of Hunan Province.\n\n\n\n\n\n\n\n\n\n\n\n\n\nbasemap &lt;- tm_shape(hunan_sf) +\n  tm_polygons() +\n  tm_text(\"NAME_3\", size=0.5)\n\ngdppc &lt;- qtm(hunan_sf, \"GDPPC\")\ntmap_arrange(basemap, gdppc, asp=1, ncol=2)"
+    "text": "Mapping GDPPC\n\nDIYThe code\n\n\nUsing the steps you learned from Hands-on Exercise 1b, prepare a choropleth map showing the geographic distribution of GDPPC of Hunan Province.\n\n\n\n\n\n\n\n\n\n\n\n\n\nbasemap &lt;- tm_shape(hunan_sf) +\n  tm_polygons() +\n  tm_text(\"NAME_3\", size=0.5)\n\ngdppc &lt;- qtm(hunan_sf, \"GDPPC\") +\n  tm_layout(\n    legend.position = c(\"left\", \"bottom\"))\ntmap_arrange(basemap, gdppc, asp=1, ncol=2)"
   },
   {
     "objectID": "In-class_Ex/In-class_Ex04/In-class_Ex04.html#converting-to-spatialpolygondataframe",
     "href": "In-class_Ex/In-class_Ex04/In-class_Ex04.html#converting-to-spatialpolygondataframe",
-    "title": "In-class Exercise 4: Geographically Weighted Summary Statistics - gwModel methods",
+    "title": "In-class Exercise 4: Geographically Weighted Summary Statistics",
     "section": "Converting to SpatialPolygonDataFrame",
-    "text": "Converting to SpatialPolygonDataFrame\n\n\n\n\n\n\nNote\n\n\n\nGWmodel presently is built around the older sp and not sf formats for handling spatial data in R.\n\n\n\n\nhunan_sp &lt;- hunan_sf %&gt;%\n  as_Spatial()"
+    "text": "Converting to SpatialPolygonDataFrame\n\n\n\n\n\n\nNote\n\n\nGWmodel presently is built around the older sp and not sf formats for handling spatial data in R.\n\n\n\n\n\nhunan_sp &lt;- hunan_sf %&gt;%\n  as_Spatial()"
   },
   {
     "objectID": "In-class_Ex/In-class_Ex04/In-class_Ex04.html#geographically-weighted-summary-statistics-gsww-with-adaptive-bandwidth",
     "href": "In-class_Ex/In-class_Ex04/In-class_Ex04.html#geographically-weighted-summary-statistics-gsww-with-adaptive-bandwidth",
-    "title": "In-class Exercise 4: Geographically Weighted Summary Statistics - gwModel methods",
+    "title": "In-class Exercise 4: Geographically Weighted Summary Statistics",
     "section": "Geographically Weighted Summary Statistics (GSWW) with adaptive bandwidth",
-    "text": "Geographically Weighted Summary Statistics (GSWW) with adaptive bandwidth\n\nDetermine adaptive bandwidth\n\nCross-validationAIC\n\n\n\n\nbw_CV &lt;- bw.gwr(GDPPC ~ 1, \n             data = hunan_sp,\n             approach = \"CV\",\n             adaptive = TRUE, \n             kernel = \"bisquare\", \n             longlat = T)\n\nAdaptive bandwidth: 62 CV score: 15515442343 \nAdaptive bandwidth: 46 CV score: 14937956887 \nAdaptive bandwidth: 36 CV score: 14408561608 \nAdaptive bandwidth: 29 CV score: 14198527496 \nAdaptive bandwidth: 26 CV score: 13898800611 \nAdaptive bandwidth: 22 CV score: 13662299974 \nAdaptive bandwidth: 22 CV score: 13662299974 \n\nbw_CV\n\n[1] 22\n\n\n\n\n\n\n\nbw_AIC &lt;- bw.gwr(GDPPC ~ 1, \n             data = hunan_sp,\n             approach =\"AIC\",\n             adaptive = TRUE, \n             kernel = \"bisquare\", \n             longlat = T)\n\nAdaptive bandwidth (number of nearest neighbours): 62 AICc value: 1923.156 \nAdaptive bandwidth (number of nearest neighbours): 46 AICc value: 1920.469 \nAdaptive bandwidth (number of nearest neighbours): 36 AICc value: 1917.324 \nAdaptive bandwidth (number of nearest neighbours): 29 AICc value: 1916.661 \nAdaptive bandwidth (number of nearest neighbours): 26 AICc value: 1914.897 \nAdaptive bandwidth (number of nearest neighbours): 22 AICc value: 1914.045 \nAdaptive bandwidth (number of nearest neighbours): 22 AICc value: 1914.045 \n\nbw_AIC\n\n[1] 22\n\n\n\n\n\n\n\n\n\nComputing geographically wieghted summary statistics\nThe code chunk below computes geographically weighted summary statistics by using gwss() of GWmodel package. The analysis is performed using adaptive distance weighted. The distance is derived using AIC method and the kernel method used id bisquare.\n\n\ngwstat &lt;- gwss(data = hunan_sp,\n               vars = \"GDPPC\",\n               bw = bw_AIC,\n               kernel = \"bisquare\",\n               quantile = TRUE,\n               adaptive = TRUE,\n               longlat = T)\n\n\n\n\n\n\n\n\nNote\n\n\n\ngwss support five kernel methods, namely gaussian, exponential, bisquare, tricube, and boxcar. Repeat the code chunk above with different kernel methods and compare their results visually.\n\n\n\n\n\nPreparing the output data\n\n\n\n\n\n\nImportant\n\n\n\ngwss() with quantile argument computes eight local summary statistics, namely: local means, local standard deviations, local variance, local skew, local coefficients of variation, local Median, local medians, local interquartile ranges, and local quantile imbalances. They are output in SDF data frame.\n\n\nCode chunk below is used to extract SDF data table from gwss object output from gwss() for subsequent geovilisation. It will be converted into data.frame by using as.data.frame().\n\n\ngwstat_df &lt;- as.data.frame(gwstat$SDF)\n\n\nNext, cbind() is used to append the newly derived data.frame onto hunan_sf sf data.frame.\n\n\nhunan_gstat &lt;- cbind(hunan_sf, gwstat_df)\n\n\n\n\n\nVisualising geographically weighted summary statistics\n\nThe Geographically Weighted MeanThe code\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ntm_shape(hunan_gstat) +\n  tm_polygons(fill = \"GDPPC_LM\",\n              fill.scale = tm_scale_intervals(\n                style = \"quantile\",\n                n = 5,\n                values = \"brewer.blues\"),\n              fill.legend = tm_legend(\n                title = \"local Mean\")) +\n  tm_borders(fill_alpha = 0.5) +\n  tm_layout(main.title = \"Distribution of geographically wieghted mean\",\n            main.title.position = \"center\",\n            main.title.size = 2.0,\n            frame = TRUE)"
+    "text": "Geographically Weighted Summary Statistics (GSWW) with adaptive bandwidth\nDetermine adaptive bandwidth\n\nCross-validationAICc\n\n\n\n\nbw_CV &lt;- bw.gwr(GDPPC ~ 1, \n             data = hunan_sp,\n             approach = \"CV\",\n             adaptive = TRUE, \n             kernel = \"bisquare\", \n             longlat = T)\n\nAdaptive bandwidth: 62 CV score: 15515442343 \nAdaptive bandwidth: 46 CV score: 14937956887 \nAdaptive bandwidth: 36 CV score: 14408561608 \nAdaptive bandwidth: 29 CV score: 14198527496 \nAdaptive bandwidth: 26 CV score: 13898800611 \nAdaptive bandwidth: 22 CV score: 13662299974 \nAdaptive bandwidth: 22 CV score: 13662299974 \n\nbw_CV\n\n[1] 22\n\n\n\n\n\n\n\nbw_AIC &lt;- bw.gwr(GDPPC ~ 1, \n             data = hunan_sp,\n             approach =\"AICc\",\n             adaptive = TRUE, \n             kernel = \"bisquare\", \n             longlat = T)\n\nAdaptive bandwidth (number of nearest neighbours): 62 AICc value: 1923.156 \nAdaptive bandwidth (number of nearest neighbours): 46 AICc value: 1920.469 \nAdaptive bandwidth (number of nearest neighbours): 36 AICc value: 1917.324 \nAdaptive bandwidth (number of nearest neighbours): 29 AICc value: 1916.661 \nAdaptive bandwidth (number of nearest neighbours): 26 AICc value: 1914.897 \nAdaptive bandwidth (number of nearest neighbours): 22 AICc value: 1914.045 \nAdaptive bandwidth (number of nearest neighbours): 22 AICc value: 1914.045 \n\nbw_AIC\n\n[1] 22"
   },
   {
     "objectID": "In-class_Ex/In-class_Ex04/In-class_Ex04.html#gwss-with-fixed-bandwidth",
     "href": "In-class_Ex/In-class_Ex04/In-class_Ex04.html#gwss-with-fixed-bandwidth",
-    "title": "In-class Exercise 4: Geographically Weighted Summary Statistics - gwModel methods",
+    "title": "In-class Exercise 4: Geographically Weighted Summary Statistics",
     "section": "GWSS with Fixed Bandwidth",
-    "text": "GWSS with Fixed Bandwidth\n\nDetermine fixed bandwidth\n\nCross-validationAIC\n\n\n\n\nbw_CV &lt;- bw.gwr(GDPPC ~ 1, \n             data = hunan_sp,\n             approach = \"CV\",\n             adaptive = FALSE, \n             kernel = \"bisquare\", \n             longlat = T)\n\nFixed bandwidth: 357.4897 CV score: 16265191728 \nFixed bandwidth: 220.985 CV score: 14954930931 \nFixed bandwidth: 136.6204 CV score: 14134185837 \nFixed bandwidth: 84.48025 CV score: 13693362460 \nFixed bandwidth: 52.25585 CV score: Inf \nFixed bandwidth: 104.396 CV score: 13891052305 \nFixed bandwidth: 72.17162 CV score: 13577893677 \nFixed bandwidth: 64.56447 CV score: 14681160609 \nFixed bandwidth: 76.8731 CV score: 13444716890 \nFixed bandwidth: 79.77877 CV score: 13503296834 \nFixed bandwidth: 75.07729 CV score: 13452450771 \nFixed bandwidth: 77.98296 CV score: 13457916138 \nFixed bandwidth: 76.18716 CV score: 13442911302 \nFixed bandwidth: 75.76323 CV score: 13444600639 \nFixed bandwidth: 76.44916 CV score: 13442994078 \nFixed bandwidth: 76.02523 CV score: 13443285248 \nFixed bandwidth: 76.28724 CV score: 13442844774 \nFixed bandwidth: 76.34909 CV score: 13442864995 \nFixed bandwidth: 76.24901 CV score: 13442855596 \nFixed bandwidth: 76.31086 CV score: 13442847019 \nFixed bandwidth: 76.27264 CV score: 13442846793 \nFixed bandwidth: 76.29626 CV score: 13442844829 \nFixed bandwidth: 76.28166 CV score: 13442845238 \nFixed bandwidth: 76.29068 CV score: 13442844678 \nFixed bandwidth: 76.29281 CV score: 13442844691 \nFixed bandwidth: 76.28937 CV score: 13442844698 \nFixed bandwidth: 76.2915 CV score: 13442844676 \nFixed bandwidth: 76.292 CV score: 13442844679 \nFixed bandwidth: 76.29119 CV score: 13442844676 \nFixed bandwidth: 76.29099 CV score: 13442844676 \nFixed bandwidth: 76.29131 CV score: 13442844676 \nFixed bandwidth: 76.29138 CV score: 13442844676 \nFixed bandwidth: 76.29126 CV score: 13442844676 \nFixed bandwidth: 76.29123 CV score: 13442844676 \n\nbw_CV\n\n[1] 76.29126\n\n\n\n\n\n\n\nbw_AIC &lt;- bw.gwr(GDPPC ~ 1, \n             data = hunan_sp,\n             approach =\"AIC\",\n             adaptive = FALSE, \n             kernel = \"bisquare\", \n             longlat = T)\n\nFixed bandwidth: 357.4897 AICc value: 1927.631 \nFixed bandwidth: 220.985 AICc value: 1921.547 \nFixed bandwidth: 136.6204 AICc value: 1919.993 \nFixed bandwidth: 84.48025 AICc value: 1940.603 \nFixed bandwidth: 168.8448 AICc value: 1919.457 \nFixed bandwidth: 188.7606 AICc value: 1920.007 \nFixed bandwidth: 156.5362 AICc value: 1919.41 \nFixed bandwidth: 148.929 AICc value: 1919.527 \nFixed bandwidth: 161.2377 AICc value: 1919.392 \nFixed bandwidth: 164.1433 AICc value: 1919.403 \nFixed bandwidth: 159.4419 AICc value: 1919.393 \nFixed bandwidth: 162.3475 AICc value: 1919.394 \nFixed bandwidth: 160.5517 AICc value: 1919.391 \n\nbw_AIC\n\n[1] 160.5517\n\n\n\n\n\n\n\n\n\nComputing adaptive bandwidth GWSS\n\n\ngwstat &lt;- gwss(data = hunan_sp,\n               vars = \"GDPPC\",\n               bw = bw_AIC,\n               kernel = \"bisquare\",\n               adaptive = FALSE,\n               quantile = FALSE,\n               longlat = T)\n\n\n\n\n\nPreparing the output data\nCode chunk below is used to extract SDF data table from gwss object output from gwss(). It will be converted into data.frame by using as.data.frame().\n\n\ngwstat_df &lt;- as.data.frame(gwstat$SDF)\n\n\nNext, cbind() is used to append the newly derived data.frame onto hunan_sf sf data.frame.\n\n\nhunan_gstat &lt;- cbind(hunan_sf, gwstat_df)\n\n\n\n\n\nVisualising geographically weighted summary statistics\n\nThe Geographically Weighted MeanThe code\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ntm_shape(hunan_gstat) +\n  tm_polygons(fill = \"GDPPC_LM\",\n              fill.scale = tm_scale_intervals(\n                style = \"quantile\",\n                n = 5,\n                values = \"brewer.blues\"),\n              fill.legend = tm_legend(\n                title = \"local Mean\")) +\n  tm_borders(fill_alpha = 0.5) +\n  tm_layout(main.title = \"Distribution of geographically wieghted mean\",\n            main.title.position = \"center\",\n            main.title.size = 2.0,\n            frame = TRUE)"
+    "text": "GWSS with Fixed Bandwidth\nDetermine fixed bandwidth\n\nCross-validationAICc\n\n\n\n\nbw_CV &lt;- bw.gwr(GDPPC ~ 1, \n             data = hunan_sp,\n             approach = \"CV\",\n             adaptive = FALSE, \n             kernel = \"bisquare\", \n             longlat = T)\n\nFixed bandwidth: 357.4897 CV score: 16265191728 \nFixed bandwidth: 220.985 CV score: 14954930931 \nFixed bandwidth: 136.6204 CV score: 14134185837 \nFixed bandwidth: 84.48025 CV score: 13693362460 \nFixed bandwidth: 52.25585 CV score: Inf \nFixed bandwidth: 104.396 CV score: 13891052305 \nFixed bandwidth: 72.17162 CV score: 13577893677 \nFixed bandwidth: 64.56447 CV score: 14681160609 \nFixed bandwidth: 76.8731 CV score: 13444716890 \nFixed bandwidth: 79.77877 CV score: 13503296834 \nFixed bandwidth: 75.07729 CV score: 13452450771 \nFixed bandwidth: 77.98296 CV score: 13457916138 \nFixed bandwidth: 76.18716 CV score: 13442911302 \nFixed bandwidth: 75.76323 CV score: 13444600639 \nFixed bandwidth: 76.44916 CV score: 13442994078 \nFixed bandwidth: 76.02523 CV score: 13443285248 \nFixed bandwidth: 76.28724 CV score: 13442844774 \nFixed bandwidth: 76.34909 CV score: 13442864995 \nFixed bandwidth: 76.24901 CV score: 13442855596 \nFixed bandwidth: 76.31086 CV score: 13442847019 \nFixed bandwidth: 76.27264 CV score: 13442846793 \nFixed bandwidth: 76.29626 CV score: 13442844829 \nFixed bandwidth: 76.28166 CV score: 13442845238 \nFixed bandwidth: 76.29068 CV score: 13442844678 \nFixed bandwidth: 76.29281 CV score: 13442844691 \nFixed bandwidth: 76.28937 CV score: 13442844698 \nFixed bandwidth: 76.2915 CV score: 13442844676 \nFixed bandwidth: 76.292 CV score: 13442844679 \nFixed bandwidth: 76.29119 CV score: 13442844676 \nFixed bandwidth: 76.29099 CV score: 13442844676 \nFixed bandwidth: 76.29131 CV score: 13442844676 \nFixed bandwidth: 76.29138 CV score: 13442844676 \nFixed bandwidth: 76.29126 CV score: 13442844676 \nFixed bandwidth: 76.29123 CV score: 13442844676 \n\nbw_CV\n\n[1] 76.29126\n\n\n\n\n\n\n\nbw_AIC &lt;- bw.gwr(GDPPC ~ 1, \n             data = hunan_sp,\n             approach =\"AICc\",\n             adaptive = FALSE, \n             kernel = \"bisquare\", \n             longlat = T)\n\nFixed bandwidth: 357.4897 AICc value: 1927.631 \nFixed bandwidth: 220.985 AICc value: 1921.547 \nFixed bandwidth: 136.6204 AICc value: 1919.993 \nFixed bandwidth: 84.48025 AICc value: 1940.603 \nFixed bandwidth: 168.8448 AICc value: 1919.457 \nFixed bandwidth: 188.7606 AICc value: 1920.007 \nFixed bandwidth: 156.5362 AICc value: 1919.41 \nFixed bandwidth: 148.929 AICc value: 1919.527 \nFixed bandwidth: 161.2377 AICc value: 1919.392 \nFixed bandwidth: 164.1433 AICc value: 1919.403 \nFixed bandwidth: 159.4419 AICc value: 1919.393 \nFixed bandwidth: 162.3475 AICc value: 1919.394 \nFixed bandwidth: 160.5517 AICc value: 1919.391 \n\nbw_AIC\n\n[1] 160.5517"
   },
   {
     "objectID": "In-class_Ex/In-class_Ex04/In-class_Ex04.html#geographically-weighted-correlation",
     "href": "In-class_Ex/In-class_Ex04/In-class_Ex04.html#geographically-weighted-correlation",
-    "title": "In-class Exercise 4: Geographically Weighted Summary Statistics - gwModel methods",
+    "title": "In-class Exercise 4: Geographically Weighted Summary Statistics",
     "section": "Geographically Weighted Correlation",
-    "text": "Geographically Weighted Correlation\nBusiness question: Is there any relationship between GDP per capita and Gross Industry Output?\n\nConventional statistical solutionThe code\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nggscatterstats(\n  data = hunan2012, \n  x = Agri, \n  y = GDPPC,\n  xlab = \"Gross Agriculture Output\", ## label for the x-axis\n  ylab = \"GDP per capita\", \n  label.var = County, \n  label.expression = Agri &gt; 10000 & GDPPC &gt; 50000, \n  point.label.args = list(alpha = 0.7, size = 4, color = \"grey50\"),\n  xfill = \"#CC79A7\", \n  yfill = \"#009E73\", \n  title = \"Relationship between GDP PC and Gross Agriculture Output\")\n\n\n\n\n\n\n\nGeospatial analytics solution\n\nDetermine the bandwidthComputing gwCorrelationExtracting the result\n\n\n\n\nbw &lt;- bw.gwr(GDPPC ~ GIO, \n             data = hunan_sp, \n             approach = \"AICc\", \n             adaptive = TRUE)\n\nAdaptive bandwidth (number of nearest neighbours): 62 AICc value: 1870.235 \nAdaptive bandwidth (number of nearest neighbours): 46 AICc value: 1870.852 \nAdaptive bandwidth (number of nearest neighbours): 72 AICc value: 1869.744 \nAdaptive bandwidth (number of nearest neighbours): 78 AICc value: 1869.713 \nAdaptive bandwidth (number of nearest neighbours): 82 AICc value: 1869.604 \nAdaptive bandwidth (number of nearest neighbours): 84 AICc value: 1869.537 \nAdaptive bandwidth (number of nearest neighbours): 86 AICc value: 1869.647 \nAdaptive bandwidth (number of nearest neighbours): 83 AICc value: 1869.567 \nAdaptive bandwidth (number of nearest neighbours): 84 AICc value: 1869.537 \n\n\n\n\n\n\n\ngwstats &lt;- gwss(hunan_sp, \n                vars = c(\"GDPPC\", \"GIO\"), \n                bw = bw,\n                kernel = \"bisquare\",\n                adaptive = TRUE, \n                longlat = T)\n\n\n\n\nCode chunk below is used to extract SDF data table from gwss object output from gwss(). It will be converted into data.frame by using as.data.frame().\n\n\ngwstat_df &lt;- as.data.frame(gwstats$SDF) %&gt;%\n  select(c(12,13)) %&gt;%\n  rename(gwCorr = Corr_GDPPC.GIO,\n         gwSpearman = Spearman_rho_GDPPC.GIO)\n\n\nNext, cbind() is used to append the newly derived data.frame onto hunan_sf sf data.frame.\n\n\nhunan_Corr &lt;- cbind(hunan_sf, gwstat_df)\n\n\n\n\n\n\n\n\nVisualising Local Correlation\n\nLocal Correlation CoefficientLocal Spearman CoefficientThe code\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ntm_shape(hunan_Corr) +\n  tm_polygons(fill = \"gwSpearman\",\n              fill.scale = tm_scale_intervals(\n                style = \"quantile\",\n                n = 5,\n                values = \"brewer.blues\"),\n              fill.legend = tm_legend(\n                title = \"local Spearman Rho\")) +\n  tm_borders(fill_alpha = 0.5) +\n  tm_title(\"Local Spearman Rho\", \n  size = 2.0) +\n  tm_layout(frame = TRUE)"
+    "text": "Geographically Weighted Correlation\nBusiness question: Is there any relationship between GDP per capita and Gross Industry Output?\n\nConventional statistical solutionThe codeGeoVisualisationThe codes\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nggscatterstats(\n  data = hunan2012, \n  x = Agri, \n  y = GDPPC,\n  xlab = \"Gross Agriculture Output\", \n  ylab = \"GDP per capita\", \n  label.var = County, \n  label.expression = Agri &gt; 10000 & GDPPC &gt; 50000, \n  point.label.args = list(alpha = 0.7, size = 4, color = \"grey50\"),\n  xfill = \"#CC79A7\", \n  yfill = \"#009E73\", \n  title = \"Relationship between GDP PC and Gross Agriculture Output\")\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ntm_shape(hunan_sf) + \n  tm_polygons(\n    fill = \"GDPPC\",\n    fill.scale = tm_scale_intervals(\n      n = 5,\n      style = \"quantile\",\n      values = \"brewer.oranges\")) +\n  tm_borders(fill_alpha = 0.25,\n             lwd = 0.5) +\n  tm_title(\"Distribution of GDP per capita\") +\n  tm_layout(legend.position = c(\"left\", \"bottom\"))"
   },
   {
     "objectID": "In-class_Ex/In-class_Ex04/In-class_Ex04.html#references",
     "href": "In-class_Ex/In-class_Ex04/In-class_Ex04.html#references",
-    "title": "In-class Exercise 4: Geographically Weighted Summary Statistics - gwModel methods",
+    "title": "In-class Exercise 4: Geographically Weighted Summary Statistics",
     "section": "References",
     "text": "References\nBrunsdon, C. et. al. (2002) “Geographically weighted summary statistics - a framework for localised exploratory data analysis”, Computer, Environment and Urban Systems, Vol 26, pp. 501-525. Available as e-journal, SMU library.\nHarris, P. & Brunsdon, C. (2010) “Exploring spatial variation and spatial relationships in freshwater acidification critical load data set for Great Britain using geographically weighted summary statistics”, Computers & Geosciences, Vol. 36, pp. 54-70. Available as e-journal, SMU library."
+  },
+  {
+    "objectID": "lesson/Lesson05/Lesson05-GLSA.html#content",
+    "href": "lesson/Lesson05/Lesson05-GLSA.html#content",
+    "title": "Lesson 5: Global and Local Measures of Spatial Association",
+    "section": "Content",
+    "text": "Content\n\n\n\nWhat is Spatial Autocorrelation\n\nMeasures of Global Spatial Autocorrelation\nMeasures of Global High/Low Clustering\n\nIntroducing Localised Geospatial Analysis\n\nLocal Indicators of Spatial Association (LISA)\n\nCluster and Outlier Analysis\n\nLocal Moran and Local Geary\nMoran scatterplot\nLISA Cluster Map\n\n\n\n\nHot Spot and Cold Spot Areas Analysis\n\nGetis and Ord’s G-statistics\n\nEmerging Hot Spot Analysis (EHSA)\n\nSpacetime and spacetime cubes\nMann-Kendall Test\nEHSA map"
+  },
+  {
+    "objectID": "lesson/Lesson05/Lesson05-GLSA.html#what-is-spatial-autocorrelation",
+    "href": "lesson/Lesson05/Lesson05-GLSA.html#what-is-spatial-autocorrelation",
+    "title": "Lesson 5: Global and Local Measures of Spatial Association",
+    "section": "What is Spatial Autocorrelation",
+    "text": "What is Spatial Autocorrelation\n\nToble’s First Law of Geography\nSpatial Dependency\nSpatial Autocorrelation\n\nPositive autocorrelation\nNegative autocorrelation"
+  },
+  {
+    "objectID": "lesson/Lesson05/Lesson05-GLSA.html#measures-of-global-spatial-autocorrelation",
+    "href": "lesson/Lesson05/Lesson05-GLSA.html#measures-of-global-spatial-autocorrelation",
+    "title": "Lesson 5: Global and Local Measures of Spatial Association",
+    "section": "Measures of Global Spatial Autocorrelation",
+    "text": "Measures of Global Spatial Autocorrelation\n\nMoran’s I\nGeary’s c"
+  },
+  {
+    "objectID": "lesson/Lesson05/Lesson05-GLSA.html#measures-of-global-highlow-clustering-getis-ord-global-g",
+    "href": "lesson/Lesson05/Lesson05-GLSA.html#measures-of-global-highlow-clustering-getis-ord-global-g",
+    "title": "Lesson 5: Global and Local Measures of Spatial Association",
+    "section": "Measures of Global High/Low Clustering: Getis-Ord Global G",
+    "text": "Measures of Global High/Low Clustering: Getis-Ord Global G\n\n\n\nGetis-Ord Global G statistic is concerned with the overall concentration or lack of concentration in all pairs that are neighbours given the definition of neighbouring areas.\nThe variable must contain only positive values to be used.\n\n\n\nSource: Getis, A., & Ord, K. (1992). “The Analysis of Spatial Association by Use of Distance Statistics”. Geographical Analysis, 24, 189–206."
+  },
+  {
+    "objectID": "lesson/Lesson05/Lesson05-GLSA.html#local-spatial-autocorrelation-statistics",
+    "href": "lesson/Lesson05/Lesson05-GLSA.html#local-spatial-autocorrelation-statistics",
+    "title": "Lesson 5: Global and Local Measures of Spatial Association",
+    "section": "Local Spatial Autocorrelation Statistics",
+    "text": "Local Spatial Autocorrelation Statistics\n\nA collection of geospatial statistical analysis methods for analysing the location related tendency (clusters or outliers) in the attributes of geographically referenced data (points or areas).\nCan be indecies decomposited from their global measures such as local Moran’s I, local Geary’s c, and Getis-Ord Gi*.\nThese spatial statistics are well suited for:\n\ndetecting clusters or outliers;\nidentifying hot spot or cold spot areas;\nassessing the assumptions of stationarity; and\nidentifying distances beyond which no discernible association obtains."
+  },
+  {
+    "objectID": "lesson/Lesson05/Lesson05-GLSA.html#local-indicator-of-spatial-association-lisa",
+    "href": "lesson/Lesson05/Lesson05-GLSA.html#local-indicator-of-spatial-association-lisa",
+    "title": "Lesson 5: Global and Local Measures of Spatial Association",
+    "section": "Local Indicator of Spatial Association (LISA)",
+    "text": "Local Indicator of Spatial Association (LISA)\n\nA subset of localised geospatial statistics methods.\nAny spatial statistics that satisfies the following two requirements (Anselin, L. 1995):\n\nthe LISA for each observation gives an indication of the extent of significant spatial clustering of similar values around that observation;\nthe sum of LISAs for all observations is proportional to a global indicator of spatial association."
+  },
+  {
+    "objectID": "lesson/Lesson05/Lesson05-GLSA.html#local-morans-i",
+    "href": "lesson/Lesson05/Lesson05-GLSA.html#local-morans-i",
+    "title": "Lesson 5: Global and Local Measures of Spatial Association",
+    "section": "Local Moran’s I",
+    "text": "Local Moran’s I\nGiven a geographically referenced attribute field, X the formula of local Moran’s I is:"
+  },
+  {
+    "objectID": "lesson/Lesson05/Lesson05-GLSA.html#detecting-hot-and-cold-spot-areas",
+    "href": "lesson/Lesson05/Lesson05-GLSA.html#detecting-hot-and-cold-spot-areas",
+    "title": "Lesson 5: Global and Local Measures of Spatial Association",
+    "section": "Detecting hot and cold spot areas",
+    "text": "Detecting hot and cold spot areas\n\n\n\nGiven a set of geospatial features (i.e. points or polygons) and an analysis field, the spatial statistics tell you where features with either high (i.e. hot spots) or low values (cold spots) cluster spatially.\nThe spatial statistic used is called Getis-Ord Gi* statistic (pronounced G-i-star).\nGetis and Ord (1992) define the local G and G∗ statistics for region i (i=1,···,n) as:"
+  },
+  {
+    "objectID": "lesson/Lesson05/Lesson05-GLSA.html#fixed-weighting-scheme",
+    "href": "lesson/Lesson05/Lesson05-GLSA.html#fixed-weighting-scheme",
+    "title": "Lesson 5: Global and Local Measures of Spatial Association",
+    "section": "Fixed weighting scheme",
+    "text": "Fixed weighting scheme\n\n\n\nThings to consider if fixed distance is used: - All features should have at least one neighbour.\n\nNo feature should have all other features as neighbours.\nEspecially if the values for the input field are skewed, you want features to have about eight neighbors each.\nMight produce large estimate variances where data are sparse, while mask subtle local variations where data are dense.\nIn extreme condition, fixed schemes might not be able to calibrate in local areas where data are too sparse to satisfy the calibration requirements (observations must be more than parameters)."
+  },
+  {
+    "objectID": "lesson/Lesson05/Lesson05-GLSA.html#adaptive-weighting-schemes",
+    "href": "lesson/Lesson05/Lesson05-GLSA.html#adaptive-weighting-schemes",
+    "title": "Lesson 5: Global and Local Measures of Spatial Association",
+    "section": "Adaptive weighting schemes",
+    "text": "Adaptive weighting schemes\n\n\n\nAdaptive schemes adjust itself according to the density of data\n\nShorter bandwidths where data are dense and longer where sparse.\nFinding nearest neighbors are one of the often used approaches.\n\n\n\n]"
+  },
+  {
+    "objectID": "lesson/Lesson05/Lesson05-GLSA.html#best-practice-guidelines",
+    "href": "lesson/Lesson05/Lesson05-GLSA.html#best-practice-guidelines",
+    "title": "Lesson 5: Global and Local Measures of Spatial Association",
+    "section": "Best practice guidelines",
+    "text": "Best practice guidelines\n\nResults are only reliable if the input feature class contains at least 30 features.\nThe input field mst be in continuous data type such as a count, rate, or other numeric measurement, no categorical attribute field is allowed."
+  },
+  {
+    "objectID": "lesson/Lesson05/Lesson05-GLSA.html#emerging-hot-spot-analysis-ehsa",
+    "href": "lesson/Lesson05/Lesson05-GLSA.html#emerging-hot-spot-analysis-ehsa",
+    "title": "Lesson 5: Global and Local Measures of Spatial Association",
+    "section": "Emerging Hot Spot Analysis (EHSA)",
+    "text": "Emerging Hot Spot Analysis (EHSA)\n\nA technique that falls under exploratory spatial data analysis (ESDA).\nIt combines the traditional ESDA technique of hot spot analysis using the Getis-Ord Gi* statistic with the traditional time-series Mann-Kendall test for monotonic trends.\nThe goal of EHSA is to evaluate how hot and cold spots are changing over time. It helps us answer the questions: are they becoming increasingly hotter, are they cooling down, or are they staying the same?"
+  },
+  {
+    "objectID": "lesson/Lesson05/Lesson05-GLSA.html#in-colclusion",
+    "href": "lesson/Lesson05/Lesson05-GLSA.html#in-colclusion",
+    "title": "Lesson 5: Global and Local Measures of Spatial Association",
+    "section": "In colclusion",
+    "text": "In colclusion\nSpatial statistics methods are not a blackbox. Before performing the analysis, a geospatial analyst should consider the followings:\n\nWhat is the geographical question?\nWhat is the geospatial feature?\nWhat is the analysis field?\nWhich conceptualization of spatial relationships is appropriate?"
+  },
+  {
+    "objectID": "lesson/Lesson05/Lesson05-GLSA.html#references",
+    "href": "lesson/Lesson05/Lesson05-GLSA.html#references",
+    "title": "Lesson 5: Global and Local Measures of Spatial Association",
+    "section": "References",
+    "text": "References\n\nMoran, P. A. P. (1950). “Notes on Continuous Stochastic Phenomena”. Biometrika. 37 (1): 17–23.\nGeary, R.C. (1954) “The Contiguity Ratio and Statistical Mapping”. The Incorporated Statistician, Vol. 5, No. 3, pp. 115-127. - Moran’s I\nGeary’s c - Getis, A., & Ord, K. (1992). “The Analysis of Spatial Association by Use of Distance Statistics”. Geographical Analysis, 24, 189–206.\nAnselin, L. (1995). “Local indicators of spatial association – LISA”. Geographical Analysis, 27(4): 93-115.\nGetis, A. and Ord, J.K. (1992) “The analysis of spatial association by use of distance statistics”. Geographical Analysis, 24(3): 189-206.\nOrd, J.K. and Getis, A. (2010) “Local spatial autocorrelation statistics: Distributional issues and an application”. Geographical Analysis, 27(4): 286-306."
+  },
+  {
+    "objectID": "lesson/Lesson06/Lesson06.html#content",
+    "href": "lesson/Lesson06/Lesson06.html#content",
+    "title": "Lesson 6: Geographic Segmentation with Spatial Clustering",
+    "section": "Content",
+    "text": "Content\n\nIntroduction to Geographic Segmentation\nSpatialising classic clustering methods\nSpatially Constrained Clustering - Hierarchical methods\n\nskater\nREDCAP\nclustGeo\n\nSpatially Constrained Clustering - Partitioning methods\n\nAutomatic zoning procedure (AZP)\nmax-p heuristic"
+  },
+  {
+    "objectID": "lesson/Lesson06/Lesson06.html#regionalisation-and-clustering",
+    "href": "lesson/Lesson06/Lesson06.html#regionalisation-and-clustering",
+    "title": "Lesson 6: Geographic Segmentation with Spatial Clustering",
+    "section": "Regionalisation and Clustering",
+    "text": "Regionalisation and Clustering\n\n\n\nRegionalisation is a process of to group a large number of geographical units such as provinces, districts or counties spatial objects into a smaller number of subsets of objects also known as regions, which are internally homogeneous and occupy contiguous regions in space.\nThe process taking into consideration multivariates. Figure on the right shows regions delineated by using six ICT measures, namely: Radio, Television, Land line phone, Mobile phone, Computer, and Internet at home of Shan State, Myanmar."
+  },
+  {
+    "objectID": "lesson/Lesson06/Lesson06.html#spatially-constrained-clustering-versus-non-spatially-constrained-clustering",
+    "href": "lesson/Lesson06/Lesson06.html#spatially-constrained-clustering-versus-non-spatially-constrained-clustering",
+    "title": "Lesson 6: Geographic Segmentation with Spatial Clustering",
+    "section": "Spatially Constrained Clustering versus Non-spatially Constrained Clustering",
+    "text": "Spatially Constrained Clustering versus Non-spatially Constrained Clustering\n\n\nA comparison of conventional non-spatially constrained clustering and spatially constrained clustering. Stars represent the centroids of sampled grid cells and polygons are Thiessen polygons that contain the centroids. Grey shading contrasts between polygons stand for the Simpson dissimilarity index (βsim) between them. Non-spatially constrained clustering produces two clusters, one of which contains polygons (C, D, and E) that are spatially disjoint. In contrast, the two clusters produced by the spatially constrained clustering form two spatially contiguous regions."
+  },
+  {
+    "objectID": "lesson/Lesson06/Lesson06.html#spatially-constrained-clustering",
+    "href": "lesson/Lesson06/Lesson06.html#spatially-constrained-clustering",
+    "title": "Lesson 6: Geographic Segmentation with Spatial Clustering",
+    "section": "Spatially Constrained Clustering",
+    "text": "Spatially Constrained Clustering\n\nSKATER (Spatial ’K’luster Analysis by Tree Edge Removal) algorithm\nREDCAP (Regionalization with dynamically constrained agglomerative clustering and partitioning algorithm\nClustGeo algorithm"
+  },
+  {
+    "objectID": "lesson/Lesson06/Lesson06.html#skater-spatial-kluster-analysis-by-tree-edge-removal-algorithm",
+    "href": "lesson/Lesson06/Lesson06.html#skater-spatial-kluster-analysis-by-tree-edge-removal-algorithm",
+    "title": "Lesson 6: Geographic Segmentation with Spatial Clustering",
+    "section": "SKATER (Spatial ’K’luster Analysis by Tree Edge Removal) algorithm",
+    "text": "SKATER (Spatial ’K’luster Analysis by Tree Edge Removal) algorithm\n\n\nThe SKATER (Spatial ’K’luster Analysis by Tree Edge Removal) builds off of a connectivity graph to represent spatial relationships between neighbouring areas, where each area is represented by a node and edges represent connections between areas. Edge costs are calculated by evaluating the dissimilarity between neighbouring areas. The connectivity graph is reduced by pruning edges with higher dissimilarity until we are left with n nodes and n−1 edges. At this point any further pruning would create subgraphs and these subgraphs become cluster candidates."
+  },
+  {
+    "objectID": "lesson/Lesson06/Lesson06.html#redcap-algorithm",
+    "href": "lesson/Lesson06/Lesson06.html#redcap-algorithm",
+    "title": "Lesson 6: Geographic Segmentation with Spatial Clustering",
+    "section": "REDCAP algorithm",
+    "text": "REDCAP algorithm\n\nRegionalization with dynamically constrained agglomerative clustering and partitioning, in short REDCAP is specially developed by D. Guo (2008) to the limitation of SKATER discussed in previous slide.\nLike SKATER, REDCAP starts from building a spanning tree with 4 different ways (single-linkage, average-linkage, ward-linkage and the complete-linkage). The single-linkage way leads to build a minimum spanning tree. Then,REDCAP provides 2 different ways (first-order and full-order constraining) to prune the tree to find clusters. The first-order approach with a minimum spanning tree is exactly the same with SKATER."
+  },
+  {
+    "objectID": "lesson/Lesson06/Lesson06.html#clustgeo-package",
+    "href": "lesson/Lesson06/Lesson06.html#clustgeo-package",
+    "title": "Lesson 6: Geographic Segmentation with Spatial Clustering",
+    "section": "ClustGeo Package",
+    "text": "ClustGeo Package\nThe R package ClustGeo implements a Ward-like hierarchical clustering algorithm including spatial/geographical constraints.\n\nTwo dissimilarity matrices D0 and D1 are inputted, along with a mixing parameter alpha in [0,1]. The dissimilarities can be non-Euclidean and the weights of the observations can be non-uniform.\nThe first matrix gives the dissimilarities in the “feature space”” and the second matrix gives the dissimilarities in the “constraint space”.\nThe criterion minimized at each stage is a convex combination of the homogeneity criterion calculated with D0 and the homogeneity criterion calculated with D1. The idea is to determine a value of alpha which increases the spatial contiguity without deteriorating too much the quality of the solution based on the variables of interest i.e. those of the feature space."
   }
 ]
