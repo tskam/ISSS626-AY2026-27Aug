@@ -44,7 +44,7 @@ Geographically referenced attributes are descriptive data items linked to a spec
 
 ::: {.column width="50%"}
 ```{r}
-pacman::p_load(ggstatsplot, DT, sf, tmap, tidyverse)
+pacman::p_load(ggstatsplot, DT, sf, sp, GWmodel, tmap, tidyverse)
 ```
 
 ```{r}
@@ -55,7 +55,7 @@ hunan <- st_read(dsn = "data/geospatial",
 hunan2012 <- read_csv("data/aspatial/Hunan_2012.csv")
 
 hunan <- left_join(hunan,hunan2012) %>%
-  select(1:4, 7, 15)
+  select(1:4, 7, 15, 31)
 ```
 
 ```{r}
@@ -76,78 +76,47 @@ A kind of data that is very similar to an ordinary data. The only difference is 
 
 ### Describing attribute distribution
 
+::::: columns
+::: {.column width="50%"}
+#### Non-geographical
+
 Are the distribution of GDP per capita by county resemble normally distributed?
 
-```{r} 
-#| fig-width: 8
-#| fig-height: 6
-
+```{r}
+#| fig-height: 7.5
 gghistostats(data = hunan, 
              x = GDPPC,
              xlab = "GDP Per Capita",
-             centrality.parameter = "median",
-             normal.curve = TRUE,
-             normal.curve.args = list(color = "red", size = 1)
-  )
+             results.subtitle = FALSE,
+             centrality.parameter = "mean"
+             )
 
 ```
-
-::: notes
-In statistics, we are interested to study if the observed distribution resemble normal distribution. To provide an answer to the question, we have to go beyond EDA and apply Confirmatory Data Analysis or also know as statistical test to confirm the observated pattern is indeed resemble normal distribution.
 :::
 
-------------------------------------------------------------------------
-
-### Geographical distribution question
+::: {.column width="50%"}
+#### Geographical
 
 Are the distribution of GDP per capita by country randomly distributed over space?
 
 ```{r}
-#| fig-width: 15
-#| fig-height: 6
+#| fig-height: 7.5
 tm_shape(hunan)+
   tm_fill("GDPPC", 
           style = "quantile", 
           palette = "Blues",
           title = "GDPPC") +
-  tm_layout(main.title = "Distribution of GDP per capita by county, Hunan Province, People Republic of China",
-            main.title.position = "center",
-            main.title.size = 1.2,
-            legend.height = 0.45, 
-            legend.width = 0.35,
-            frame = TRUE) +
-  tm_borders(alpha = 0.5) 
+  tm_borders(fill_alpha = 0.25,
+             lwd = 0.5) +
+  tm_title("Distribution of GDP per capita by county, Hunan Province, People Republic of China") + tm_layout(legend.position = c("left", "bottom"))
 ```
-
-::: notes
-When come of geographically referenced attributes, beside the distribution of the value, we are also interested to find out if the observed geographical patterns are randomly distributed. Similarly to statistical, geovisualisation is not enough because the visual impression will change when different data classification methods is used.
 :::
-
-------------------------------------------------------------------------
-
-### Geographical distribution question
-
-Are the distribution of GDP per capita by country randomly distributed over space?
-
-```{r}
-#| fig-width: 15
-#| fig-height: 6
-tm_shape(hunan)+
-  tm_fill("GDPPC", 
-          style = "jenks", 
-          palette = "Blues",
-          title = "GDPPC") +
-  tm_layout(main.title = "Distribution of GDP per capita by county, Hunan Province, People Republic of China",
-            main.title.position = "center",
-            main.title.size = 1.2,
-            legend.height = 0.45, 
-            legend.width = 0.35,
-            frame = TRUE) +
-  tm_borders(alpha = 0.5) 
-```
+:::::
 
 ::: notes
-As a result, a formal statistical test of spatial randomness is needed.
+In statistics, we are interested to study if the observed distribution resemble normal distribution. To provide an answer to the question, we have to go beyond EDA and apply Confirmatory Data Analysis or also know as statistical test to confirm the observated pattern is indeed resemble normal distribution.
+
+When come of geographically referenced attributes, beside the distribution of the value, we are also interested to find out if the observed geographical patterns are randomly distributed. Similarly to statistical, geovisualisation is not enough because the visual impression will change when different data classification methods is used.
 :::
 
 ## What are Spatial Weights *(wij)*
@@ -249,15 +218,45 @@ Row-standardised weights increase the influence of links from observations with 
 
 ## Applications of Spatial Weights
 
+- Spatially lagged variable
+- Geographically weighted summary statistics
+- Geographically weighted correlation
+
+## Spatially Lagged Variable
+
+A spatially lagged variable is a weighted sum or average of a variable's values from neighboring locations.
+
 Formally, for observation i, the spatial lag of yi, referred to as \[Wy\]i (the variable Wy observed for location i) is:
 
-![](img/image6-17.jpg)
+![](img/image6-17.jpg){width="320"}
 
 where the weights wij consist of the elements of the i-th row of the matrix W, matched up with the corresponding elements of the vector y.
 
 ::: notes
 With a neighbor structure defined by the non-zero elements of the spatial weights matrix W, a **spatially lagged variable** is a weighted sum or a weighted average of the neighboring values for that variable. In most commonly used notation, the spatial lag of y is then expressed as Wy.
 :::
+
+---
+
+### Spatially Lagged Variable
+
+:::: columns
+::: {.column width = "50%"}
+**How It Works?**
+
+- The Spatial Weights Matrix (W): This grid or matrix defines who your "neighbors" are and how much influence they carry (e.g., sharing a border or being within 5 kilometers).
+- The Calculation (Wy or Wx): You multiply the weights matrix by your data vector (y for a dependent variable, or X for an independent variable).
+- The Result: For any given place, the spatial lag gives you a single number representing the surrounding neighborhood's average value for that trait.
+:::
+
+::: {.column width = "50%"}
+**Why It Matters?**
+
+- Captures Spillovers: It lets statistical models test if a neighbor's property values, crime rates, or rainfall levels directly affect your location.
+- Fixes Bias: Standard regression assumes data points are independent. When places influence each other (spatial autocorrelation), ignoring this creates biased results. Adding a spatial lag helps clean up the model.
+
+:::
+::::
 
 ------------------------------------------------------------------------
 
@@ -289,48 +288,289 @@ The idea behind geographically weighted statistics is simple. For example, inste
 
 ![](img/image6-21.png)
 
----
+------------------------------------------------------------------------
+
+### The kernel
+
+A kernel is a mathematical function that determines how data points are weighted based on their distance from a specific target location.
+
+![](img/image6-24.png)
+
+------------------------------------------------------------------------
 
 ### An example of Geographically Weighted Mean
 
-::: columns
-:::: {.column width="50%"}
-
 ![](img/image6-21b.png)
-::::
 
-:::: {.column width="50%"}
-::::
+--- 
+
+### Visualising Geographically Weighted Mean 
+
+
+```{r}
+hunan_sp <- as(hunan, "Spatial")
+
+gwss_GDPPC <- gwss(hunan_sp, 
+                   vars = "GDPPC", 
+                   bw = 22,
+                   quantile = TRUE,
+                   adaptive = TRUE)
+
+gwss_df <- as.data.frame(gwss_GDPPC$SDF)
+hunan_gwss <- cbind(hunan, gwss_df)
+```
+
+:::: columns
+::: {.column width="50%"}
+```{r}
+#| fig-width: 7
+#| fig-height: 8
+tm_shape(hunan_gwss) + 
+  tm_polygons(
+    fill = "GDPPC",
+    fill.scale = tm_scale_intervals(
+      n = 7,
+      style = "quantile",
+      values = "tableau.classic_orange")) +
+  tm_borders(fill_alpha = 0.25,
+             lwd = 0.5) +
+  tm_title("Distribution of GDP per capita") +
+  tm_layout(legend.position = c("left", "bottom"))
+```
 :::
+
+::: {.column width="50%"}
+```{r}
+#| fig-width: 7
+#| fig-height: 8
+tm_shape(hunan_gwss) + 
+  tm_polygons(
+    fill = "GDPPC_LM",
+    fill.scale = tm_scale_intervals(
+      n = 7,
+      style = "quantile",
+      values = "tableau.classic_blue")) +
+  tm_borders(fill_alpha = 0.25,
+             lwd = 0.5) +
+  tm_title("Distribution of geographically weighted mean") +
+  tm_layout(legend.position = c("left", "bottom"))
+```
+:::
+:::::
 
 ## Geographically Weighted Robust Statistics
 
-::: columns
-:::: {.column width="50%"}
-
+::::: columns
+::: {.column width="50%"}
 - Geographically weighted robust statistics combine local spatial weighting with outlier-resistant calculations to geographically referenced data characteristics across space without being skewed by extreme values.
 
-- All robust statistics depend on the definition of a weighted p-quantile, where p is between 0 and 1. 
-- This definition is used to calculate the weighted median (p=0.5), first quartile (p=0.25), and third quartile (p=0.75). 
-::::
+- All robust statistics depend on the definition of a weighted p-quantile, where p is between 0 and 1.
 
-:::: {.column width="50%"}
+- This definition is used to calculate the weighted median (p=0.5), first quartile (p=0.25), and third quartile (p=0.75).
+:::
 
+::: {.column width="50%"}
 The p-quantile for a given p is defined as the following:
 
 ![](img/image6-22.png)
-
-::::
 :::
+:::::
 
----
+------------------------------------------------------------------------
 
 ### Geographically Weighted Robust Statistics
 
-Using the definition of the p-quantile in previous slide, the following table shows the weighted and unweighted version of each robust summary statistic. 
+Using the definition of the p-quantile in previous slide, the following table shows the weighted and unweighted version of each robust summary statistic.
 
 ![](img/image6-23.png)
 
+
+
+---
+
+### Visualising Geographically Weighted Median
+
+:::: columns
+::: {.column width="50%"}
+
+```{r}
+#| fig-width: 7
+#| fig-height: 8
+tm_shape(hunan_gwss) + 
+  tm_polygons(
+    fill = "GDPPC",
+    fill.scale = tm_scale_intervals(
+      n = 7,
+      style = "quantile",
+      values = "tableau.classic_orange")) +
+  tm_borders(fill_alpha = 0.25,
+             lwd = 0.5) +
+  tm_title("Distribution of GDP per capita") +
+  tm_layout(legend.position = c("left", "bottom"))
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+#| fig-width: 7
+#| fig-height: 8
+tm_shape(hunan_gwss) + 
+  tm_polygons(
+    fill = "GDPPC_Median",
+    fill.scale = tm_scale_intervals(
+      n = 7,
+      style = "quantile",
+      values = "tableau.classic_blue")) +
+  tm_borders(fill_alpha = 0.25,
+             lwd = 0.5) +
+  tm_title("Distribution of geographically weighted median") +
+  tm_layout(legend.position = c("left", "bottom"))
+```
+:::
+:::::
+
+## Geographically Weighted Correlation
+
+Geographically weighted correlation is a local statistical method used to measure how the strength and direction of a relationship between two variables changes across different geographic locations.
+
+**Key Concepts**
+
+- **Spatial Non-Stationary**: It recognizes that the relationship between two factors (such as income and health outcomes) is not uniform and can vary from one neighborhood or region to another.
+- **Distance Decay (Weighting)**: It follows **Tobler's First Law of Geography**, meaning things closer to a location have a higher impact on the local correlation value than things far away.
+- **Bandwidth and Kernel**: A defined spatial window (bandwidth) and a weighting function (kernel) are used to dictate how quickly the influence of neighboring points decreases over distance.
+
+---
+
+### Correlation Analysis
+
+:::: columns
+::: {.column width = "80%"}
+Business question: Is there any relationship between GDP per capita and Gross Agriculture Output?
+
+```{r}
+#| fig-height: 7.5
+ggscatterstats(
+  data = hunan2012,
+  x = Agri,
+  y = GDPPC,
+  xlab = "Gross Agriculture Output",
+  ylab = "GDP per capita",
+  label.var = County,
+  label.expression = Agri > 10000 & GDPPC > 50000,
+  point.label.args = list(alpha = 0.7, size = 4, color = "grey50"),
+  xfill = "#CC79A7",
+  yfill = "#009E73",
+  title = "Relationship between GDP PC and Gross Agriculture Output")
+
+```
+:::
+::::
+
+------------------------------------------------------------------------
+
+### GeoVisualisation of the variable
+
+:::: columns
+::: {.column width="50%"}
+
+```{r}
+#| fig-width: 7
+#| fig-height: 8
+tm_shape(hunan) + 
+  tm_polygons(
+    fill = "GDPPC",
+    fill.scale = tm_scale_intervals(
+      n = 7,
+      style = "quantile",
+      values = "tableau.classic_orange")) +
+  tm_borders(fill_alpha = 0.25,
+             lwd = 0.5) +
+  tm_title("Distribution of GDP per capita") +
+  tm_layout(legend.position = c("left", "bottom"))
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+#| fig-width: 7
+#| fig-height: 8
+tm_shape(hunan_gwss) + 
+  tm_polygons(
+    fill = "Agri",
+    fill.scale = tm_scale_intervals(
+      n = 7,
+      style = "quantile",
+      values = "tableau.classic_green")) +
+  tm_borders(fill_alpha = 0.25,
+             lwd = 0.5) +
+  tm_title("Distribution of Gross Agriculture Product") +
+  tm_layout(legend.position = c("left", "bottom"))
+```
+:::
+:::::
+
+------------------------------------------------------------------------
+
+### Visualising gwCorr
+
+```{r}
+gwCorr <- gwss(hunan_sp,
+                vars = c("GDPPC", "Agri"),
+                bw = 37,
+                kernel = "bisquare",
+                adaptive = TRUE,
+                longlat = FALSE)
+
+gwCorr_df <- as.data.frame(gwCorr$SDF) %>%
+  select(c("Corr_GDPPC.Agri","Spearman_rho_GDPPC.Agri")) %>%
+  rename(gwCorr = Corr_GDPPC.Agri,
+         gwSpearman = Spearman_rho_GDPPC.Agri)
+
+hunan_Corr <- cbind(hunan, gwCorr_df)
+```
+
+:::: columns
+::: {.column width="50%"}
+```{r}
+#| fig-width: 7
+#| fig-height: 8
+tm_shape(hunan_Corr) +
+  tm_polygons(
+    fill = "gwCorr",
+    fill.scale = tm_scale_intervals(
+      n = 7,
+      style = "fixed",
+      breaks = c(-0.5, -0.25, -0.15, -0.01, 0.01, 0.15, 0.25, 0.5),
+      labels = c("-0.25 - -0.5", "-0.15, -0.24", "-0.01 - -0.14", "0", "0.01 - 0.14", "0.15 - 0.24", "0.25 - 0.5"),
+      values = "tableau.classic_orange_blue")) +
+  tm_borders(fill_alpha = 0.25,
+             lwd = 0.5) +
+  tm_title("Local Pearson Correlation Coefficient") +
+  tm_layout(legend.position = c("left", "bottom"))
+
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+#| fig-width: 7
+#| fig-height: 8
+tm_shape(hunan_Corr) +
+  tm_polygons(
+    fill = "gwSpearman",
+    fill.scale = tm_scale_intervals(
+      n = 7,
+      style = "fixed",
+      breaks = c(-0.5, -0.25, -0.15, -0.01, 0.01, 0.15, 0.25, 0.5),
+      labels = c("-0.25 - -0.5", "-0.15, -0.24", "-0.01 - -0.14", "0", "0.01 - 0.14", "0.15 - 0.24", "0.25 - 0.5"),
+      values = "tableau.classic_orange_blue")) +
+  tm_borders(fill_alpha = 0.25,
+             lwd = 0.5) +
+  tm_title("Local Spearman Correlation Coefficient") +
+  tm_layout(legend.position = c("left", "bottom"))
+```
+:::
+::::
 
 ## References
 

@@ -1348,7 +1348,7 @@
     "href": "lesson/Lesson04/Lesson04-Spatial_Weights.html#applications-of-spatial-weights",
     "title": "Lesson 4: Spatial Weights and Applications",
     "section": "Applications of Spatial Weights",
-    "text": "Applications of Spatial Weights\nFormally, for observation i, the spatial lag of yi, referred to as [Wy]i (the variable Wy observed for location i) is:\n\nwhere the weights wij consist of the elements of the i-th row of the matrix W, matched up with the corresponding elements of the vector y.\n\nWith a neighbor structure defined by the non-zero elements of the spatial weights matrix W, a spatially lagged variable is a weighted sum or a weighted average of the neighboring values for that variable. In most commonly used notation, the spatial lag of y is then expressed as Wy."
+    "text": "Applications of Spatial Weights\n\nSpatially lagged variable\nGeographically weighted summary statistics\nGeographically weighted correlation"
   },
   {
     "objectID": "lesson/Lesson04/Lesson04-Spatial_Weights.html#references",
@@ -1370,5 +1370,47 @@
     "title": "Lesson 4: Spatial Weights and Applications",
     "section": "Geographically Weighted Robust Statistics",
     "text": "Geographically Weighted Robust Statistics\n\n\n\nGeographically weighted robust statistics combine local spatial weighting with outlier-resistant calculations to geographically referenced data characteristics across space without being skewed by extreme values.\nAll robust statistics depend on the definition of a weighted p-quantile, where p is between 0 and 1.\nThis definition is used to calculate the weighted median (p=0.5), first quartile (p=0.25), and third quartile (p=0.75).\n\n\nThe p-quantile for a given p is defined as the following:"
+  },
+  {
+    "objectID": "lesson/Lesson04/Lesson04-Spatial_Weights.html#in-class-exercise-4",
+    "href": "lesson/Lesson04/Lesson04-Spatial_Weights.html#in-class-exercise-4",
+    "title": "Lesson 4: Spatial Weights and Applications",
+    "section": "In-class Exercise 4",
+    "text": "In-class Exercise 4\nGetting started\n\nSetting up the R environment, beside sf, spdep, tidyverse and tmap, include GWmodel.\nImporting the data sets (i.e. Hunan_2012.csv and Hunan shapefile.)\nUsing appropriate join operation append GDPPC field from Hunan_2012 data table onto hunan sf data table.\nConverting hunan sf data table into sp object."
+  },
+  {
+    "objectID": "lesson/Lesson04/Lesson04-Spatial_Weights.html#geographically-weighted-correlation-analysis",
+    "href": "lesson/Lesson04/Lesson04-Spatial_Weights.html#geographically-weighted-correlation-analysis",
+    "title": "Lesson 4: Spatial Weights and Applications",
+    "section": "Geographically Weighted Correlation Analysis",
+    "text": "Geographically Weighted Correlation Analysis\nCorrelation Analysis\nBusiness question: Is there any relationship between GDP per capita and Gross Agriculture Output?"
+  },
+  {
+    "objectID": "lesson/Lesson04/Lesson04-Spatial_Weights.html#geographically-weighted-correlation",
+    "href": "lesson/Lesson04/Lesson04-Spatial_Weights.html#geographically-weighted-correlation",
+    "title": "Lesson 4: Spatial Weights and Applications",
+    "section": "Geographically Weighted Correlation",
+    "text": "Geographically Weighted Correlation\nGeographically weighted correlation is a local statistical method used to measure how the strength and direction of a relationship between two variables changes across different geographic locations.\nKey Concepts\n\nSpatial Non-Stationary: It recognizes that the relationship between two factors (such as income and health outcomes) is not uniform and can vary from one neighborhood or region to another.\nDistance Decay (Weighting): It follows Tobler’s First Law of Geography, meaning things closer to a location have a higher impact on the local correlation value than things far away.\nBandwidth and Kernel: A defined spatial window (bandwidth) and a weighting function (kernel) are used to dictate how quickly the influence of neighboring points decreases over distance."
+  },
+  {
+    "objectID": "lesson/Lesson04/Lesson04-Spatial_Weights.html#exploratory-spatial-data-analysis-edsa",
+    "href": "lesson/Lesson04/Lesson04-Spatial_Weights.html#exploratory-spatial-data-analysis-edsa",
+    "title": "Lesson 4: Spatial Weights and Applications",
+    "section": "Exploratory Spatial Data Analysis (EDSA)",
+    "text": "Exploratory Spatial Data Analysis (EDSA)\nExploratory Spatial Data Analysis (ESDA) is a set of statistical and visual techniques that treats location as a core part of data analysis to find hidden patterns, clusters, and outliers before building formal models.\nCore Concepts - Spatial Autocorrelation: Measures whether similar values cluster together geographically (positive) or scatter apart (negative). - Spatial Heterogeneity: Highlights how relationships or data variations change depending on the specific geographic region. - Spatial Outliers: Spots individual observations that differ significantly from their immediate geographic neighbors."
+  },
+  {
+    "objectID": "lesson/Lesson04/Lesson04-Spatial_Weights.html#esda---basic-concepts",
+    "href": "lesson/Lesson04/Lesson04-Spatial_Weights.html#esda---basic-concepts",
+    "title": "Lesson 4: Spatial Weights and Applications",
+    "section": "ESDA - Basic Concepts",
+    "text": "ESDA - Basic Concepts\nExploratory Spatial Data Analysis (ESDA) is a set of statistical and visual techniques that treats location as a core part of data analysis to find hidden patterns, clusters, and outliers before building formal models.\nCore Concepts - Spatial Autocorrelation: Measures whether similar values cluster together geographically (positive) or scatter apart (negative). - Spatial Heterogeneity: Highlights how relationships or data variations change depending on the specific geographic region. - Spatial Outliers: Spots individual observations that differ significantly from their immediate geographic neighbors.\nCore Methods - Geographically Weighted Summary Statistics (gwss) and geographically weighted correlation: Traditional global statistics assume data relationships are uniform across a study area. Geographically weighted methods relax this assumption, allowing metrics like means, standard deviations, and correlations to vary locally across geographic space. - Global Autocorrelation: Examines the overall degree of clustering or dispersion across an entire study region. - Local Autocorrelation: Pinpoints specific localized clusters, hot spots, or cold spots within the dataset. - Emerging Hotspot Analysis: Determine how clusters of points or values change across both space and time."
+  },
+  {
+    "objectID": "lesson/Lesson04/Lesson04-Spatial_Weights.html#spatially-lagged-variable",
+    "href": "lesson/Lesson04/Lesson04-Spatial_Weights.html#spatially-lagged-variable",
+    "title": "Lesson 4: Spatial Weights and Applications",
+    "section": "Spatially Lagged Variable",
+    "text": "Spatially Lagged Variable\nA spatially lagged variable is a weighted sum or average of a variable’s values from neighboring locations.\nFormally, for observation i, the spatial lag of yi, referred to as [Wy]i (the variable Wy observed for location i) is:\n\nwhere the weights wij consist of the elements of the i-th row of the matrix W, matched up with the corresponding elements of the vector y.\n\nWith a neighbor structure defined by the non-zero elements of the spatial weights matrix W, a spatially lagged variable is a weighted sum or a weighted average of the neighboring values for that variable. In most commonly used notation, the spatial lag of y is then expressed as Wy."
   }
 ]

@@ -10,7 +10,7 @@
   <meta name="generator" content="quarto-1.8.26">
 
   <meta name="author" content="Dr.&nbsp;Kam Tin Seong Assoc. Professor of Information Systems(Practice)">
-  <meta name="dcterms.date" content="2026-09-14">
+  <meta name="dcterms.date" content="2026-09-18">
   <title>ISSS626 – Lesson 4: Spatial Weights and Applications</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -141,7 +141,7 @@ Dr.&nbsp;Kam Tin Seong<br>Assoc. Professor of Information Systems(Practice)
     </div>
 </div>
 
-  <p class="date">2026-09-14</p>
+  <p class="date">2026-09-18</p>
 </section>
 <section>
 <section id="content" class="title-slide slide level1 center">
@@ -207,48 +207,35 @@ Dr.&nbsp;Kam Tin Seong<br>Assoc. Professor of Information Systems(Practice)
 <section class="slide level2">
 
 <h3 id="describing-attribute-distribution">Describing attribute distribution</h3>
+<div class="columns">
+<div class="column" style="width:50%;">
+<h4 id="non-geographical">Non-geographical</h4>
 <p>Are the distribution of GDP per capita by county resemble normally distributed?</p>
-
-<img data-src="Lesson04-Spatial_Weights_files/figure-revealjs/unnamed-chunk-4-1.png" width="768" class="r-stretch"><aside class="notes">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="Lesson04-Spatial_Weights_files/figure-revealjs/unnamed-chunk-4-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<h4 id="geographical">Geographical</h4>
+<p>Are the distribution of GDP per capita by country randomly distributed over space?</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="Lesson04-Spatial_Weights_files/figure-revealjs/unnamed-chunk-5-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div></div>
+<aside class="notes">
 <p>In statistics, we are interested to study if the observed distribution resemble normal distribution. To provide an answer to the question, we have to go beyond EDA and apply Confirmatory Data Analysis or also know as statistical test to confirm the observated pattern is indeed resemble normal distribution.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section class="slide level2">
-
-<h3 id="geographical-distribution-question">Geographical distribution question</h3>
-<p>Are the distribution of GDP per capita by country randomly distributed over space?</p>
-
-<img data-src="Lesson04-Spatial_Weights_files/figure-revealjs/unnamed-chunk-5-1.png" width="1440" class="r-stretch"><aside class="notes">
 <p>When come of geographically referenced attributes, beside the distribution of the value, we are also interested to find out if the observed geographical patterns are randomly distributed. Similarly to statistical, geovisualisation is not enough because the visual impression will change when different data classification methods is used.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section class="slide level2">
-
-<h3 id="geographical-distribution-question-1">Geographical distribution question</h3>
-<p>Are the distribution of GDP per capita by country randomly distributed over space?</p>
-
-<img data-src="Lesson04-Spatial_Weights_files/figure-revealjs/unnamed-chunk-6-1.png" width="1440" class="r-stretch"><aside class="notes">
-<p>As a result, a formal statistical test of spatial randomness is needed.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -420,9 +407,18 @@ The main different between Queens and Rooks is that Rooks only consider geograph
 </section>
 <section id="applications-of-spatial-weights" class="slide level2">
 <h2>Applications of Spatial Weights</h2>
+<ul>
+<li>Spatially lagged variable</li>
+<li>Geographically weighted summary statistics</li>
+<li>Geographically weighted correlation</li>
+</ul>
+</section>
+<section id="spatially-lagged-variable" class="slide level2">
+<h2>Spatially Lagged Variable</h2>
+<p>A spatially lagged variable is a weighted sum or average of a variable’s values from neighboring locations.</p>
 <p>Formally, for observation i, the spatial lag of yi, referred to as [Wy]i (the variable Wy observed for location i) is:</p>
 
-<img data-src="img/image6-17.jpg" class="r-stretch"><p>where the weights wij consist of the elements of the i-th row of the matrix W, matched up with the corresponding elements of the vector y.</p>
+<img data-src="img/image6-17.jpg" width="320" class="r-stretch"><p>where the weights wij consist of the elements of the i-th row of the matrix W, matched up with the corresponding elements of the vector y.</p>
 <aside class="notes">
 <p>With a neighbor structure defined by the non-zero elements of the spatial weights matrix W, a <strong>spatially lagged variable</strong> is a weighted sum or a weighted average of the neighboring values for that variable. In most commonly used notation, the spatial lag of y is then expressed as Wy.</p>
 <style type="text/css">
@@ -436,6 +432,25 @@ The main different between Queens and Rooks is that Rooks only consider geograph
           overflow: hidden!important;
           display:block!important;
       }</style></aside>
+</section>
+<section class="slide level2">
+
+<h3 id="spatially-lagged-variable-1">Spatially Lagged Variable</h3>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>How It Works?</strong></p>
+<ul>
+<li>The Spatial Weights Matrix (W): This grid or matrix defines who your “neighbors” are and how much influence they carry (e.g., sharing a border or being within 5 kilometers).</li>
+<li>The Calculation (Wy or Wx): You multiply the weights matrix by your data vector (y for a dependent variable, or X for an independent variable).</li>
+<li>The Result: For any given place, the spatial lag gives you a single number representing the surrounding neighborhood’s average value for that trait.</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><strong>Why It Matters?</strong></p>
+<ul>
+<li>Captures Spillovers: It lets statistical models test if a neighbor’s property values, crime rates, or rainfall levels directly affect your location.</li>
+<li>Fixes Bias: Standard regression assumes data points are independent. When places influence each other (spatial autocorrelation), ignoring this creates biased results. Adding a spatial lag helps clean up the model.</li>
+</ul>
+</div></div>
 </section>
 <section class="slide level2">
 
@@ -482,12 +497,39 @@ The main different between Queens and Rooks is that Rooks only consider geograph
 <img data-src="img/image6-21.png" class="r-stretch"></section>
 <section class="slide level2">
 
+<h3 id="the-kernel">The kernel</h3>
+<p>A kernel is a mathematical function that determines how data points are weighted based on their distance from a specific target location.</p>
+
+<img data-src="img/image6-24.png" class="r-stretch"></section>
+<section class="slide level2">
+
 <h3 id="an-example-of-geographically-weighted-mean">An example of Geographically Weighted Mean</h3>
+
+<img data-src="img/image6-21b.png" class="r-stretch"></section>
+<section class="slide level2">
+
+<h3 id="visualising-geographically-weighted-mean">Visualising Geographically Weighted Mean</h3>
 <div class="columns">
 <div class="column" style="width:50%;">
-<p><img data-src="img/image6-21b.png"></p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="Lesson04-Spatial_Weights_files/figure-revealjs/unnamed-chunk-7-1.png" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
 </div><div class="column" style="width:50%;">
-
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="Lesson04-Spatial_Weights_files/figure-revealjs/unnamed-chunk-8-1.png" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
 </div></div>
 </section>
 <section id="geographically-weighted-robust-statistics" class="slide level2">
@@ -510,6 +552,111 @@ The main different between Queens and Rooks is that Rooks only consider geograph
 <p>Using the definition of the p-quantile in previous slide, the following table shows the weighted and unweighted version of each robust summary statistic.</p>
 
 <img data-src="img/image6-23.png" class="r-stretch"></section>
+<section class="slide level2">
+
+<h3 id="visualising-geographically-weighted-median">Visualising Geographically Weighted Median</h3>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="Lesson04-Spatial_Weights_files/figure-revealjs/unnamed-chunk-9-1.png" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="Lesson04-Spatial_Weights_files/figure-revealjs/unnamed-chunk-10-1.png" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</div></div>
+</section>
+<section id="geographically-weighted-correlation" class="slide level2">
+<h2>Geographically Weighted Correlation</h2>
+<p>Geographically weighted correlation is a local statistical method used to measure how the strength and direction of a relationship between two variables changes across different geographic locations.</p>
+<p><strong>Key Concepts</strong></p>
+<ul>
+<li><strong>Spatial Non-Stationary</strong>: It recognizes that the relationship between two factors (such as income and health outcomes) is not uniform and can vary from one neighborhood or region to another.</li>
+<li><strong>Distance Decay (Weighting)</strong>: It follows <strong>Tobler’s First Law of Geography</strong>, meaning things closer to a location have a higher impact on the local correlation value than things far away.</li>
+<li><strong>Bandwidth and Kernel</strong>: A defined spatial window (bandwidth) and a weighting function (kernel) are used to dictate how quickly the influence of neighboring points decreases over distance.</li>
+</ul>
+</section>
+<section class="slide level2">
+
+<h3 id="correlation-analysis">Correlation Analysis</h3>
+<div class="columns">
+<div class="column" style="width:80%;">
+<p>Business question: Is there any relationship between GDP per capita and Gross Agriculture Output?</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="Lesson04-Spatial_Weights_files/figure-revealjs/unnamed-chunk-11-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div></div>
+</section>
+<section class="slide level2">
+
+<h3 id="geovisualisation-of-the-variable">GeoVisualisation of the variable</h3>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="Lesson04-Spatial_Weights_files/figure-revealjs/unnamed-chunk-12-1.png" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="Lesson04-Spatial_Weights_files/figure-revealjs/unnamed-chunk-13-1.png" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</div></div>
+</section>
+<section class="slide level2">
+
+<h3 id="visualising-gwcorr">Visualising gwCorr</h3>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="Lesson04-Spatial_Weights_files/figure-revealjs/unnamed-chunk-15-1.png" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="Lesson04-Spatial_Weights_files/figure-revealjs/unnamed-chunk-16-1.png" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</div></div>
+</section>
 <section id="references" class="slide level2">
 <h2>References</h2>
 <ul>
