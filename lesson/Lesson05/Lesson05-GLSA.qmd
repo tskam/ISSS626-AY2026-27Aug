@@ -24,7 +24,7 @@ editor: visual
 - Introducing Localised Geospatial Analysis
   - Local Indicators of Spatial Association (LISA)
 - Cluster and Outlier Analysis
-  - Local Moran and Local Geary
+  - Local Moran's I and Local Geary's c
   - Moran scatterplot
   - LISA Cluster Map
 :::
@@ -152,7 +152,7 @@ Reference: [A Computer Movie Simulating Urban Growth in the Detroit Region](http
 ## Measures of Global Spatial Autocorrelation
 
 - Moran's I
-- Geary's c
+- Geary's C
 
 ------------------------------------------------------------------------
 
@@ -164,7 +164,7 @@ Describe how features differ from the values in the study area as a whole.
 
 ![](img/image7-6.jpg){fig-align="center" width="680"}
 
-- Moran I (Z value) is:
+- Moran's I (Z value) is:
   - positive (I\>0): Clustered, observations tend to be similar;
   - negative(I\<0): Dispersed, observations tend to be dissimilar;
   - approximately zero: observations are arranged randomly over space.
@@ -173,7 +173,7 @@ Describe how features differ from the values in the study area as a whole.
 
 ------------------------------------------------------------------------
 
-### Measures of Global Spatial Autocorrelation: Geary's c
+### Measures of Global Spatial Autocorrelation: Geary's C
 
 :::: columns
 ::: {.column width="70%"}
@@ -181,10 +181,10 @@ Describing how features differ from their immediate neighbours.
 
 ![](img/image7-7.jpg)
 
-- Geary c (Z value) is:
-  - Large c value (\>1) : Dispersed, observations tend to be dissimilar;
-  - Small c value (\<1) : Clustered, observations tend to be similar;
-  - c = 1: observations are arranged randomly over space.
+- Geary's C (Z value) is:
+  - Large C value (\>1) : Dispersed, observations tend to be dissimilar;
+  - Small C value (\<1) : Clustered, observations tend to be similar;
+  - C = 1: observations are arranged randomly over space.
 :::
 ::::
 
@@ -317,7 +317,7 @@ Given a geographically referenced attribute field, X the formula of local Moran'
 
 ### Local Moran's I and Moran's I
 
-The summation of local Moran is
+The summation of local Moran's I is:
 
 ![](img/image7-12.jpg)
 
@@ -327,7 +327,7 @@ The summation of local Moran is
 
 ------------------------------------------------------------------------
 
-### Test statistics of Local Moran
+### Test statistics of Local Moran's I
 
 :::: columns
 ::: {.column width="70%"}
@@ -337,7 +337,7 @@ The summation of local Moran is
 
 ------------------------------------------------------------------------
 
-### Interpretation of Local Moran
+### Interpretation of Local Moran's I
 
 - An **outlier**: significant and negative if location i is associated with relatively low values in surrounding locations.
 
@@ -349,7 +349,7 @@ The summation of local Moran is
 
 ------------------------------------------------------------------------
 
-### Interpretation of Local Moran and Scatterplot
+### Interpretation of Local Moran's I and Scatterplot
 
 ![](img/image7-15.jpg)
 
@@ -551,7 +551,7 @@ Before running the test, you should ensure that:
 
 ::: {style="font-size: 0.58em"}
 | Pattern Name | Defination |
-|------------------|------------------------------------------------------|
+|-------------------|-----------------------------------------------------|
 | No pattern detected | Does not fall into any of the hot or cold spot patterns defined below. |
 | New Hot Spot | A location that is a statistically significant hot spot for the final time step and has never been a statistically significant hot spot before. |
 | Consecutive Hot Spot | A location with a single uninterrupted run of at least two statistically significant hot spot bins in the final time-step intervals. The location has never been a statistically significant hot spot prior to the final hot spot run and less than 90 percent of all bins are statistically significant hot spots. |
@@ -569,7 +569,7 @@ Before running the test, you should ensure that:
 
 ::: {style="font-size: 0.58em"}
 | Pattern Name | Definition |
-|------------------|------------------------------------------------------|
+|-------------------|-----------------------------------------------------|
 | New Cold Spot | A location that is a statistically significant cold spot for the final time step and has never been a statistically significant cold spot before. |
 | Consecutive Cold Spot | A location with a single uninterrupted run of at least two statistically significant cold spot bins in the final time-step intervals. The location has never been a statistically significant cold spot prior to the final cold spot run and less than 90 percent of all bins are statistically significant cold spots. |
 | Intensifying Cold Spot | A location that has been a statistically significant cold spot for 90 percent of the time-step intervals, including the final time step. In addition, the intensity of clustering of low counts in each time step is increasing overall and that increase is statistically significant. |

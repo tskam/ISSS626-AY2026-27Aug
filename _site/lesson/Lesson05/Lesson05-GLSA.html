@@ -10,7 +10,7 @@
   <meta name="generator" content="quarto-1.8.26">
 
   <meta name="author" content="Dr.&nbsp;Kam Tin Seong Assoc. Professor of Information Systems(Practice)">
-  <meta name="dcterms.date" content="2026-09-18">
+  <meta name="dcterms.date" content="2026-09-20">
   <title>ISSS626 – Lesson 5: Global and Local Measures of Spatial Association</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -141,7 +141,7 @@ Dr.&nbsp;Kam Tin Seong<br>Assoc. Professor of Information Systems(Practice)
     </div>
 </div>
 
-  <p class="date">18 Sep 2026</p>
+  <p class="date">20 Sep 2026</p>
 </section>
 <section id="content" class="slide level2">
 <h2>Content</h2>
@@ -159,7 +159,7 @@ Dr.&nbsp;Kam Tin Seong<br>Assoc. Professor of Information Systems(Practice)
 </ul></li>
 <li>Cluster and Outlier Analysis
 <ul>
-<li>Local Moran and Local Geary</li>
+<li>Local Moran’s I and Local Geary’s c</li>
 <li>Moran scatterplot</li>
 <li>LISA Cluster Map</li>
 </ul></li>
@@ -294,7 +294,7 @@ Dr.&nbsp;Kam Tin Seong<br>Assoc. Professor of Information Systems(Practice)
 <h2>Measures of Global Spatial Autocorrelation</h2>
 <ul>
 <li>Moran’s I</li>
-<li>Geary’s c</li>
+<li>Geary’s C</li>
 </ul>
 </section>
 <section class="slide level2">
@@ -309,7 +309,7 @@ Dr.&nbsp;Kam Tin Seong<br>Assoc. Professor of Information Systems(Practice)
 </figure>
 </div>
 <ul>
-<li>Moran I (Z value) is:
+<li>Moran’s I (Z value) is:
 <ul>
 <li>positive (I&gt;0): Clustered, observations tend to be similar;</li>
 <li>negative(I&lt;0): Dispersed, observations tend to be dissimilar;</li>
@@ -320,17 +320,17 @@ Dr.&nbsp;Kam Tin Seong<br>Assoc. Professor of Information Systems(Practice)
 </section>
 <section class="slide level2">
 
-<h3 id="measures-of-global-spatial-autocorrelation-gearys-c">Measures of Global Spatial Autocorrelation: Geary’s c</h3>
+<h3 id="measures-of-global-spatial-autocorrelation-gearys-c">Measures of Global Spatial Autocorrelation: Geary’s C</h3>
 <div class="columns">
 <div class="column" style="width:70%;">
 <p>Describing how features differ from their immediate neighbours.</p>
 <p><img data-src="img/image7-7.jpg"></p>
 <ul>
-<li>Geary c (Z value) is:
+<li>Geary’s C (Z value) is:
 <ul>
-<li>Large c value (&gt;1) : Dispersed, observations tend to be dissimilar;</li>
-<li>Small c value (&lt;1) : Clustered, observations tend to be similar;</li>
-<li>c = 1: observations are arranged randomly over space.</li>
+<li>Large C value (&gt;1) : Dispersed, observations tend to be dissimilar;</li>
+<li>Small C value (&lt;1) : Clustered, observations tend to be similar;</li>
+<li>C = 1: observations are arranged randomly over space.</li>
 </ul></li>
 </ul>
 </div></div>
@@ -460,7 +460,7 @@ Dr.&nbsp;Kam Tin Seong<br>Assoc. Professor of Information Systems(Practice)
 <section class="slide level2">
 
 <h3 id="local-morans-i-and-morans-i">Local Moran’s I and Moran’s I</h3>
-<p>The summation of local Moran is</p>
+<p>The summation of local Moran’s I is:</p>
 <p><img data-src="img/image7-12.jpg"></p>
 <ul>
 <li>Moran’s I</li>
@@ -469,7 +469,7 @@ Dr.&nbsp;Kam Tin Seong<br>Assoc. Professor of Information Systems(Practice)
 </section>
 <section class="slide level2">
 
-<h3 id="test-statistics-of-local-moran">Test statistics of Local Moran</h3>
+<h3 id="test-statistics-of-local-morans-i">Test statistics of Local Moran’s I</h3>
 <div class="columns">
 <div class="column" style="width:70%;">
 <p><img data-src="img/image7-14.jpg"></p>
@@ -477,7 +477,7 @@ Dr.&nbsp;Kam Tin Seong<br>Assoc. Professor of Information Systems(Practice)
 </section>
 <section class="slide level2">
 
-<h3 id="interpretation-of-local-moran">Interpretation of Local Moran</h3>
+<h3 id="interpretation-of-local-morans-i">Interpretation of Local Moran’s I</h3>
 <ul>
 <li><p>An <strong>outlier</strong>: significant and negative if location i is associated with relatively low values in surrounding locations.</p></li>
 <li><p>A <strong>cluster</strong>: significant and positive if location i is associated with relatively high values of the surrounding locations.</p></li>
@@ -487,7 +487,7 @@ Dr.&nbsp;Kam Tin Seong<br>Assoc. Professor of Information Systems(Practice)
 </section>
 <section class="slide level2">
 
-<h3 id="interpretation-of-local-moran-and-scatterplot">Interpretation of Local Moran and Scatterplot</h3>
+<h3 id="interpretation-of-local-morans-i-and-scatterplot">Interpretation of Local Moran’s I and Scatterplot</h3>
 
 <img data-src="img/image7-15.jpg" class="r-stretch"></section>
 <section class="slide level2">
@@ -672,8 +672,8 @@ Dr.&nbsp;Kam Tin Seong<br>Assoc. Professor of Information Systems(Practice)
 <div style="font-size: 0.58em">
 <table class="caption-top">
 <colgroup>
-<col style="width: 25%">
-<col style="width: 75%">
+<col style="width: 26%">
+<col style="width: 73%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -728,8 +728,8 @@ Dr.&nbsp;Kam Tin Seong<br>Assoc. Professor of Information Systems(Practice)
 <div style="font-size: 0.58em">
 <table class="caption-top">
 <colgroup>
-<col style="width: 25%">
-<col style="width: 75%">
+<col style="width: 26%">
+<col style="width: 73%">
 </colgroup>
 <thead>
 <tr class="header">

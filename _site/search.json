@@ -1488,7 +1488,7 @@
     "href": "lesson/Lesson05/Lesson05-GLSA.html#content",
     "title": "Lesson 5: Global and Local Measures of Spatial Association",
     "section": "Content",
-    "text": "Content\n\n\n\nWhat is Spatial Autocorrelation\n\nMeasures of Global Spatial Autocorrelation\nMeasures of Global High/Low Clustering\n\nIntroducing Localised Geospatial Analysis\n\nLocal Indicators of Spatial Association (LISA)\n\nCluster and Outlier Analysis\n\nLocal Moran and Local Geary\nMoran scatterplot\nLISA Cluster Map\n\n\n\n\nHot Spot and Cold Spot Areas Analysis\n\nGetis and Ord’s G-statistics\n\nEmerging Hot Spot Analysis (EHSA)\n\nSpacetime and spacetime cubes\nMann-Kendall Test\nEHSA map"
+    "text": "Content\n\n\n\nWhat is Spatial Autocorrelation\n\nMeasures of Global Spatial Autocorrelation\nMeasures of Global High/Low Clustering\n\nIntroducing Localised Geospatial Analysis\n\nLocal Indicators of Spatial Association (LISA)\n\nCluster and Outlier Analysis\n\nLocal Moran’s I and Local Geary’s c\nMoran scatterplot\nLISA Cluster Map\n\n\n\n\nHot Spot and Cold Spot Areas Analysis\n\nGetis and Ord’s G-statistics\n\nEmerging Hot Spot Analysis (EHSA)\n\nSpacetime and spacetime cubes\nMann-Kendall Test\nEHSA map"
   },
   {
     "objectID": "lesson/Lesson05/Lesson05-GLSA.html#what-is-spatial-autocorrelation",
@@ -1502,7 +1502,7 @@
     "href": "lesson/Lesson05/Lesson05-GLSA.html#measures-of-global-spatial-autocorrelation",
     "title": "Lesson 5: Global and Local Measures of Spatial Association",
     "section": "Measures of Global Spatial Autocorrelation",
-    "text": "Measures of Global Spatial Autocorrelation\n\nMoran’s I\nGeary’s c"
+    "text": "Measures of Global Spatial Autocorrelation\n\nMoran’s I\nGeary’s C"
   },
   {
     "objectID": "lesson/Lesson05/Lesson05-GLSA.html#measures-of-global-highlow-clustering-getis-ord-global-g",
@@ -1629,5 +1629,131 @@
     "title": "Lesson 6: Geographic Segmentation with Spatial Clustering",
     "section": "ClustGeo Package",
     "text": "ClustGeo Package\nThe R package ClustGeo implements a Ward-like hierarchical clustering algorithm including spatial/geographical constraints.\n\nTwo dissimilarity matrices D0 and D1 are inputted, along with a mixing parameter alpha in [0,1]. The dissimilarities can be non-Euclidean and the weights of the observations can be non-uniform.\nThe first matrix gives the dissimilarities in the “feature space”” and the second matrix gives the dissimilarities in the “constraint space”.\nThe criterion minimized at each stage is a convex combination of the homogeneity criterion calculated with D0 and the homogeneity criterion calculated with D1. The idea is to determine a value of alpha which increases the spatial contiguity without deteriorating too much the quality of the solution based on the variables of interest i.e. those of the feature space."
+  },
+  {
+    "objectID": "In-class_Ex/In-class_Ex05/In-class_Ex05-GLSA.html#content",
+    "href": "In-class_Ex/In-class_Ex05/In-class_Ex05-GLSA.html#content",
+    "title": "In-class Exercise 5: Global and Local Measures of Spatial Autocorrelation: sfdep methods",
+    "section": "Content",
+    "text": "Content\n\nIntroducing sfdep.\n\nsfdep creates an sf and tidyverse friendly interface to the package as well as introduces new functionality that is not present in spdep.\nsfdep utilizes list columns extensively to make this interface possible.”"
+  },
+  {
+    "objectID": "In-class_Ex/In-class_Ex05/In-class_Ex05-GLSA.html#getting-started",
+    "href": "In-class_Ex/In-class_Ex05/In-class_Ex05-GLSA.html#getting-started",
+    "title": "In-class Exercise 5: Global and Local Measures of Spatial Autocorrelation: sfdep methods",
+    "section": "Getting started",
+    "text": "Getting started\nInstalling and Loading the R Packages\nFour R packages will be used for this in-class exercise, they are: sf, sfdep, tmap and tidyverse.\n\nDo It Yourself!The code\n\n\nUsing the steps you learned in previous lesson, install and load sf, tmap, sfdep and tidyverse packages into R environment.\n\n\n\n\npacman::p_load(sf, sfdep, tmap, tidyverse)"
+  },
+  {
+    "objectID": "In-class_Ex/In-class_Ex05/In-class_Ex05-GLSA.html#the-data",
+    "href": "In-class_Ex/In-class_Ex05/In-class_Ex05-GLSA.html#the-data",
+    "title": "In-class Exercise 5: Global and Local Measures of Spatial Autocorrelation: sfdep methods",
+    "section": "The Data",
+    "text": "The Data\nFor the purpose of this in-class exercise, the Hunan data sets will be used. There are two data sets in this use case, they are:\n\nHunan, a geospatial data set in ESRI shapefile format, and\nHunan_2012, an attribute data set in csv format.\n\n\nDo It Yourself!The code\n\n\nUsing the steps you learned in previous lesson, import Hunan shapefile into R environment as an sf data frame.\n\n\n\n\nhunan &lt;- st_read(dsn = \"data/geospatial\", \n                 layer = \"Hunan\")\n\nReading layer `Hunan' from data source \n  `C:\\tskam\\ISSS626-AY2026-27Aug\\In-class_Ex\\In-class_Ex05\\data\\geospatial' \n  using driver `ESRI Shapefile'\nSimple feature collection with 88 features and 7 fields\nGeometry type: POLYGON\nDimension:     XY\nBounding box:  xmin: 108.7831 ymin: 24.6342 xmax: 114.2544 ymax: 30.12812\nGeodetic CRS:  WGS 84"
+  },
+  {
+    "objectID": "In-class_Ex/In-class_Ex05/In-class_Ex05-GLSA.html#importing-attribute-table",
+    "href": "In-class_Ex/In-class_Ex05/In-class_Ex05-GLSA.html#importing-attribute-table",
+    "title": "In-class Exercise 5: Global and Local Measures of Spatial Autocorrelation: sfdep methods",
+    "section": "Importing Attribute Table",
+    "text": "Importing Attribute Table\n\nDo It Yourself!The code\n\n\nUsing the steps you learned in previous lesson, import Hunan_2012.csv into R environment as an tibble data frame.\n\n\n\n\nhunan2012 &lt;- read_csv(\"data/aspatial/Hunan_2012.csv\")"
+  },
+  {
+    "objectID": "In-class_Ex/In-class_Ex05/In-class_Ex05-GLSA.html#combining-both-data-frame-by-using-left-join",
+    "href": "In-class_Ex/In-class_Ex05/In-class_Ex05-GLSA.html#combining-both-data-frame-by-using-left-join",
+    "title": "In-class Exercise 5: Global and Local Measures of Spatial Autocorrelation: sfdep methods",
+    "section": "Combining both data frame by using left join",
+    "text": "Combining both data frame by using left join\n\nDo It Yourself!The code\n\n\nUsing the steps you learned in previous lesson, combine the Hunan sf data frame and Hunan_2012 data frame. Ensure that the output is an sf data frame.\n\n\n\n\nhunan_GDPPC &lt;- left_join(hunan, hunan2012) %&gt;%\n  select(1:4, 7, 15)\n\n\n\n\n\n\n\n\nNote\n\n\nFor the purpose of this exercise, we only retain column 1 to 4, column 7 and column 15. You should examine the output sf data.frame to learn know what are these fields.\n\n\n\n\n\n\n\n\n\nImportant\n\n\nIn order to retain the geospatial properties, the left data frame must the sf data.frame (i.e. hunan)"
+  },
+  {
+    "objectID": "In-class_Ex/In-class_Ex05/In-class_Ex05-GLSA.html#plotting-a-choropleth-map",
+    "href": "In-class_Ex/In-class_Ex05/In-class_Ex05-GLSA.html#plotting-a-choropleth-map",
+    "title": "In-class Exercise 5: Global and Local Measures of Spatial Autocorrelation: sfdep methods",
+    "section": "Plotting a choropleth map",
+    "text": "Plotting a choropleth map\n\nDo It Yourself!The plotThe code\n\n\nUsing the steps you learned in previous lesson, plot a choropleth map showing the distribution of GDPPC of Hunan Province.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ntmap_mode(\"plot\")\ntm_shape(hunan_GDPPC) +\n  tm_polygons(fill = \"GDPPC\", \n              fill.scale = tm_scale_intervals(\n                style = \"quantile\", \n                values = \"brewer.blues\")) +\n  tm_title(\"Distribution of GDP per capita by county, Hunan Province\") +\n  tm_borders(fill_alpha = 0.5) +\n  tm_compass(type=\"8star\", size = 2) +\n  tm_scalebar() +\n  tm_grid(fill_alpha =0.2) +\n  tm_layout(legend.position = c(\"left\", \"bottom\"))"
+  },
+  {
+    "objectID": "In-class_Ex/In-class_Ex05/In-class_Ex05-GLSA.html#global-measures-of-spatial-association",
+    "href": "In-class_Ex/In-class_Ex05/In-class_Ex05-GLSA.html#global-measures-of-spatial-association",
+    "title": "In-class Exercise 5: Global and Local Measures of Spatial Autocorrelation: sfdep methods",
+    "section": "Global Measures of Spatial Association",
+    "text": "Global Measures of Spatial Association\nStep 1: Deriving Queen’s contiguity weights: sfdep methods\n\n\n\n\nwm_q &lt;- hunan_GDPPC %&gt;%\n  mutate(nb = st_contiguity(geometry),\n         wt = st_weights(nb,\n                         style = \"W\"),\n         .before = 1) \n\n\n\n\nNotice that st_weights() provides tree arguments, they are:\n\nnb: A neighbor list object as created by st_neighbors().\nstyle: Default “W” for row standardized weights. This value can also be “B”, “C”, “U”, “minmax”, and “S”. B is the basic binary coding, W is row standardised (sums over all links to n), C is globally standardised (sums over all links to n), U is equal to C divided by the number of neighbours (sums over all links to unity), while S is the variance-stabilizing coding scheme proposed by Tiefelsdorf et al. 1999, p. 167-168 (sums over all links to n).\nallow_zero: If TRUE, assigns zero as lagged value to zone without neighbors."
+  },
+  {
+    "objectID": "In-class_Ex/In-class_Ex05/In-class_Ex05-GLSA.html#lisa-map",
+    "href": "In-class_Ex/In-class_Ex05/In-class_Ex05-GLSA.html#lisa-map",
+    "title": "In-class Exercise 5: Global and Local Measures of Spatial Autocorrelation: sfdep methods",
+    "section": "LISA map",
+    "text": "LISA map\n\n\nLISA map is a categorical map showing outliers and clusters. There are two types of outliers namely: High-Low and Low-High outliers. Likewise, there are two type of clusters namely: High-High and Low-Low cluaters. In fact, LISA map is an interpreted map by combining local Moran’s I of geographical areas and their respective p-values."
+  },
+  {
+    "objectID": "In-class_Ex/In-class_Ex05/In-class_Ex05-GLSA.html#computing-local-morans-i",
+    "href": "In-class_Ex/In-class_Ex05/In-class_Ex05-GLSA.html#computing-local-morans-i",
+    "title": "In-class Exercise 5: Global and Local Measures of Spatial Autocorrelation: sfdep methods",
+    "section": "Computing local Moran’s I",
+    "text": "Computing local Moran’s I\nIn this section, you will learn how to compute Local Moran’s I of GDPPC at county level by using local_moran() of sfdep package.\n\nThe codeThe output\n\n\n\n\nlisa &lt;- wm_q %&gt;% \n  mutate(local_moran = local_moran(\n    GDPPC, nb, wt, nsim = 99),\n         .before = 1) %&gt;%\n  unnest(local_moran)\n\n\n\n\n\nThe output of local_moran() is a sf data.frame containing the columns ii, eii, var_ii, z_ii, p_ii, p_ii_sim, and p_folded_sim.\n\nii: local moran statistic\neii: expectation of local moran statistic; for localmoran_permthe permutation sample means\nvar_ii: variance of local moran statistic; for localmoran_permthe permutation sample standard deviations\nz_ii: standard deviate of local moran statistic; for localmoran_perm based on permutation sample means and standard deviations p_ii: p-value of local moran statistic using pnorm(); for localmoran_perm using standard deviatse based on permutation sample means and standard deviations p_ii_sim: For localmoran_perm(), rank() and punif() of observed statistic rank for [0, 1] p-values using alternative= -p_folded_sim: the simulation folded [0, 0.5] range ranked p-value (based on https://github.com/pysal/esda/blob/4a63e0b5df1e754b17b5f1205b cadcbecc5e061/esda/crand.py#L211-L213)\nskewness: For localmoran_perm, the output of e1071::skewness() for the permutation samples underlying the standard deviates\nkurtosis: For localmoran_perm, the output of e1071::kurtosis() for the permutation samples underlying the standard deviates."
+  },
+  {
+    "objectID": "In-class_Ex/In-class_Ex05/In-class_Ex05-GLSA.html#hot-spot-and-cold-spot-area-analysis-hcsa",
+    "href": "In-class_Ex/In-class_Ex05/In-class_Ex05-GLSA.html#hot-spot-and-cold-spot-area-analysis-hcsa",
+    "title": "In-class Exercise 5: Global and Local Measures of Spatial Autocorrelation: sfdep methods",
+    "section": "Hot Spot and Cold Spot Area Analysis (HCSA)",
+    "text": "Hot Spot and Cold Spot Area Analysis (HCSA)\n\n\nHCSA uses spatial weights to identify locations of statistically significant hot spots and cold spots in an spatially weighted attribute that are in proximity to one another based on a calculated distance. The analysis groups features when similar high (hot) or low (cold) values are found in a cluster. The polygon features usually represent administration boundaries or a custom grid structure."
+  },
+  {
+    "objectID": "In-class_Ex/In-class_Ex05/In-class_Ex05-EHSA.html#overview",
+    "href": "In-class_Ex/In-class_Ex05/In-class_Ex05-EHSA.html#overview",
+    "title": "In-class Exercise 5: Emerging Hot Spot Analysis",
+    "section": "Overview",
+    "text": "Overview\n\n\n\nEmerging Hot Spot Analysis (EHSA) is a spatio-temporal analysis method for revealing and describing how hot spot and cold spot areas evolve over time. The analysis consist of four main steps:\n\nBuilding a space-time cube,\nCalculating Getis-Ord local Gi* statistic for each bin by using an FDR correction,\nEvaluating these hot and cold spot trends by using Mann-Kendall trend test,\nCategorising each study area location by referring to the resultant trend z-score and p-value for each location with data, and with the hot spot z-score and p-value for each bin.\n\n\n\n\n\n\n\nImportant\n\n\nIt is highly recommended to read Emerging Hot Spot Analysis before you continue the exercise."
+  },
+  {
+    "objectID": "In-class_Ex/In-class_Ex05/In-class_Ex05-EHSA.html#getting-started",
+    "href": "In-class_Ex/In-class_Ex05/In-class_Ex05-EHSA.html#getting-started",
+    "title": "In-class Exercise 5: Emerging Hot Spot Analysis",
+    "section": "Getting started",
+    "text": "Getting started\nInstalling and Loading the R Packages\n\n\nAs usual, p_load() of pacman package will be used to check if the necessary packages have been installed in R, if yes, load the packages on R environment.\nSix R packages are need for this in-class exercise, they are: sf, sfdep, tmap, plotly, and tidyverse.\n\n\npacman::p_load(sf, sfdep, tmap, \n               plotly, tidyverse, \n               Kendall)"
+  },
+  {
+    "objectID": "In-class_Ex/In-class_Ex05/In-class_Ex05-EHSA.html#the-data",
+    "href": "In-class_Ex/In-class_Ex05/In-class_Ex05-EHSA.html#the-data",
+    "title": "In-class Exercise 5: Emerging Hot Spot Analysis",
+    "section": "The Data",
+    "text": "The Data\n\n\nFor the purpose of this in-class exercise, the Hunan data sets will be used. There are two data sets in this use case, they are:\n\nHunan, a geospatial data set in ESRI shapefile format, and\nHunan_GDPPC, an attribute data set in csv format.\n\nBefore getting started, reveal the content of Hunan_GDPPC.csv by using Notepad and MS Excel."
+  },
+  {
+    "objectID": "In-class_Ex/In-class_Ex05/In-class_Ex05-EHSA.html#creating-a-time-series-cube",
+    "href": "In-class_Ex/In-class_Ex05/In-class_Ex05-EHSA.html#creating-a-time-series-cube",
+    "title": "In-class Exercise 5: Emerging Hot Spot Analysis",
+    "section": "Creating a Time Series Cube",
+    "text": "Creating a Time Series Cube\nBefore getting started, students must read this article to learn the basic concept of spatio-temporal cube and its implementation in sfdep package.\nIn the code chunk below, spacetime() of sfdep ised used to create an spatio-temporal cube.\n\n\nGDPPC_st &lt;- spacetime(GDPPC, hunan,\n                      .loc_col = \"County\",\n                      .time_col = \"Year\")\n\n\nNext, is_spacetime_cube() of sfdep package will be used to verify if GDPPC_st is indeed an space-time cube object.\n\n\nis_spacetime_cube(GDPPC_st)\n\n[1] TRUE\n\n\n\nThe TRUE return confirms that GDPPC_st object is indeed an time-space cube."
+  },
+  {
+    "objectID": "In-class_Ex/In-class_Ex05/In-class_Ex05-EHSA.html#computing-gi",
+    "href": "In-class_Ex/In-class_Ex05/In-class_Ex05-EHSA.html#computing-gi",
+    "title": "In-class Exercise 5: Emerging Hot Spot Analysis",
+    "section": "Computing Gi*",
+    "text": "Computing Gi*\nNext, we will compute the local Gi* statistics.\nDeriving the spatial weights\n\n\nThe code chunk below will be used to identify neighbors and to derive an inverse distance weights.\n\n\nGDPPC_nb &lt;- GDPPC_st %&gt;%\n  activate(\"geometry\") %&gt;%\n  mutate(nb = include_self(\n    st_contiguity(geometry)),\n    wt = st_inverse_distance(nb, \n                             geometry, \n                             scale = 1,\n                             alpha = 1),\n    .before = 1) %&gt;%\n  set_nbs(\"nb\") %&gt;%\n  set_wts(\"wt\")\n\n\n\n\n\n\n\n\n\nThings to learn from the code chunk above\n\n\n\nactivate() of dplyr package is used to activate the geometry context\nmutate() of dplyr package is used to create two new columns nb and wt.\nThen we will activate the data context again and copy over the nb and wt columns to each time-slice using set_nbs() and set_wts()\n\nrow order is very important so do not rearrange the observations after using set_nbs() or set_wts().\n\n\n\n\n\n\nNote that this dataset now has neighbors and weights for each time-slice."
+  },
+  {
+    "objectID": "In-class_Ex/In-class_Ex05/In-class_Ex05-EHSA.html#computing-gi-1",
+    "href": "In-class_Ex/In-class_Ex05/In-class_Ex05-EHSA.html#computing-gi-1",
+    "title": "In-class Exercise 5: Emerging Hot Spot Analysis",
+    "section": "Computing Gi*",
+    "text": "Computing Gi*\n\n\nWe can use these new columns to manually calculate the local Gi* for each location. We can do this by grouping by Year and using local_gstar_perm() of sfdep package. After which, we use unnest() to unnest gi_star column of the newly created gi_starts data.frame.\n\n\ngi_stars &lt;- GDPPC_nb %&gt;% \n  group_by(Year) %&gt;% \n  mutate(gi_star = local_gstar_perm(\n    GDPPC, nb, wt)) %&gt;% \n  tidyr::unnest(gi_star)"
+  },
+  {
+    "objectID": "In-class_Ex/In-class_Ex05/In-class_Ex05-EHSA.html#mann-kendall-test",
+    "href": "In-class_Ex/In-class_Ex05/In-class_Ex05-EHSA.html#mann-kendall-test",
+    "title": "In-class Exercise 5: Emerging Hot Spot Analysis",
+    "section": "Mann-Kendall Test",
+    "text": "Mann-Kendall Test\nA monotonic series or function is one that only increases (or decreases) and never changes direction. So long as the function either stays flat or continues to increase, it is monotonic.\nH0: No monotonic trend\nH1: Monotonic trend is present\nInterpretation\n\nReject the null-hypothesis null if the p-value is smaller than the alpha value (i.e. 1-confident level)\nTau ranges between -1 and 1 where:\n\n-1 is a perfectly decreasing series, and\n1 is a perfectly increasing series.\n\n\n\n\n\n\n\n\nImportant\n\n\nYou are encouraged to read Mann-Kendall Test For Monotonic Trend to learn more about the concepts and method of Mann-Kendall test.."
+  },
+  {
+    "objectID": "In-class_Ex/In-class_Ex05/In-class_Ex05-EHSA.html#performing-emerging-hotspot-analysis",
+    "href": "In-class_Ex/In-class_Ex05/In-class_Ex05-EHSA.html#performing-emerging-hotspot-analysis",
+    "title": "In-class Exercise 5: Emerging Hot Spot Analysis",
+    "section": "Performing Emerging Hotspot Analysis",
+    "text": "Performing Emerging Hotspot Analysis\n\n\nLastly, we will perform EHSA analysis by using emerging_hotspot_analysis() of sfdep package. It takes a spacetime object x (i.e. GDPPC_st), and the quoted name of the variable of interest (i.e. GDPPC) for .var argument. The k argument is used to specify the number of time lags which is set to 1 by default. Lastly, nsim map numbers of simulation to be performed.\n\n\n\nehsa &lt;- emerging_hotspot_analysis(\n  x = GDPPC_st, \n  .var = \"GDPPC\", \n  k = 1, \n  nsim = 99\n)"
   }
 ]
