@@ -613,17 +613,25 @@ Spatial statistics methods are not a blackbox. Before performing the analysis, a
 
 ## References
 
+::: {style="font-size: 0.75em"}
+
 - Moran, P. A. P. (1950). ["Notes on Continuous Stochastic Phenomena"](https://www-jstor-org.libproxy.smu.edu.sg/stable/2332142?seq=1#metadata_info_tab_contents). Biometrika. 37 (1): 17--23.
 
 - Geary, R.C. (1954) ["The Contiguity Ratio and Statistical Mapping"](https://www-jstor-org.libproxy.smu.edu.sg/stable/2986645?sid=primo&origin=crossref&seq=1#metadata_info_tab_contents). *The Incorporated Statistician*, Vol. 5, No. 3, pp. 115-127. - [Moran's I](https://en.wikipedia.org/wiki/Moran%27s_I)
 
 - [Geary's c](https://en.wikipedia.org/wiki/Geary%27s_C) - Getis, A., & Ord, K. (1992). ["The Analysis of Spatial Association by Use of Distance Statistics"](https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1538-4632.1992.tb00261.x). *Geographical Analysis*, 24, 189--206.
 
-- Anselin, L. (1995). "Local indicators of spatial association -- LISA". *Geographical Analysis*, 27(4): 93-115.
+- Anselin, L. (1995). "[Local indicators of spatial association - LISA](https://onlinelibrary.wiley.com/doi/10.1111/j.1538-4632.1995.tb00338.x)". *Geographical Analysis*, 27(4): 93-115.
 
-- Getis, A. and Ord, J.K. (1992) "The analysis of spatial association by use of distance statistics". *Geographical Analysis*, 24(3): 189-206.
+- Getis, A. and Ord, J.K. (1992) "[The analysis of spatial association by use of distance statistics](https://onlinelibrary.wiley.com/doi/10.1111/j.1538-4632.1992.tb00261.x)". *Geographical Analysis*, 24(3): 189-206.
 
 - Ord, J.K. and Getis, A. (2010) "Local spatial autocorrelation statistics: Distributional issues and an application". *Geographical Analysis*, 27(4): 286-306.
+
+- Putrenko, V., Pashynska, N., & Nazarenko, S. (2018, October 27). "[Data Mining of Network Events With Space-Time Cube Application](https://doi.org/10.5281/zenodo.1472753)". *First Workshop on Platial Analysis (PLATIAL'18), Heidelberg, Germany*.
+
+:::
+
+
 
 ```{r}
 #| echo: false

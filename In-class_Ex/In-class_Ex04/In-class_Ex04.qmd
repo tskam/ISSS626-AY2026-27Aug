@@ -1,0 +1,639 @@
+---
+title: "In-class Exercise 4: <br/>Geographically Weighted Summary Statistics"
+subtitle: "gwModel methods"
+author: "Dr. Kam Tin Seong<br/>Assoc. Professor of Information Systems(Practice)"
+institute: "School of Computing and Information Systems,<br/>Singapore Management University"
+date: today
+format: 
+  revealjs:
+    pdf: default
+    width: 1600
+    height: 900
+    show-notes: false
+    slide-number: true
+    show-slide-number: all
+execute: 
+  eval: true
+  echo: true
+  warning: false
+  freeze: true
+date-format: "DD MMM YYYY"
+editor: visual 
+---
+
+## Overview
+
+- **Geographically Weighted Summary Statistics (GWSS)** are methods that calculate summary statistics (like mean, standard deviation, or median) for local areas within a dataset, rather than for the entire dataset globally.
+
+- Each calculation assigns weights to nearby data points, with closer points receiving higher weights, using a specified kernel function (e.g., bisquare or Gaussian) and bandwidth to define the neighborhood's influence. This allows for the detection of spatial heterogeneity, where statistical relationships and patterns vary across the study area, providing more detailed and localized insights than traditional global statistics.
+
+------------------------------------------------------------------------
+
+### Application of GWSS
+
+- GWSS are applied to understand how relationships between variables vary across geographic space in fields like environmental science, health, and socio-economics.
+- Applications include analyzing spatial variations in ecological processes, mapping health disparities, assessing the relationship between human activities and landscape changes, and identifying spatial patterns in geochemical anomalies.
+- By creating local models instead of a single global one, GWSS reveals localized relationships and spatial non-stationarity, leading to more targeted resource management and policy interventions.
+
+------------------------------------------------------------------------
+
+### Learning Outcome
+
+By the end of this in-class exercise, you will gain hands-on experience in
+
+- extracting and preparing geospatial analytics data by using appropriate fiunctions of **sf**, **readr** and **dplyr** packages.
+- computing geographically weighted summaries statistics and correlation coefficients by using `gwss()` of **GWmodel** package,
+- extracting, creating and integrating SDF data frame of gwss object with hunan sf data frame by using appropriate **dplyr** functions, and
+- visualising the output of `gwss()` using appropriate choropleth mapping functions of **tmap** package.
+
+## Loading the package
+
+To complete this exercise, sf, spdep, tmap, tidyverse, knitr and GWmodel will be used.
+
+:::: panel-tabset
+### DIY
+
+Using the step you learned from previous hands-in, install and load the necessary R packages in R environment.
+
+### The code
+
+::: {style="font-size: 1.50em"}
+```{r}
+pacman::p_load(sf, ggstatsplot, tmap, tidyverse, knitr, GWmodel)
+```
+:::
+::::
+
+## Preparing the Data
+
+For this in-class exercise, Hunan shapefile and Hunan_2012 data file will be used.
+
+:::::: panel-tabset
+### DIY
+
+Using the steps you learned from previous hands-on, complete the following tasks:
+
+- import Hunan shapefile and parse it into a sf polygon feature object.
+- import Hunan_2012.csv file parse it into a tibble data.frame.
+- join Hunan and Hunan_2012 data.frames and tidy the data table by retaining NAME_2, ID_3, NAME_3, County, GDPPC, GIO, Agri and Service.
+
+### Importing Hunan shapefile
+
+::: {style="font-size: 1.50em"}
+```{r}
+hunan_sf <- st_read(dsn = "data/geospatial", 
+                 layer = "Hunan")
+```
+:::
+
+### Importing Hunan_2012 table
+
+::: {style="font-size: 1.50em"}
+```{r}
+hunan2012 <- read_csv("data/aspatial/Hunan_2012.csv")
+```
+:::
+
+### Joining Hunan and Hunan_2012
+
+::: {style="font-size: 1.50em"}
+```{r}
+hunan_sf <- left_join(hunan_sf, hunan2012) %>%
+  select(1:3, 7, 15, 16, 31, 32)
+```
+:::
+::::::
+
+## Mapping GDPPC
+
+:::: panel-tabset
+### DIY
+
+Using the steps you learned from Hands-on Exercise 1b, prepare a choropleth map showing the geographic distribution of GDPPC of Hunan Province.
+
+```{r}
+#| fig-width: 16
+#| fig-height: 6
+#| echo: false
+basemap <- tm_shape(hunan_sf) +
+  tm_polygons() +
+  tm_text("NAME_3", size=0.5)
+
+gdppc <- qtm(hunan_sf, "GDPPC") +
+  tm_layout(
+    legend.position = c("left", "bottom"))
+tmap_arrange(basemap, gdppc, asp=1, ncol=2)
+```
+
+### The code
+
+::: {style="font-size: 1.50em"}
+```{r}
+#| fig-width: 16
+#| fig-height: 6
+#| eval: false
+basemap <- tm_shape(hunan_sf) +
+  tm_polygons() +
+  tm_text("NAME_3", size=0.5)
+
+gdppc <- qtm(hunan_sf, "GDPPC") +
+  tm_layout(
+    legend.position = c("left", "bottom"))
+tmap_arrange(basemap, gdppc, asp=1, ncol=2)
+```
+:::
+::::
+
+## Converting to SpatialPolygonDataFrame
+
+::: callout-note
+GWmodel presently is built around the older sp and not sf formats for handling spatial data in R.
+:::
+
+::: {style="font-size: 1.50em"}
+```{r}
+hunan_sp <- hunan_sf %>%
+  as_Spatial()
+```
+:::
+
+## Geographically Weighted Summary Statistics (GSWW) with adaptive bandwidth
+
+### Determine adaptive bandwidth
+
+::::: panel-tabset
+### Cross-validation
+
+::: {style="font-size: 1.20em"}
+```{r}
+bw_CV <- bw.gwr(GDPPC ~ 1, 
+             data = hunan_sp,
+             approach = "CV",
+             adaptive = TRUE, 
+             kernel = "bisquare", 
+             longlat = T)
+bw_CV
+```
+:::
+
+### AICc
+
+::: {style="font-size: 1.20em"}
+```{r}
+bw_AIC <- bw.gwr(GDPPC ~ 1, 
+             data = hunan_sp,
+             approach ="AICc",
+             adaptive = TRUE, 
+             kernel = "bisquare", 
+             longlat = T)
+bw_AIC
+```
+:::
+:::::
+
+------------------------------------------------------------------------
+
+### Computing geographically wieghted summary statistics
+
+The code chunk below computes geographically weighted summary statistics by using `gwss()` of GWmodel package. The analysis is performed using adaptive distance weighted. The distance is derived using **AICc** method and the kernel method used is **bisquare**.
+
+::: {style="font-size: 1.50em"}
+```{r}
+gwstat <- gwss(data = hunan_sp,
+               vars = "GDPPC",
+               bw = bw_AIC,
+               kernel = "bisquare",
+               quantile = TRUE,
+               adaptive = TRUE,
+               longlat = T)
+```
+:::
+
+::: callout-note
+gwss support five kernel methods, namely gaussian, exponential, bisquare, tricube, and boxcar. Repeat the code chunk above with different kernel methods and compare their results visually.
+:::
+
+------------------------------------------------------------------------
+
+### Preparing the output data
+
+::: callout-important
+`gwss()` with **quantile** argument computes eight local summary statistics, namely: local means, local standard deviations, local variance, local skew, local coefficients of variation, local Median, local medians, local interquartile ranges, and local quantile imbalances. They are output in **SDF** data frame.
+:::
+
+Code chunk below is used to extract **SDF** data table from **gwss** object output from `gwss()` for subsequent geovilisation. It will be converted into data.frame by using `as.data.frame()`.
+
+::: {style="font-size: 1.50em"}
+```{r}
+gwstat_df <- as.data.frame(gwstat$SDF)
+```
+:::
+
+Next, `cbind()` is used to append the newly derived data.frame onto *hunan_sf* sf data.frame.
+
+::: {style="font-size: 1.50em"}
+```{r}
+hunan_gstat <- cbind(hunan_sf, gwstat_df)
+```
+:::
+
+------------------------------------------------------------------------
+
+### Visualising geographically weighted summary statistics
+
+:::::: panel-tabset
+### The Geographically Weighted Mean
+
+:::: columns
+::: {.column width="50%"}
+```{r}
+#| fig-height: 9
+#| echo: false
+tm_shape(hunan_gstat) +
+  tm_polygons(fill = "GDPPC_LM",
+              fill.scale = tm_scale_intervals(
+                style = "quantile",
+                n = 5,
+                values = "brewer.blues"),
+              fill.legend = tm_legend(
+                title = "local Mean")) +
+  tm_borders(fill_alpha = 0.5) +
+  tm_title("Distribution of geographically weighted mean") + 
+  tm_layout(legend.position = c("left", "bottom"))
+```
+:::
+::::
+
+### The code
+
+::: {style="font-size: 1.30em"}
+```{r}
+#| eval: false
+tm_shape(hunan_gstat) +
+  tm_polygons(fill = "GDPPC_LM",
+              fill.scale = tm_scale_intervals(
+                style = "quantile",
+                n = 5,
+                values = "brewer.blues"),
+              fill.legend = tm_legend(
+                title = "local Mean")) +
+  tm_borders(fill_alpha = 0.5) +
+  tm_title("Distribution of geographically wieghted mean") + 
+  tm_layout(legend.position = c("left", "bottom"))
+```
+:::
+::::::
+
+## GWSS with Fixed Bandwidth
+
+### Determine fixed bandwidth
+
+::::: panel-tabset
+### Cross-validation
+
+::: {style="font-size: 1.20em"}
+```{r}
+bw_CV <- bw.gwr(GDPPC ~ 1, 
+             data = hunan_sp,
+             approach = "CV",
+             adaptive = FALSE, 
+             kernel = "bisquare", 
+             longlat = T)
+bw_CV
+```
+:::
+
+### AICc
+
+::: {style="font-size: 1.20em"}
+```{r}
+bw_AIC <- bw.gwr(GDPPC ~ 1, 
+             data = hunan_sp,
+             approach ="AICc",
+             adaptive = FALSE, 
+             kernel = "bisquare", 
+             longlat = T)
+bw_AIC
+```
+:::
+:::::
+
+------------------------------------------------------------------------
+
+### Computing fixed bandwidth GWSS
+
+::: {style="font-size: 1.50em"}
+```{r}
+gwstat <- gwss(data = hunan_sp,
+               vars = "GDPPC",
+               bw = bw_AIC,
+               kernel = "bisquare",
+               adaptive = FALSE,
+               quantile = TRUE,
+               longlat = T)
+```
+:::
+
+------------------------------------------------------------------------
+
+### Preparing the output data
+
+Code chunk below is used to extract **SDF** data table from **gwss** object output from `gwss()`. It will be converted into data.frame by using `as.data.frame()`.
+
+::: {style="font-size: 1.50em"}
+```{r}
+gwstat_df <- as.data.frame(gwstat$SDF)
+```
+:::
+
+Next, `cbind()` is used to append the newly derived data.frame onto *hunan_sf* sf data.frame.
+
+::: {style="font-size: 1.50em"}
+```{r}
+hunan_gstat <- cbind(hunan_sf, gwstat_df)
+```
+:::
+
+------------------------------------------------------------------------
+
+### Visualising fixed bandwidth geographically weighted mean
+
+:::::: panel-tabset
+### The Geographically Weighted Mean
+
+:::: columns
+::: {.column width="50%"}
+```{r}
+#| fig-height: 9
+#| echo: false
+tm_shape(hunan_gstat) +
+  tm_polygons(fill = "GDPPC_LM",
+              fill.scale = tm_scale_intervals(
+                style = "quantile",
+                n = 5,
+                values = "brewer.blues"),
+              fill.legend = tm_legend(
+                title = "local Mean")) +
+  tm_borders(fill_alpha = 0.5) +
+  tm_title("Distribution of geographically wieghted mean") + 
+  tm_layout(legend.position = c("left", "bottom"))
+```
+:::
+::::
+
+### The code
+
+::: {style="font-size: 1.30em"}
+```{r}
+#| eval: false
+tm_shape(hunan_gstat) +
+  tm_polygons(fill = "GDPPC_LM",
+              fill.scale = tm_scale_intervals(
+                style = "quantile",
+                n = 5,
+                values = "brewer.blues"),
+              fill.legend = tm_legend(
+                title = "local Mean")) +
+  tm_borders(fill_alpha = 0.5) +
+  tm_title("Distribution of geographically wieghted mean") + 
+  tm_layout(legend.position = c("left", "bottom"))
+```
+:::
+::::::
+
+## Geographically Weighted Correlation
+
+Business question: Is there any relationship between GDP per capita and Gross Industry Output?
+
+:::: panel-tabset
+### Conventional statistical solution
+
+```{r}
+#| fig-width: 7
+#| fig-height: 7
+#| echo: false
+ggscatterstats(
+  data = hunan2012, 
+  x = GIO, 
+  y = GDPPC,
+  xlab = "Gross Industry Output",
+  ylab = "GDP per capita", 
+  label.var = County, 
+  label.expression = Agri > 10000 & GDPPC > 50000, 
+  point.label.args = list(alpha = 0.7, size = 4, color = "grey50"),
+  xfill = "#CC79A7", 
+  yfill = "#009E73", 
+  title = "Relationship between GDP PC and Gross Agriculture Output")
+```
+
+### The code
+
+::: {style="font-size: 1.45em"}
+```{r}
+#| eval: false
+ggscatterstats(
+  data = hunan2012, 
+  x = Agri, 
+  y = GDPPC,
+  xlab = "Gross Agriculture Output", 
+  ylab = "GDP per capita", 
+  label.var = County, 
+  label.expression = Agri > 10000 & GDPPC > 50000, 
+  point.label.args = list(alpha = 0.7, size = 4, color = "grey50"),
+  xfill = "#CC79A7", 
+  yfill = "#009E73", 
+  title = "Relationship between GDP PC and Gross Agriculture Output")
+```
+:::
+
+### GeoVisualisation 
+
+::::: columns
+::: {.column width="50%"}
+```{r}
+#| fig-width: 6
+#| fig-height: 7
+#| echo: false
+tm_shape(hunan_sf) + 
+  tm_polygons(
+    fill = "GDPPC",
+    fill.scale = tm_scale_intervals(
+      n = 5,
+      style = "quantile",
+      values = "brewer.oranges")) +
+  tm_borders(fill_alpha = 0.25,
+             lwd = 0.5) +
+  tm_title("Distribution of GDP per capita") +
+  tm_layout(legend.position = c("left", "bottom"))
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+#| fig-width: 6
+#| fig-height: 7
+#| echo: false
+tm_shape(hunan_sf) + 
+  tm_polygons(
+    fill = "GIO",
+    fill.scale = tm_scale_intervals(
+      n = 5,
+      style = "quantile",
+      values = "brewer.blues")) +
+  tm_borders(fill_alpha = 0.25,
+             lwd = 0.5) +
+  tm_title("Distribution of Gross Industry Output") +
+  tm_layout(legend.position = c("left", "bottom"))
+```
+:::
+:::::
+
+### The codes
+
+::: {style="font-size: 1.35em"}
+```{r}
+#| fig-width: 6
+#| fig-height: 7
+#| eval: false
+tm_shape(hunan_sf) + 
+  tm_polygons(
+    fill = "GDPPC",
+    fill.scale = tm_scale_intervals(
+      n = 5,
+      style = "quantile",
+      values = "brewer.oranges")) +
+  tm_borders(fill_alpha = 0.25,
+             lwd = 0.5) +
+  tm_title("Distribution of GDP per capita") +
+  tm_layout(legend.position = c("left", "bottom"))
+```
+:::
+::::
+
+------------------------------------------------------------------------
+
+### Geospatial analytics solution
+
+::::::: panel-tabset
+### Determine the bandwidth
+
+::: {style="font-size: 1.50em"}
+```{r}
+bw <- bw.gwr(GDPPC ~ GIO, 
+             data = hunan_sp, 
+             approach = "AICc",
+             kernel = "bisquare",
+             adaptive = TRUE)
+```
+:::
+
+### Computing gwCorrelation
+
+::: {style="font-size: 1.50em"}
+```{r}
+gwstats <- gwss(hunan_sp, 
+                vars = c("GDPPC", "GIO"), 
+                bw = bw,
+                kernel = "bisquare",
+                adaptive = TRUE, 
+                longlat = T)
+```
+:::
+
+### Extracting the result
+
+Code chunk below is used to extract **SDF** data table from **gwss** object output from `gwss()`. It will be converted into data.frame by using `as.data.frame()`.
+
+::: {style="font-size: 1.50em"}
+```{r}
+gwstat_df <- as.data.frame(gwstats$SDF) %>%
+  select(c(12,13)) %>%
+  rename(gwCorr = Corr_GDPPC.GIO,
+         gwSpearman = Spearman_rho_GDPPC.GIO)
+```
+:::
+
+Next, `cbind()` is used to append the newly derived data.frame onto *hunan_sf* sf data.frame.
+
+::: {style="font-size: 1.50em"}
+```{r}
+hunan_Corr <- cbind(hunan_sf, gwstat_df)
+```
+:::
+:::::::
+
+------------------------------------------------------------------------
+
+### Visualising Local Correlation
+
+:::: panel-tabset
+### Local Correlation Coefficient
+
+```{r}
+#| fig-height: 7
+#| echo: false
+tm_shape(hunan_Corr) + 
+tm_polygons(fill = "gwCorr",
+              fill.scale = tm_scale_intervals(
+                style = "quantile",
+                n = 5,
+                values = "brewer.blues"),
+                fill.legend = tm_legend(
+                title = "local Correlation Coefficient")) +
+  tm_borders(fill_alpha = 0.5) + 
+  tm_title("Local Correlation Coefficient", 
+  size = 2.0) +
+  tm_layout(frame = TRUE)
+```
+
+### Local Spearman Coefficient
+
+```{r}
+#| fig-height: 7
+#| echo: false
+tm_shape(hunan_Corr) +
+  tm_polygons(fill = "gwSpearman",
+              fill.scale = tm_scale_intervals(
+                style = "quantile",
+                n = 5,
+                values = "brewer.blues"),
+              fill.legend = tm_legend(
+                title = "local Spearman Rho")) +
+  tm_borders(fill_alpha = 0.5) +
+  tm_title("Local Spearman Rho", 
+  size = 2.0) +
+  tm_layout(frame = TRUE)
+```
+
+### The code
+
+::: {style="font-size: 1.35em"}
+```{r}
+#| eval: false
+tm_shape(hunan_Corr) +
+  tm_polygons(fill = "gwSpearman",
+              fill.scale = tm_scale_intervals(
+                style = "quantile",
+                n = 5,
+                values = "brewer.blues"),
+              fill.legend = tm_legend(
+                title = "local Spearman Rho")) +
+  tm_borders(fill_alpha = 0.5) +
+  tm_title("Local Spearman Rho", 
+  size = 2.0) +
+  tm_layout(frame = TRUE)
+```
+:::
+::::
+
+## References
+
+Brunsdon, C. et. al. (2002) "Geographically weighted summary statistics - a framework for localised exploratory data analysis", *Computer, Environment and Urban Systems*, Vol 26, pp. 501-525. Available as e-journal, SMU library.
+
+Harris, P. & Brunsdon, C. (2010) "Exploring spatial variation and spatial relationships in freshwater acidification critical load data set for Great Britain using geographically weighted summary statistics", *Computers & Geosciences*, Vol. 36, pp. 54-70. Available as e-journal, SMU library.
+
+```{r}
+#| eval: false
+#| echo: false
+renderthis::to_pdf(from ="In-class_Ex04.qmd")
+```
