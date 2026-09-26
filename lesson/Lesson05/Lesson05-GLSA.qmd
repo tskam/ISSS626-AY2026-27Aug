@@ -93,8 +93,6 @@ Reference: [A Computer Movie Simulating Urban Growth in the Detroit Region](http
 
 ### Spatial Autocorrelation
 
-:::::: columns
-:::: {.column width="50%"}
 ::: {style="font-size: 0.9em"}
 - Spatial autocorrelation is the term used to describe the presence of systematic spatial variation in a variable.
 
@@ -104,12 +102,8 @@ Reference: [A Computer Movie Simulating Urban Growth in the Detroit Region](http
   - at a set of fixed sites located within a region (such as prices at a set of retail outlets); or
   - across a set of areas that subdivide a region (such as the count or proportion of households with two or more cars in a set of Census tracts that divide an urban region).
 :::
-::::
 
-::: {.column width="50%"}
-![](img/image7-3.jpg){width="700"}
-:::
-::::::
+![](img/image7-3.jpg){fig-align="center"}
 
 ------------------------------------------------------------------------
 
@@ -353,15 +347,37 @@ The summation of local Moran's I is:
 
 ![](img/image7-15.jpg)
 
+
+------------------------------------------------------------------------
+
+### LISA map
+
+![](img/image5-22c.png)
+
 ------------------------------------------------------------------------
 
 ### Other forms of LISA
 
-- Local Geary
+- Local Geary's C
 
 ![](img/image7-16.jpg)
 
 ![](img/image7-17.jpg)
+
+## Bivariate local Moran's I
+
+The equation for calculating bivariate Moran’s I is:
+
+![](img/image5-24a.png)
+
+---
+
+### Interpretation of Bivariate local Moran's I
+
+- High-High (Positive Spatial Association): Location i has a high value for variable X, and its neighboring areas have high average values for variable Y. Example: A location with high GDP per capita surrounded by locations with high Gross Industry Output (GIO).
+- Low-Low (Positive Spatial Association): Location i has a low value for variable X, and its neighbors have low average values for variable Y. Example: A location with low GDP per capita surrounded by locations with low Gross Industry Output (GIO).
+- High-Low (Spatial Outlier):Location i has a high value for variable X, but its neighbors have low average values for variable Y. Example: A location with high GDP per capita surrounded by locations with low Gross Industry Output (GIO).
+- Low-High (Spatial Outlier): Location i has a low value for variable X, but its neighbors have high average values for variable Y. Example: A location with low GDP per capita surrounded by locations with high Gross Industry Output (GIO).
 
 ## Detecting hot and cold spot areas
 
@@ -551,7 +567,7 @@ Before running the test, you should ensure that:
 
 ::: {style="font-size: 0.58em"}
 | Pattern Name | Defination |
-|-------------------|-----------------------------------------------------|
+|---------------------|--------------------------------------------------|
 | No pattern detected | Does not fall into any of the hot or cold spot patterns defined below. |
 | New Hot Spot | A location that is a statistically significant hot spot for the final time step and has never been a statistically significant hot spot before. |
 | Consecutive Hot Spot | A location with a single uninterrupted run of at least two statistically significant hot spot bins in the final time-step intervals. The location has never been a statistically significant hot spot prior to the final hot spot run and less than 90 percent of all bins are statistically significant hot spots. |
@@ -569,7 +585,7 @@ Before running the test, you should ensure that:
 
 ::: {style="font-size: 0.58em"}
 | Pattern Name | Definition |
-|-------------------|-----------------------------------------------------|
+|---------------------|--------------------------------------------------|
 | New Cold Spot | A location that is a statistically significant cold spot for the final time step and has never been a statistically significant cold spot before. |
 | Consecutive Cold Spot | A location with a single uninterrupted run of at least two statistically significant cold spot bins in the final time-step intervals. The location has never been a statistically significant cold spot prior to the final cold spot run and less than 90 percent of all bins are statistically significant cold spots. |
 | Intensifying Cold Spot | A location that has been a statistically significant cold spot for 90 percent of the time-step intervals, including the final time step. In addition, the intensity of clustering of low counts in each time step is increasing overall and that increase is statistically significant. |
@@ -614,7 +630,6 @@ Spatial statistics methods are not a blackbox. Before performing the analysis, a
 ## References
 
 ::: {style="font-size: 0.75em"}
-
 - Moran, P. A. P. (1950). ["Notes on Continuous Stochastic Phenomena"](https://www-jstor-org.libproxy.smu.edu.sg/stable/2332142?seq=1#metadata_info_tab_contents). Biometrika. 37 (1): 17--23.
 
 - Geary, R.C. (1954) ["The Contiguity Ratio and Statistical Mapping"](https://www-jstor-org.libproxy.smu.edu.sg/stable/2986645?sid=primo&origin=crossref&seq=1#metadata_info_tab_contents). *The Incorporated Statistician*, Vol. 5, No. 3, pp. 115-127. - [Moran's I](https://en.wikipedia.org/wiki/Moran%27s_I)
@@ -628,10 +643,7 @@ Spatial statistics methods are not a blackbox. Before performing the analysis, a
 - Ord, J.K. and Getis, A. (2010) "Local spatial autocorrelation statistics: Distributional issues and an application". *Geographical Analysis*, 27(4): 286-306.
 
 - Putrenko, V., Pashynska, N., & Nazarenko, S. (2018, October 27). "[Data Mining of Network Events With Space-Time Cube Application](https://doi.org/10.5281/zenodo.1472753)". *First Workshop on Platial Analysis (PLATIAL'18), Heidelberg, Germany*.
-
 :::
-
-
 
 ```{r}
 #| echo: false

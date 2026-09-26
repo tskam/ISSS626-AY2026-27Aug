@@ -1635,7 +1635,7 @@
     "href": "In-class_Ex/In-class_Ex05/In-class_Ex05-GLSA.html#content",
     "title": "In-class Exercise 5: Global and Local Measures of Spatial Autocorrelation: sfdep methods",
     "section": "Content",
-    "text": "Content\n\nIntroducing sfdep.\n\nsfdep creates an sf and tidyverse friendly interface to the package as well as introduces new functionality that is not present in spdep.\nsfdep utilizes list columns extensively to make this interface possible.”"
+    "text": "Content\n\nIntroducing sfdep.\n\nsfdep creates an sf and tidyverse friendly interface to the package as well as introduces new functionality that is not present in spdep.\nsfdep utilizes list columns extensively to make this interface possible."
   },
   {
     "objectID": "In-class_Ex/In-class_Ex05/In-class_Ex05-GLSA.html#getting-started",
@@ -1677,7 +1677,7 @@
     "href": "In-class_Ex/In-class_Ex05/In-class_Ex05-GLSA.html#global-measures-of-spatial-association",
     "title": "In-class Exercise 5: Global and Local Measures of Spatial Autocorrelation: sfdep methods",
     "section": "Global Measures of Spatial Association",
-    "text": "Global Measures of Spatial Association\nStep 1: Deriving Queen’s contiguity weights: sfdep methods\n\n\nThe code chunk below is used to compute the Queen’s contiguity weightes.\n\n\nwm_q &lt;- hunan_GDPPC %&gt;%\n  mutate(nb = st_contiguity(geometry),\n         wt = st_weights(nb,\n                         style = \"W\"),\n         .before = 1) \n\n\n\n\n\n\n\n\nNote\n\n\nIt is a good practice to review the output datatable after the computation is done.\n\n\n\n\n\nNotice that st_weights() provides tree arguments, they are:\n\nnb: A neighbor list object as created by st_neighbors().\nstyle: Default “W” for row standardized weights. This value can also be “B”, “C”, “U”, “minmax”, and “S”. B is the basic binary coding, W is row standardised (sums over all links to n), C is globally standardised (sums over all links to n), U is equal to C divided by the number of neighbours (sums over all links to unity), while S is the variance-stabilizing coding scheme proposed by Tiefelsdorf et al. 1999, p. 167-168 (sums over all links to n).\nallow_zero: If TRUE, assigns zero as lagged value to zone without neighbors."
+    "text": "Global Measures of Spatial Association\nDeriving Queen’s contiguity weights: sfdep methods\n\n\nThe code chunk below is used to compute the Queen’s contiguity weightes.\n\n\nwm_q &lt;- hunan_GDPPC %&gt;%\n  mutate(nb = st_contiguity(geometry),\n         wt = st_weights(nb,\n                         style = \"W\"),\n         .before = 1) \n\n\n\n\n\n\n\n\nNote\n\n\nIt is a good practice to review the output datatable after the computation is done.\n\n\n\n\n\nNotice that st_weights() requires three inputs, they are:\n\nnb: A neighbor list object as created by st_contiguity().\nstyle: Default “W” for row standardized weights. This value can also be “B”, “C”, “U”, “minmax”, and “S”. B is the basic binary coding, W is row standardised (sums over all links to n), C is globally standardised (sums over all links to n), U is equal to C divided by the number of neighbours (sums over all links to unity), while S is the variance-stabilizing coding scheme proposed by Tiefelsdorf et al. 1999, p. 167-168 (sums over all links to n).\nallow_zero: If TRUE, assigns zero as lagged value to zone without neighbors."
   },
   {
     "objectID": "In-class_Ex/In-class_Ex05/In-class_Ex05-GLSA.html#lisa-map",
@@ -1698,7 +1698,7 @@
     "href": "In-class_Ex/In-class_Ex05/In-class_Ex05-GLSA.html#hot-spot-and-cold-spot-area-analysis-hcsa",
     "title": "In-class Exercise 5: Global and Local Measures of Spatial Autocorrelation: sfdep methods",
     "section": "Hot Spot and Cold Spot Area Analysis (HCSA)",
-    "text": "Hot Spot and Cold Spot Area Analysis (HCSA)\n\n\nHCSA uses spatial weights to identify locations of statistically significant hot spots and cold spots in an spatially weighted attribute that are in proximity to one another based on a calculated distance. The analysis groups features when similar high (hot) or low (cold) values are found in a cluster. The polygon features usually represent administration boundaries or a custom grid structure."
+    "text": "Hot Spot and Cold Spot Area Analysis (HCSA)\n\n\n\nHCSA uses spatial weights to identify locations of statistically significant hot spots and cold spots in an spatially weighted attribute that are in proximity to one another based on a calculated distance.\nThe analysis groups features when similar high (hot) or low (cold) values are found in a cluster. The polygon features usually represent administration boundaries or a custom grid structure."
   },
   {
     "objectID": "In-class_Ex/In-class_Ex05/In-class_Ex05-EHSA.html#overview",
@@ -1762,5 +1762,12 @@
     "title": "In-class Exercise 5: Global and Local Measures of Spatial Autocorrelation: sfdep methods",
     "section": "The plot",
     "text": "The plot"
+  },
+  {
+    "objectID": "lesson/Lesson05/Lesson05-GLSA.html#bivariate-local-morans-i",
+    "href": "lesson/Lesson05/Lesson05-GLSA.html#bivariate-local-morans-i",
+    "title": "Lesson 5: Global and Local Measures of Spatial Association",
+    "section": "Bivariate local Moran’s I",
+    "text": "Bivariate local Moran’s I\nThe equation for calculating bivariate Moran’s I is:"
   }
 ]

@@ -10,7 +10,7 @@
   <meta name="generator" content="quarto-1.8.26">
 
   <meta name="author" content="Dr.&nbsp;Kam Tin Seong Assoc. Professor of Information Systems(Practice)">
-  <meta name="dcterms.date" content="2026-09-20">
+  <meta name="dcterms.date" content="2026-09-25">
   <title>ISSS626 – Lesson 5: Global and Local Measures of Spatial Association</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -141,7 +141,7 @@ Dr.&nbsp;Kam Tin Seong<br>Assoc. Professor of Information Systems(Practice)
     </div>
 </div>
 
-  <p class="date">20 Sep 2026</p>
+  <p class="date">25 Sep 2026</p>
 </section>
 <section id="content" class="slide level2">
 <h2>Content</h2>
@@ -227,8 +227,6 @@ Dr.&nbsp;Kam Tin Seong<br>Assoc. Professor of Information Systems(Practice)
 <section class="slide level2">
 
 <h3 id="spatial-autocorrelation">Spatial Autocorrelation</h3>
-<div class="columns">
-<div class="column" style="width:50%;">
 <div style="font-size: 0.9em">
 <ul>
 <li><p>Spatial autocorrelation is the term used to describe the presence of systematic spatial variation in a variable.</p></li>
@@ -240,10 +238,8 @@ Dr.&nbsp;Kam Tin Seong<br>Assoc. Professor of Information Systems(Practice)
 </ul></li>
 </ul>
 </div>
-</div><div class="column" style="width:50%;">
-<p><img data-src="img/image7-3.jpg" width="700"></p>
-</div></div>
-</section>
+
+<img data-src="img/image7-3.jpg" class="quarto-figure quarto-figure-center r-stretch"></section>
 <section class="slide level2">
 
 <h3 id="positive-spatial-autocorrelation">Positive Spatial Autocorrelation</h3>
@@ -492,12 +488,32 @@ Dr.&nbsp;Kam Tin Seong<br>Assoc. Professor of Information Systems(Practice)
 <img data-src="img/image7-15.jpg" class="r-stretch"></section>
 <section class="slide level2">
 
+<h3 id="lisa-map">LISA map</h3>
+
+<img data-src="img/image5-22c.png" class="r-stretch"></section>
+<section class="slide level2">
+
 <h3 id="other-forms-of-lisa">Other forms of LISA</h3>
 <ul>
-<li>Local Geary</li>
+<li>Local Geary’s C</li>
 </ul>
 <p><img data-src="img/image7-16.jpg"></p>
 <p><img data-src="img/image7-17.jpg"></p>
+</section>
+<section id="bivariate-local-morans-i" class="slide level2">
+<h2>Bivariate local Moran’s I</h2>
+<p>The equation for calculating bivariate Moran’s I is:</p>
+
+<img data-src="img/image5-24a.png" class="r-stretch"></section>
+<section class="slide level2">
+
+<h3 id="interpretation-of-bivariate-local-morans-i">Interpretation of Bivariate local Moran’s I</h3>
+<ul>
+<li>High-High (Positive Spatial Association): Location i has a high value for variable X, and its neighboring areas have high average values for variable Y. Example: A location with high GDP per capita surrounded by locations with high Gross Industry Output (GIO).</li>
+<li>Low-Low (Positive Spatial Association): Location i has a low value for variable X, and its neighbors have low average values for variable Y. Example: A location with low GDP per capita surrounded by locations with low Gross Industry Output (GIO).</li>
+<li>High-Low (Spatial Outlier):Location i has a high value for variable X, but its neighbors have low average values for variable Y. Example: A location with high GDP per capita surrounded by locations with low Gross Industry Output (GIO).</li>
+<li>Low-High (Spatial Outlier): Location i has a low value for variable X, but its neighbors have high average values for variable Y. Example: A location with low GDP per capita surrounded by locations with high Gross Industry Output (GIO).</li>
+</ul>
 </section>
 <section id="detecting-hot-and-cold-spot-areas" class="slide level2">
 <h2>Detecting hot and cold spot areas</h2>
@@ -672,8 +688,8 @@ Dr.&nbsp;Kam Tin Seong<br>Assoc. Professor of Information Systems(Practice)
 <div style="font-size: 0.58em">
 <table class="caption-top">
 <colgroup>
-<col style="width: 26%">
-<col style="width: 73%">
+<col style="width: 29%">
+<col style="width: 70%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -728,8 +744,8 @@ Dr.&nbsp;Kam Tin Seong<br>Assoc. Professor of Information Systems(Practice)
 <div style="font-size: 0.58em">
 <table class="caption-top">
 <colgroup>
-<col style="width: 26%">
-<col style="width: 73%">
+<col style="width: 29%">
+<col style="width: 70%">
 </colgroup>
 <thead>
 <tr class="header">
