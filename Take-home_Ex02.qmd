@@ -1,0 +1,270 @@
+---
+title: "Take-home Exercise 2: Geospatial Analytics for Peace"
+date: "September 30, 2025"
+date-modified: "last-modified"
+format: html
+toc: true
+execute: 
+  eval: true
+  echo: true
+  warning: false
+  freeze: auto
+editor: visual
+---
+
+::: callout-important
+This handout provides the context, the task, the expectation and the grading criteria of Take-home Exercise 2. Students must review and understand them before getting started with the take-home exercise.
+:::
+
+## Setting the Scene
+
+Myanmar has been in armed conflict since 1948, when the country, then known as Burma, gained independence from the United Kingdom.  The conflict has largely been ethnic-based, with ethnic armed organisations fighting Myanmar's armed forces, the Tatmadaw, for self-determination.  Despite numerous ceasefires and the creation of autonomous self-administered zones in 2008, armed groups continue to call for independence, increased autonomy, democracy, or the federalisation of Myanmar.  It is the world's longest ongoing civil war, spanning almost eight decades.
+
+In February 2021, Myanmar’s military seized control of the country, overthrowing the government elected in 2020 and led by the National League for Democracy.  Initially, some believed that the newly established military government would quickly suppress protests and restore order. Instead, the junta’s repression – marked by arbitrary arrests and indiscriminate violence – intensified the conflict.  Since then, Myanmar has descended into civil war, causing thousands of deaths and displacing over three million people. Many civilians fled to forests and mountainous areas or joined the armed groups opposing the military, abandoning peaceful protests in favor of armed resistance. The country soon became fragmented into multiple zones controlled by different groups, with large areas slipping almost entirely out of the junta’s grasp.
+
+## Objectives
+
+In this exercise, you will explore Local Measures of Spatial Association methods and Emerging Hot Spot Analysis method to identifying, assessing, and geovisualizing the spatial distribution, patterns and trends of armed conflict in the Myanmar at township level from 1st January 2021 to 30th September 2025.
+
+The specific objectives of this take-home exercise are:
+
+-   To pinpoint exact geographic hotspots, cold spots, and spatial outliers where violence clusters or behaves unusually compared to surrounding townships.
+-   To reveal where, how fast, and in what pattern political violence is evolving over space and time.
+
+In a modest way, we hope that the results can assist in peace-building initiatives and preventing further armed conflicts in the country.
+
+## The Task
+
+The specific tasks of this take-home exercise are as follows:
+
+### Geospatial Data Science
+
+-   Build a geospatial analytical data by aggregating and counting arm conflict variables at the township level of Myanmar.   
+-   Construct a space-time cube of arm by counting conflict variables over space and time.
+
+-   Display the geographical distribution of the arm conflict distribution and patterns by using appropriate geovisualisation methods,
+
+-   Describe the spatial patterns revealed by the geovisualisation (not more than 200 words per visual).
+
+### Local Measures of Spatial Association (LMSA) Analysis
+
+-   Compute LMSA statistic of the arm conflict variables generated.
+-   Display the LMSA maps of the passengers trips generate by origin at hexagon level. The maps should only display the significant (i.e. p-value \< 0.05)\
+-   With reference to the analysis results, draw statistical conclusions (not more than 200 words per visual).
+
+### Emerging Hot Spot Analysis(EHSA)
+
+With reference to the arm conflict variables in the space-time cube:
+
+-   perform Mann-Kendall Test by using the spatio-temporal local Gi\* values,
+-   prepared EHSA maps of the Gi\* values of the passenger trips by origin at the hexagon level. The maps should only display the significant (i.e. p-value \< 0.05).\
+-   With reference to the EHSA maps and data visualisation prepared, describe the spatial patterns revealed. (not more than 250 words per cluster).
+
+## The Data
+
+### Aspatial data
+
+For the purpose of this take-home exercise, **[Armed Conflict Location & Event Data Project (ACLED)](https://acleddata.com/)** data of Myanmar will be used.  The data set is available on eLearn.  The study time period is from 1st January 2021 to 30th September 2025.
+
+### Geospatial data
+
+**Myanmar Township Boundaries MIMU v9.4** should be used in this study.  The data set can be downloaded at [MIMU Geonode](https://geonode.themimu.info/).  
+
+## Grading Criteria
+
+This exercise will be graded by using the following criteria:
+
+### Geospatial Data Wrangling (20 marks)
+
+You will be assessed on your ability to prepare analysis-ready data, including:
+
+- Correct import of tabular and geospatial data from multiple sources.
+- Appropriate data cleaning, transformation, and derivation of new variables.
+- Correct use of coordinate reference systems and spatial joins.
+- Use of tidy, efficient R code and clear explanations of purpose.
+
+::: callout-warning
+All data are like vast grassland full of land mines. Your job is to clear those mines and not to step on them.
+:::
+
+### Geospatial Analysis (30 marks)
+
+You will be assessed on your ability to apply spatial statistical methods rigorously, including:
+
+- Appropriate choice and correct application of spatial statistics (e.g., Local Moran’s I, Getis-Ord Gi\*, EHSA).
+- Accurate interpretation of outputs, with evidence-based reasoning.
+- Demonstrating awareness of assumptions, spatial scales, and limitations of chosen methods.
+- Clear articulation of how results address the stated objectives.
+
+### Geovisualisation and geocommunication (20 marks):
+
+You will be assessed on your ability to communicate results through effective geovisualisation, including:
+
+- Use of clear, accurate, and professional map designs (appropriate symbology, color scales, legends, labels).
+- Selection of visual forms that best reveal spatial patterns and support decision-making.
+- Concise and insightful written commentary (≤200 words per visual) that explains findings in plain, non-technical language.
+- Effective integration of visuals into a coherent narrative.
+
+### Reproducibility (15 marks)
+
+You will be assessed on your ability to ensure that your analysis is fully reproducible, including:
+
+- Use of Quarto with code chunks that run end-to-end without modification.
+- Clear explanation of purpose for each step (not just code, but why it is done).
+- Logical organisation of workflow, with modular structure and meaningful sectioning.
+- Proper documentation of R packages, data sources, and dependencies to allow replication by others.
+    
+::: callout-tip
+Simply providing code chunks is insufficient. You must explain the purpose of each major analytical step, the function(s) used, the reason for the analytical decision, and any assumptions or limitations involved.
+:::    
+
+### Bonus: Value-Added Analysis (15%)
+
+Students are encouraged to explore beyond the core methods covered in class.
+
+Students may extend their analysis using an appropriate geospatial analytical method not covered in the core exercise.
+
+A qualifying value-added analysis should:
+
+- address a meaningful analytical question;
+- be geospatial in nature;
+- be methodologically appropriate;
+- be clearly justified;
+- identify relevant assumptions and limitations; and
+- provide substantive additional insight.
+
+::: callout-note
+Simply applying an additional method or producing an additional visualisation without demonstrating its analytical contribution will not qualify for bonus marks.
+:::
+
+Examples may include, but are not limited to, an alternative spatial-statistical approach, advanced spatio-temporal analysis, simulation-based analysis, or another appropriately justified geospatial method.
+
+## Assessment Rubric
+
+::: {style="font-size: 65%;"}
+| Criterion | Outstanding | Excellent | Good | Satisfactory | Needs Improvement |
+|------------|------------|------------|------------|------------|------------|
+| Geospatial Data Wrangling & Data Quality | Demonstrates highly proficient and thoughtful handling of complex geospatial data. Data-quality issues are systematically identified, diagnosed and appropriately addressed. Spatial/temporal transformations and derived variables are clearly justified. | Demonstrates strong proficiency in geospatial data preparation. Most important data-quality issues are identified and appropriately addressed. Transformations and derived variables are generally well justified. | Data are appropriately cleaned, transformed and prepared for analysis. Most important data-quality issues are addressed, although some decisions may lack depth of justification. | Data are sufficiently prepared for analysis, but important quality issues or processing decisions are incompletely addressed or documented. | Data preparation is incomplete, inappropriate or poorly documented. Important data-quality problems are overlooked, potentially compromising subsequent analysis. |
+| LMSA and EHSA Analysis & Statistical Reasoning | Demonstrates sophisticated understanding of LMSA analysis and EHSA. Methods are carefully selected and justified. Assumptions, parameters and reference/null models are explicitly evaluated. Results are interpreted critically, with appropriate consideration of uncertainty, limitations and alternative explanations. | Demonstrates strong understanding of the analytical methods. Methods and parameters are appropriately justified. Assumptions and reference/null models are clearly addressed. Results are accurately interpreted with good critical discussion. | Applies appropriate LMSA methods correctly and provides generally sound interpretation. Some methodological choices, assumptions or limitations are discussed, but critical evaluation could be deeper. | Demonstrates basic understanding and applies the principal methods with some success. Interpretation is largely descriptive and methodological justification, assumptions or limitations are limited. | Methods are incorrectly applied, poorly justified or misunderstood. Interpretation is inaccurate, superficial or unsupported by the analysis. |
+| Geovisualisation & Geocommunication | Produces highly effective, accurate and purposeful visualisations. Visual encodings are carefully chosen to reveal important spatial/spatio-temporal patterns. Statistical graphics and maps work together to communicate a coherent analytical story. | Produces clear, accurate and well-designed visualisations. Important patterns are effectively communicated and supported by appropriate analytical interpretation. | Visualisations are generally appropriate and understandable. Major findings can be identified, although some visual or communication choices could be improved. | Visualisations communicate basic findings but may suffer from inappropriate design, excessive complexity, weak hierarchy or limited analytical interpretation. | Visualisations are unclear, misleading, inaccurate or poorly matched to the analytical questions. |
+| Reproducibility & Analytical Documentation | Provides a highly transparent and reproducible workflow. Data sources, preparation decisions, assumptions, analytical parameters, methods, code and outputs are comprehensively documented. Explanations demonstrate clear understanding of *why* each major step is undertaken. | Provides a well-documented and reproducible workflow. Code, methods and major analytical decisions are clearly documented and explained. | Provides a generally reproducible workflow with appropriate code and documentation. Some analytical decisions or explanations are incomplete. | Code and workflow are present but documentation is limited. Another analyst may reproduce some, but not necessarily all, aspects of the analysis. | uate explanation or important components are missing. |
+:::
+
+#### Qualitative grading rubric of Value-Added Analysis
+
+::: {style="font-size: 75%;"}
+| Level | Descriptor |
+|-------------------------|-----------------------------------------------|
+| Exceptional Contribution | Introduces a well-chosen geospatial analytical approach beyond the core scope that addresses a meaningful additional question and generates substantive new insight. The method is appropriately justified, implemented and interpreted, with assumptions and limitations clearly considered. |
+| Meaningful Contribution | Extends the analysis using an appropriate additional geospatial method and provides useful additional insight. The method and findings are reasonably justified and interpreted. |
+| Limited / No Bonus | The extension adds limited analytical value, lacks sufficient methodological justification, or mainly duplicates the core analysis. No bonus is awarded where the additional method does not provide meaningful new insight. |
+:::
+
+::: callout-important
+Value-Added Analysis is not awarded for simply using a more advanced R package, producing additional visualisations, or applying a method that was not covered in class. Bonus credit is awarded for demonstrating meaningful additional analytical insight through an appropriately justified geospatial approach.
+:::
+
+## Submission Requirements
+
+### Executive Summary
+
+Prepare an Executive Summary of no more than 10 slides, excluding the cover page and content page.
+
+The Executive Summary must be prepared using Quarto [revealjs](https://quarto.org/docs/presentations/revealjs/).
+
+The presentation should communicate the essential:
+
+- research question;
+- study area and data;
+- analytical approach;
+- key findings;
+- important visual evidence;
+- limitations; and
+- public-safety implications.
+
+You are required to publish the Executive Summary on **Vercel** or another appropriate web-hosting service.
+
+### Technical Report
+
+Prepare a comprehensive Technical Report using Quarto in **HTML** format.
+
+The Technical Report should provide sufficient detail to document and reproduce the complete analytical workflow.
+
+It should include, where appropriate:
+
+- Introduction and study context
+- Research question and objectives
+- Data and study design
+- Data preparation and quality assessment
+- Analytical assumptions and methodological decisions
+- LSMA analysis
+- EHSA
+- Integrated findings and discussion
+- Geovisualisation and geocommunication
+- Pease-keeping implications
+- Limitations
+- References
+
+You are required to publish the Technical Report on Vercel or another appropriate web-hosting service.
+
+### Quarto Project and Reproducibility
+
+The complete Quarto project for the take-home exercise must be pushed to your GitHub repository.
+
+The repository should contain the necessary files to demonstrate the reproducibility of your analysis, subject to any data-licensing or redistribution restrictions.
+
+### Submission Links
+
+Update Take-home Exercise 2 links to the:
+
+- Executive Summary;
+- Technical Report; and
+- GitHub repository
+
+on the coursework website and provide the required links through eLearn.
+
+## Due Date
+
+**25th October 2026 (Sunday), 11.59pm (midnight)**.
+
+## Learning from senior
+
+You are advised to review these sample submissions prepared by your seniors.
+
+-   [Christover Manafe](https://isss626-camanafe.netlify.app/take_home_ex/take_home_ex02/take_home_ex02)
+-   [Teng Kok Wai](https://isss626-gaa.netlify.app/take-home_ex/take-home_ex02/take-home_ex02)
+-   [Nguyen Bao Thu Phuong]()
+
+
+## Learning from IS415
+
+-   [KHANT MIN NAING](https://is415-geospatial-with-khant.netlify.app/take-home_ex/take-home_ex02/take-home_ex02): Very well done in all the five grading criteria especially the ability to provide a comprehensive overview of the analysis methods used and discussion on the analysis results.
+-   [MATTHEW HO YIWEN](https://is415-gaa-matthew-ho.netlify.app/takehomeex/takehomeex2/the2) Able to provide a clear and comprehensive discussion on the geospatial data wrangling process and to communicate the analysis results by using appropriate geovisualisation and data visualisation methods.
+
+## Q & A
+
+Please submit your questions or queries related to this take-home exercise on Piazza.
+
+## Peer Learning
+
+
+## Reference
+
+### Arm Conflict of Myanmar
+
+- [Myanmar conflict](https://en.wikipedia.org/wiki/Myanmar_conflict) on wiki.
+- [Between cooperation and competition: The struggle of resistance groups in Myanmar](https://acleddata.com/report/between-cooperation-and-competition-struggle-resistance-groups-myanmar)
+- [Civil War in Myanmar](https://www.cfr.org/global-conflict-tracker/conflict/rohingya-crisis-myanmar)
+
+### Research articles
+
+-   Uglješa Stankov et. al. (2017) "Spatial autocorrelation analysis of tourist arrivals using municipal data: A Serbian example", *Geographica Pannonica*, Vol.21 (2), p.106-114. SMU e-journal.
+-   Khan, D. et. al. (2017) "[Hot spots, cluster detection and spatial outlier analysis of teen birth rates in the U.S., 2003–2012](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5618106/)", *Spatial and Spatio-temporal Epidemiology*, Vol. 21, pp. 67–75.
+-   Muhammad Arif & Didit Purnomo (2017) "[Measuring Spatial Cluster for Leading Industries in Surakarta with Exploratory Spatial Data Analysis (ESDA)](https://journals.ums.ac.id/index.php/JEP/article/view/4178/0)", *Jurnal Ekonomi Pembangunan*, Vol. 18 (1), pp. 64-81.
+-   Joshua T. Fergen \* and Ryan D. Bergstrom (2021) "[Social Vulnerability across the Great Lakes Basin: A County-Level Comparative and Spatial Analysis](https://www.mdpi.com/2071-1050/13/13/7274)", *Sustainability*, Vol. 13(13).
+-   V Putrenko, N Pashynska, and S Nazarenko (2018) "Data Mining of Network Events With Space-Time Cube Application". In: R Westerholt, F-B Mocnik, and A Zipf (eds.), *Proceedings of the 1st Workshop on Platial Analysis* (PLATIAL’18), pp. 75–82. SMU e-journal.
+-   Jamie Anne Boschan and Caterina G. Roman (2024) "[Hot Spots of Gun Violence in the Era of Focused Deterrence: A Space-Time Analysis of Shootings in South Philadelphia](https://www.mdpi.com/2076-0760/13/2/119)", Social Sciences, Vol. 13.
+-   Minkyung Kim and Sangdon Lee (2023) "[Identification of Emerging Roadkill Hotspots on Korean Expressways Using Space–Time Cubes](https://www.mdpi.com/1660-4601/20/6/4896)", *Int. J. Environ. Res. Public Health*, 20(6).
+-   TAN, Yong Ying and KAM, Tin Seong (2019) "[Exploring and visualizing household electricity consumption patterns in Singapore: A geospatial analytics approach](https://ink.library.smu.edu.sg/cgi/viewcontent.cgi?article=5379&context=sis_research)", *Information in Contemporary Society: 14th International Conference, iConference 2019*, Washington, DC, March 31-April 3: Proceedings, (pp.
+785-796) Springer. https://doi.org/10.1007/978-3-030-15742-5_74
+-   MACK, Zhi Wei Vincent and KAM, Tin Seong (2018) "[Is there space for violence?: A data-driven approach to the exploration of spatial-temporal dimensions of conflict](https://ink.library.smu.edu.sg/cgi/viewcontent.cgi?article=5334&context=sis_research)", *Proceedings of the 2nd ACM SIGSPATIAL Workshop on Geospatial Humanities*, Seattle, WA, USA, 2018 November 06, (pp. 1-10) Seattle, WA, USA. ACM Digital Library. https://doi.org/10.1145/3282933.3282935 (Published)
