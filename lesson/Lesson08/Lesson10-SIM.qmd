@@ -1,0 +1,387 @@
+---
+title: "Lesson 10: <br/>Spatial Interaction Models"
+author: "Dr. Kam Tin Seong <br/>Assoc. Professor of Information Systems(Practice)"
+institute: "School of Computing and Information Systems,<br/>Singapore Management University"
+date: "`r Sys.Date()`"
+format: 
+  revealjs:
+    width: 1600
+    height: 900
+    show-notes: false
+    slide-number: true
+    show-slide-number: all
+date-format: "DD MMM YYYY"
+editor: visual
+---
+
+## Content
+
+-   Characteristics of Spatial Interaction Data
+-   Spatial Interaction Models
+    -   Unconstrained
+    -   Origin constrined
+    -   Destination constrained
+    -   Doubly constrained
+-   What is Spatial Econometrics?
+-   What is Spatial Econometric Interaction Models?
+-   Introducing spflow package
+-   Spatial Econometric Modelling of O-D Flows: spflow application
+
+## What Spatial Interaction Models are?
+
+:::::: columns
+::: {.column width="65%"}
+Spatial interaction or "gravity models" estimate the flow of people, material, or information between locations in geographical space.
+
+![](img/image10-1.jpg)
+:::
+
+:::: {.column width="35%"}
+::: callout-note
+Spatial interaction models seek to explain existing spatial flows. As such it is possible to measure flows and predict the consequences of changes in the conditions generating them. When such attributes are known, it is possible to better allocate transport resources such as conveyances, infrastructure, and terminals.
+:::
+::::
+::::::
+
+------------------------------------------------------------------------
+
+### Conditions for Spatial Flows
+
+-   Three interdependent conditions are necessary for a spatial interaction to occur:
+
+![](img/image10-2.jpg)
+
+::: notes
+-   **Complementarity**. There must be a supply and a demand between the interacting locations. A residential zone is complementary to an employment zone because the first is supplying workers while the second is supplying jobs. The same can be said concerning the complementarity between a store and its customers and between an industry and its suppliers (movements of freight). An economic system is based on a large array of complementary activities.
+-   **Intervening opportunity (lack of)**. Refers to a location that may offer a better alternative as a point of origin or as a point of destination. For instance, in order to have an interaction of a customer to a store, there must not be a closer store that offers a similar array of goods. Otherwise, the customer will likely patronize the closer store and the initial interaction will not take place.
+-   **Transferability**. Mobility must be supported by transport infrastructures, implying that the origin and the destination must be linked. Costs to overcome distance must not be higher than the benefits of the related interaction, even if there are complementarity and no alternative opportunity.
+:::
+
+------------------------------------------------------------------------
+
+### Representation of a Movement as a Spatial Interaction
+
+::::: columns
+::: {.column width="50%"}
+Representing mobility as a spatial interaction involves several considerations:
+
+-   Locations: A movement is occurring between a location of origin and a location of destination. i generally denotes an origin while j is a destination.
+-   Centroid: An abstraction of the attributes of a zone at a point.
+-   Flows: Flows are generally expressed by a valued vector Tij representing an interaction between locations i and j.
+-   Vectors: A vector Tij links two centroids and has a value assigned to it (50) which can represents movements.
+:::
+
+::: {.column width="50%"}
+![](img/image10-3.jpg)
+:::
+:::::
+
+::: notes
+-   Locations. A movement is occurring between a location of origin and a location of destination. i generally denotes an origin while j is a destination. The representation of origins and destinations commonly involves centroids.
+-   Centroid. An abstraction of the attributes of a zone at a point. This is of particular relevance when the attributes generating mobility are zonal (e.g. ZIP codes, cities, states, etc.) while the graphic representation requires specific origins and destinations. For instance, showing flows between ZIP codes would implicitly require the generation of one centroid for each ZIP code.
+-   Flows. Flows are generally expressed by a valued vector Tij representing an interaction between locations i and j.
+-   Vectors. On the above figure, two areas, zone i and zone j, are represented as two centroids, i and j. A vector Tij links two centroids and has a value assigned to it (50) which can represents movements such as tons of freight, numbers of passengers per day, or number of phone calls.
+:::
+
+## Constructing an O/D Matrix
+
+-   The construction of an origin / destination matrix requires directional flow information between a series of locations.
+-   Figure below represents movements (O/D pairs) between five locations (A, B, C, D and E). From this graph, an O/D matrix can be built where each O/D pair becomes a cell. A value of 0 is assigned for each O/D pair that does not have an observed flow.
+
+![](img/image10-4.jpg)
+
+## Three Basic Types of Interaction Models
+
+-   The general formulation of the spatial interaction model is stated as **Tij**, which is the interaction between location i (origin) and location j (destination). **Vi** are the attributes of the location of origin i, **Wj** are the attributes of the location of destination j, and **Sij** are the attributes of separation between the location of origin i and the location of destination j.
+-   From this general formulation, three basic types of interaction models can be derived:
+
+![](img/image10-5.jpg)
+
+## Gravity Models
+
+:::::: {style="font-size: 0.85em"}
+::::: columns
+::: {.column width="50%"}
+The general formula (also known as unconstrained):
+
+![](img/image10-6a.jpg)
+
+-   Tij is the transition/trip or flow, 𝑇, between origin 𝑖 (always the rows in a matrix) and destination 𝑗 (always the columns in a matrix). If you are not overly familiar with matrix notation, the 𝑖 and 𝑗 are just generic indexes to allow us to refer to any cell in the matrix.
+-   𝑉 is a vector (a 1 dimensional matrix -- or, if you like, a single line of numbers) of origin attributes which relate to the emissivity of all origins in the dataset, 𝑖 -- this could be any of the origin-related variables.
+:::
+
+::: {.column width="50%"}
+-   𝑊 is a vector of destination attributes relating to the attractiveness of all destinations in the dataset, 𝑗 -- similarly, this could be any of the destination related variables.
+-   𝑑 is a matrix of costs (frequently distances -- hence, d) relating to the flows between 𝑖 and 𝑗.
+-   𝑘, 𝜇, 𝛼 and 𝛽 are all model parameters to be estimated. 𝛽 is assumed to be negative, as with an increase in cost/distance we would expect interaction to decrease.
+:::
+:::::
+::::::
+
+------------------------------------------------------------------------
+
+### Unconstrained (Totally constrained) case
+
+::::: columns
+::: {.column width="50%"}
+The O-D Matrix
+
+![](img/image10-6c.jpg)
+
+and distance matrix:
+
+![](img/image10-6d.jpg){width="500"}
+
+![](img/image10-6e.jpg)
+:::
+
+::: {.column width="50%"}
+The estimated O-D matrix:
+
+![](img/image10-6f.jpg)
+
+and the calculation T11
+
+![](img/image10-6g.jpg){width="400"}
+:::
+:::::
+
+------------------------------------------------------------------------
+
+### The Origin (Production) Constrained Model
+
+::::: columns
+::: {.column width="50%"}
+In the Origin Constrained Model,
+
+-   𝑂𝑖 does not have a parameter as it is a known **constraint**.
+-   𝐴𝑖 is known as a **balancing factor** and is a vector of values which relate to each origin 𝑖 which do the equivalent job as 𝑘 in the unconstrained/total constrained model but ensure that flow estimates from each origin sum to the know totals 𝑂𝑖 rather than just the overall total.
+:::
+
+::: {.column width="50%"}
+![](img/image10-6b.jpg)
+:::
+:::::
+
+------------------------------------------------------------------------
+
+### Oringin (Production) constrained case
+
+::::: columns
+::: {.column width="50%"}
+The O-D Matrix
+
+![](img/image10-6c.jpg)
+
+and distance matrix:
+
+![](img/image10-6d.jpg){width="500"}
+
+![](img/image10-6e.jpg)
+:::
+
+::: {.column width="50%"}
+The estimated O-D matrix:
+
+![](img/image10-7a.jpg)
+
+A1 is calculated as shown below:
+
+![](img/image10-7b.jpg)
+
+Hence, T11 is calculated as shown below:
+
+![](img/image10-7c.jpg){width="450"}
+:::
+:::::
+
+------------------------------------------------------------------------
+
+### The Destination (Attraction) Constrained Model
+
+:::: columns
+::: {.column width="50%"}
+![](img/image10-8a.jpg)
+:::
+::::
+
+------------------------------------------------------------------------
+
+### Destination (Attraction) constrained case
+
+::::: columns
+::: {.column width="50%"}
+The O-D Matrix
+
+![](img/image10-6c.jpg)
+
+and distance matrix:
+
+![](img/image10-6d.jpg){width="500"}
+
+![](img/image10-6e.jpg)
+:::
+
+::: {.column width="50%"}
+The estimated O-D matrix:
+
+![](img/image10-8b.jpg)
+
+B1 is calculated as shown below:
+
+![](img/image10-8c.jpg)
+
+Hence, T11 is calculated as shown below:
+
+![](img/image10-8d.jpg){width="500"}
+:::
+:::::
+
+------------------------------------------------------------------------
+
+### The Doubly Constrained Model
+
+:::::: columns
+::: {.column width="50%"}
+![](img/image10-9a.jpg)
+:::
+
+:::: {.column width="50%"}
+::: callout-note
+Note that the calculation of 𝐴𝑖 relies on knowing 𝐵𝑗 and the calculation of 𝐵𝑗 relies on knowing 𝐴𝑖 -- something of a conundrum to which the solution is elegantly described by Senior (1979), who sketches out a very useful algorithm for iteratively arriving at values for 𝐴𝑖 and 𝐵𝑗 by setting each to equal 1 initially and then continuing to calculate each in turn until the difference between successive iterations of the 𝐴𝑖 and 𝐵𝑗 values is small enough not to matter.
+:::
+::::
+::::::
+
+------------------------------------------------------------------------
+
+### Doubly constrained case
+
+::::: columns
+::: {.column width="50%"}
+The O-D Matrix
+
+![](img/image10-6c.jpg)
+
+and distance matrix:
+
+![](img/image10-6d.jpg){width="500"}
+
+![](img/image10-6e.jpg)
+:::
+
+::: {.column width="50%"}
+The estimated O-D matrix:
+
+![](img/image10-9b.jpg)
+
+Hence, T11 is calculated as shown below:
+
+![](img/image10-9c.jpg){width="500"}
+
+Notice that A1 and B1 are computed by using computer.
+:::
+:::::
+
+## Spatial Econometric Interaction Models
+
+### Limitation of Spatial Interaction Models
+
+-   The gravity model assumes independence among observations, and this assumption seems heroic for many fundamentally spatial problems.
+
+![](img/image5-1.jpg)
+
+------------------------------------------------------------------------
+
+### Limitation of Spatial Interaction Models
+
+There are two technical limitations of SIM:
+
+-   Maximum-likelihood estimates require that the dependent variable vector follow a normal distribution or that it can be suitably transformed to achieve normality.
+
+-   Maximum-likelihood method is not appropriate when there are a large number of zero flows exist.
+
+## Spatial Econometric Model for Origin-Destination Flows
+
+![](img/image5-6.jpg)
+
+## Spatial Econometric Interaction Model
+
+The general formula of Spatial Econometric Interaction Model is defined as follow:
+
+![](img/image5-2.jpg)
+
+where by 𝐖~𝓭~, 𝐖~𝒐~ and 𝐖~𝓌~ are spatial weights of destination, origin and origin-destination.
+
+## What is Econometrics
+
+-   Econometrics is an application of statistical methods to economic data in order to give empirical content to economic relationships. More precisely, it is "the quantitative analysis of actual economic phenomena based on the concurrent development of theory and observation, related by appropriate methods of inference.
+
+-   A basic tool for econometrics is the multiple linear regression model.
+
+-   Econometric theory uses statistical theory and mathematical statistics to evaluate and develop econometric methods.
+
+-   Econometricians try to find estimators that have desirable statistical properties including unbiasedness, efficiency, and consistency.
+
+-   Applied econometrics uses theoretical econometrics and real-world data for assessing economic theories, developing econometric models, analysing economic history, and forecasting.
+
+## What is Spatial Econometrics?
+
+-   A branch of economics that deals with the study of economic phenomena that exhibit spatial dependence.
+-   This branch of economics has its roots in classical economics, which focused on the study of how economic activity was related to the location of factors of production.
+-   Classical economists developed theories of how businesses locate themselves in relation to their markets and to each other. These theories formed the basis for the development of modern spatial economics.
+
+## What is Spatial Econometrics?
+
+-   In a broader sense it is inclusive of the models and theoretical instruments of spatial statistics and spatial data analysis to analyze various economic effects such as **externalities**, **interactions**, **spatial concentration** and many others.
+-   Discrete spatial data can take the form of points, lines and polygons. **Point** data refer to the position of the single economic agent observed at an individual level. **Lines** in space take the form of interactions between two spatial locations such as flows of goods, individuals and information. Finally data observed within **polygons** can take the form of predefined irregular portions of space, usually administrative partitions such as countries, regions or counties within one country.
+
+## What Are The Examples of Applications Using Spatial Econometrics ?
+
+There are many applications for spatial econometrics . Here are a few examples :
+
+-   Evaluating the impact of a new road or railway on property values.
+-   Estimating the effect of environmental regulations on firm location decisions.
+-   Analyzing the determinants of crime rates across neighborhoods
+-   Studying the relationship between house prices and income levels in different regions.
+-   Investigating the spread of infectious diseases through a population.
+-   Modeling the relationship between land values and location-specific services.
+-   Analyzing the relationship between proximity to facilities and job opportunities .
+
+## Spatial Model Specification for Origin-Destination Flows
+
+![](img/image5-3.jpg)
+
+## Spatial Model Specification for Origin-Destination Flows
+
+![](img/image5-4.jpg)
+
+## Spatial Model Specification for Origin-Destination Flows
+
+![](img/image5-5.jpg)
+
+## Huff Model
+
+-   Huff model is a spatial analysis tool that 
+**estimates the probability of a consumer visiting a specific store** by considering the store's attractiveness and the distance to it, relative to competing stores.
+-   It uses a formula where the likelihood of patronage is proportional to the store's attractiveness (e.g., size) and inversely proportional to the distance from the consumer, which decays at a rate determined by a distance exponent.
+-   Essentially, it helps businesses predict sales potential and determine market areas by calculating a site's attractiveness compared to its competitors.
+
+------------------------------------------------------------------------
+
+### Huff Model 
+
+![](img/image11.jpg)
+
+
+
+
+
+```{r}
+#| echo: false
+#| eval: false
+renderthis::to_pdf(
+  from = "https://is415-ay2022-23t2.netlify.app/lesson/lesson11/lesson11-sim.html",
+  to = "D://IS415_AY2022-23T2/02-Lesson/Lesson11.pdf"
+)
+```

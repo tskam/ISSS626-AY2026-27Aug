@@ -1,0 +1,1003 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-html/tabby.min.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.8.26">
+
+  <meta name="author" content="Dr.&nbsp;Kam Tin Seong  Assoc. Professor of Information Systems(Practice)">
+  <meta name="dcterms.date" content="2026-10-12">
+  <title>ISSS626 – Lesson 7:  Modelling Geographic of Accessibility</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../../site_libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="../../site_libs/revealjs/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto-534cd8e3a96973385dffff3f4709048d.css">
+  <link href="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="../../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" class="quarto-title-block center">
+  <h1 class="title">Lesson 7: <br>Modelling Geographic of Accessibility</h1>
+
+<div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+Dr.&nbsp;Kam Tin Seong <br>Assoc. Professor of Information Systems(Practice) 
+</div>
+        <p class="quarto-title-affiliation">
+            School of Computing and Information Systems,<br>Singapore Management University
+          </p>
+    </div>
+</div>
+
+  <p class="date">12 Oct 2026</p>
+</section>
+<section id="content" class="slide level2">
+<h2>Content</h2>
+<ul>
+<li>Basic Concepts of Geography of Accessibility</li>
+<li>Accessibility Models
+<ul>
+<li>Stewart Potential model</li>
+<li>Hansen Potential model</li>
+<li>Two Step Floating Catchment Area (2SFCA)</li>
+<li>Kernel Density Two-step Floating Catchment Area (KD2SFCA)</li>
+<li>Spatial Accessibility Measure (SAM)</li>
+</ul></li>
+</ul>
+</section>
+<section id="what-is-geography-of-accessibility" class="slide level2">
+<h2>What is Geography of Accessibility?</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>Accessibility is the measure of <strong>the capacity of a location to be reached from, or to be reached by, different locations</strong>. Therefore, the capacity and the arrangement of transport infrastructure are key elements in the determination of accessibility.</li>
+</ul>
+</div></div>
+</section>
+<section class="slide level2">
+
+<h3 id="why-model-geography-of-accessibility">Why Model Geography of Accessibility?</h3>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>Questions that can be answered by accessibility models:
+<ul>
+<li>Which part of the geographical areas are deprived from getting access to a social service, facility or job opportunity?</li>
+<li>Which part of the geographical areas will be affected by a public policy or business decision such as merging JCs, secondary and primary schools.</li>
+</ul></li>
+</ul>
+</div></div>
+</section>
+<section id="measuring-distances" class="slide level2">
+<h2>Measuring Distances</h2>
+<ul>
+<li>Different spatial and distance conceptualizations that are commonly employed when measuring and modelling accessibility.</li>
+</ul>
+
+<img data-src="img/image1.jpg" class="r-stretch"></section>
+<section class="slide level2">
+
+<h3 id="distance-consideration">Distance Consideration</h3>
+<p>Cartesian distance versus Network distance.</p>
+
+<img data-src="img/image14.jpg" class="r-stretch"><div style="font-size: 0.65em">
+<p>Reference: Philippe Apparicio et. al.&nbsp;(2017) <a href="https://ij-healthgeographics.biomedcentral.com/articles/10.1186/s12942-017-0105-9">“The approaches to measuring the potential spatial access to urban health services revisited: distance types and aggregation‑error issues.</a> <em>International Journal of Health Geographics</em>, pp.&nbsp;16:32.</p>
+</div>
+</section>
+<section class="slide level2">
+
+<h3 id="the-distance-friction">The distance friction</h3>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>Modeling spatial interactions implies quantifying the <strong>distance friction</strong> or <strong>impedance</strong>.</li>
+<li>The role of the distance can be interpreted as a disincentive to access desired destinations or opportunities (e.g.&nbsp;jobs, shops).</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><img data-src="img/image3.jpg"></p>
+</div></div>
+<aside class="notes">
+<p>The perception of how far a destination is may not be a linear function of distance. People are more likely to shop at a place close to home than one far away. Distance is viewed as a nonlinear deterrent to movement. This phenomenon can be modeled by using a distance-decay function. The use of a power distance-decay function is borrowed from Newton’s law of gravitation, from which the term gravity model is derived. A distance-decay parameter, symbolized by the Greek letter beta, can be used to exaggerate the distance to destinations. Some activities, such as grocery shopping, have a large exponent, indicating that people will travel only a short distance for such things. Other activities, such as furniture shopping, have a small exponent, because people are willing to travel farther to shop for furniture.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section class="slide level2">
+
+<h3 id="distance-decay-function.">Distance Decay function.</h3>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p>Inverse distance decay, 𝜶∕𝒅_𝜷</p>
+<p><img data-src="img/image4a.jpg"></p>
+</div><div class="column" style="width:50%;">
+<p>Exponential distance decay, 𝜶𝒆^(−𝜷𝒅)</p>
+<p><img data-src="img/image4b.jpg"></p>
+</div></div>
+</section>
+<section id="the-geographical-unit" class="slide level2">
+<h2>The Geographical Unit</h2>
+<ul>
+<li>This issue of irregularly shaped polygons created arbitrarily (such as county boundaries or block groups that have been created from a political process).</li>
+</ul>
+
+<img data-src="img/image7.jpg" class="r-stretch"></section>
+<section class="slide level2">
+
+<h3 id="the-geographical-unit-1">The Geographical Unit</h3>
+<ul>
+<li>Using regular shaped geometry such as square, hexagon or triangle to define geographical unit.</li>
+</ul>
+
+<img data-src="img/image1.png" class="r-stretch"><aside class="notes">
+<p>In GIS analysis, regularly shaped grids is used for many reasons such as normalizing geography for mapping or to mitigate the issues of using irregularly shaped polygons created arbitrarily (such as county boundaries or block groups that have been created from a political process). Regularly shaped grids can only be comprised of equilateral triangles, squares, or hexagons, as these three polygon shapes are the only three that can tessellate (repeating the same shape over and over again, edge to edge, to cover an area without gaps or overlaps) to create an evenly spaced grid.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section class="slide level2">
+
+<h3 id="the-geographical-unit-2">The Geographical Unit</h3>
+<ul>
+<li>Hexagons reduce sampling bias due to edge effects of the grid shape, this is related to the low perimeter-to-area ratio of the shape of the hexagon.</li>
+<li>A circle has the lowest ratio but cannot tessellate to form a continuous grid. Hexagons are the most circular-shaped polygon that can tessellate to form an evenly spaced grid.]</li>
+</ul>
+
+<img data-src="img/image2.png" class="r-stretch"><aside class="notes">
+<p>Though the square (fishnet) grid is the predominantly used shape type in GIS analysis and thematic mapping, there are ways in which hexagons may be better suited for your analysis based on the nature of your question.</p>
+<p>Hexagons reduce sampling bias due to edge effects of the grid shape, this is related to the low perimeter-to-area ratio of the shape of the hexagon. A circle has the lowest ratio but cannot tessellate to form a continuous grid. Hexagons are the most circular-shaped polygon that can tessellate to form an evenly spaced grid.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section class="slide level2">
+
+<h3 id="the-geographical-unit-3">The Geographical Unit</h3>
+<ul>
+<li>An example of 250m radius hexagons covering Singapore main island.</li>
+</ul>
+
+<img data-src="img/image8.jpg" class="r-stretch"></section>
+<section class="slide level2">
+
+<h3 id="distance-to-nearest-location">Distance to Nearest Location</h3>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p>The formula:</p>
+<p><img data-src="img/image15.jpg"></p>
+</div><div class="column" style="width:50%;">
+<p>Limitation of the method:</p>
+<ul>
+<li>Does not consider the size/attractiveness of the closest location, thereby implicitly treating all locations as being equally attractive.</li>
+<li>Does not consider the cumulative effect of multiple accessible locations (e.g.&nbsp;is a zone that is within 1.1 km of two MRT stations inferior to one that is within 1.0 km of a single station?</li>
+</ul>
+</div></div>
+</section>
+<section id="what-spatial-interaction-models-are" class="slide level2">
+<h2>What Spatial Interaction Models are?</h2>
+<div class="columns">
+<div class="column" style="width:65%;">
+<p>Spatial interaction or “gravity models” estimate the flow of people, material, or information between locations in geographical space.</p>
+<p><img data-src="img/image10-1.jpg"></p>
+</div><div class="column" style="width:35%;">
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Note</strong></p>
+</div>
+<div class="callout-content">
+<p>Spatial interaction models seek to explain existing spatial flows. As such it is possible to measure flows and predict the consequences of changes in the conditions generating them. When such attributes are known, it is possible to better allocate transport resources such as conveyances, infrastructure, and terminals.</p>
+</div>
+</div>
+</div>
+</div></div>
+</section>
+<section class="slide level2">
+
+<h3 id="conditions-for-spatial-flows">Conditions for Spatial Flows</h3>
+<ul>
+<li>Three interdependent conditions are necessary for a spatial interaction to occur:</li>
+</ul>
+
+<img data-src="img/image10-2.jpg" class="r-stretch"><aside class="notes">
+<ul>
+<li><strong>Complementarity</strong>. There must be a supply and a demand between the interacting locations. A residential zone is complementary to an employment zone because the first is supplying workers while the second is supplying jobs. The same can be said concerning the complementarity between a store and its customers and between an industry and its suppliers (movements of freight). An economic system is based on a large array of complementary activities.</li>
+<li><strong>Intervening opportunity (lack of)</strong>. Refers to a location that may offer a better alternative as a point of origin or as a point of destination. For instance, in order to have an interaction of a customer to a store, there must not be a closer store that offers a similar array of goods. Otherwise, the customer will likely patronize the closer store and the initial interaction will not take place.</li>
+<li><strong>Transferability</strong>. Mobility must be supported by transport infrastructures, implying that the origin and the destination must be linked. Costs to overcome distance must not be higher than the benefits of the related interaction, even if there are complementarity and no alternative opportunity.</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section class="slide level2">
+
+<h3 id="representation-of-a-movement-as-a-spatial-interaction">Representation of a Movement as a Spatial Interaction</h3>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p>Representing mobility as a spatial interaction involves several considerations:</p>
+<ul>
+<li>Locations: A movement is occurring between a location of origin and a location of destination. i generally denotes an origin while j is a destination.</li>
+<li>Centroid: An abstraction of the attributes of a zone at a point.</li>
+<li>Flows: Flows are generally expressed by a valued vector Tij representing an interaction between locations i and j.</li>
+<li>Vectors: A vector Tij links two centroids and has a value assigned to it (50) which can represents movements.</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><img data-src="img/image10-3.jpg"></p>
+</div></div>
+<aside class="notes">
+<ul>
+<li>Locations. A movement is occurring between a location of origin and a location of destination. i generally denotes an origin while j is a destination. The representation of origins and destinations commonly involves centroids.</li>
+<li>Centroid. An abstraction of the attributes of a zone at a point. This is of particular relevance when the attributes generating mobility are zonal (e.g.&nbsp;ZIP codes, cities, states, etc.) while the graphic representation requires specific origins and destinations. For instance, showing flows between ZIP codes would implicitly require the generation of one centroid for each ZIP code.</li>
+<li>Flows. Flows are generally expressed by a valued vector Tij representing an interaction between locations i and j.</li>
+<li>Vectors. On the above figure, two areas, zone i and zone j, are represented as two centroids, i and j. A vector Tij links two centroids and has a value assigned to it (50) which can represents movements such as tons of freight, numbers of passengers per day, or number of phone calls.</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="constructing-an-od-matrix" class="slide level2">
+<h2>Constructing an O/D Matrix</h2>
+<ul>
+<li>The construction of an origin / destination matrix requires directional flow information between a series of locations.</li>
+<li>Figure below represents movements (O/D pairs) between five locations (A, B, C, D and E). From this graph, an O/D matrix can be built where each O/D pair becomes a cell. A value of 0 is assigned for each O/D pair that does not have an observed flow.</li>
+</ul>
+
+<img data-src="img/image10-4.jpg" class="r-stretch"></section>
+<section id="three-basic-types-of-interaction-models" class="slide level2">
+<h2>Three Basic Types of Interaction Models</h2>
+<ul>
+<li>The general formulation of the spatial interaction model is stated as <strong>Tij</strong>, which is the interaction between location i (origin) and location j (destination). <strong>Vi</strong> are the attributes of the location of origin i, <strong>Wj</strong> are the attributes of the location of destination j, and <strong>Sij</strong> are the attributes of separation between the location of origin i and the location of destination j.</li>
+<li>From this general formulation, three basic types of interaction models can be derived:</li>
+</ul>
+
+<img data-src="img/image10-5.jpg" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="the-potential-model" class="slide level2">
+<h2>The Potential Model</h2>
+<h3 id="the-classic-model">The classic model</h3>
+
+<img data-src="img/image2.jpg" width="600" class="r-stretch"></section>
+<section class="slide level2">
+
+<h3 id="the-modified-potential-formula">The Modified Potential Formula</h3>
+
+<img data-src="img/image5.jpg" class="r-stretch"></section>
+<section class="slide level2">
+
+<h3 id="real-world-application-of-potential-model">Real world application of potential model</h3>
+<ul>
+<li>Accessibility to urban functions study.</li>
+</ul>
+
+<img data-src="img/image6a.jpg" class="r-stretch"></section>
+<section class="slide level2">
+
+<h3 id="real-world-application-of-potential-model-1">Real world application of potential model</h3>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>Accessibility to shopping centres.</li>
+</ul>
+<p><img data-src="img/image6b.jpg"></p>
+</div><div class="column" style="width:50%;">
+<p>Accessibility to health services</p>
+<p><img data-src="img/image6c.jpg"></p>
+</div></div>
+</section>
+<section class="slide level2">
+
+<h3 id="real-world-application-of-potential-model-2">Real world application of potential model</h3>
+<ul>
+<li>Overall accessibility</li>
+</ul>
+
+<img data-src="img/image6d.jpg" class="r-stretch"></section>
+<section id="two-step-floating-catchment-area-method-2sfca" class="slide level2">
+<h2>Two-step floating catchment area method (2SFCA)</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>A special case of a potential model for measuring spatial accessibility to primary social services and public facilities.</li>
+<li>It was inspired by the spatial decomposition idea first proposed by Radke and Mu (2000).</li>
+</ul>
+<div style="font-size: 0.65em">
+<p>Reference: Luo, W.; Wang, F. (2003b). <a href="https://www.niu.edu/landform/papers/Luo_Wang2003.pdf">“Measures of spatial accessibility to health care in a GIS environment: synthesis and a case study in the Chicago region”</a>. <em>Environment and Planning B: Planning and Design</em>. 30 (6): 865–884.</p>
+</div>
+</div><div class="column" style="width:50%;">
+<p>An earlier version of 2SFCA</p>
+<p><img data-src="img/image9.jpg" width="483"></p>
+</div></div>
+</section>
+<section class="slide level2">
+
+<h3 id="two-step-floating-catchment-area-method-2sfca-1">Two-step floating catchment area method (2SFCA)</h3>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Step 1</strong>: For each physician location <em>j</em>, search all population locations (<em>k</em>) that are within a threshold travel time (<em>d0</em>) from location <em>j</em> (that is, catchment area <em>j</em> ), and compute the physician-to-population ratio, <em>Rj</em>, within the catchment area:</p>
+<p><img data-src="img/image10a.jpg"></p>
+</div><div class="column" style="width:50%;">
+<p>An earlier version of 2SFCA</p>
+<p><img data-src="img/image9.jpg"></p>
+</div></div>
+</section>
+<section class="slide level2">
+
+<h3 id="two-step-floating-catchment-area-method-2sfca-2">Two-step floating catchment area method (2SFCA)</h3>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Step 2:</strong> For each population location <em>i</em>, search all physician locations (<em>j</em>) that are within the threshold travel time (<em>d0</em>) from location <em>i</em> (that is, catchment area <em>i</em>), and sum up the physician-to-population ratios, <em>Rj</em>, at these locations:</p>
+<p><img data-src="img/image10b.jpg"></p>
+</div><div class="column" style="width:50%;">
+<p>An earlier version of 2SFCA.</p>
+<p><img data-src="img/image9.jpg"></p>
+</div></div>
+</section>
+<section class="slide level2">
+
+<h3 id="enhanced-two-step-floating-catchment-area-e2sfca">Enhanced Two-step Floating Catchment Area (E2SFCA)</h3>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div style="font-size: 0.90em">
+<p><strong>Step 1:</strong> The catchment of physician location <em>j</em> is defined as the area within 30-min driving zone(Lee, 1991). Within each catchment, compute three travel time zones with minute breaks of 0–10,10–20 and 20–30min (zones1–3,respectively). Search all population locations(<em>k</em>) that are within a threshold travel time zone (<em>Dr</em>) from location <em>j</em> (this is catchment area <em>j</em>), and compute the weighted physician-to-population ratio, <em>Rj</em>, within the catchment area as follows:</p>
+</div>
+<p><img data-src="img/image11a.jpg"></p>
+</div><div class="column" style="width:50%;">
+<div style="font-size: 0.90em">
+<p><strong>Step 2:</strong> For each population location <em>i</em>, search all physician locations (<em>j</em>) that are within the 30min travel time zone from location <em>i</em> (that is,catchment area <em>i</em>), and sum up the physician-to-population ratios (calculated in step1), <em>Rj</em>, at these locations as follows:</p>
+</div>
+<p><img data-src="img/image11b.jpg"></p>
+</div></div>
+</section>
+<section class="slide level2">
+
+<h3 id="comparing-2sfca-and-e2sfca">Comparing 2SFCA and E2SFCA</h3>
+
+<img data-src="img/image12.jpg" class="r-stretch"><div style="font-size: 0.65em">
+<p>Reference: Luo, Wei., Qi, Yi. (2009) <a href="https://www.researchgate.net/publication/26646789_An_Enhanced_Two-Step_Floating_Catchment_Area_E2SFCA_Method_for_Measuring_Spatial_Accessibility_to_Primary_Care_Physicians">“An enhanced two-step floating catchment area (E2SFCA) method for measuring spatial accessibility to primary care physicians”</a>, <em>Health &amp; Place</em>, 2009, Vol.15 (4), p.1100-1107.</p>
+</div>
+<aside class="notes">
+<p>2SFCA method tends to over estimate accessibility because distance decay is not considered, and thus identifies smaller total shortage areas. The sharper distance decay weight (weight2) used in E2SFCA identifies greater total shortage area (in terms of both physical area and population) than as lower distance decay weight(weight1).The policy implication is that using the E2SFCA method would more explicitly identify and delineate HPSAs. This would help allocate the limited resources to the most needy places.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="spatial-accessibility-measure-sam" class="slide level2">
+<h2>Spatial Accessibility Measure (SAM)</h2>
+<p>The formula:</p>
+
+<img data-src="img/image13.jpg" class="r-stretch"><p>where</p>
+<ul>
+<li><em>Aai</em> is the accessibility in ED <em>i</em>,</li>
+<li><em>nj</em> is the capacity of the target facility <em>j</em>.</li>
+<li><em>pi</em> is the demand of this ED, and</li>
+<li><em>dij</em> is the network distance between the <em>EDi</em> and each facility <em>j</em>.</li>
+</ul>
+<div style="font-size: 0.65em">
+<p>Reference: Stamatis Kalogirou &amp; Ronan Foley (2006) <a href="https://www.tandfonline.com/doi/abs/10.1080/00750770609555866">“Health, place and Hanly: Modelling accessibility to hospitals in Ireland”</a>, <em>Irish Geography</em>, Volume 39(1), 2006, 52-68.</p>
+</div>
+
+
+</section>
+    </div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<div class="footer footer-default">
+
+</div>
+</div></div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="../../site_libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="../../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="../../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="../../site_libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="../../site_libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="../../site_libs/revealjs/plugin/search/search.js"></script>
+  <script src="../../site_libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="../../site_libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'none',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1600,
+
+        height: 900,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    
+
+    <script>
+
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+
+      // slide changes (different for each slide format).
+
+      (function () {
+
+        // dispatch for htmlwidgets
+
+        function fireSlideEnter() {
+
+          const event = window.document.createEvent("Event");
+
+          event.initEvent("slideenter", true, true);
+
+          window.document.dispatchEvent(event);
+
+        }
+
+    
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+
+          fireSlideEnter();
+
+    
+
+          // dispatch for shiny
+
+          if (window.jQuery) {
+
+            if (previousSlide) {
+
+              window.jQuery(previousSlide).trigger("hidden");
+
+            }
+
+            if (currentSlide) {
+
+              window.jQuery(currentSlide).trigger("shown");
+
+            }
+
+          }
+
+        }
+
+    
+
+        // hookup for slidy
+
+        if (window.w3c_slidy) {
+
+          window.w3c_slidy.add_observer(function (slide_num) {
+
+            // slide_num starts at position 1
+
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+
+          });
+
+        }
+
+    
+
+      })();
+
+    </script>
+
+    
+
+    <script id="quarto-html-after-body" type="application/javascript">
+      window.document.addEventListener("DOMContentLoaded", function (event) {
+        const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+        tabsets.forEach(function(tabset) {
+          const tabby = new Tabby('#' + tabset.id);
+        });
+        const isCodeAnnotation = (el) => {
+          for (const clz of el.classList) {
+            if (clz.startsWith('code-annotation-')) {                     
+              return true;
+            }
+          }
+          return false;
+        }
+        const onCopySuccess = function(e) {
+          // button target
+          const button = e.trigger;
+          // don't keep focus
+          button.blur();
+          // flash "checked"
+          button.classList.add('code-copy-button-checked');
+          var currentTitle = button.getAttribute("title");
+          button.setAttribute("title", "Copied!");
+          let tooltip;
+          if (window.bootstrap) {
+            button.setAttribute("data-bs-toggle", "tooltip");
+            button.setAttribute("data-bs-placement", "left");
+            button.setAttribute("data-bs-title", "Copied!");
+            tooltip = new bootstrap.Tooltip(button, 
+              { trigger: "manual", 
+                customClass: "code-copy-button-tooltip",
+                offset: [0, -8]});
+            tooltip.show();    
+          }
+          setTimeout(function() {
+            if (tooltip) {
+              tooltip.hide();
+              button.removeAttribute("data-bs-title");
+              button.removeAttribute("data-bs-toggle");
+              button.removeAttribute("data-bs-placement");
+            }
+            button.setAttribute("title", currentTitle);
+            button.classList.remove('code-copy-button-checked');
+          }, 1000);
+          // clear code selection
+          e.clearSelection();
+        }
+        const getTextToCopy = function(trigger) {
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+        }
+        const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+          text: getTextToCopy
+        });
+        clipboard.on('success', onCopySuccess);
+        if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+          const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+            text: getTextToCopy,
+            container: window.document.getElementById('quarto-embedded-source-code-modal')
+          });
+          clipboardModal.on('success', onCopySuccess);
+        }
+          var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+          var mailtoRegex = new RegExp(/^mailto:/);
+            var filterRegex = new RegExp('/' + window.location.host + '/');
+          var isInternal = (href) => {
+              return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+          }
+          // Inspect non-navigation links and adorn them if external
+         var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+          for (var i=0; i<links.length; i++) {
+            const link = links[i];
+            if (!isInternal(link.href)) {
+              // undo the damage that might have been done by quarto-nav.js in the case of
+              // links that we want to consider external
+              if (link.dataset.originalHref !== undefined) {
+                link.href = link.dataset.originalHref;
+              }
+            }
+          }
+        function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+          const config = {
+            allowHTML: true,
+            maxWidth: 500,
+            delay: 100,
+            arrow: false,
+            appendTo: function(el) {
+                return el.closest('section.slide') || el.parentElement;
+            },
+            interactive: true,
+            interactiveBorder: 10,
+            theme: 'light-border',
+            placement: 'bottom-start',
+          };
+          if (contentFn) {
+            config.content = contentFn;
+          }
+          if (onTriggerFn) {
+            config.onTrigger = onTriggerFn;
+          }
+          if (onUntriggerFn) {
+            config.onUntrigger = onUntriggerFn;
+          }
+            config['offset'] = [0,0];
+            config['maxWidth'] = 700;
+          window.tippy(el, config); 
+        }
+        const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+        for (var i=0; i<noterefs.length; i++) {
+          const ref = noterefs[i];
+          tippyHover(ref, function() {
+            // use id or data attribute instead here
+            let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+            try { href = new URL(href).hash; } catch {}
+            const id = href.replace(/^#\/?/, "");
+            const note = window.document.getElementById(id);
+            if (note) {
+              return note.innerHTML;
+            } else {
+              return "";
+            }
+          });
+        }
+        const findCites = (el) => {
+          const parentEl = el.parentElement;
+          if (parentEl) {
+            const cites = parentEl.dataset.cites;
+            if (cites) {
+              return {
+                el,
+                cites: cites.split(' ')
+              };
+            } else {
+              return findCites(el.parentElement)
+            }
+          } else {
+            return undefined;
+          }
+        };
+        var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+        for (var i=0; i<bibliorefs.length; i++) {
+          const ref = bibliorefs[i];
+          const citeInfo = findCites(ref);
+          if (citeInfo) {
+            tippyHover(citeInfo.el, function() {
+              var popup = window.document.createElement('div');
+              citeInfo.cites.forEach(function(cite) {
+                var citeDiv = window.document.createElement('div');
+                citeDiv.classList.add('hanging-indent');
+                citeDiv.classList.add('csl-entry');
+                var biblioDiv = window.document.getElementById('ref-' + cite);
+                if (biblioDiv) {
+                  citeDiv.innerHTML = biblioDiv.innerHTML;
+                }
+                popup.appendChild(citeDiv);
+              });
+              return popup.innerHTML;
+            });
+          }
+        }
+      });
+      </script>
+    
+
+</body></html>

@@ -1,0 +1,69 @@
+---
+title: "In-class Exercise 6: Spatially Constrained Clustering: REDCAP methods"
+author: "Dr. Kam Tin Seong<br/>Assoc. Professor of Information Systems(Practice)"
+institute: "School of Computing and Information Systems,<br/>Singapore Management University"
+date: today
+format: 
+  revealjs:
+    pdf: default
+    width: 1600
+    height: 900
+    show-notes: false
+    slide-number: true
+    show-slide-number: all
+execute: 
+  eval: false
+  echo: true
+  warning: false
+  freeze: true
+editor: visual
+---
+
+```{r}
+pacman::p_load(sf, rgeoda, tidyverse)
+```
+
+```{r}
+shan_sf <- read_rds("data/rds/shan_sf.rds")
+```
+
+```{r}
+queen_w <- queen_weights(shan_sf)
+summary(queen_w)
+```
+
+```{r}
+shan_data <- shan_sf |>
+  select(16:20) |>
+  st_drop_geometry()
+```
+
+```{r}
+schc_clusters <- schc(k=5, 
+                      w=queen_w, 
+                      df=shan_data, 
+                      method="ward")
+```
+
+```{r}
+skater_clusters <- skater(k=6, 
+                        w=queen_w, 
+                        df=shan_data,
+                        cpu_threads = 1)
+```
+
+```{r}
+redcap_clusters <- redcap(k=6, 
+                          w=queen_w, 
+                          df=shan_data,
+                          method="firstorder-singlelinkage")
+```
+
+```{r}
+clusters <- as.data.frame(schc_clusters$Clusters)
+```
+
+```{r}
+shan_sf <- shan_sf |>
+  cbind(clusters)
+```

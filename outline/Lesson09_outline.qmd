@@ -1,5 +1,5 @@
 ---
-title: "Lesson 9: Modelling Geographic of Accessibility"
+title: "Lesson 7: Geographically Weighted Regression"
 date: "July 21, 2024"
 date-modified: "last-modified"
 output:
@@ -10,48 +10,43 @@ execute:
   freeze: true
 ---
 
+In this lesson, you will learn the basic concepts and methods of geographically weighted regression.
+
 ## Content
 
-- Basic Concepts of Geographic Accessibility
-- Gravitational Law and Distance Decay Function
-- Introducing Potential Models
-  - The classic model
-- Hansen Potential Accessibility Model
-- Two-step Floating Catchment Area (2SFCA) Method
-- Kernel Density Two-Step Floating Catchment Area (KD2SFCA) Method
-- Interpreting and Visualising Modelling Results
+- Basic concepts and principles of linear regression
+  - Simple linear regression
+  - Multiple linear regression
+- The spatial stationarity assumption of multiple linear regression.
+- Introducing Geographically Weighted Regression
+  - Weighting functions (kernel)
+  - Weighting schemes
+  - Bandwidth
+  - Interpreting and Visualising
 
 ## Lesson Slides and Hands-on Notes
 
-- [Lesson 9](../lesson/lesson09/lesson09-GeoAcc.html) slides.
+- [Lesson 7 slides](../lesson/lesson07/lesson07-gwr.html).
 
-- [Hands-on Exercise 9](https://r4gdsa.netlify.app/chap17.html) handout.
+- [Hands-on Exercise 7](https://r4gdsa.netlify.app/chap13.html).
 
 ## Self-reading Before Meet-up
 
-Read before lesson:
+To read before class:
 
-- Long, J. (2017). [Modelling Accessibility. The Geographic Information Science & Technology Body of Knowledge](https://gistbok.ucgis.org/bok-topics/modelling-accessibility) (3rd Quarter 2017 Edition), John P. Wilson (ed.).
+- Brunsdon, C., Fotheringham, A.S., and Charlton, M. (2002) "Geographically weighted regression: A method for exploring spatial nonstationarity". Geographical Analysis, 28: 281-289.
+- Brunsdon, C., Fotheringham, A.S. and Charlton, M., (1999) "Some Notes on Parametric Significance Tests for Geographically Weighted Regression". Journal of Regional Science, 39(3), 497-524.
 
-- Hansen, W. G. (1959): ["How Accessibility Shapes Land Use"](https://dspace.mit.edu/bitstream/handle/1721.1/74869/32597665-MIT.pdf?...2). *Journal of the American Institute of Planners*, 25, 2, p. 73-76.
+## References
 
-- Luo, W.; Wang, F. (2003) ["Measures of spatial accessibility to health care in a GIS environment: synthesis and a case study in the Chicago region"](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8238135/). *Environment and Planning B: Planning and Design.* 30 (6): 865--884. doi:10.1068/b29120.
+- Mennis, Jeremy (2006) "Mapping the Results of Geographically Weighted Regression", The Cartographic Journal, Vol.43 (2), p.171-179.
+- Stephen A. Matthews ; Tse-Chuan Yang (2012) "Mapping the results of local statistics: Using geographically weighted regression", Demographic Research, Vol.26, p.151-166.
 
-- Luo, W.; Qi, Y. (2009). ["An enhanced two-step floating catchment area (E2SFCA) method for measuring spatial accessibility to primary care physicians"](https://www.researchgate.net/publication/26646789_An_Enhanced_Two-Step_Floating_Catchment_Area_E2SFCA_Method_for_Measuring_Spatial_Accessibility_to_Primary_Care_Physicians). *Health & Place*. 15 (4): 1100--1107.
+## All About R
 
-## Reference
-
-- Section on "Transportation and Accessibility" in The Geography of Transport Systems.
-- Rich, D.C. (1980) Potential Models in Human Geography.
-- Orpana, T./Lampinen, J. (2003) "Building spatial choice models from aggregate data". Journal of Regional Science,43, 2, p. 319-347.
-- [Two-step floating catchment area method](https://en.wikipedia.org/wiki/Two-step_floating_catchment_area_method).
-- Cheng, Gang et. al. (2016) "Spatial difference analysis for accessibility to high level hospitals based on travel time in Shenzhen, China" Habitat International, Vol.53, p.485-494.
-- Polzin, Pierre ; Borges, José ; Coelho, António (2014) "An Extended Kernel Density Two-Step Floating Catchment Area Method to Analyze Access to Health Care" Environment and planning. B, Planning & design, Vol.41 (4), p.717-735.
-
-## All About R:
-
-- [accessibility](https://ipeagit.github.io/accessibility/)
-
-- [SpatialAcc](https://cran.r-project.org/web/packages/SpatialAcc/) package.
-
-- [Potential](https://riatelab.github.io/potential/index.html) package.
+- [**GWmodel**](https://cran.r-project.org/web/packages/GWmodel/) package, especially
+  - Gollini, I et. al. (2015) ["GWmodel: An R Package for Exploring Spatial Heterogeneity Using Geographically Weighted Models"](https://www.jstatsoft.org/article/view/v063i17), *Journal of Statistical Software*, Volume 63, Issue 17 and
+  - Binbin Lu, Paul Harris, Martin Charlton & Chris Brunsdon (2014) ["The GWmodel R package: further topics for exploring spatial heterogeneity using geographically weighted models"](https://www.tandfonline.com/doi/full/10.1080/10095020.2014.917453), *Geo-spatial Information Science*, 17:2, 85-101, DOI: 10.1080/10095020.2014.917453.
+- [**lctools**](https://cran.r-project.org/web/packages/lctools/index.html) package especially *gw()* and *gwr()* related functions.
+- [**spgwr**](https://cran.r-project.org/web/packages/spgwr/index.html) implements of geographically weighted regression methods for exploring possible non-stationarity.
+- [**gwrr**](https://cran.r-project.org/web/packages/gwrr/index.html): its geographically weighted regression (GWR) models and has tools to diagnose and remediate collinearity in the GWR models. Also fits geographically weighted ridge regression (GWRR) and geographically weighted lasso (GWL) models.

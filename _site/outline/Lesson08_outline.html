@@ -2,17 +2,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.37">
+<meta name="generator" content="quarto-1.8.26">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2024-07-21">
+<meta name="dcterms.date" content="2025-11-03">
 
-<title>Lesson 8: Geographically Weighted Predictive Modelling – ISSS626 Geospatial Analytics</title>
+<title>Lesson 8: Delineating and Analysing Trade Area: Huff and MCI Models – ISSS626</title>
 <style>
-/* Default styles provided by pandoc.
-** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
-*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -36,14 +33,15 @@ ul.task-list li input[type="checkbox"] {
 <meta name="quarto:offset" content="../">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-cfe12cc0b31e9ab990748e524033966a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-5f49f16f97b4b358d01fa7acc334a7f0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -84,7 +82,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../index.html">
-    <span class="navbar-title">ISSS626 Geospatial Analytics</span>
+    <span class="navbar-title">ISSS626</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -127,8 +125,12 @@ ul.task-list li input[type="checkbox"] {
  <span class="dropdown-text">In-class Exercise 4</span></a>
   </li>  
         <li>
+    <a class="dropdown-item" href="../In-class_Ex/In-class_Ex05/In-class_Ex05-GLSA.html">
+ <span class="dropdown-text">In-class Exercise 5a</span></a>
+  </li>  
+        <li>
     <a class="dropdown-item" href="../In-class_Ex/In-class_Ex05/In-class_Ex05-EHSA.html">
- <span class="dropdown-text">In-class Exercise 5</span></a>
+ <span class="dropdown-text">In-class Exercise 5b</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../In-class_Ex/In-class_Ex06/In-class_Ex06-KickStarter.html">
@@ -217,12 +219,10 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#content" id="toc-content" class="nav-link active" data-scroll-target="#content">Content</a></li>
-  <li><a href="#lesson-slides-and-hands-on-notes" id="toc-lesson-slides-and-hands-on-notes" class="nav-link" data-scroll-target="#lesson-slides-and-hands-on-notes">Lesson Slides and Hands-on Notes</a>
-  <ul class="collapse">
+  <li><a href="#lesson-slides-and-hands-on-notes" id="toc-lesson-slides-and-hands-on-notes" class="nav-link" data-scroll-target="#lesson-slides-and-hands-on-notes">Lesson Slides and Hands-on Notes</a></li>
   <li><a href="#self-reading-before-meet-up" id="toc-self-reading-before-meet-up" class="nav-link" data-scroll-target="#self-reading-before-meet-up">Self-reading Before Meet-up</a></li>
-  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
-  <li><a href="#all-about-r" id="toc-all-about-r" class="nav-link" data-scroll-target="#all-about-r">All About R</a></li>
-  </ul></li>
+  <li><a href="#reference" id="toc-reference" class="nav-link" data-scroll-target="#reference">Reference</a></li>
+  <li><a href="#all-about-r" id="toc-all-about-r" class="nav-link" data-scroll-target="#all-about-r">All About R:</a></li>
   </ul>
 </nav>
     </div>
@@ -231,7 +231,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Lesson 8: Geographically Weighted Predictive Modelling</h1>
+<h1 class="title">Lesson 8: Delineating and Analysing Trade Area: Huff and MCI Models</h1>
 </div>
 
 
@@ -242,14 +242,14 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">July 21, 2024</p>
+      <p class="date">November 3, 2025</p>
     </div>
   </div>
   
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">July 19, 2026</p>
+      <p class="date-modified">October 12, 2026</p>
     </div>
   </div>
     
@@ -260,46 +260,66 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<p>According to Huff, trade area is defined as “a geographically delineated region containing potential customers for whom there exists a probability greater than zero of their purchasing a given class of products or services offered for sale by a particular firm or by a particular agglomeration of firms”. Several methods to delineate a store trade area have been proposed over the years. For drive-time or travel distance analysis method, the trade area is delineated according to how far or how long the customers are willing to travel to patronise the store. Another commonly used method is the Huff Model which assumes that consumer decisions are probabilistic and not deterministic.</p>
+<p>In this lesson, you will learn the basic concepts Spatial Interaction and Huff and MCI Models for trade area delineation and analysis.</p>
 <section id="content" class="level2">
 <h2 class="anchored" data-anchor-id="content">Content</h2>
 <ul>
-<li>What is Predictive Modelling?</li>
-<li>What is Geospatial Predictive Modelling</li>
-<li>Introducing Recursive Partitioning</li>
-<li>Advanced Recursive Partitioning: Random Forest</li>
-<li>Introducing Geographically Weighted Random Forest</li>
+<li>Basic Concepts of Spatial Interaction</li>
+<li>Introducing Huff model
+<ul>
+<li>Basic concepts and method</li>
+<li>Calibrating Huff model</li>
+<li>Interpreting Huff model results</li>
+</ul></li>
+<li>Introducing Multiplicative Competitive Interaction Model (MCI)
+<ul>
+<li>Basic concepts and method</li>
+<li>Calibrating MCI model</li>
+<li>Interpreting MCI model results</li>
+</ul></li>
 </ul>
 </section>
 <section id="lesson-slides-and-hands-on-notes" class="level2">
 <h2 class="anchored" data-anchor-id="lesson-slides-and-hands-on-notes">Lesson Slides and Hands-on Notes</h2>
 <ul>
-<li><p><a href="../lesson/Lesson08/Lesson08-GWRF.html">Lesson 8</a> slides.</p></li>
-<li><p>Handout of <a href="https://r4gdsa.netlify.app/chap14.html">Hands-on Exercise 8</a>.</p></li>
-</ul>
-<section id="self-reading-before-meet-up" class="level3">
-<h3 class="anchored" data-anchor-id="self-reading-before-meet-up">Self-reading Before Meet-up</h3>
-<p>To read before class:</p>
-<ul>
-<li><p>Stefanos Georganos et. al.&nbsp;(2019) <a href="https://www.tandfonline.com/doi/full/10.1080/10106049.2019.1595177">“Geographical Random Forests: A Spatial Extension of the Random Forest Algorithm to Address Spatial Heterogeneity in Remote Sensing and Population Modelling”</a>, <em>Geocarto International</em>, DOI: 10.1080/10106049.2019.1595177.</p></li>
-<li><p>Georganos, S. and Kalogirou, S. (2022) <a href="https://www.mdpi.com/2220-9964/11/9/471">“A Forest of Forests: A Spatially Weighted and Computationally Efficient Formulation of Geographical Random Forests”</a>. <strong>ISPRS, International Journal of Geo-Information</strong>, 2022, 11, 471. <a href="https://www.mdpi.com/2220-9964/11/9/471" class="uri">https://www.mdpi.com/2220-9964/11/9/471</a></p></li>
+<li>Lesson 8 slides in <a href="../lesson/Lesson08/Lesson08-Huff.html">html</a> format.</li>
+<li><a href="https://r4gdsa.netlify.app/chap18">Hands-on Exercise 8</a></li>
 </ul>
 </section>
-<section id="references" class="level3">
-<h3 class="anchored" data-anchor-id="references">References</h3>
+<section id="self-reading-before-meet-up" class="level2">
+<h2 class="anchored" data-anchor-id="self-reading-before-meet-up">Self-reading Before Meet-up</h2>
+<p>Read before lesson:</p>
 <ul>
-<li><p>George Grekousis et. al.&nbsp;(2022) <a href="https://doi.org/10.1016/j.healthplace.2022.102744">“Ranking the importance of demographic, socioeconomic, and underlying health factors on US COVID-19 deaths: A geographical random forest approach”</a>, <em>Health and Place</em>, vol.&nbsp;74, pp.&nbsp;1-12.</p></li>
-<li><p>Yaowen Luo, Jianguo Yan &amp; Stephen McClure. (2020) “<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7527667/pdf/11356_2020_Article_10962.pdf">Distribution of the environmental and socioeconomic risk factors on COVID-19 death rate across continental USA: a spatial nonlinear analysis</a>”, <em>Environmental Science and Pollution Research</em>, 28:6587–6599.</p></li>
-<li><p>Eun-Hee Koh, Eunhee Lee, &amp; Kang-Kun Lee (2020) “<a href="https://www.sciencedirect.com/science/article/pii/S0301479720305788">Application of geographically weighted regression models to predict spatial characteristics of nitrate contamination: Implications for an effective groundwater management strategy</a>”, <em>Journal of Environmental Management</em>. Vol. 268</p></li>
+<li><a href="https://transportgeography.org/contents/methods/spatial-interactions-gravity-model/">A.18 – Spatial Interactions and the Gravity Model</a></li>
+<li><a href="https://transportgeography.org/contents/methods/market-area-analysis/">A.15 – Market Area Analysis</a></li>
+<li>Huff, D. (1963)<a href="https://www.jstor.org/stable/3144521">A Probabilistic Analysis of Shopping Center Trade Areas</a></li>
+<li>Masao Nakanishi, Lee G. Cooper, (1982) <a href="https://www.anderson.ucla.edu/faculty/lee.cooper/Pubs/Simplified%20Estimation%20for%20MCI%20Models.pdf">Technical Note—Simplified Estimation Procedures for MCI Models</a>. Marketing Science 1(3):314-322. http://dx.doi.org/10.1287/mksc.1.3.314</li>
 </ul>
 </section>
-<section id="all-about-r" class="level3">
-<h3 class="anchored" data-anchor-id="all-about-r">All About R</h3>
+<section id="reference" class="level2">
+<h2 class="anchored" data-anchor-id="reference">Reference</h2>
 <ul>
-<li><a href="https://cran.r-project.org/web/packages/SpatialML/index.html">SpatialML</a></li>
+<li>Kingsley E. Haynes and A. Stewart Fotheringham (2020) <a href="https://researchrepository.wvu.edu/rri-web-book/16/"><strong>Gravity and Spatial Interaction Models</strong></a>, Web Book of Regional Science. Chapter 1 and Sub-section 2.2.</li>
+<li>Farmer, C. and Oshan, T. (2017). <a href="https://gistbok.ucgis.org/bok-topics/spatial-interaction">“Spatial interaction”</a>. <strong>The Geographic Information Science &amp; Technology Body of Knowledge</strong> (4th Quarter 2017 Edition), John P. Wilson (ed.). DOI: 10.22224/gistbok/2017.4.5 (link is external)</li>
+<li>Flowerdew R, Aitkin M (1982) <a href="https://www.academia.edu/38321611/A_Method_of_Fitting_the_Gravity_Model_Based_on_the_Poisson_Distribution_">“A method of fitting the gravity model based on the Poisson distribution”</a>. <em>Journal of Regional Science</em>, 22: 191–202.</li>
+<li><a href="https://www.insee.fr/en/statistiques/fichier/3635545/imet131-j-chapitre-6.pdf">” Chapter 6. Spatial econometrics - common models”</a>, Handbook of Spatial Analysis.</li>
+<li>James P. LeSage and R. Kelley Pace (2008) <a href="https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1467-9787.2008.00573.x">“Spatial Econometric Modeling of Origin-Destination Flows”</a>. <em>Journal of Regional Science</em>, Vol. 48, No.&nbsp;5, pp.&nbsp;941-967.</li>
+<li>Pavel KLAPKA, et. al.&nbsp;(2013) <a href="https://sciendo.com/de/article/10.2478/mgr-2013-0013">“The Footfall of Shopping Centre in Olomouc (CZECH REPUBLIC): An Application of The Gravity Model”</a>, <em>Moravian Geographical Reports</em>, Vol 21, pp.&nbsp;12-26.<br>
+</li>
+<li>Yang Yue et. al.&nbsp;(2012) “Exploratory calibration of a spatial interaction model using taxi GPS trajectories”, <em>Computers, Environment and Urban Systems</em>, 36 (2012) 140–153.</li>
+<li>Morito Tsutsumi and Kazuki Tamesue (2012) “Intraregional flow problem in spatial econometric model for origin-destination flows”, <em>Environment and Planning B: Planning and Design</em>, Vol. 39, pp.&nbsp;1006-1015. Access via SMU e-journal.</li>
+</ul>
+</section>
+<section id="all-about-r" class="level2">
+<h2 class="anchored" data-anchor-id="all-about-r">All About R:</h2>
+<ul>
+<li><a href="https://cran.r-project.org/web/packages/MCI/index.html">MCI: Multiplicative Competitive Interaction (MCI) Model</a></li>
+<li>Wieland, T., (2017) <a href="https://journal.r-project.org/articles/RJ-2017-020/RJ-2017-020.pdf">Market Area Analysis for Retail and Service Locations with MCI</a>, The R Journal, Vol. 9, No.&nbsp;1, pp.&nbsp;298-323.</li>
+<li><a href="https://cran.r-project.org/web/packages/REAT/index.html">REAT: Regional Economic Analysis Toolbox</a></li>
 </ul>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->

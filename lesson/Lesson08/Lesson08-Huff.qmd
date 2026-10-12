@@ -1,0 +1,218 @@
+---
+title: "Lesson 8 <br/>Delineating and Analysis Trade Area<br/>Huff and MCI Models"
+author: "Dr. Kam Tin Seong <br/>Assoc. Professor of Information Systems(Practice)"
+institute: "School of Computing and Information Systems,<br/>Singapore Management University"
+date: "`r Sys.Date()`"
+format: 
+  revealjs:
+    width: 1600
+    height: 900
+    show-notes: false
+    slide-number: true
+    show-slide-number: all
+date-format: "DD MMM YYYY"
+editor: visual
+---
+
+## Content
+
+- Characteristics of Spatial Interaction Data
+- The Huff Model
+- The Multiplicative Competitive Interaction (MCI) Model
+
+## What Spatial Interaction Models are?
+
+:::::: columns
+::: {.column width="65%"}
+Spatial interaction or "gravity models" estimate the flow of people, material, or information between locations in geographical space.
+
+![](img/image10-1.jpg)
+:::
+
+:::: {.column width="35%"}
+::: callout-note
+Spatial interaction models seek to explain existing spatial flows. As such it is possible to measure flows and predict the consequences of changes in the conditions generating them. When such attributes are known, it is possible to better allocate transport resources such as conveyances, infrastructure, and terminals.
+:::
+::::
+::::::
+
+------------------------------------------------------------------------
+
+### Conditions for Spatial Flows
+
+- Three interdependent conditions are necessary for a spatial interaction to occur:
+
+![](img/image10-2.jpg)
+
+::: notes
+- **Complementarity**. There must be a supply and a demand between the interacting locations. A residential zone is complementary to an employment zone because the first is supplying workers while the second is supplying jobs. The same can be said concerning the complementarity between a store and its customers and between an industry and its suppliers (movements of freight). An economic system is based on a large array of complementary activities.
+- **Intervening opportunity (lack of)**. Refers to a location that may offer a better alternative as a point of origin or as a point of destination. For instance, in order to have an interaction of a customer to a store, there must not be a closer store that offers a similar array of goods. Otherwise, the customer will likely patronize the closer store and the initial interaction will not take place.
+- **Transferability**. Mobility must be supported by transport infrastructures, implying that the origin and the destination must be linked. Costs to overcome distance must not be higher than the benefits of the related interaction, even if there are complementarity and no alternative opportunity.
+:::
+
+------------------------------------------------------------------------
+
+### Representation of a Movement as a Spatial Interaction
+
+::::: columns
+::: {.column width="50%"}
+Representing mobility as a spatial interaction involves several considerations:
+
+- Locations: A movement is occurring between a location of origin and a location of destination. i generally denotes an origin while j is a destination.
+- Centroid: An abstraction of the attributes of a zone at a point.
+- Flows: Flows are generally expressed by a valued vector Tij representing an interaction between locations i and j.
+- Vectors: A vector Tij links two centroids and has a value assigned to it (50) which can represents movements.
+:::
+
+::: {.column width="50%"}
+![](img/image10-3.jpg)
+:::
+:::::
+
+::: notes
+- Locations. A movement is occurring between a location of origin and a location of destination. i generally denotes an origin while j is a destination. The representation of origins and destinations commonly involves centroids.
+- Centroid. An abstraction of the attributes of a zone at a point. This is of particular relevance when the attributes generating mobility are zonal (e.g. ZIP codes, cities, states, etc.) while the graphic representation requires specific origins and destinations. For instance, showing flows between ZIP codes would implicitly require the generation of one centroid for each ZIP code.
+- Flows. Flows are generally expressed by a valued vector Tij representing an interaction between locations i and j.
+- Vectors. On the above figure, two areas, zone i and zone j, are represented as two centroids, i and j. A vector Tij links two centroids and has a value assigned to it (50) which can represents movements such as tons of freight, numbers of passengers per day, or number of phone calls.
+:::
+
+## Constructing an O/D Matrix
+
+- The construction of an origin / destination matrix requires directional flow information between a series of locations.
+- Figure below represents movements (O/D pairs) between five locations (A, B, C, D and E). From this graph, an O/D matrix can be built where each O/D pair becomes a cell. A value of 0 is assigned for each O/D pair that does not have an observed flow.
+
+![](img/image10-4.jpg)
+
+## Three Basic Types of Interaction Models
+
+- The general formulation of the spatial interaction model is stated as **Tij**, which is the interaction between location i (origin) and location j (destination). **Vi** are the attributes of the location of origin i, **Wj** are the attributes of the location of destination j, and **Sij** are the attributes of separation between the location of origin i and the location of destination j.
+- From this general formulation, three basic types of interaction models can be derived:
+
+![](img/image10-5.jpg)
+
+## Huff Model
+
+- Huff model is a retail trade area analysis tool commonly used by analysts and practitioners that **estimates the probability of a consumer visiting a specific store** by considering the store's attractiveness and the distance to it, relative to competing stores.
+- It uses a formula where the likelihood of patronage is proportional to the store's attractiveness (e.g., size) and inversely proportional to the distance from the consumer, which decays at a rate determined by a distance exponent.
+- Essentially, it helps businesses predict sales potential and determine market areas by calculating a site's attractiveness compared to its competitors.
+
+------------------------------------------------------------------------
+
+### The Utility function
+
+:::: columns
+::: {.column width="65%"}
+The basis of the Huff Model is the following multiplicative utility function with two explanatory variables representing two determinants of store choice (Huff and Batsell, 1975):
+
+$$
+U_{ij} = A^⍺_jd^{-𝜆}_{ij}
+$$
+
+where:
+
+- $U_{ij}$ is the utility of the supply location $j$ for the customers at origin $i$,
+
+- $A_j$ reflects the attraction of supply location $j$, and
+
+- $d_{ij}$ contains the transport costs customers from $i$ have to take to reach $j$.
+
+  The exponents ⍺ and 𝜆 are weighting parameters.
+:::
+::::
+
+------------------------------------------------------------------------
+
+### Huff Model: The interaction probability
+
+:::: columns
+::: {.column width="65%"}
+![](img/image6.jpg){width="1009"}
+
+These probabilites can be interpreted as market shares of location $j$ in origin $i$, what can be called **local market shares**. These shares implicitly represent a final state of consumer preference patterns in a spatial equilibrium (Huff and Batsell, 1975).
+:::
+::::
+
+------------------------------------------------------------------------
+
+### Huff Model: Visual explanation
+
+![](img/image8.jpg)
+
+------------------------------------------------------------------------
+
+### Market Share Analysis:
+
+:::: columns
+::: {.column width="50%"}
+The **expected customer/expenditure flows** from $i$ to $j$ are estimated by multiplying the local market shares with the local market potential (Huff, 1962):
+
+$$
+E_{ij} = p_{ij}C_i,
+$$
+
+where
+
+- $E_{ij}$ is the number of expected customer/purchasing power flows from origin $i$ to location $j$, and
+
+- $C_i$ is the total market potential (number of potential customers or purchasing power) in $i$.
+:::
+::::
+
+------------------------------------------------------------------------
+
+### Market Share Analysis:
+
+::::: columns
+::: {.column width="50%"}
+The **total sales of each store** in the study area can be determine by summing the expected expenditures from each geographical area for all stores. That is
+
+$$
+T_j = \sum_{i=1}^{m} E_{ij}
+$$ where $T_j$ is the market area of $j$ containing $m$ submarkets, normally measured in persons or money.
+:::
+
+::: {.column width="50%"}
+The **market share** of each store within the study area is each store's total expected sales divided by the total scales of all stores.
+
+$$
+M_j = T_j / \sum_{j=1}^{m} T_j
+$$
+:::
+:::::
+
+## The Multiplicative Competitive Interaction (MCI) Model
+
+The fundamental theorem behind market share models is the following simple relationship between the competitors’ characteristics and their market shares (Cooper and Nakanishi, 2010):
+
+$$
+MS_j =A_j/ \sum_{j=1}^{n} Aj,
+$$
+
+where $MS_j$ is the market share of competitor $j$ and $A_j$ is the attraction of $j$. This leads to two characteristics of market shares which are summarized as logical-consistency requirements for market shares: $0 < MS_j < 1$, and $\sum_{j=1}^{n} MS_j = 1$, respectively (Cooper and Nakanishi, 2010).
+
+------------------------------------------------------------------------
+
+### The MCI model
+
+- The MCI Model is explicitly formulated to regard a market which is segmented into $i$ submarkets $(i = 1, ...,m)$ and which is served by $j$ suppliers $(j = 1, ..., n)$.
+
+- The attraction function is multiplicative and consists of $h (h = 1, ..., H)$ explanatory variables which are weighted exponentially to reflect their sensitivity (Nakanishi and Cooper, 1974):
+
+![](img/image7.jpg){fig-align="center"}
+
+where:
+
+- $p_{ij}$ is the probability that the customers from submarket $i$ choose supplier $j$,
+
+- $A_{h_j}$ is the value of the h-th variable describing the object $j$,
+
+- $𝛄h$ is the weighting parameter for the sensitivity of $p_ij$ with respect to the variable $h$.
+
+```{r}
+#| echo: false
+#| eval: false
+renderthis::to_pdf(
+  from = "https://is415-ay2022-23t2.netlify.app/lesson/lesson11/lesson11-sim.html",
+  to = "D://IS415_AY2022-23T2/02-Lesson/Lesson11.pdf"
+)
+```
