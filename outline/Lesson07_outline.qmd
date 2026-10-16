@@ -41,17 +41,28 @@ Read before lesson:
 
 ## Reference
 
+- Soukhov, A., Pereira, R. H., Higgins, C. D., & Páez, A. (2025). "[A family of accessibility measures derived from spatial interaction principles](https://doi.org/10.1371/journal.pone.0335951)". *PLOS One*, 20(11), e0335951.
+
 - Section on "Transportation and Accessibility" in The Geography of Transport Systems.
+
 - Rich, D.C. (1980) Potential Models in Human Geography.
+
 - Orpana, T./Lampinen, J. (2003) "Building spatial choice models from aggregate data". Journal of Regional Science,43, 2, p. 319-347.
+
 - [Two-step floating catchment area method](https://en.wikipedia.org/wiki/Two-step_floating_catchment_area_method).
+
 - Cheng, Gang et. al. (2016) "Spatial difference analysis for accessibility to high level hospitals based on travel time in Shenzhen, China" Habitat International, Vol.53, p.485-494.
+
 - Polzin, Pierre ; Borges, José ; Coelho, António (2014) "An Extended Kernel Density Two-Step Floating Catchment Area Method to Analyze Access to Health Care" Environment and planning. B, Planning & design, Vol.41 (4), p.717-735.
 
 ## All About R:
 
-- [accessibility](https://ipeagit.github.io/accessibility/)
+- [accessibility](https://ipea.github.io/accessibility/index.html)
 
-- [SpatialAcc](https://cran.r-project.org/web/packages/SpatialAcc/) package.
+  - [Introduction to urban accessibility: A practical guide with R](https://ipeagit.github.io/intro_access_book/index.en.html)
+
+- [SpatialAcc](https://cran.r-project.org/web/packages/SpatialAcc/): An R package that provides a set of spatial accessibility measures from one set of locations (demand, such as where people live) to another set of locations (supply, such as services).  The package implements several established accessibility indicators, including Hansen gravity-based, Spatial Accessibility Measure ([SAM](https://www.researchgate.net/publication/235202669_Health_place_and_Hanly_Modelling_accessibility_to_hospitals_in_Ireland)) and two-step floating catchment area (2SFCA and KD2SFCA) type measures
 
 - [Potential](https://riatelab.github.io/potential/index.html) package.
+
+- [Catchment](https://uva-bi-sdad.github.io/catchment/): An R package to calculate spatial access and availability metrics.
