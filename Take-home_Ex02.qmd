@@ -18,9 +18,9 @@ This handout provides the context, the task, the expectation and the grading cri
 
 ## Setting the Scene
 
-Myanmar has been in armed conflict since 1948, when the country, then known as Burma, gained independence from the United Kingdom.  The conflict has largely been ethnic-based, with ethnic armed organisations fighting Myanmar's armed forces, the Tatmadaw, for self-determination.  Despite numerous ceasefires and the creation of autonomous self-administered zones in 2008, armed groups continue to call for independence, increased autonomy, democracy, or the federalisation of Myanmar.  It is the world's longest ongoing civil war, spanning almost eight decades.
+Myanmar has been in armed conflict since 1948, when the country, then known as Burma, gained independence from the United Kingdom. The conflict has largely been ethnic-based, with ethnic armed organisations fighting Myanmar's armed forces, the Tatmadaw, for self-determination. Despite numerous ceasefires and the creation of autonomous self-administered zones in 2008, armed groups continue to call for independence, increased autonomy, democracy, or the federalisation of Myanmar. It is the world's longest ongoing civil war, spanning almost eight decades.
 
-In February 2021, Myanmar’s military seized control of the country, overthrowing the government elected in 2020 and led by the National League for Democracy.  Initially, some believed that the newly established military government would quickly suppress protests and restore order. Instead, the junta’s repression – marked by arbitrary arrests and indiscriminate violence – intensified the conflict.  Since then, Myanmar has descended into civil war, causing thousands of deaths and displacing over three million people. Many civilians fled to forests and mountainous areas or joined the armed groups opposing the military, abandoning peaceful protests in favor of armed resistance. The country soon became fragmented into multiple zones controlled by different groups, with large areas slipping almost entirely out of the junta’s grasp.
+In February 2021, Myanmar’s military seized control of the country, overthrowing the government elected in 2020 and led by the National League for Democracy. Initially, some believed that the newly established military government would quickly suppress protests and restore order. Instead, the junta’s repression – marked by arbitrary arrests and indiscriminate violence – intensified the conflict. Since then, Myanmar has descended into civil war, causing thousands of deaths and displacing over three million people. Many civilians fled to forests and mountainous areas or joined the armed groups opposing the military, abandoning peaceful protests in favor of armed resistance. The country soon became fragmented into multiple zones controlled by different groups, with large areas slipping almost entirely out of the junta’s grasp.
 
 ## Objectives
 
@@ -28,8 +28,8 @@ In this exercise, you will explore Local Measures of Spatial Association methods
 
 The specific objectives of this take-home exercise are:
 
--   To pinpoint exact geographic hotspots, cold spots, and spatial outliers where violence clusters or behaves unusually compared to surrounding townships.
--   To reveal where, how fast, and in what pattern political violence is evolving over space and time.
+- To pinpoint exact geographic hotspots, cold spots, and spatial outliers where violence clusters or behaves unusually compared to surrounding townships.
+- To reveal where, how fast, and in what pattern political violence is evolving over space and time.
 
 In a modest way, we hope that the results can assist in peace-building initiatives and preventing further armed conflicts in the country.
 
@@ -39,36 +39,37 @@ The specific tasks of this take-home exercise are as follows:
 
 ### Geospatial Data Science
 
--   Build a geospatial analytical data by aggregating and counting arm conflict variables at the township level of Myanmar.   
--   Construct a space-time cube of arm by counting conflict variables over space and time.
+- Build a geospatial analytical data by aggregating and counting arm conflict variables at the township level of Myanmar.\
 
--   Display the geographical distribution of the arm conflict distribution and patterns by using appropriate geovisualisation methods,
+- Construct a space-time cube of arm by counting conflict variables over space and time.
 
--   Describe the spatial patterns revealed by the geovisualisation (not more than 200 words per visual).
+- Display the geographical distribution of the arm conflict distribution and patterns by using appropriate geovisualisation methods,
+
+- Describe the spatial patterns revealed by the geovisualisation (not more than 200 words per visual).
 
 ### Local Measures of Spatial Association (LMSA) Analysis
 
--   Compute LMSA statistic of the arm conflict variables generated.
--   Display the LMSA maps of the passengers trips generate by origin at hexagon level. The maps should only display the significant (i.e. p-value \< 0.05)\
--   With reference to the analysis results, draw statistical conclusions (not more than 200 words per visual).
+- Compute LMSA statistic of the arm conflict variables generated.
+- Display the LMSA maps of the arm conflict variables by township. The maps should only display the significant (i.e. p-value \< 0.05)\
+- With reference to the analysis results, draw statistical conclusions (not more than 200 words per visual).
 
 ### Emerging Hot Spot Analysis(EHSA)
 
 With reference to the arm conflict variables in the space-time cube:
 
--   perform Mann-Kendall Test by using the spatio-temporal local Gi\* values,
--   prepared EHSA maps of the Gi\* values of the passenger trips by origin at the hexagon level. The maps should only display the significant (i.e. p-value \< 0.05).\
--   With reference to the EHSA maps and data visualisation prepared, describe the spatial patterns revealed. (not more than 250 words per cluster).
+- perform Mann-Kendall Test by using the spatio-temporal local Gi\* values,
+- prepared EHSA maps of the Gi\* values of the arm conflict variables by township. The maps should only display the significant (i.e. p-value \< 0.05).\
+- With reference to the EHSA maps and data visualisation prepared, describe the spatial patterns revealed. (not more than 250 words per cluster).
 
 ## The Data
 
 ### Aspatial data
 
-For the purpose of this take-home exercise, **[Armed Conflict Location & Event Data Project (ACLED)](https://acleddata.com/)** data of Myanmar will be used.  The data set is available on eLearn.  The study time period is from 1st January 2021 to 30th September 2025.
+For the purpose of this take-home exercise, [**Armed Conflict Location & Event Data Project (ACLED)**](https://acleddata.com/) data of Myanmar will be used. The data set is available on eLearn. The study time period is from 1st January 2021 to 30th September 2025.
 
 ### Geospatial data
 
-**Myanmar Township Boundaries MIMU v9.4** should be used in this study.  The data set can be downloaded at [MIMU Geonode](https://geonode.themimu.info/).  
+**Myanmar Township Boundaries MIMU v9.4** should be used in this study. The data set can be downloaded at [MIMU Geonode](https://geonode.themimu.info/).
 
 ## Grading Criteria
 
@@ -113,10 +114,10 @@ You will be assessed on your ability to ensure that your analysis is fully repro
 - Clear explanation of purpose for each step (not just code, but why it is done).
 - Logical organisation of workflow, with modular structure and meaningful sectioning.
 - Proper documentation of R packages, data sources, and dependencies to allow replication by others.
-    
+
 ::: callout-tip
 Simply providing code chunks is insufficient. You must explain the purpose of each major analytical step, the function(s) used, the reason for the analytical decision, and any assumptions or limitations involved.
-:::    
+:::
 
 ### Bonus: Value-Added Analysis (15%)
 
@@ -231,22 +232,20 @@ on the coursework website and provide the required links through eLearn.
 
 You are advised to review these sample submissions prepared by your seniors.
 
--   [Christover Manafe](https://isss626-camanafe.netlify.app/take_home_ex/take_home_ex02/take_home_ex02)
--   [Teng Kok Wai](https://isss626-gaa.netlify.app/take-home_ex/take-home_ex02/take-home_ex02)
--   [Nguyen Bao Thu Phuong]()
-
+- [Christover Manafe](https://isss626-camanafe.netlify.app/take_home_ex/take_home_ex02/take_home_ex02)
+- [Teng Kok Wai](https://isss626-gaa.netlify.app/take-home_ex/take-home_ex02/take-home_ex02)
+- [Nguyen Bao Thu Phuong]()
 
 ## Learning from IS415
 
--   [KHANT MIN NAING](https://is415-geospatial-with-khant.netlify.app/take-home_ex/take-home_ex02/take-home_ex02): Very well done in all the five grading criteria especially the ability to provide a comprehensive overview of the analysis methods used and discussion on the analysis results.
--   [MATTHEW HO YIWEN](https://is415-gaa-matthew-ho.netlify.app/takehomeex/takehomeex2/the2) Able to provide a clear and comprehensive discussion on the geospatial data wrangling process and to communicate the analysis results by using appropriate geovisualisation and data visualisation methods.
+- [KHANT MIN NAING](https://is415-geospatial-with-khant.netlify.app/take-home_ex/take-home_ex02/take-home_ex02): Very well done in all the five grading criteria especially the ability to provide a comprehensive overview of the analysis methods used and discussion on the analysis results.
+- [MATTHEW HO YIWEN](https://is415-gaa-matthew-ho.netlify.app/takehomeex/takehomeex2/the2) Able to provide a clear and comprehensive discussion on the geospatial data wrangling process and to communicate the analysis results by using appropriate geovisualisation and data visualisation methods.
 
 ## Q & A
 
 Please submit your questions or queries related to this take-home exercise on Piazza.
 
 ## Peer Learning
-
 
 ## Reference
 
@@ -258,13 +257,12 @@ Please submit your questions or queries related to this take-home exercise on Pi
 
 ### Research articles
 
--   Uglješa Stankov et. al. (2017) "Spatial autocorrelation analysis of tourist arrivals using municipal data: A Serbian example", *Geographica Pannonica*, Vol.21 (2), p.106-114. SMU e-journal.
--   Khan, D. et. al. (2017) "[Hot spots, cluster detection and spatial outlier analysis of teen birth rates in the U.S., 2003–2012](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5618106/)", *Spatial and Spatio-temporal Epidemiology*, Vol. 21, pp. 67–75.
--   Muhammad Arif & Didit Purnomo (2017) "[Measuring Spatial Cluster for Leading Industries in Surakarta with Exploratory Spatial Data Analysis (ESDA)](https://journals.ums.ac.id/index.php/JEP/article/view/4178/0)", *Jurnal Ekonomi Pembangunan*, Vol. 18 (1), pp. 64-81.
--   Joshua T. Fergen \* and Ryan D. Bergstrom (2021) "[Social Vulnerability across the Great Lakes Basin: A County-Level Comparative and Spatial Analysis](https://www.mdpi.com/2071-1050/13/13/7274)", *Sustainability*, Vol. 13(13).
--   V Putrenko, N Pashynska, and S Nazarenko (2018) "Data Mining of Network Events With Space-Time Cube Application". In: R Westerholt, F-B Mocnik, and A Zipf (eds.), *Proceedings of the 1st Workshop on Platial Analysis* (PLATIAL’18), pp. 75–82. SMU e-journal.
--   Jamie Anne Boschan and Caterina G. Roman (2024) "[Hot Spots of Gun Violence in the Era of Focused Deterrence: A Space-Time Analysis of Shootings in South Philadelphia](https://www.mdpi.com/2076-0760/13/2/119)", Social Sciences, Vol. 13.
--   Minkyung Kim and Sangdon Lee (2023) "[Identification of Emerging Roadkill Hotspots on Korean Expressways Using Space–Time Cubes](https://www.mdpi.com/1660-4601/20/6/4896)", *Int. J. Environ. Res. Public Health*, 20(6).
--   TAN, Yong Ying and KAM, Tin Seong (2019) "[Exploring and visualizing household electricity consumption patterns in Singapore: A geospatial analytics approach](https://ink.library.smu.edu.sg/cgi/viewcontent.cgi?article=5379&context=sis_research)", *Information in Contemporary Society: 14th International Conference, iConference 2019*, Washington, DC, March 31-April 3: Proceedings, (pp.
-785-796) Springer. https://doi.org/10.1007/978-3-030-15742-5_74
--   MACK, Zhi Wei Vincent and KAM, Tin Seong (2018) "[Is there space for violence?: A data-driven approach to the exploration of spatial-temporal dimensions of conflict](https://ink.library.smu.edu.sg/cgi/viewcontent.cgi?article=5334&context=sis_research)", *Proceedings of the 2nd ACM SIGSPATIAL Workshop on Geospatial Humanities*, Seattle, WA, USA, 2018 November 06, (pp. 1-10) Seattle, WA, USA. ACM Digital Library. https://doi.org/10.1145/3282933.3282935 (Published)
+- Uglješa Stankov et. al. (2017) "Spatial autocorrelation analysis of tourist arrivals using municipal data: A Serbian example", *Geographica Pannonica*, Vol.21 (2), p.106-114. SMU e-journal.
+- Khan, D. et. al. (2017) "[Hot spots, cluster detection and spatial outlier analysis of teen birth rates in the U.S., 2003–2012](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5618106/)", *Spatial and Spatio-temporal Epidemiology*, Vol. 21, pp. 67–75.
+- Muhammad Arif & Didit Purnomo (2017) "[Measuring Spatial Cluster for Leading Industries in Surakarta with Exploratory Spatial Data Analysis (ESDA)](https://journals.ums.ac.id/index.php/JEP/article/view/4178/0)", *Jurnal Ekonomi Pembangunan*, Vol. 18 (1), pp. 64-81.
+- Joshua T. Fergen \* and Ryan D. Bergstrom (2021) "[Social Vulnerability across the Great Lakes Basin: A County-Level Comparative and Spatial Analysis](https://www.mdpi.com/2071-1050/13/13/7274)", *Sustainability*, Vol. 13(13).
+- V Putrenko, N Pashynska, and S Nazarenko (2018) "Data Mining of Network Events With Space-Time Cube Application". In: R Westerholt, F-B Mocnik, and A Zipf (eds.), *Proceedings of the 1st Workshop on Platial Analysis* (PLATIAL’18), pp. 75–82. SMU e-journal.
+- Jamie Anne Boschan and Caterina G. Roman (2024) "[Hot Spots of Gun Violence in the Era of Focused Deterrence: A Space-Time Analysis of Shootings in South Philadelphia](https://www.mdpi.com/2076-0760/13/2/119)", Social Sciences, Vol. 13.
+- Minkyung Kim and Sangdon Lee (2023) "[Identification of Emerging Roadkill Hotspots on Korean Expressways Using Space–Time Cubes](https://www.mdpi.com/1660-4601/20/6/4896)", *Int. J. Environ. Res. Public Health*, 20(6).
+- TAN, Yong Ying and KAM, Tin Seong (2019) "[Exploring and visualizing household electricity consumption patterns in Singapore: A geospatial analytics approach](https://ink.library.smu.edu.sg/cgi/viewcontent.cgi?article=5379&context=sis_research)", *Information in Contemporary Society: 14th International Conference, iConference 2019*, Washington, DC, March 31-April 3: Proceedings, (pp. 785-796) Springer. https://doi.org/10.1007/978-3-030-15742-5_74
+- MACK, Zhi Wei Vincent and KAM, Tin Seong (2018) "[Is there space for violence?: A data-driven approach to the exploration of spatial-temporal dimensions of conflict](https://ink.library.smu.edu.sg/cgi/viewcontent.cgi?article=5334&context=sis_research)", *Proceedings of the 2nd ACM SIGSPATIAL Workshop on Geospatial Humanities*, Seattle, WA, USA, 2018 November 06, (pp. 1-10) Seattle, WA, USA. ACM Digital Library. https://doi.org/10.1145/3282933.3282935 (Published)
