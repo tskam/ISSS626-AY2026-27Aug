@@ -35,13 +35,15 @@ Read before lesson:
 
 - Hansen, W. G. (1959): ["How Accessibility Shapes Land Use"](https://dspace.mit.edu/bitstream/handle/1721.1/74869/32597665-MIT.pdf?...2). *Journal of the American Institute of Planners*, 25, 2, p. 73-76.
 
-- Luo, W.; Wang, F. (2003) ["Measures of spatial accessibility to health care in a GIS environment: synthesis and a case study in the Chicago region"](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8238135/). *Environment and Planning B: Planning and Design.* 30 (6): 865--884. doi:10.1068/b29120.
-
-- Luo, W.; Qi, Y. (2009). ["An enhanced two-step floating catchment area (E2SFCA) method for measuring spatial accessibility to primary care physicians"](https://www.researchgate.net/publication/26646789_An_Enhanced_Two-Step_Floating_Catchment_Area_E2SFCA_Method_for_Measuring_Spatial_Accessibility_to_Primary_Care_Physicians). *Health & Place*. 15 (4): 1100--1107.
+- [2SFCA Method](https://www.youtube.com/watch?v=u1wbb6ZZgOw&t=14s)
 
 ## Reference
 
 - Soukhov, A., Pereira, R. H., Higgins, C. D., & Páez, A. (2025). "[A family of accessibility measures derived from spatial interaction principles](https://doi.org/10.1371/journal.pone.0335951)". *PLOS One*, 20(11), e0335951.
+
+- Luo, W.; Wang, F. (2003) ["Measures of spatial accessibility to health care in a GIS environment: synthesis and a case study in the Chicago region"](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8238135/). *Environment and Planning B: Planning and Design.* 30 (6): 865--884. doi:10.1068/b29120.
+
+- Luo, W.; Qi, Y. (2009). ["An enhanced two-step floating catchment area (E2SFCA) method for measuring spatial accessibility to primary care physicians"](https://www.researchgate.net/publication/26646789_An_Enhanced_Two-Step_Floating_Catchment_Area_E2SFCA_Method_for_Measuring_Spatial_Accessibility_to_Primary_Care_Physicians). *Health & Place*. 15 (4): 1100--1107.
 
 - Section on "Transportation and Accessibility" in The Geography of Transport Systems.
 
@@ -61,7 +63,7 @@ Read before lesson:
 
   - [Introduction to urban accessibility: A practical guide with R](https://ipeagit.github.io/intro_access_book/index.en.html)
 
-- [SpatialAcc](https://cran.r-project.org/web/packages/SpatialAcc/): An R package that provides a set of spatial accessibility measures from one set of locations (demand, such as where people live) to another set of locations (supply, such as services).  The package implements several established accessibility indicators, including Hansen gravity-based, Spatial Accessibility Measure ([SAM](https://www.researchgate.net/publication/235202669_Health_place_and_Hanly_Modelling_accessibility_to_hospitals_in_Ireland)) and two-step floating catchment area (2SFCA and KD2SFCA) type measures
+- [SpatialAcc](https://cran.r-project.org/web/packages/SpatialAcc/): An R package that provides a set of spatial accessibility measures from one set of locations (demand, such as where people live) to another set of locations (supply, such as services). The package implements several established accessibility indicators, including Hansen gravity-based, Spatial Accessibility Measure ([SAM](https://www.researchgate.net/publication/235202669_Health_place_and_Hanly_Modelling_accessibility_to_hospitals_in_Ireland)) and two-step floating catchment area (2SFCA and KD2SFCA) type measures
 
 - [Potential](https://riatelab.github.io/potential/index.html) package.
 
