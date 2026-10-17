@@ -2151,9 +2151,9 @@
   {
     "objectID": "In-class_Ex/In-class_Ex07/In-class_Ex07-accessibility.html",
     "href": "In-class_Ex/In-class_Ex07/In-class_Ex07-accessibility.html",
-    "title": "In-class Exercise 7: Geography of Accessibility: accessibility methods",
+    "title": "In-class Exercise 7: Geography of Accessibility: catchment methods",
     "section": "",
-    "text": "remotes::install_github('uva-bi-sdad/catchment')\n\n\npacman::p_load(sf, tidyverse, tmap, accessibility, catchment)"
+    "text": "Use the code chunk below to install catchment R package from github.\n\nremotes::install_github('uva-bi-sdad/catchment')\n\nNext, load sf, tidyverse, tmap, accessibility and catchment R packages into RStudio environment using the code chunk below\n\npacman::p_load(sf, tidyverse, tmap, accessibility, catchment)"
   },
   {
     "objectID": "In-class_Ex/In-class_Ex07/In-class_Ex07-accessibility.html#loading-r-package",
