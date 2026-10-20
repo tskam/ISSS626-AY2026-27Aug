@@ -1,5 +1,5 @@
 ---
-title: "Lesson 8 <br/>Delineating and Analysis Trade Area<br/>Huff and MCI Models"
+title: "Lesson 8 <br/>Market Area Analysis for Retail and <br/>Service Locations: Huff and MCI Models"
 author: "Dr. Kam Tin Seong <br/>Assoc. Professor of Information Systems(Practice)"
 institute: "School of Computing and Information Systems,<br/>Singapore Management University"
 date: "`r Sys.Date()`"
@@ -16,31 +16,29 @@ editor: visual
 
 ## Content
 
-- Characteristics of Spatial Interaction Data
+- Geospatial Analytics for Business Geography
 - The Huff Model
 - The Multiplicative Competitive Interaction (MCI) Model
 
-## What Spatial Interaction Models are?
+## Geospatial Analytics for Business Geography
 
-:::::: columns
-::: {.column width="65%"}
-Spatial interaction or "gravity models" estimate the flow of people, material, or information between locations in geographical space.
+Business geography is the application of geographic analysis, geospatial data, and spatial technology to improve corporate and strategic decision-making.
 
-![](img/image10-1.jpg)
-:::
+Key elements of business geography includes but not limited to
 
-:::: {.column width="35%"}
-::: callout-note
-Spatial interaction models seek to explain existing spatial flows. As such it is possible to measure flows and predict the consequences of changes in the conditions generating them. When such attributes are known, it is possible to better allocate transport resources such as conveyances, infrastructure, and terminals.
-:::
-::::
-::::::
+- Site Selection: Using spatial data, demographics, and traffic patterns to find the best locations for retail stores, warehouses, or factories.
+- Market Analysis: Dividing and targeting consumer bases by region, city, climate, or urban versus rural settings (geographic segmentation).
+- Supply Chain & Logistics: Tracking the movement of raw materials, manufacturing hubs, and distribution routes across local and global networks.
+- Risk & Environmental Assessment: Evaluating regional vulnerabilities like natural disasters, resource scarcity (such as water stress), or regulatory changes.
+- Economic Base & Location Quotient: Measuring whether a local economy or industry exports goods outside its region or only serves internal demand.
+
+
 
 ------------------------------------------------------------------------
 
-### Conditions for Spatial Flows
+### Market Area Analysis
 
-- Three interdependent conditions are necessary for a spatial interaction to occur:
+A market area analysis is a structured evaluation of the geographic and demographic boundaries from which a business draws its customers, designed to assess demand, competition, and growth potential.
 
 ![](img/image10-2.jpg)
 
@@ -52,49 +50,42 @@ Spatial interaction models seek to explain existing spatial flows. As such it is
 
 ------------------------------------------------------------------------
 
-### Representation of a Movement as a Spatial Interaction
+## The Origin of Retail Trade Area: Reilly's Law
 
-::::: columns
+Reilly’s law of retail gravitation (1931) aims to find a point of indifference between two locations, so that the trading area of each can be determined. This point is assumed to be a function of the distance between two locations pondered by their respective size (population often used for this purpose). A location can thus be more attractive than the other.
+
+::: columns
 ::: {.column width="50%"}
-Representing mobility as a spatial interaction involves several considerations:
-
-- Locations: A movement is occurring between a location of origin and a location of destination. i generally denotes an origin while j is a destination.
-- Centroid: An abstraction of the attributes of a zone at a point.
-- Flows: Flows are generally expressed by a valued vector Tij representing an interaction between locations i and j.
-- Vectors: A vector Tij links two centroids and has a value assigned to it (50) which can represents movements.
+![](img/image10-6.jpg)
 :::
 
 ::: {.column width="50%"}
-![](img/image10-3.jpg)
+In the figure, two locations are 75 km apart. According to the Hotelling principle, the point of indifference should be halfway in between (37.5 km). However, since location A has a larger population (more weight), it is assumed to draw more customers. Under such circumstances, the point of indifference is 45.9 km away from location A.
 :::
-:::::
-
-::: notes
-- Locations. A movement is occurring between a location of origin and a location of destination. i generally denotes an origin while j is a destination. The representation of origins and destinations commonly involves centroids.
-- Centroid. An abstraction of the attributes of a zone at a point. This is of particular relevance when the attributes generating mobility are zonal (e.g. ZIP codes, cities, states, etc.) while the graphic representation requires specific origins and destinations. For instance, showing flows between ZIP codes would implicitly require the generation of one centroid for each ZIP code.
-- Flows. Flows are generally expressed by a valued vector Tij representing an interaction between locations i and j.
-- Vectors. On the above figure, two areas, zone i and zone j, are represented as two centroids, i and j. A vector Tij links two centroids and has a value assigned to it (50) which can represents movements such as tons of freight, numbers of passengers per day, or number of phone calls.
 :::
 
-## Constructing an O/D Matrix
-
-- The construction of an origin / destination matrix requires directional flow information between a series of locations.
-- Figure below represents movements (O/D pairs) between five locations (A, B, C, D and E). From this graph, an O/D matrix can be built where each O/D pair becomes a cell. A value of 0 is assigned for each O/D pair that does not have an observed flow.
-
-![](img/image10-4.jpg)
-
-## Three Basic Types of Interaction Models
-
-- The general formulation of the spatial interaction model is stated as **Tij**, which is the interaction between location i (origin) and location j (destination). **Vi** are the attributes of the location of origin i, **Wj** are the attributes of the location of destination j, and **Sij** are the attributes of separation between the location of origin i and the location of destination j.
-- From this general formulation, three basic types of interaction models can be derived:
-
-![](img/image10-5.jpg)
 
 ## Huff Model
 
 - Huff model is a retail trade area analysis tool commonly used by analysts and practitioners that **estimates the probability of a consumer visiting a specific store** by considering the store's attractiveness and the distance to it, relative to competing stores.
 - It uses a formula where the likelihood of patronage is proportional to the store's attractiveness (e.g., size) and inversely proportional to the distance from the consumer, which decays at a rate determined by a distance exponent.
 - Essentially, it helps businesses predict sales potential and determine market areas by calculating a site's attractiveness compared to its competitors.
+
+------------------------------------------------------------------------
+
+### Huff Model: Visual explanation
+
+Huff’s retail model (1963) assumes that customers have a choice to patronize a location in view of other alternatives. Thus, a market area is expressed as a continuous probabilities line, unless there are no other alternative locations. The indifference point becomes the point of equal probability that a customer will patronize one location or another.
+
+::: columns
+::: {.column width = "50%"}
+![](img/image8.jpg)
+:::
+
+::: {.column width = "50%"}
+In the figure, a customer has a greater chance (0.71) to patronize location A at the midpoint than location B (0.29). The advantage of Huff’s retail model is that it leaves room for customer choice.
+:::
+:::
 
 ------------------------------------------------------------------------
 
@@ -132,11 +123,7 @@ These probabilites can be interpreted as market shares of location $j$ in origin
 :::
 ::::
 
-------------------------------------------------------------------------
 
-### Huff Model: Visual explanation
-
-![](img/image8.jpg)
 
 ------------------------------------------------------------------------
 

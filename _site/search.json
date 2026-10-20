@@ -95,7 +95,7 @@
     "href": "lesson.html",
     "title": "Weekly Lesson Plan",
     "section": "",
-    "text": "Week\nDate\nTopic\nStudent Assignment\n\n\n\n\n1\n29/8/2026\nIntroduction to Geospatial Analytics\n\n\n\n2\n5/9/2026\nSpatial Point Patterns Analysis (SPAA)\n\n\n\n3\n12/9/2026\nAdvanced Spatial Point Patterns Analysis\n\n\n\n4\n19/9/2026\nSpatial Weights and Applications\n\n\n\n5\n26/9/2026\nGlobal and Local Measures of Spatial Association\nTake-home Exercise 1 due\n\n\n6\n3/10/2026\nGeographic Segmentation\n\n\n\n\n10/10/2026\nRecess\n\n\n\n7\n17/10/2026\nModelling Geographic of Accessibility\n\n\n\n8\n24/10/2026\nSpatial Interaction Models\nTake-home Exercise 2 due\n\n\n9\n31/10/2026\nGeographically Weighted Explanatory Models\n\n\n\n10\n7/11/2026\nGeographically Weighted Predictive Models\nTimed Individual Assessment\n\n\n11\n14/11/2026\nExamination Week\nTake-home Exercise 3 due"
+    "text": "Week\nDate\nTopic\nStudent Assignment\n\n\n\n\n1\n29/8/2026\nIntroduction to Geospatial Analytics\n\n\n\n2\n5/9/2026\nSpatial Point Patterns Analysis (SPAA)\n\n\n\n3\n12/9/2026\nAdvanced Spatial Point Patterns Analysis\n\n\n\n4\n19/9/2026\nSpatial Weights and Applications\n\n\n\n5\n26/9/2026\nGlobal and Local Measures of Spatial Association\nTake-home Exercise 1 due\n\n\n6\n3/10/2026\nGeographic Segmentation\n\n\n\n\n10/10/2026\nRecess\n\n\n\n7\n17/10/2026\nModelling Geographic of Accessibility\n\n\n\n8\n24/10/2026\nMarket Area Analysis for Retail and Service Locations\nTake-home Exercise 2 due\n\n\n9\n31/10/2026\nGeographically Weighted Explanatory Models\n\n\n\n10\n7/11/2026\nGeographically Weighted Predictive Models\nTimed Individual Assessment\n\n\n11\n14/11/2026\nExamination Week\nTake-home Exercise 3 due"
   },
   {
     "objectID": "R.html",
@@ -240,21 +240,21 @@
   {
     "objectID": "outline/Lesson08_outline.html",
     "href": "outline/Lesson08_outline.html",
-    "title": "Lesson 8: Delineating and Analysing Trade Area: Huff and MCI Models",
+    "title": "Lesson 8: Market Area Analysis for Retail and Service Locations: Huff and MCI Models",
     "section": "",
     "text": "According to Huff, trade area is defined as “a geographically delineated region containing potential customers for whom there exists a probability greater than zero of their purchasing a given class of products or services offered for sale by a particular firm or by a particular agglomeration of firms”. Several methods to delineate a store trade area have been proposed over the years. For drive-time or travel distance analysis method, the trade area is delineated according to how far or how long the customers are willing to travel to patronise the store. Another commonly used method is the Huff Model which assumes that consumer decisions are probabilistic and not deterministic.\nIn this lesson, you will learn the basic concepts Spatial Interaction and Huff and MCI Models for trade area delineation and analysis."
   },
   {
     "objectID": "outline/Lesson08_outline.html#content",
     "href": "outline/Lesson08_outline.html#content",
-    "title": "Lesson 8: Delineating and Analysing Trade Area: Huff and MCI Models",
+    "title": "Lesson 8: Market Area Analysis for Retail and Service Locations: Huff and MCI Models",
     "section": "Content",
     "text": "Content\n\nBasic Concepts of Spatial Interaction\nIntroducing Huff model\n\nBasic concepts and method\nCalibrating Huff model\nInterpreting Huff model results\n\nIntroducing Multiplicative Competitive Interaction Model (MCI)\n\nBasic concepts and method\nCalibrating MCI model\nInterpreting MCI model results"
   },
   {
     "objectID": "outline/Lesson08_outline.html#lesson-slides-and-hands-on-notes",
     "href": "outline/Lesson08_outline.html#lesson-slides-and-hands-on-notes",
-    "title": "Lesson 8: Delineating and Analysing Trade Area: Huff and MCI Models",
+    "title": "Lesson 8: Market Area Analysis for Retail and Service Locations: Huff and MCI Models",
     "section": "Lesson Slides and Hands-on Notes",
     "text": "Lesson Slides and Hands-on Notes\n\nLesson 8 slides in html format.\nHands-on Exercise 8"
   },
@@ -1899,21 +1899,21 @@
   {
     "objectID": "outline/Lesson08_outline.html#self-reading-before-meet-up",
     "href": "outline/Lesson08_outline.html#self-reading-before-meet-up",
-    "title": "Lesson 8: Delineating and Analysing Trade Area: Huff and MCI Models",
+    "title": "Lesson 8: Market Area Analysis for Retail and Service Locations: Huff and MCI Models",
     "section": "Self-reading Before Meet-up",
     "text": "Self-reading Before Meet-up\nRead before lesson:\n\nA.18 – Spatial Interactions and the Gravity Model\nA.15 – Market Area Analysis\nHuff, D. (1963)A Probabilistic Analysis of Shopping Center Trade Areas\nMasao Nakanishi, Lee G. Cooper, (1982) Technical Note—Simplified Estimation Procedures for MCI Models. Marketing Science 1(3):314-322. http://dx.doi.org/10.1287/mksc.1.3.314"
   },
   {
     "objectID": "outline/Lesson08_outline.html#reference",
     "href": "outline/Lesson08_outline.html#reference",
-    "title": "Lesson 8: Delineating and Analysing Trade Area: Huff and MCI Models",
+    "title": "Lesson 8: Market Area Analysis for Retail and Service Locations: Huff and MCI Models",
     "section": "Reference",
-    "text": "Reference\n\nKingsley E. Haynes and A. Stewart Fotheringham (2020) Gravity and Spatial Interaction Models, Web Book of Regional Science. Chapter 1 and Sub-section 2.2.\nFarmer, C. and Oshan, T. (2017). “Spatial interaction”. The Geographic Information Science & Technology Body of Knowledge (4th Quarter 2017 Edition), John P. Wilson (ed.). DOI: 10.22224/gistbok/2017.4.5 (link is external)\nFlowerdew R, Aitkin M (1982) “A method of fitting the gravity model based on the Poisson distribution”. Journal of Regional Science, 22: 191–202.\n” Chapter 6. Spatial econometrics - common models”, Handbook of Spatial Analysis.\nJames P. LeSage and R. Kelley Pace (2008) “Spatial Econometric Modeling of Origin-Destination Flows”. Journal of Regional Science, Vol. 48, No. 5, pp. 941-967.\nPavel KLAPKA, et. al. (2013) “The Footfall of Shopping Centre in Olomouc (CZECH REPUBLIC): An Application of The Gravity Model”, Moravian Geographical Reports, Vol 21, pp. 12-26.\n\nYang Yue et. al. (2012) “Exploratory calibration of a spatial interaction model using taxi GPS trajectories”, Computers, Environment and Urban Systems, 36 (2012) 140–153.\nMorito Tsutsumi and Kazuki Tamesue (2012) “Intraregional flow problem in spatial econometric model for origin-destination flows”, Environment and Planning B: Planning and Design, Vol. 39, pp. 1006-1015. Access via SMU e-journal."
+    "text": "Reference\n\nSuhara, Yoshihiko. et. al. (2021) “Validating Gravity-Based Market Share Models Using Large-Scale Transactional Data” Big Data, 9 (3).\nMeenal (2025) “Huff gravity model applications: A data driven machine learning model for store close decisions strategy + assessing the efficacy of market share models using this approach on large-scale transactional data + predicting impact on economic results due to diversity in cities”\nZhenjun Zhu et. al. (2021) “Improved Huff Model for Estimating Urban Rail Transit Station Catchment Areas considering Station Choices” Journal of Advanced Transportation, Volume 2021.\nDwi Bekti and Noviana Pratiwi (2018) “Multiplicative Competition Interaction Model to obtained Retail Consumer Choice based on Spatial Analysis”, IOP Conference Series Earth and Environmental Science 2018 187:012041"
   },
   {
     "objectID": "outline/Lesson08_outline.html#all-about-r",
     "href": "outline/Lesson08_outline.html#all-about-r",
-    "title": "Lesson 8: Delineating and Analysing Trade Area: Huff and MCI Models",
+    "title": "Lesson 8: Market Area Analysis for Retail and Service Locations: Huff and MCI Models",
     "section": "All About R:",
     "text": "All About R:\n\nMCI: Multiplicative Competitive Interaction (MCI) Model\nWieland, T., (2017) Market Area Analysis for Retail and Service Locations with MCI, The R Journal, Vol. 9, No. 1, pp. 298-323.\nREAT: Regional Economic Analysis Toolbox"
   },
@@ -2245,5 +2245,61 @@
     "title": "In-class Exercise 7: Geography of Accessibility: catchment methods",
     "section": "Modified 2-Step Floating Catchment Area",
     "text": "Modified 2-Step Floating Catchment Area\n\ndf_m2sfca &lt;- catchment_ratio(\n  consumers = hexagons$demand, \n  providers = eldercare$capacity,\n  cost = distmat_km,\n  step_weights, \n  adjust_providers = function(w) w^2) %&gt;%\n  as.data.frame() %&gt;%\n  rename(\"M2SFCA\" = \".\")"
+  },
+  {
+    "objectID": "lesson/Lesson08/Lesson08-Huff&MCI.html#content",
+    "href": "lesson/Lesson08/Lesson08-Huff&MCI.html#content",
+    "title": "Lesson 8 Market Area Analysis for Retail and Service Locations: Huff and MCI Models",
+    "section": "Content",
+    "text": "Content\n\nGeospatial Analytics for Business Geography\nThe Huff Model\nThe Multiplicative Competitive Interaction (MCI) Model"
+  },
+  {
+    "objectID": "lesson/Lesson08/Lesson08-Huff&MCI.html#what-spatial-interaction-models-are",
+    "href": "lesson/Lesson08/Lesson08-Huff&MCI.html#what-spatial-interaction-models-are",
+    "title": "Lesson 8 Market Area Analysis for Retail and Service Locations: Huff and MCI Models",
+    "section": "What Spatial Interaction Models are?",
+    "text": "What Spatial Interaction Models are?\n\n\nSpatial interaction or “gravity models” estimate the flow of people, material, or information between locations in geographical space.\n\n\n\n\n\n\n\n\nNote\n\n\nSpatial interaction models seek to explain existing spatial flows. As such it is possible to measure flows and predict the consequences of changes in the conditions generating them. When such attributes are known, it is possible to better allocate transport resources such as conveyances, infrastructure, and terminals."
+  },
+  {
+    "objectID": "lesson/Lesson08/Lesson08-Huff&MCI.html#constructing-an-od-matrix",
+    "href": "lesson/Lesson08/Lesson08-Huff&MCI.html#constructing-an-od-matrix",
+    "title": "Lesson 8 Market Area Analysis for Retail and Service Locations: Huff and MCI Models",
+    "section": "Constructing an O/D Matrix",
+    "text": "Constructing an O/D Matrix\n\nThe construction of an origin / destination matrix requires directional flow information between a series of locations.\nFigure below represents movements (O/D pairs) between five locations (A, B, C, D and E). From this graph, an O/D matrix can be built where each O/D pair becomes a cell. A value of 0 is assigned for each O/D pair that does not have an observed flow."
+  },
+  {
+    "objectID": "lesson/Lesson08/Lesson08-Huff&MCI.html#three-basic-types-of-interaction-models",
+    "href": "lesson/Lesson08/Lesson08-Huff&MCI.html#three-basic-types-of-interaction-models",
+    "title": "Lesson 8 Market Area Analysis for Retail and Service Locations: Huff and MCI Models",
+    "section": "Three Basic Types of Interaction Models",
+    "text": "Three Basic Types of Interaction Models\n\nThe general formulation of the spatial interaction model is stated as Tij, which is the interaction between location i (origin) and location j (destination). Vi are the attributes of the location of origin i, Wj are the attributes of the location of destination j, and Sij are the attributes of separation between the location of origin i and the location of destination j.\nFrom this general formulation, three basic types of interaction models can be derived:"
+  },
+  {
+    "objectID": "lesson/Lesson08/Lesson08-Huff&MCI.html#huff-model",
+    "href": "lesson/Lesson08/Lesson08-Huff&MCI.html#huff-model",
+    "title": "Lesson 8 Market Area Analysis for Retail and Service Locations: Huff and MCI Models",
+    "section": "Huff Model",
+    "text": "Huff Model\n\nHuff model is a retail trade area analysis tool commonly used by analysts and practitioners that estimates the probability of a consumer visiting a specific store by considering the store’s attractiveness and the distance to it, relative to competing stores.\nIt uses a formula where the likelihood of patronage is proportional to the store’s attractiveness (e.g., size) and inversely proportional to the distance from the consumer, which decays at a rate determined by a distance exponent.\nEssentially, it helps businesses predict sales potential and determine market areas by calculating a site’s attractiveness compared to its competitors."
+  },
+  {
+    "objectID": "lesson/Lesson08/Lesson08-Huff&MCI.html#the-multiplicative-competitive-interaction-mci-model",
+    "href": "lesson/Lesson08/Lesson08-Huff&MCI.html#the-multiplicative-competitive-interaction-mci-model",
+    "title": "Lesson 8 Market Area Analysis for Retail and Service Locations: Huff and MCI Models",
+    "section": "The Multiplicative Competitive Interaction (MCI) Model",
+    "text": "The Multiplicative Competitive Interaction (MCI) Model\nThe fundamental theorem behind market share models is the following simple relationship between the competitors’ characteristics and their market shares (Cooper and Nakanishi, 2010):\n\\[\nMS_j =A_j/ \\sum_{j=1}^{n} Aj,\n\\]\nwhere \\(MS_j\\) is the market share of competitor \\(j\\) and \\(A_j\\) is the attraction of \\(j\\). This leads to two characteristics of market shares which are summarized as logical-consistency requirements for market shares: \\(0 &lt; MS_j &lt; 1\\), and \\(\\sum_{j=1}^{n} MS_j = 1\\), respectively (Cooper and Nakanishi, 2010)."
+  },
+  {
+    "objectID": "lesson/Lesson08/Lesson08-Huff&MCI.html#geospatial-analytics-for-business-geography",
+    "href": "lesson/Lesson08/Lesson08-Huff&MCI.html#geospatial-analytics-for-business-geography",
+    "title": "Lesson 8 Market Area Analysis for Retail and Service Locations: Huff and MCI Models",
+    "section": "Geospatial Analytics for Business Geography",
+    "text": "Geospatial Analytics for Business Geography\nBusiness geography is the application of geographic analysis, geospatial data, and spatial technology to improve corporate and strategic decision-making.\nKey elements of business geography includes but not limited to\n\nSite Selection: Using spatial data, demographics, and traffic patterns to find the best locations for retail stores, warehouses, or factories.\nMarket Analysis: Dividing and targeting consumer bases by region, city, climate, or urban versus rural settings (geographic segmentation).\nSupply Chain & Logistics: Tracking the movement of raw materials, manufacturing hubs, and distribution routes across local and global networks.\nRisk & Environmental Assessment: Evaluating regional vulnerabilities like natural disasters, resource scarcity (such as water stress), or regulatory changes.\nEconomic Base & Location Quotient: Measuring whether a local economy or industry exports goods outside its region or only serves internal demand."
+  },
+  {
+    "objectID": "lesson/Lesson08/Lesson08-Huff&MCI.html#the-origin-of-retail-trade-area-reillys-law",
+    "href": "lesson/Lesson08/Lesson08-Huff&MCI.html#the-origin-of-retail-trade-area-reillys-law",
+    "title": "Lesson 8 Market Area Analysis for Retail and Service Locations: Huff and MCI Models",
+    "section": "The Origin of Retail Trade Area: Reilly’s Law",
+    "text": "The Origin of Retail Trade Area: Reilly’s Law\nReilly’s law of retail gravitation (1931) aims to find a point of indifference between two locations, so that the trading area of each can be determined. This point is assumed to be a function of the distance between two locations pondered by their respective size (population often used for this purpose). A location can thus be more attractive than the other.\n\n\n\n\nIn the figure, two locations are 75 km apart. According to the Hotelling principle, the point of indifference should be halfway in between (37.5 km). However, since location A has a larger population (more weight), it is assumed to draw more customers. Under such circumstances, the point of indifference is 45.9 km away from location A."
   }
 ]

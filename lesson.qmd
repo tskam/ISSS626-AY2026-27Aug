@@ -15,7 +15,7 @@ editor: visual
 | 6 | 3/10/2026 | [Geographic Segmentation](outline/Lesson06_outline.html) |  |
 |  | 10/10/2026 | Recess |  |
 | 7 | 17/10/2026 | [Modelling Geographic of Accessibility](outline/Lesson07_outline.html) |  |
-| 8 | 24/10/2026 | [Trade Area Analysis](outline/Lesson08_outline.html) | Take-home Exercise 2 due |
+| 8 | 24/10/2026 | [Market Area Analysis for Retail and Service Locations ](outline/Lesson08_outline.html) | Take-home Exercise 2 due |
 | 9 | 31/10/2026 | [Geographically Weighted Explanatory Models](outline/Lesson09_outline.html) |  |
 | 10 | 7/11/2026 | [Geographically Weighted Predictive Models](outline/Lesson10_outline.html) | Timed Individual Assessment |
 | 11 | 14/11/2026 | Examination Week | Take-home Exercise 3 due |
