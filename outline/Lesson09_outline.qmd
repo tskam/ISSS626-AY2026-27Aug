@@ -1,5 +1,5 @@
 ---
-title: "Lesson 7: Geographically Weighted Regression"
+title: "Lesson 9: Geographically Weighted Regression"
 date: "July 21, 2024"
 date-modified: "last-modified"
 output:
@@ -26,9 +26,9 @@ In this lesson, you will learn the basic concepts and methods of geographically 
 
 ## Lesson Slides and Hands-on Notes
 
-- [Lesson 7 slides](../lesson/lesson07/lesson07-gwr.html).
+- [Lesson 9 slides](../lesson/lesson09/lesson09-gwr.html).
 
-- [Hands-on Exercise 7](https://r4gdsa.netlify.app/chap13.html).
+- [Hands-on Exercise 9](https://r4gdsa.netlify.app/chap13.html).
 
 ## Self-reading Before Meet-up
 

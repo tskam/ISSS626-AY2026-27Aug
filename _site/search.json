@@ -261,30 +261,30 @@
   {
     "objectID": "outline/Lesson09_outline.html",
     "href": "outline/Lesson09_outline.html",
-    "title": "Lesson 9: Modelling Geographic of Accessibility",
+    "title": "Lesson 9: Geographically Weighted Regression",
     "section": "",
-    "text": "Basic Concepts of Geographic Accessibility\nGravitational Law and Distance Decay Function\nIntroducing Potential Models\n\nThe classic model\n\nHansen Potential Accessibility Model\nTwo-step Floating Catchment Area (2SFCA) Method\nKernel Density Two-Step Floating Catchment Area (KD2SFCA) Method\nInterpreting and Visualising Modelling Results"
+    "text": "In this lesson, you will learn the basic concepts and methods of geographically weighted regression."
   },
   {
     "objectID": "outline/Lesson09_outline.html#content",
     "href": "outline/Lesson09_outline.html#content",
-    "title": "Lesson 9: Modelling Geographic of Accessibility",
-    "section": "",
-    "text": "Basic Concepts of Geographic Accessibility\nGravitational Law and Distance Decay Function\nIntroducing Potential Models\n\nThe classic model\n\nHansen Potential Accessibility Model\nTwo-step Floating Catchment Area (2SFCA) Method\nKernel Density Two-Step Floating Catchment Area (KD2SFCA) Method\nInterpreting and Visualising Modelling Results"
+    "title": "Lesson 9: Geographically Weighted Regression",
+    "section": "Content",
+    "text": "Content\n\nBasic concepts and principles of linear regression\n\nSimple linear regression\nMultiple linear regression\n\nThe spatial stationarity assumption of multiple linear regression.\nIntroducing Geographically Weighted Regression\n\nWeighting functions (kernel)\nWeighting schemes\nBandwidth\nInterpreting and Visualising"
   },
   {
     "objectID": "outline/Lesson09_outline.html#lesson-slides-and-hands-on-notes",
     "href": "outline/Lesson09_outline.html#lesson-slides-and-hands-on-notes",
-    "title": "Lesson 9: Modelling Geographic of Accessibility",
+    "title": "Lesson 9: Geographically Weighted Regression",
     "section": "Lesson Slides and Hands-on Notes",
-    "text": "Lesson Slides and Hands-on Notes\n\nLesson 9 slides.\nHands-on Exercise 9 handout."
+    "text": "Lesson Slides and Hands-on Notes\n\nLesson 9 slides.\nHands-on Exercise 9."
   },
   {
     "objectID": "outline/Lesson09_outline.html#self-reading-before-meet-up",
     "href": "outline/Lesson09_outline.html#self-reading-before-meet-up",
-    "title": "Lesson 9: Modelling Geographic of Accessibility",
+    "title": "Lesson 9: Geographically Weighted Regression",
     "section": "Self-reading Before Meet-up",
-    "text": "Self-reading Before Meet-up\nRead before lesson:\n\nLong, J. (2017). Modelling Accessibility. The Geographic Information Science & Technology Body of Knowledge (3rd Quarter 2017 Edition), John P. Wilson (ed.).\nHansen, W. G. (1959): “How Accessibility Shapes Land Use”. Journal of the American Institute of Planners, 25, 2, p. 73-76.\nLuo, W.; Wang, F. (2003) “Measures of spatial accessibility to health care in a GIS environment: synthesis and a case study in the Chicago region”. Environment and Planning B: Planning and Design. 30 (6): 865–884. doi:10.1068/b29120.\nLuo, W.; Qi, Y. (2009). “An enhanced two-step floating catchment area (E2SFCA) method for measuring spatial accessibility to primary care physicians”. Health & Place. 15 (4): 1100–1107."
+    "text": "Self-reading Before Meet-up\nTo read before class:\n\nBrunsdon, C., Fotheringham, A.S., and Charlton, M. (2002) “Geographically weighted regression: A method for exploring spatial nonstationarity”. Geographical Analysis, 28: 281-289.\nBrunsdon, C., Fotheringham, A.S. and Charlton, M., (1999) “Some Notes on Parametric Significance Tests for Geographically Weighted Regression”. Journal of Regional Science, 39(3), 497-524."
   },
   {
     "objectID": "outline/Lesson09_outline.html#reference",
@@ -296,9 +296,9 @@
   {
     "objectID": "outline/Lesson09_outline.html#all-about-r",
     "href": "outline/Lesson09_outline.html#all-about-r",
-    "title": "Lesson 9: Modelling Geographic of Accessibility",
-    "section": "All About R:",
-    "text": "All About R:\n\naccessibility\nSpatialAcc package.\nPotential package."
+    "title": "Lesson 9: Geographically Weighted Regression",
+    "section": "All About R",
+    "text": "All About R\n\nGWmodel package, especially\n\nGollini, I et. al. (2015) “GWmodel: An R Package for Exploring Spatial Heterogeneity Using Geographically Weighted Models”, Journal of Statistical Software, Volume 63, Issue 17 and\nBinbin Lu, Paul Harris, Martin Charlton & Chris Brunsdon (2014) “The GWmodel R package: further topics for exploring spatial heterogeneity using geographically weighted models”, Geo-spatial Information Science, 17:2, 85-101, DOI: 10.1080/10095020.2014.917453.\n\nlctools package especially gw() and gwr() related functions.\nspgwr implements of geographically weighted regression methods for exploring possible non-stationarity.\ngwrr: its geographically weighted regression (GWR) models and has tools to diagnose and remediate collinearity in the GWR models. Also fits geographically weighted ridge regression (GWRR) and geographically weighted lasso (GWL) models."
   },
   {
     "objectID": "outline/Lesson10_outline.html",
@@ -2301,5 +2301,68 @@
     "title": "Lesson 8 Market Area Analysis for Retail and Service Locations: Huff and MCI Models",
     "section": "The Origin of Retail Trade Area: Reilly’s Law",
     "text": "The Origin of Retail Trade Area: Reilly’s Law\nReilly’s law of retail gravitation (1931) aims to find a point of indifference between two locations, so that the trading area of each can be determined. This point is assumed to be a function of the distance between two locations pondered by their respective size (population often used for this purpose). A location can thus be more attractive than the other.\n\n\n\n\nIn the figure, two locations are 75 km apart. According to the Hotelling principle, the point of indifference should be halfway in between (37.5 km). However, since location A has a larger population (more weight), it is assumed to draw more customers. Under such circumstances, the point of indifference is 45.9 km away from location A."
+  },
+  {
+    "objectID": "outline/Lesson09_outline.html#references",
+    "href": "outline/Lesson09_outline.html#references",
+    "title": "Lesson 9: Geographically Weighted Regression",
+    "section": "References",
+    "text": "References\n\nMennis, Jeremy (2006) “Mapping the Results of Geographically Weighted Regression”, The Cartographic Journal, Vol.43 (2), p.171-179.\nStephen A. Matthews ; Tse-Chuan Yang (2012) “Mapping the results of local statistics: Using geographically weighted regression”, Demographic Research, Vol.26, p.151-166."
+  },
+  {
+    "objectID": "lesson/Lesson09/Lesson09-gwr.html#content",
+    "href": "lesson/Lesson09/Lesson09-gwr.html#content",
+    "title": "Lesson 9: Geographically Weighted Regression",
+    "section": "Content",
+    "text": "Content\n\nIntroducing Regression Modelling\n\nSimple Linear Regression\nMultiple Linear Regression\n\nWhat is Spatial Non-stationary\nIntroducing Geographically Weighted Regression\n\nWeighting functions (kernel)\nWeighting schemes\nBandwidth\n\nInterpreting and Visualising"
+  },
+  {
+    "objectID": "lesson/Lesson09/Lesson09-gwr.html#the-why-questions",
+    "href": "lesson/Lesson09/Lesson09-gwr.html#the-why-questions",
+    "title": "Lesson 9: Geographically Weighted Regression",
+    "section": "The WHY Questions",
+    "text": "The WHY Questions\n\nWhy some condominium units were transacted at relatively higher prices than others?"
+  },
+  {
+    "objectID": "lesson/Lesson09/Lesson09-gwr.html#the-why-questions-1",
+    "href": "lesson/Lesson09/Lesson09-gwr.html#the-why-questions-1",
+    "title": "Lesson 9: Geographically Weighted Regression",
+    "section": "The WHY Questions",
+    "text": "The WHY Questions\nWhy condominium units located at the central part of Singapore were transacted at relatively higher prices than others?"
+  },
+  {
+    "objectID": "lesson/Lesson09/Lesson09-gwr.html#what-is-regression-analysis",
+    "href": "lesson/Lesson09/Lesson09-gwr.html#what-is-regression-analysis",
+    "title": "Lesson 9: Geographically Weighted Regression",
+    "section": "What is regression analysis?",
+    "text": "What is regression analysis?\n\nA set of statistical processes for explaining the relationships among variables.\nThe focus is on the relationship between a dependent variable (y) and one or more independent variables (x)\n\nDoes X affect Y? If so, how?\nWhat is the change in Y given a one unit change in X?\n\nEstimate outcomes based on the relationships modelled."
+  },
+  {
+    "objectID": "lesson/Lesson09/Lesson09-gwr.html#assumptions-of-linear-regression-models",
+    "href": "lesson/Lesson09/Lesson09-gwr.html#assumptions-of-linear-regression-models",
+    "title": "Lesson 9: Geographically Weighted Regression",
+    "section": "Assumptions of linear regression models",
+    "text": "Assumptions of linear regression models\n\nLinearity assumption. The relationship between the dependent variable and independent variables is (approximately) linear.\nNormality assumption. The residual errors are assumed to be normally distributed.\nHomogeneity of residuals variance. The residuals are assumed to have a constant variance (homoscedasticity).\nThe residuals are uncorrelated with each other.\n\nserial correlation, as with time series\n\n(Optional) The errors (residuals) are normally distributed and have a 0 population mean.]"
+  },
+  {
+    "objectID": "lesson/Lesson09/Lesson09-gwr.html#spatial-non-stationary",
+    "href": "lesson/Lesson09/Lesson09-gwr.html#spatial-non-stationary",
+    "title": "Lesson 9: Geographically Weighted Regression",
+    "section": "Spatial Non-stationary",
+    "text": "Spatial Non-stationary\n\nWhen applied to spatial data, as can be seen, it assumes a stationary spatial process.\n\nThe same stimulus provokes the same response in all parts of the study region.\nHighly untenable for spatial process."
+  },
+  {
+    "objectID": "lesson/Lesson09/Lesson09-gwr.html#geographically-weighted-regression-gwr",
+    "href": "lesson/Lesson09/Lesson09-gwr.html#geographically-weighted-regression-gwr",
+    "title": "Lesson 9: Geographically Weighted Regression",
+    "section": "Geographically Weighted Regression (GWR)",
+    "text": "Geographically Weighted Regression (GWR)\n\nLocal statistical technique to analyze spatial variations in relationships.\nSpatial non-stationarity is assumed and will be tested.\nBased on the “First Law of Geography”: everything is related with everything else, but closer things are more related."
+  },
+  {
+    "objectID": "lesson/Lesson09/Lesson09-gwr.html#references",
+    "href": "lesson/Lesson09/Lesson09-gwr.html#references",
+    "title": "Lesson 9: Geographically Weighted Regression",
+    "section": "References",
+    "text": "References\nBrunsdon, C., Fotheringham, A.S., and Charlton, M. (2002) “Geographically weighted regression: A method for exploring spatial nonstationarity”. Geographical Analysis, 28: 281-289.\nBrunsdon, C., Fotheringham, A.S. and Charlton, M., (1999) [“Some Notes on Parametric Significance Tests for Geographically Weighted Regression”](https://onlinelibrary-wiley-com.libproxy.smu.edu.sg/doi/abs/10.1111/0022-4146.00146. Journal of Regional Science, 39(3), 497-524.\nMennis, Jeremy (2006) “Mapping the Results of Geographically Weighted Regression”, The Cartographic Journal, Vol.43 (2), p.171-179.\nStephen A. Matthews ; Tse-Chuan Yang (2012) “Mapping the results of local statistics: Using geographically weighted regression”, Demographic Research, Vol.26, p.151-166."
   }
 ]

@@ -1,0 +1,15 @@
+{
+  "hash": "158fed7eb5d8a2cfb08e9c8cf651864c",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"In-class Exercise 8: Market Area Analysis for Retail and Service Locations with MCI Methods\"\nauthor: \"Dr. Kam Tin Seong<br/>Assoc. Professor of Information Systems(Practice)\"\ninstitute: \"School of Computing and Information Systems,<br/>Singapore Management University\"\ndate: today\nformat: \n  revealjs:\n    html: default\n    width: 1600\n    height: 900\n    show-notes: false\n    slide-number: true\n    show-slide-number: all\nexecute: \n  eval: true\n  echo: true\n  warning: false\n  freeze: true\neditor: visual\n---\n\n## Loading R package\n\nLoad sf, tidyverse, tmap, accessibility and catchment R packages into RStudio environment using the code chunk below\n\n\n::: {.cell}\n\n```{.r .cell-code}\npacman::p_load(sf, tidyverse, tmap, MCI, ggstatsplot) \n```\n:::\n\n\n\n::: {.cell}\n\n```{.r .cell-code}\ndata(shopping1)\ndata(shopping2)\n```\n:::\n\n\n\n::: {.cell}\n\n```{.r .cell-code}\nshopping1_adj <- shopping1 %>%\n  filter(weekday != 3 & \n         holiday != 1 &\n         survey != \"pretest\")\n```\n:::\n\n\n\n::: {.cell}\n\n```{.r .cell-code}\nijmatrix <- ijmatrix.create(shopping1_adj,\n                            \"resid_code\",\n                            \"POS\",\n                            \"POS_expen\")\n```\n:::\n\n\n\n::: {.cell}\n\n```{.r .cell-code}\nijmatrix_dist <- ijmatrix %>%\n  left_join(shopping2, \n            by = join_by(interaction == route))\n```\n:::\n\n\n\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

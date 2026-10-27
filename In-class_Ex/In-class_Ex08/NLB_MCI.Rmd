@@ -1,0 +1,142 @@
+---
+title: "NLB_MCI Model"
+author: "Dr. Kam Tin Seong"
+date: "March 22, 2017"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+##Overview
+
+This application implements two market area models, namely: Multiplicative Competitive Interaction Model and Huff Model.
+
+
+###Loading the R library
+
+```{r}
+library(MCI)
+library(dplyr)
+```
+
+##Interactive Matrix
+
+A spatial interaction is a realized movement of people, freight or information between an origin and a destination.  It is a transport demand / supply relationship expressed over a geographical space.  
+
+In this section, you will build a simple spatial interactive matrix by compbining a distance matrix (Subzone_Distance.csv) and a market area file (e.g. Subzone_Pop_2013.csv).
+
+The read.csv function of R will be used to import these two data files into R environment.
+
+First, we will import the distance matrix file.
+
+```{r}
+Distance_Matrix <- read.csv("D:/Library Analytics/MCI/dataTest/Subzone_Distance.csv")
+```
+
+Next, we will import the library information file.
+
+```{r}
+POI_Info <- read.csv("D:/Library Analytics/MCI/dataTest/Lib_Info_13.csv")
+```
+
+Create dummy variables for library types
+```{r}
+POI_Info <- transform(POI_Info, type_if_mall = ifelse(Branch.Type == "Mall",1,0))
+POI_Info <- transform(POI_Info, type_if_standalone = ifelse(Branch.Type == "Stand-Alone",1,0))
+```
+
+Now, we are going to use the left.join function of dplyr to combine the Distance_Matrix and POI_INFO using 
+
+```{r}
+Interactive_Matrix <- left_join(Distance_Matrix, POI_Info)
+```
+
+###A simple MCI model
+
+We can test the completeness of the interactive matrix created by building a simple Huff model.
+
+```{r}
+MCI_mat <- mci.shares(Interactive_Matrix, "Subzone", "Branch", "Collection.Size",1,"Distance_km",-2)
+```
+
+We can save the MCI_mat into csv so that you can visualise using data visualisation tool such as Tableau.
+
+It is important to note that one of your columns is of type list, so the data.frame is no longer 2-dimensional and can't be exported to a 2d csv-file.  In this case, we need to coerce data frames 
+
+
+MCI_mat_coerced <- data.frame(lapply(MCI_mat, as.character), stringsAsFactors=FALSE)
+
+
+write.csv(MCI_mat_coerced, file = "D:/Library Analytics/MCI/dataTest/MCI_mat.csv")
+
+
+```{r}
+mci_model <- mci.fit(MCI_mat, "Subzone", "Branch", "p_ij","Distance_km", "Branch.Gross.Floor.Area","Collection.Size","No..of.Tuition.Centres.Within.1KM","type_if_mall", "type_if_standalone")
+summary(mci_model)
+```
+
+## MCI Model using Transaction Data
+
+###Import patrons' transaction data 
+
+Read library patrons' transaction data into R environment
+```{r}
+Transaction_Data <- read.csv("D:/Library Analytics/MCI/dataTest/TXN_FY13_data.csv")
+```
+
+Removing the transactions where uid = 0 (unidentified)
+```{r}
+Transaction_Data <- Transaction_Data[(Transaction_Data$Patron.UID != 0),]
+```
+
+###Import Patron Data
+```{r}
+Patron_Data <- read.csv("D:/Library Analytics/MCI/dataTest/Patron_Dataset_FY13_Subzone.csv")
+```
+
+Remove "Bad Value" & "Missing Value" under Locale Planning ADZID
+```{r}
+Patron_Data <- Patron_Data[(Patron_Data$Locale.Planning.ADZID != "Bad Value")&
+                                                             (Patron_Data$Locale.Planning.ADZID != "Missing Value"),]
+```
+
+###Create an Interaction Matrix
+Creates an interaction matrix based on the observed frequencies (automatically) market shares are corrected when they do not match the MCI standards (pij = 0) by adding absolute value 0.1
+
+```{r}
+ijmatrix_TXN_FY13 <- ijmatrix.create(Transaction_Data, "Subzone","Branch.Code", correctVar = TRUE, correctVar.val = 1)
+```
+
+
+###Merge the interaction matrics
+
+Next, we will merge the newly drived empirical interaction matrix with the distance matrix. 
+
+```{r}
+ijmatrix <- merge(ijmatrix_TXN_FY13, Interactive_Matrix, by.x="interaction", by.y="route", all.x = TRUE)
+```
+
+Save the final interactive matrix into csv file
+
+```{r}
+write.csv(ijmatrix, file = "D:/Library Analytics/MCI/dataTest/ijmatrix.csv")
+```
+
+
+Fitting MCI model
+
+```{r}
+mci_model <- mci.fit(ijmatrix, "Subzone.x", "Branch", "p_ij_obs","Distance_km", "Branch.Gross.Floor.Area","Collection.Size","No..of.Tuition.Centres.Within.1KM","type_if_mall", "type_if_standalone")
+summary(mci_model)
+```
+
+
+###Calculate the estimated market share
+
+```{r}
+mci_share <- mci.shares(ijmatrix, "Subzone.x", "Branch","Distance_km", -1.378289, "Branch.Gross.Floor.Area", 0.644230, "Collection.Size",-0.220801, "No..of.Tuition.Centres.Within.1KM",0.128224)
+```
+
+

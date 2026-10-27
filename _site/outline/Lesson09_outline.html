@@ -2,17 +2,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.37">
+<meta name="generator" content="quarto-1.8.26">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="dcterms.date" content="2024-07-21">
 
-<title>Lesson 9: Modelling Geographic of Accessibility – ISSS626 Geospatial Analytics</title>
+<title>Lesson 9: Geographically Weighted Regression – ISSS626</title>
 <style>
-/* Default styles provided by pandoc.
-** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
-*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -36,14 +33,15 @@ ul.task-list li input[type="checkbox"] {
 <meta name="quarto:offset" content="../">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-cfe12cc0b31e9ab990748e524033966a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-5f49f16f97b4b358d01fa7acc334a7f0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -84,7 +82,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../index.html">
-    <span class="navbar-title">ISSS626 Geospatial Analytics</span>
+    <span class="navbar-title">ISSS626</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -127,15 +125,19 @@ ul.task-list li input[type="checkbox"] {
  <span class="dropdown-text">In-class Exercise 4</span></a>
   </li>  
         <li>
+    <a class="dropdown-item" href="../In-class_Ex/In-class_Ex05/In-class_Ex05-GLSA.html">
+ <span class="dropdown-text">In-class Exercise 5a</span></a>
+  </li>  
+        <li>
     <a class="dropdown-item" href="../In-class_Ex/In-class_Ex05/In-class_Ex05-EHSA.html">
- <span class="dropdown-text">In-class Exercise 5</span></a>
+ <span class="dropdown-text">In-class Exercise 5b</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../In-class_Ex/In-class_Ex06/In-class_Ex06-KickStarter.html">
  <span class="dropdown-text">In-class Exercise 6</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../In-class_Ex/In-class_Ex07/In-class_Ex07-gwr.html">
+    <a class="dropdown-item" href="../In-class_Ex/In-class_Ex07/In-class_Ex07-accessibility.html">
  <span class="dropdown-text">In-class Exercise 7</span></a>
   </li>  
         <li>
@@ -219,8 +221,8 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#content" id="toc-content" class="nav-link active" data-scroll-target="#content">Content</a></li>
   <li><a href="#lesson-slides-and-hands-on-notes" id="toc-lesson-slides-and-hands-on-notes" class="nav-link" data-scroll-target="#lesson-slides-and-hands-on-notes">Lesson Slides and Hands-on Notes</a></li>
   <li><a href="#self-reading-before-meet-up" id="toc-self-reading-before-meet-up" class="nav-link" data-scroll-target="#self-reading-before-meet-up">Self-reading Before Meet-up</a></li>
-  <li><a href="#reference" id="toc-reference" class="nav-link" data-scroll-target="#reference">Reference</a></li>
-  <li><a href="#all-about-r" id="toc-all-about-r" class="nav-link" data-scroll-target="#all-about-r">All About R:</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  <li><a href="#all-about-r" id="toc-all-about-r" class="nav-link" data-scroll-target="#all-about-r">All About R</a></li>
   </ul>
 </nav>
     </div>
@@ -229,7 +231,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Lesson 9: Modelling Geographic of Accessibility</h1>
+<h1 class="title">Lesson 9: Geographically Weighted Regression</h1>
 </div>
 
 
@@ -247,7 +249,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">July 19, 2026</p>
+      <p class="date-modified">October 27, 2026</p>
     </div>
   </div>
     
@@ -258,55 +260,58 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<p>In this lesson, you will learn the basic concepts and methods of geographically weighted regression.</p>
 <section id="content" class="level2">
 <h2 class="anchored" data-anchor-id="content">Content</h2>
 <ul>
-<li>Basic Concepts of Geographic Accessibility</li>
-<li>Gravitational Law and Distance Decay Function</li>
-<li>Introducing Potential Models
+<li>Basic concepts and principles of linear regression
 <ul>
-<li>The classic model</li>
+<li>Simple linear regression</li>
+<li>Multiple linear regression</li>
 </ul></li>
-<li>Hansen Potential Accessibility Model</li>
-<li>Two-step Floating Catchment Area (2SFCA) Method</li>
-<li>Kernel Density Two-Step Floating Catchment Area (KD2SFCA) Method</li>
-<li>Interpreting and Visualising Modelling Results</li>
+<li>The spatial stationarity assumption of multiple linear regression.</li>
+<li>Introducing Geographically Weighted Regression
+<ul>
+<li>Weighting functions (kernel)</li>
+<li>Weighting schemes</li>
+<li>Bandwidth</li>
+<li>Interpreting and Visualising</li>
+</ul></li>
 </ul>
 </section>
 <section id="lesson-slides-and-hands-on-notes" class="level2">
 <h2 class="anchored" data-anchor-id="lesson-slides-and-hands-on-notes">Lesson Slides and Hands-on Notes</h2>
 <ul>
-<li><p><a href="../lesson/lesson09/lesson09-GeoAcc.html">Lesson 9</a> slides.</p></li>
-<li><p><a href="https://r4gdsa.netlify.app/chap17.html">Hands-on Exercise 9</a> handout.</p></li>
+<li><p><a href="../lesson/lesson09/lesson09-gwr.html">Lesson 9 slides</a>.</p></li>
+<li><p><a href="https://r4gdsa.netlify.app/chap13.html">Hands-on Exercise 9</a>.</p></li>
 </ul>
 </section>
 <section id="self-reading-before-meet-up" class="level2">
 <h2 class="anchored" data-anchor-id="self-reading-before-meet-up">Self-reading Before Meet-up</h2>
-<p>Read before lesson:</p>
+<p>To read before class:</p>
 <ul>
-<li><p>Long, J. (2017). <a href="https://gistbok.ucgis.org/bok-topics/modelling-accessibility">Modelling Accessibility. The Geographic Information Science &amp; Technology Body of Knowledge</a> (3rd Quarter 2017 Edition), John P. Wilson (ed.).</p></li>
-<li><p>Hansen, W. G. (1959): <a href="https://dspace.mit.edu/bitstream/handle/1721.1/74869/32597665-MIT.pdf?...2">“How Accessibility Shapes Land Use”</a>. <em>Journal of the American Institute of Planners</em>, 25, 2, p.&nbsp;73-76.</p></li>
-<li><p>Luo, W.; Wang, F. (2003) <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8238135/">“Measures of spatial accessibility to health care in a GIS environment: synthesis and a case study in the Chicago region”</a>. <em>Environment and Planning B: Planning and Design.</em> 30 (6): 865–884. doi:10.1068/b29120.</p></li>
-<li><p>Luo, W.; Qi, Y. (2009). <a href="https://www.researchgate.net/publication/26646789_An_Enhanced_Two-Step_Floating_Catchment_Area_E2SFCA_Method_for_Measuring_Spatial_Accessibility_to_Primary_Care_Physicians">“An enhanced two-step floating catchment area (E2SFCA) method for measuring spatial accessibility to primary care physicians”</a>. <em>Health &amp; Place</em>. 15 (4): 1100–1107.</p></li>
+<li>Brunsdon, C., Fotheringham, A.S., and Charlton, M. (2002) “Geographically weighted regression: A method for exploring spatial nonstationarity”. Geographical Analysis, 28: 281-289.</li>
+<li>Brunsdon, C., Fotheringham, A.S. and Charlton, M., (1999) “Some Notes on Parametric Significance Tests for Geographically Weighted Regression”. Journal of Regional Science, 39(3), 497-524.</li>
 </ul>
 </section>
-<section id="reference" class="level2">
-<h2 class="anchored" data-anchor-id="reference">Reference</h2>
+<section id="references" class="level2">
+<h2 class="anchored" data-anchor-id="references">References</h2>
 <ul>
-<li>Section on “Transportation and Accessibility” in The Geography of Transport Systems.</li>
-<li>Rich, D.C. (1980) Potential Models in Human Geography.</li>
-<li>Orpana, T./Lampinen, J. (2003) “Building spatial choice models from aggregate data”. Journal of Regional Science,43, 2, p.&nbsp;319-347.</li>
-<li><a href="https://en.wikipedia.org/wiki/Two-step_floating_catchment_area_method">Two-step floating catchment area method</a>.</li>
-<li>Cheng, Gang et. al.&nbsp;(2016) “Spatial difference analysis for accessibility to high level hospitals based on travel time in Shenzhen, China” Habitat International, Vol.53, p.485-494.</li>
-<li>Polzin, Pierre ; Borges, José ; Coelho, António (2014) “An Extended Kernel Density Two-Step Floating Catchment Area Method to Analyze Access to Health Care” Environment and planning. B, Planning &amp; design, Vol.41 (4), p.717-735.</li>
+<li>Mennis, Jeremy (2006) “Mapping the Results of Geographically Weighted Regression”, The Cartographic Journal, Vol.43 (2), p.171-179.</li>
+<li>Stephen A. Matthews ; Tse-Chuan Yang (2012) “Mapping the results of local statistics: Using geographically weighted regression”, Demographic Research, Vol.26, p.151-166.</li>
 </ul>
 </section>
 <section id="all-about-r" class="level2">
-<h2 class="anchored" data-anchor-id="all-about-r">All About R:</h2>
+<h2 class="anchored" data-anchor-id="all-about-r">All About R</h2>
 <ul>
-<li><p><a href="https://ipeagit.github.io/accessibility/">accessibility</a></p></li>
-<li><p><a href="https://cran.r-project.org/web/packages/SpatialAcc/">SpatialAcc</a> package.</p></li>
-<li><p><a href="https://riatelab.github.io/potential/index.html">Potential</a> package.</p></li>
+<li><a href="https://cran.r-project.org/web/packages/GWmodel/"><strong>GWmodel</strong></a> package, especially
+<ul>
+<li>Gollini, I et. al.&nbsp;(2015) <a href="https://www.jstatsoft.org/article/view/v063i17">“GWmodel: An R Package for Exploring Spatial Heterogeneity Using Geographically Weighted Models”</a>, <em>Journal of Statistical Software</em>, Volume 63, Issue 17 and</li>
+<li>Binbin Lu, Paul Harris, Martin Charlton &amp; Chris Brunsdon (2014) <a href="https://www.tandfonline.com/doi/full/10.1080/10095020.2014.917453">“The GWmodel R package: further topics for exploring spatial heterogeneity using geographically weighted models”</a>, <em>Geo-spatial Information Science</em>, 17:2, 85-101, DOI: 10.1080/10095020.2014.917453.</li>
+</ul></li>
+<li><a href="https://cran.r-project.org/web/packages/lctools/index.html"><strong>lctools</strong></a> package especially <em>gw()</em> and <em>gwr()</em> related functions.</li>
+<li><a href="https://cran.r-project.org/web/packages/spgwr/index.html"><strong>spgwr</strong></a> implements of geographically weighted regression methods for exploring possible non-stationarity.</li>
+<li><a href="https://cran.r-project.org/web/packages/gwrr/index.html"><strong>gwrr</strong></a>: its geographically weighted regression (GWR) models and has tools to diagnose and remediate collinearity in the GWR models. Also fits geographically weighted ridge regression (GWRR) and geographically weighted lasso (GWL) models.</li>
 </ul>
 
 
