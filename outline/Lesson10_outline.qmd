@@ -1,5 +1,5 @@
 ---
-title: "Lesson 8: Geographically Weighted Predictive Modelling"
+title: "Lesson 10: Geographically Weighted Predictive Modelling"
 date: "July 21, 2024"
 date-modified: "last-modified"
 output:
@@ -20,9 +20,9 @@ execute:
 
 ## Lesson Slides and Hands-on Notes
 
-- [Lesson 8](../lesson/Lesson08/Lesson08-GWRF.html) slides.
+- [Lesson 8](../lesson/Lesson10/Lesson10-GWRF.html) slides.
 
-- Handout of [Hands-on Exercise 8](https://r4gdsa.netlify.app/chap14.html).
+- Handout of [Hands-on Exercise 10](https://r4gdsa.netlify.app/chap14.html).
 
 ### Self-reading Before Meet-up
 

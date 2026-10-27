@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.26">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Dr.&nbsp;Kam Tin Seong Assoc. Professor of Information Systems(Practice)">
+<meta name="dcterms.date" content="2026-10-27">
+
+<title>Lesson 8: Geographically Weighted Predictive Modelling – ISSS626</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-5f49f16f97b4b358d01fa7acc334a7f0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">ISSS626</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../syllabus.html"> 
+<span class="menu-text">Syllabus</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../lesson.html"> 
+<span class="menu-text">Lesson Plan</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-in-class-exercise" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">In-class Exercise</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-in-class-exercise">    
+        <li>
+    <a class="dropdown-item" href="../../In-class_Ex/In-class_Ex01/In-class_Ex01.html">
+ <span class="dropdown-text">In-class Exercise 1</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../In-class_Ex/In-class_Ex02/In-class_Ex02-SPPA.html">
+ <span class="dropdown-text">In-class Exercise 2</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../In-class_Ex/In-class_Ex03/In-class_Ex03a.html">
+ <span class="dropdown-text">In-class Exercise 3a</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../In-class_Ex/In-class_Ex03/In-class_Ex03b.html">
+ <span class="dropdown-text">In-class Exercise 3b</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../In-class_Ex/In-class_Ex04/In-class_Ex04.html">
+ <span class="dropdown-text">In-class Exercise 4</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../In-class_Ex/In-class_Ex05/In-class_Ex05-GLSA.html">
+ <span class="dropdown-text">In-class Exercise 5a</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../In-class_Ex/In-class_Ex05/In-class_Ex05-EHSA.html">
+ <span class="dropdown-text">In-class Exercise 5b</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../In-class_Ex/In-class_Ex06/In-class_Ex06-KickStarter.html">
+ <span class="dropdown-text">In-class Exercise 6</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../In-class_Ex/In-class_Ex07/In-class_Ex07-accessibility.html">
+ <span class="dropdown-text">In-class Exercise 7</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../In-class_Ex/In-class_Ex08/In-class_Ex08.html">
+ <span class="dropdown-text">In-class Exercise 8</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../In-class_Ex/In-class_Ex09/In-class_Ex09.html">
+ <span class="dropdown-text">In-class Exercise 9</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../In-class_Ex/In-class_Ex10/In-class_Ex10.html">
+ <span class="dropdown-text">In-class Exercise 10</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-take-home-exercise" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Take-home Exercise</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-take-home-exercise">    
+        <li>
+    <a class="dropdown-item" href="../../Take-home_Ex01.html">
+ <span class="dropdown-text">Take-home Exercise 1</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../Take-home_Ex02.html">
+ <span class="dropdown-text">Take-home Exercise 2</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../Take-home_Ex03a.html">
+ <span class="dropdown-text">Take-home Exercise 3a</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../Take-home_Ex03b.html">
+ <span class="dropdown-text">Take-home Exercise 3b</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-all-about-r" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">All About R</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-all-about-r">    
+        <li>
+    <a class="dropdown-item" href="../../R.html">
+ <span class="dropdown-text">R Resouces</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../Quarto.html">
+ <span class="dropdown-text">Quarto</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../git.html">
+ <span class="dropdown-text">git and github</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#content" id="toc-content" class="nav-link active" data-scroll-target="#content">Content</a></li>
+  <li><a href="#what-is-predictive-modelling" id="toc-what-is-predictive-modelling" class="nav-link" data-scroll-target="#what-is-predictive-modelling">What is Predictive Modelling?</a></li>
+  <li><a href="#what-is-geospatial-predictive-modelling" id="toc-what-is-geospatial-predictive-modelling" class="nav-link" data-scroll-target="#what-is-geospatial-predictive-modelling">What is Geospatial Predictive Modelling</a>
+  <ul class="collapse">
+  <li><a href="#differences-between-explanatory-modelling-and-predictive-analytics" id="toc-differences-between-explanatory-modelling-and-predictive-analytics" class="nav-link" data-scroll-target="#differences-between-explanatory-modelling-and-predictive-analytics">Differences between Explanatory Modelling and Predictive Analytics</a></li>
+  </ul></li>
+  <li><a href="#predictive-modelling-process" id="toc-predictive-modelling-process" class="nav-link" data-scroll-target="#predictive-modelling-process">Predictive Modelling Process</a>
+  <ul class="collapse">
+  <li><a href="#data-sampling-in-predictive-analytics" id="toc-data-sampling-in-predictive-analytics" class="nav-link" data-scroll-target="#data-sampling-in-predictive-analytics">Data Sampling in Predictive Analytics</a></li>
+  <li><a href="#comparing-predictive-performance" id="toc-comparing-predictive-performance" class="nav-link" data-scroll-target="#comparing-predictive-performance">Comparing Predictive Performance</a></li>
+  </ul></li>
+  <li><a href="#introducing-recursive-partitioning" id="toc-introducing-recursive-partitioning" class="nav-link" data-scroll-target="#introducing-recursive-partitioning">Introducing recursive partitioning</a>
+  <ul class="collapse">
+  <li><a href="#recursive-partitioning-as-a-machine-learning-engine" id="toc-recursive-partitioning-as-a-machine-learning-engine" class="nav-link" data-scroll-target="#recursive-partitioning-as-a-machine-learning-engine">Recursive Partitioning as a Machine Learning engine</a></li>
+  <li><a href="#properties-of-recursive-partitioning" id="toc-properties-of-recursive-partitioning" class="nav-link" data-scroll-target="#properties-of-recursive-partitioning">Properties of Recursive Partitioning</a></li>
+  <li><a href="#properties-of-recursive-partitioning-1" id="toc-properties-of-recursive-partitioning-1" class="nav-link" data-scroll-target="#properties-of-recursive-partitioning-1">Properties of Recursive Partitioning</a></li>
+  <li><a href="#components-of-classification-and-regression-tree-cart" id="toc-components-of-classification-and-regression-tree-cart" class="nav-link" data-scroll-target="#components-of-classification-and-regression-tree-cart">Components of Classification and Regression Tree (CART)</a></li>
+  <li><a href="#some-useful-features-and-advantages-of-recursive-partitioning" id="toc-some-useful-features-and-advantages-of-recursive-partitioning" class="nav-link" data-scroll-target="#some-useful-features-and-advantages-of-recursive-partitioning">Some useful features and advantages of Recursive Partitioning</a></li>
+  </ul></li>
+  <li><a href="#advanced-recursive-partitioning-random-forest" id="toc-advanced-recursive-partitioning-random-forest" class="nav-link" data-scroll-target="#advanced-recursive-partitioning-random-forest">Advanced Recursive Partitioning: Random Forest</a></li>
+  <li><a href="#introducing-geographically-weighted-random-forest-gwrf" id="toc-introducing-geographically-weighted-random-forest-gwrf" class="nav-link" data-scroll-target="#introducing-geographically-weighted-random-forest-gwrf">Introducing Geographically Weighted Random Forest (gwRF)</a></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="Lesson09-GWRF.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Lesson 8: Geographically Weighted Predictive Modelling</h1>
+</div>
+
+
+<div class="quarto-title-meta-author">
+  <div class="quarto-title-meta-heading">Author</div>
+  <div class="quarto-title-meta-heading">Affiliation</div>
+  
+    <div class="quarto-title-meta-contents">
+    <p class="author">Dr.&nbsp;Kam Tin Seong<br>Assoc. Professor of Information Systems(Practice) </p>
+  </div>
+  <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            School of Computing and Information Systems,<br>Singapore Management University
+          </p>
+      </div>
+  </div>
+
+<div class="quarto-title-meta">
+
+      
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">27 Oct 2026</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="content" class="level2">
+<h2 class="anchored" data-anchor-id="content">Content</h2>
+<ul>
+<li><p>What is Predictive Modelling?</p></li>
+<li><p>What is Geospatial Predictive Modelling</p></li>
+<li><p>Introducing Recursive Partitioning</p></li>
+<li><p>Advanced Recursive Partitioning: Random Forest</p></li>
+<li><p>Introducing Geographically Weighted Random Forest</p></li>
+</ul>
+</section>
+<section id="what-is-predictive-modelling" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-predictive-modelling">What is Predictive Modelling?</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li><p>Predictive modelling uses statistical learning or machine learning techniques to predict outcomes.</p>
+<ul>
+<li>By and large, the event one wants to predict is in the future. However, a set of known outcome and predictors (also known as variables) will be used to calibrate the predictive models.</li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><img src="img/image8-1.jpg" class="img-fluid" width="650"></p>
+</div>
+</div>
+</section>
+<section id="what-is-geospatial-predictive-modelling" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-geospatial-predictive-modelling">What is Geospatial Predictive Modelling</h2>
+<ul>
+<li>Geospatial predictive modelling is conceptually rooted in the principle that the occurrences of events being modeled are limited in distribution.
+<ul>
+<li>When geographically referenced data are used, occurrences of events are neither uniform nor random in distribution over space. There are geospatial factors (infrastructure, sociocultural, topographic, etc.) that constrain and influence where the locations of events occur.</li>
+<li>Geospatial predictive modeling attempts to describe those constraints and influences by spatially correlating occurrences of historical geospatial locations with environmental factors that represent those constraints and influences.</li>
+</ul></li>
+</ul>
+<hr>
+<section id="differences-between-explanatory-modelling-and-predictive-analytics" class="level3">
+<h3 class="anchored" data-anchor-id="differences-between-explanatory-modelling-and-predictive-analytics">Differences between Explanatory Modelling and Predictive Analytics</h3>
+<p><img src="img/image8-2.jpg" class="img-fluid"></p>
+</section>
+</section>
+<section id="predictive-modelling-process" class="level2">
+<h2 class="anchored" data-anchor-id="predictive-modelling-process">Predictive Modelling Process</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/image8-3.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+<hr>
+<section id="data-sampling-in-predictive-analytics" class="level3">
+<h3 class="anchored" data-anchor-id="data-sampling-in-predictive-analytics">Data Sampling in Predictive Analytics</h3>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div style="font-size: 0.80em">
+<ul>
+<li>Training dataset: This is used to build up our prediction algorithm. Our algorithm tries to tune itself to the quirks of the training data sets. In this phase we usually create multiple algorithms in order to compare their performances during the Cross-Validation Phase.</li>
+<li>Validation dataset: This data set is used to give an estimate of model skill while tuning model’s hyperparameters. It aims to avoiding over-fitting the predictive model.</li>
+<li>Test dataset: The is also held back from&nbsp;the training of the model, but is instead used to give an unbiased estimate of the skill of the final tuned model when comparing or selecting between final models.</li>
+</ul>
+</div>
+</div><div class="column" style="width:50%;">
+<p><img src="img/image8-4.jpg" class="img-fluid"></p>
+</div>
+</div>
+<hr>
+</section>
+<section id="comparing-predictive-performance" class="level3">
+<h3 class="anchored" data-anchor-id="comparing-predictive-performance">Comparing Predictive Performance</h3>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>The need for model comparison arises from the wide choice of classifiers and predictive methods.<br>
+</li>
+<li>Not only do we have several different methods, but even within a single method there are usually many options that can lead to completely different results.<br>
+</li>
+<li>In practice, modelers often use several tools, sometimes both graphical and numerical, to choose a best model.</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><img src="img/image8-5.jpg" class="img-fluid"></p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Mean_squared_error">Mean Squared Error (MSE)</a> (also known as Average Squared Error (ASE))</li>
+<li><a href="https://datacadamia.com/data_mining/aic">Akaike information criterion (AIC)</a></li>
+<li><a href="https://datacadamia.com/data_mining/bic">Bayesian Information Criterion (BIC)</a></li>
+</ul>
+</div>
+</div>
+</section>
+</section>
+<section id="introducing-recursive-partitioning" class="level2">
+<h2 class="anchored" data-anchor-id="introducing-recursive-partitioning">Introducing recursive partitioning</h2>
+<ul>
+<li>A predictive methodology involving a dependent variable y and one and more predictors.</li>
+<li>The dependent variable can be either a continuous or categorical scales.</li>
+<li>Rules partition data into mutually exclusive groups.</li>
+<li>No need to worry about transformations such as logs.</li>
+<li>No prior distribution requirement.</li>
+</ul>
+<hr>
+<section id="recursive-partitioning-as-a-machine-learning-engine" class="level3">
+<h3 class="anchored" data-anchor-id="recursive-partitioning-as-a-machine-learning-engine">Recursive Partitioning as a Machine Learning engine</h3>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>As a machine learning technique, recursive partitioning algorithms operate by building a model based on the training dataset and using that to make predictions or decisions, rather than following only explicitly programmed instructions.<br>
+</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><img src="img/image8-6.jpg" class="img-fluid"></p>
+</div>
+</div>
+<hr>
+</section>
+<section id="properties-of-recursive-partitioning" class="level3">
+<h3 class="anchored" data-anchor-id="properties-of-recursive-partitioning">Properties of Recursive Partitioning</h3>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>If the response is categorical, then it is fitting the probabilities estimated for the response levels, minimizing the residual log-likelihood chi-square [2*entropy].</li>
+</ul>
+<p><img src="img/image8-7a.jpg" class="img-fluid"></p>
+</div><div class="column" style="width:50%;">
+<p>If the response is continuous, then the platform fits means, minimizing the sum of squared errors. The earlier is popularly known as <strong>Classification Trees</strong> and the later is known as <strong>Regression Trees</strong>.</p>
+<p><img src="img/image8-7b.jpg" class="img-fluid"></p>
+</div>
+</div>
+<hr>
+</section>
+<section id="properties-of-recursive-partitioning-1" class="level3">
+<h3 class="anchored" data-anchor-id="properties-of-recursive-partitioning-1">Properties of Recursive Partitioning</h3>
+<div class="columns">
+<div class="column" style="width:50%;">
+<section id="working-with-continuous-predictors" class="level4">
+<h4 class="anchored" data-anchor-id="working-with-continuous-predictors">Working with continuous predictor(s)</h4>
+<ul>
+<li>If a predictor is continuous, then the partition is done according to a splitting “cut” value for X. For example, Average Days Delinquent &lt; 12.3 or &gt;=12.3 as shown in the figure.</li>
+</ul>
+<p><img src="img/image8-8a.jpg" class="img-fluid"></p>
+</section>
+</div><div class="column" data-eidth="50%">
+<section id="working-with-categorical-predictors" class="level4">
+<h4 class="anchored" data-anchor-id="working-with-categorical-predictors">Working with categorical predictor(s)</h4>
+<ul>
+<li>If the predictor is categorical, then it divides the X categories into two groups of levels and considers all possible groupings into two levels.</li>
+</ul>
+<p><img src="img/image8-8b.jpg" class="img-fluid"></p>
+</section>
+</div>
+</div>
+<hr>
+</section>
+<section id="components-of-classification-and-regression-tree-cart" class="level3">
+<h3 class="anchored" data-anchor-id="components-of-classification-and-regression-tree-cart">Components of Classification and Regression Tree (CART)</h3>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p>A CART is read from the top down starting at the <strong>root node</strong>.</p>
+<ul>
+<li>Each <strong>internal node</strong> represents a split based on the values of one of the inputs. The inputs can appear in any number of splits throughout the tree. Cases move down the branch that contains its input value.</li>
+<li>The terminal nodes of the tree are called <strong>leaves</strong>. The leaves represent the predicted target. All cases reaching a particular leaf are given the same predicted value.</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><img src="img/image8-9.jpg" class="img-fluid"></p>
+</div>
+</div>
+<hr>
+</section>
+<section id="some-useful-features-and-advantages-of-recursive-partitioning" class="level3">
+<h3 class="anchored" data-anchor-id="some-useful-features-and-advantages-of-recursive-partitioning">Some useful features and advantages of Recursive Partitioning</h3>
+<ul>
+<li>Recursive partitioning is nonparametric and therefore does not rely on data belonging to a particular type of distribution.</li>
+<li>Recursive partitioning is not significantly impacted by outliers in the input variables.</li>
+<li>You can relax stopping rules to “overgrow” decision trees and then prune back the tree to the optimal size. This approach minimizes the probability that important structure in the data set will be overlooked by stopping too soon.</li>
+<li>Recursive partitioning incorporates both testing with a test data set and cross-validation to assess the goodness of fit more accurately.</li>
+<li>Recursive partitioning can use the same variables more than once in different parts of the tree. This capability can uncover complex interdependencies between sets of variables.</li>
+<li>Recursive partitioning can be used in conjunction with other prediction methods to select the input set of variables.</li>
+</ul>
+</section>
+</section>
+<section id="advanced-recursive-partitioning-random-forest" class="level2">
+<h2 class="anchored" data-anchor-id="advanced-recursive-partitioning-random-forest">Advanced Recursive Partitioning: Random Forest</h2>
+<p><strong>Random forest</strong>, like its name implies, consists of a large number of individual decision trees that operate as an ensemble.</p>
+<ul>
+<li>Each individual tree in the random forest spits out a class prediction and the class with the most votes becomes our model’s prediction as shown the figure.</li>
+</ul>
+<p><img src="img/image8-10.jpg" class="img-fluid"></p>
+</section>
+<section id="introducing-geographically-weighted-random-forest-gwrf" class="level2">
+<h2 class="anchored" data-anchor-id="introducing-geographically-weighted-random-forest-gwrf">Introducing Geographically Weighted Random Forest (gwRF)</h2>
+<ul>
+<li>Geographically Weighted Random Forest (GRF) is a spatial analysis method using a local version of the famous Machine Learning algorithm.
+<ul>
+<li>This technique adopts the idea of the Geographically Weighted Regression.</li>
+<li>The main difference between a tradition (linear) GWR and GRF is that we can model non-stationarity coupled with a flexible non-linear model which is very hard to overfit due to its bootstrapping nature, thus relaxing the assumptions of traditional Gaussian statistics.</li>
+</ul></li>
+</ul>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
