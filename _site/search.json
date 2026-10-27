@@ -319,7 +319,7 @@
     "href": "outline/Lesson10_outline.html#lesson-slides-and-hands-on-notes",
     "title": "Lesson 10: Geographically Weighted Predictive Modelling",
     "section": "Lesson Slides and Hands-on Notes",
-    "text": "Lesson Slides and Hands-on Notes\n\nLesson 8 slides.\nHandout of Hands-on Exercise 8.\n\n\nSelf-reading Before Meet-up\nTo read before class:\n\nStefanos Georganos et. al. (2019) “Geographical Random Forests: A Spatial Extension of the Random Forest Algorithm to Address Spatial Heterogeneity in Remote Sensing and Population Modelling”, Geocarto International, DOI: 10.1080/10106049.2019.1595177.\nGeorganos, S. and Kalogirou, S. (2022) “A Forest of Forests: A Spatially Weighted and Computationally Efficient Formulation of Geographical Random Forests”. ISPRS, International Journal of Geo-Information, 2022, 11, 471. https://www.mdpi.com/2220-9964/11/9/471\n\n\n\nReferences\n\nGeorge Grekousis et. al. (2022) “Ranking the importance of demographic, socioeconomic, and underlying health factors on US COVID-19 deaths: A geographical random forest approach”, Health and Place, vol. 74, pp. 1-12.\nYaowen Luo, Jianguo Yan & Stephen McClure. (2020) “Distribution of the environmental and socioeconomic risk factors on COVID-19 death rate across continental USA: a spatial nonlinear analysis”, Environmental Science and Pollution Research, 28:6587–6599.\nEun-Hee Koh, Eunhee Lee, & Kang-Kun Lee (2020) “Application of geographically weighted regression models to predict spatial characteristics of nitrate contamination: Implications for an effective groundwater management strategy”, Journal of Environmental Management. Vol. 268\n\n\n\nAll About R\n\nSpatialML"
+    "text": "Lesson Slides and Hands-on Notes\n\nLesson 8 slides.\nHandout of Hands-on Exercise 10.\n\n\nSelf-reading Before Meet-up\nTo read before class:\n\nStefanos Georganos et. al. (2019) “Geographical Random Forests: A Spatial Extension of the Random Forest Algorithm to Address Spatial Heterogeneity in Remote Sensing and Population Modelling”, Geocarto International, DOI: 10.1080/10106049.2019.1595177.\nGeorganos, S. and Kalogirou, S. (2022) “A Forest of Forests: A Spatially Weighted and Computationally Efficient Formulation of Geographical Random Forests”. ISPRS, International Journal of Geo-Information, 2022, 11, 471. https://www.mdpi.com/2220-9964/11/9/471\n\n\n\nReferences\n\nGeorge Grekousis et. al. (2022) “Ranking the importance of demographic, socioeconomic, and underlying health factors on US COVID-19 deaths: A geographical random forest approach”, Health and Place, vol. 74, pp. 1-12.\nYaowen Luo, Jianguo Yan & Stephen McClure. (2020) “Distribution of the environmental and socioeconomic risk factors on COVID-19 death rate across continental USA: a spatial nonlinear analysis”, Environmental Science and Pollution Research, 28:6587–6599.\nEun-Hee Koh, Eunhee Lee, & Kang-Kun Lee (2020) “Application of geographically weighted regression models to predict spatial characteristics of nitrate contamination: Implications for an effective groundwater management strategy”, Journal of Environmental Management. Vol. 268\n\n\n\nAll About R\n\nSpatialML"
   },
   {
     "objectID": "outline/Lesson10_outline.html#self-reading-before-meet-up",
@@ -2364,5 +2364,208 @@
     "title": "Lesson 9: Geographically Weighted Regression",
     "section": "References",
     "text": "References\nBrunsdon, C., Fotheringham, A.S., and Charlton, M. (2002) “Geographically weighted regression: A method for exploring spatial nonstationarity”. Geographical Analysis, 28: 281-289.\nBrunsdon, C., Fotheringham, A.S. and Charlton, M., (1999) [“Some Notes on Parametric Significance Tests for Geographically Weighted Regression”](https://onlinelibrary-wiley-com.libproxy.smu.edu.sg/doi/abs/10.1111/0022-4146.00146. Journal of Regional Science, 39(3), 497-524.\nMennis, Jeremy (2006) “Mapping the Results of Geographically Weighted Regression”, The Cartographic Journal, Vol.43 (2), p.171-179.\nStephen A. Matthews ; Tse-Chuan Yang (2012) “Mapping the results of local statistics: Using geographically weighted regression”, Demographic Research, Vol.26, p.151-166."
+  },
+  {
+    "objectID": "Take-home_Ex03.html",
+    "href": "Take-home_Ex03.html",
+    "title": "Take-home Exercise 3: Geospatial Analytics for Peace",
+    "section": "",
+    "text": "Important\n\n\n\nThis handout provides the context, the task, the expectation and the grading criteria of Take-home Exercise 3. Students must review and understand them before getting started with the take-home exercise."
+  },
+  {
+    "objectID": "Take-home_Ex03.html#setting-the-scene",
+    "href": "Take-home_Ex03.html#setting-the-scene",
+    "title": "Take-home Exercise 3: Geospatial Analytics for Peace",
+    "section": "Setting the Scene",
+    "text": "Setting the Scene\nUrban Rail Transit (URT), a public transportation system comprising rail-based modes such as subways, trams, and light rail plays a central role in sustainable urban development. By providing efficient, high-capacity mobility, URT promotes transit-oriented development (TOD) around stations, integrating land-use planning with transportation networks. This integration supports walkable communities, reduces traffic congestion, improves environmental quality, and enhances socioeconomic opportunities by connecting residents to employment, services, and education. URT systems also help cities manage spatial growth and optimize scarce land resources.\nIn Singapore, the Mass Rapid Transit (MRT) system has served as the backbone of public transportation since its inception in November 1987. Designed to provide fast, reliable, and high-capacity services, the MRT mitigates road congestion and supports the island’s high-density urban form. It has shaped urban development by linking new residential towns with commercial and employment hubs, while advancing national objectives such as ensuring that most households are within a 10-minute walk of a station (Land Transport Authority, 2016).\nFollowing decades of strategic planning and sustained expansion, the MRT network now spans the length and breadth of the city-state. As of 2024, it comprises 143 operational stations across six lines arranged in a circle–radial topology, with approximately 242.6 km of fully grade-separated track. Average daily ridership reached 3.41 million in 2024 (Wikipedia).\nWhile the MRT network is globally celebrated for its efficiency and coverage, the “ghost station” phenomenon, where stations are fully built but left operationalised in darkness, reveals the high-stakes balancing act between proactive infrastructure planning and immediate operational economics.\nThe authority intentionally build “shell stations” ahead of time to minimize future construction disruptions and massive costs. However, when economic downturns or delayed housing developments leave these areas empty, the stark reality of projected low ridership creates a dilemma for transport operators trying to manage massive daily running costs.\nA pertinent example is Hume MRT station, whose structural shell was completed in 2015 but whose opening was postponed due to low projected ridership and limited surrounding development. The station is opened for passenger service only on 28 February 2025, a decade after Downtown Line Stage 2 began operations. Similarly, the Buangkok and Woodleigh MRT stations remained closed when the North-East Line began operations in 2003, as the operator SBS Transit had determined that expected passenger volumes at these stations were insufficient to justify the operating costs. Addressing such challenges requires comprehensive catchment-area analysis and robust methods for predicting station-level ridership."
+  },
+  {
+    "objectID": "Take-home_Ex03.html#objectives",
+    "href": "Take-home_Ex03.html#objectives",
+    "title": "Take-home Exercise 3: Geospatial Analytics for Peace",
+    "section": "Objectives",
+    "text": "Objectives\nAccording to Singapore’s Land Transport Authority, two additional MRT lines, namely: the Jurong Region Line and the Cross Island Line will be completed by 2030, contributing 24 and 12 stations respectively. As the network expands, increasing system complexity poses challenges, particularly the risk of imbalanced ridership and mismatches between demand and capacity. These issues may hinder the broader goal of achieving an efficient and sustainable rail system.\nUsing probabilistic spatial interaction modelling methods, in this take-home exercise you are task to develop an analytical framework for ridership estimation at the station-level.\nThe specific objectives the take-home exercise are:\n\nTo calibrate a probabilistic spatial interaction model for station-level ridership prediction.\nTo estimate the potential ridership of MRT stations along the proposed Jurong Region Line and the Cross Island Line, and\nTo evaluate the potential impact of the newly planned MRT stations on the ridership patterns of the existing stations."
+  },
+  {
+    "objectID": "Take-home_Ex03.html#the-task",
+    "href": "Take-home_Ex03.html#the-task",
+    "title": "Take-home Exercise 3: Geospatial Analytics for Peace",
+    "section": "The Task",
+    "text": "The Task\nThe specific tasks of this take-home exercise are as follows:\n\nGeospatial Data Science\n\nBuild a geospatial analytical data by aggregating and counting arm conflict variables at the township level of Myanmar.\n\nConstruct a space-time cube of arm by counting conflict variables over space and time.\nDisplay the geographical distribution of the arm conflict distribution and patterns by using appropriate geovisualisation methods,\nDescribe the spatial patterns revealed by the geovisualisation (not more than 200 words per visual).\n\n\n\nLocal Measures of Spatial Association (LMSA) Analysis\n\nCompute LMSA statistic of the arm conflict variables generated.\nDisplay the LMSA maps of the arm conflict variables by township. The maps should only display the significant (i.e. p-value &lt; 0.05)\n\nWith reference to the analysis results, draw statistical conclusions (not more than 200 words per visual).\n\n\n\nEmerging Hot Spot Analysis(EHSA)\nWith reference to the arm conflict variables in the space-time cube:\n\nperform Mann-Kendall Test by using the spatio-temporal local Gi* values,\nprepared EHSA maps of the Gi* values of the arm conflict variables by township. The maps should only display the significant (i.e. p-value &lt; 0.05).\n\nWith reference to the EHSA maps and data visualisation prepared, describe the spatial patterns revealed. (not more than 250 words per cluster)."
+  },
+  {
+    "objectID": "Take-home_Ex03.html#the-data",
+    "href": "Take-home_Ex03.html#the-data",
+    "title": "Take-home Exercise 3: Geospatial Analytics for Peace",
+    "section": "The Data",
+    "text": "The Data\n\nAspatial data\nFor the purpose of this take-home exercise, Armed Conflict Location & Event Data Project (ACLED) data of Myanmar will be used. The data set is available on eLearn. The study time period is from 1st January 2021 to 30th September 2025.\n\n\nGeospatial data\nMyanmar Township Boundaries MIMU v9.4 should be used in this study. The data set can be downloaded at MIMU Geonode."
+  },
+  {
+    "objectID": "Take-home_Ex03.html#grading-criteria",
+    "href": "Take-home_Ex03.html#grading-criteria",
+    "title": "Take-home Exercise 3: Geospatial Analytics for Peace",
+    "section": "Grading Criteria",
+    "text": "Grading Criteria\nThis exercise will be graded by using the following criteria:\n\nGeospatial Data Wrangling (20 marks)\nYou will be assessed on your ability to prepare analysis-ready data, including:\n\nCorrect import of tabular and geospatial data from multiple sources.\nAppropriate data cleaning, transformation, and derivation of new variables.\nCorrect use of coordinate reference systems and spatial joins.\nUse of tidy, efficient R code and clear explanations of purpose.\n\n\n\n\n\n\n\nWarning\n\n\n\nAll data are like vast grassland full of land mines. Your job is to clear those mines and not to step on them.\n\n\n\n\nGeospatial Analysis (30 marks)\nYou will be assessed on your ability to apply spatial statistical methods rigorously, including:\n\nAppropriate choice and correct application of spatial statistics (e.g., Local Moran’s I, Getis-Ord Gi*, EHSA).\nAccurate interpretation of outputs, with evidence-based reasoning.\nDemonstrating awareness of assumptions, spatial scales, and limitations of chosen methods.\nClear articulation of how results address the stated objectives.\n\n\n\nGeovisualisation and geocommunication (20 marks):\nYou will be assessed on your ability to communicate results through effective geovisualisation, including:\n\nUse of clear, accurate, and professional map designs (appropriate symbology, color scales, legends, labels).\nSelection of visual forms that best reveal spatial patterns and support decision-making.\nConcise and insightful written commentary (≤200 words per visual) that explains findings in plain, non-technical language.\nEffective integration of visuals into a coherent narrative.\n\n\n\nReproducibility (15 marks)\nYou will be assessed on your ability to ensure that your analysis is fully reproducible, including:\n\nUse of Quarto with code chunks that run end-to-end without modification.\nClear explanation of purpose for each step (not just code, but why it is done).\nLogical organisation of workflow, with modular structure and meaningful sectioning.\nProper documentation of R packages, data sources, and dependencies to allow replication by others.\n\n\n\n\n\n\n\nTip\n\n\n\nSimply providing code chunks is insufficient. You must explain the purpose of each major analytical step, the function(s) used, the reason for the analytical decision, and any assumptions or limitations involved.\n\n\n\n\nBonus: Value-Added Analysis (15%)\nStudents are encouraged to explore beyond the core methods covered in class.\nStudents may extend their analysis using an appropriate geospatial analytical method not covered in the core exercise.\nA qualifying value-added analysis should:\n\naddress a meaningful analytical question;\nbe geospatial in nature;\nbe methodologically appropriate;\nbe clearly justified;\nidentify relevant assumptions and limitations; and\nprovide substantive additional insight.\n\n\n\n\n\n\n\nNote\n\n\n\nSimply applying an additional method or producing an additional visualisation without demonstrating its analytical contribution will not qualify for bonus marks.\n\n\nExamples may include, but are not limited to, an alternative spatial-statistical approach, advanced spatio-temporal analysis, simulation-based analysis, or another appropriately justified geospatial method."
+  },
+  {
+    "objectID": "Take-home_Ex03.html#assessment-rubric",
+    "href": "Take-home_Ex03.html#assessment-rubric",
+    "title": "Take-home Exercise 3: Geospatial Analytics for Peace",
+    "section": "Assessment Rubric",
+    "text": "Assessment Rubric\n\n\n\n\n\n\n\n\n\n\n\n\nCriterion\nOutstanding\nExcellent\nGood\nSatisfactory\nNeeds Improvement\n\n\n\n\nGeospatial Data Wrangling & Data Quality\nDemonstrates highly proficient and thoughtful handling of complex geospatial data. Data-quality issues are systematically identified, diagnosed and appropriately addressed. Spatial/temporal transformations and derived variables are clearly justified.\nDemonstrates strong proficiency in geospatial data preparation. Most important data-quality issues are identified and appropriately addressed. Transformations and derived variables are generally well justified.\nData are appropriately cleaned, transformed and prepared for analysis. Most important data-quality issues are addressed, although some decisions may lack depth of justification.\nData are sufficiently prepared for analysis, but important quality issues or processing decisions are incompletely addressed or documented.\nData preparation is incomplete, inappropriate or poorly documented. Important data-quality problems are overlooked, potentially compromising subsequent analysis.\n\n\nLMSA and EHSA Analysis & Statistical Reasoning\nDemonstrates sophisticated understanding of LMSA analysis and EHSA. Methods are carefully selected and justified. Assumptions, parameters and reference/null models are explicitly evaluated. Results are interpreted critically, with appropriate consideration of uncertainty, limitations and alternative explanations.\nDemonstrates strong understanding of the analytical methods. Methods and parameters are appropriately justified. Assumptions and reference/null models are clearly addressed. Results are accurately interpreted with good critical discussion.\nApplies appropriate LMSA methods correctly and provides generally sound interpretation. Some methodological choices, assumptions or limitations are discussed, but critical evaluation could be deeper.\nDemonstrates basic understanding and applies the principal methods with some success. Interpretation is largely descriptive and methodological justification, assumptions or limitations are limited.\nMethods are incorrectly applied, poorly justified or misunderstood. Interpretation is inaccurate, superficial or unsupported by the analysis.\n\n\nGeovisualisation & Geocommunication\nProduces highly effective, accurate and purposeful visualisations. Visual encodings are carefully chosen to reveal important spatial/spatio-temporal patterns. Statistical graphics and maps work together to communicate a coherent analytical story.\nProduces clear, accurate and well-designed visualisations. Important patterns are effectively communicated and supported by appropriate analytical interpretation.\nVisualisations are generally appropriate and understandable. Major findings can be identified, although some visual or communication choices could be improved.\nVisualisations communicate basic findings but may suffer from inappropriate design, excessive complexity, weak hierarchy or limited analytical interpretation.\nVisualisations are unclear, misleading, inaccurate or poorly matched to the analytical questions.\n\n\nReproducibility & Analytical Documentation\nProvides a highly transparent and reproducible workflow. Data sources, preparation decisions, assumptions, analytical parameters, methods, code and outputs are comprehensively documented. Explanations demonstrate clear understanding of why each major step is undertaken.\nProvides a well-documented and reproducible workflow. Code, methods and major analytical decisions are clearly documented and explained.\nProvides a generally reproducible workflow with appropriate code and documentation. Some analytical decisions or explanations are incomplete.\nCode and workflow are present but documentation is limited. Another analyst may reproduce some, but not necessarily all, aspects of the analysis.\nuate explanation or important components are missing.\n\n\n\n\n\nQualitative grading rubric of Value-Added Analysis\n\n\n\n\n\n\n\n\nLevel\nDescriptor\n\n\n\n\nExceptional Contribution\nIntroduces a well-chosen geospatial analytical approach beyond the core scope that addresses a meaningful additional question and generates substantive new insight. The method is appropriately justified, implemented and interpreted, with assumptions and limitations clearly considered.\n\n\nMeaningful Contribution\nExtends the analysis using an appropriate additional geospatial method and provides useful additional insight. The method and findings are reasonably justified and interpreted.\n\n\nLimited / No Bonus\nThe extension adds limited analytical value, lacks sufficient methodological justification, or mainly duplicates the core analysis. No bonus is awarded where the additional method does not provide meaningful new insight.\n\n\n\n\n\n\n\n\n\n\nImportant\n\n\n\nValue-Added Analysis is not awarded for simply using a more advanced R package, producing additional visualisations, or applying a method that was not covered in class. Bonus credit is awarded for demonstrating meaningful additional analytical insight through an appropriately justified geospatial approach."
+  },
+  {
+    "objectID": "Take-home_Ex03.html#submission-requirements",
+    "href": "Take-home_Ex03.html#submission-requirements",
+    "title": "Take-home Exercise 3: Geospatial Analytics for Peace",
+    "section": "Submission Requirements",
+    "text": "Submission Requirements\n\nExecutive Summary\nPrepare an Executive Summary of no more than 10 slides, excluding the cover page and content page.\nThe Executive Summary must be prepared using Quarto revealjs.\nThe presentation should communicate the essential:\n\nresearch question;\nstudy area and data;\nanalytical approach;\nkey findings;\nimportant visual evidence;\nlimitations; and\npublic-safety implications.\n\nYou are required to publish the Executive Summary on Vercel or another appropriate web-hosting service.\n\n\nTechnical Report\nPrepare a comprehensive Technical Report using Quarto in HTML format.\nThe Technical Report should provide sufficient detail to document and reproduce the complete analytical workflow.\nIt should include, where appropriate:\n\nIntroduction and study context\nResearch question and objectives\nData and study design\nData preparation and quality assessment\nAnalytical assumptions and methodological decisions\nLSMA analysis\nEHSA\nIntegrated findings and discussion\nGeovisualisation and geocommunication\nPease-keeping implications\nLimitations\nReferences\n\nYou are required to publish the Technical Report on Vercel or another appropriate web-hosting service.\n\n\nQuarto Project and Reproducibility\nThe complete Quarto project for the take-home exercise must be pushed to your GitHub repository.\nThe repository should contain the necessary files to demonstrate the reproducibility of your analysis, subject to any data-licensing or redistribution restrictions.\n\n\nSubmission Links\nUpdate Take-home Exercise 2 links to the:\n\nExecutive Summary;\nTechnical Report; and\nGitHub repository\n\non the coursework website and provide the required links through eLearn."
+  },
+  {
+    "objectID": "Take-home_Ex03.html#due-date",
+    "href": "Take-home_Ex03.html#due-date",
+    "title": "Take-home Exercise 3: Geospatial Analytics for Peace",
+    "section": "Due Date",
+    "text": "Due Date\n25th October 2026 (Sunday), 11.59pm (midnight)."
+  },
+  {
+    "objectID": "Take-home_Ex03.html#learning-from-senior",
+    "href": "Take-home_Ex03.html#learning-from-senior",
+    "title": "Take-home Exercise 3: Geospatial Analytics for Peace",
+    "section": "Learning from senior",
+    "text": "Learning from senior\nYou are advised to review these sample submissions prepared by your seniors.\n\nChristover Manafe\nTeng Kok Wai\nNguyen Bao Thu Phuong"
+  },
+  {
+    "objectID": "Take-home_Ex03.html#learning-from-is415",
+    "href": "Take-home_Ex03.html#learning-from-is415",
+    "title": "Take-home Exercise 3: Geospatial Analytics for Peace",
+    "section": "Learning from IS415",
+    "text": "Learning from IS415\n\nKHANT MIN NAING: Very well done in all the five grading criteria especially the ability to provide a comprehensive overview of the analysis methods used and discussion on the analysis results.\nMATTHEW HO YIWEN Able to provide a clear and comprehensive discussion on the geospatial data wrangling process and to communicate the analysis results by using appropriate geovisualisation and data visualisation methods."
+  },
+  {
+    "objectID": "Take-home_Ex03.html#q-a",
+    "href": "Take-home_Ex03.html#q-a",
+    "title": "Take-home Exercise 3: Geospatial Analytics for Peace",
+    "section": "Q & A",
+    "text": "Q & A\nPlease submit your questions or queries related to this take-home exercise on Piazza."
+  },
+  {
+    "objectID": "Take-home_Ex03.html#peer-learning",
+    "href": "Take-home_Ex03.html#peer-learning",
+    "title": "Take-home Exercise 3: Geospatial Analytics for Peace",
+    "section": "Peer Learning",
+    "text": "Peer Learning"
+  },
+  {
+    "objectID": "Take-home_Ex03.html#reference",
+    "href": "Take-home_Ex03.html#reference",
+    "title": "Take-home Exercise 3: Geospatial Analytics for Peace",
+    "section": "Reference",
+    "text": "Reference"
+  },
+  {
+    "objectID": "lesson/Lesson10/Lesson09-GWRF.html",
+    "href": "lesson/Lesson10/Lesson09-GWRF.html",
+    "title": "Lesson 8: Geographically Weighted Predictive Modelling",
+    "section": "",
+    "text": "What is Predictive Modelling?\nWhat is Geospatial Predictive Modelling\nIntroducing Recursive Partitioning\nAdvanced Recursive Partitioning: Random Forest\nIntroducing Geographically Weighted Random Forest"
+  },
+  {
+    "objectID": "lesson/Lesson10/Lesson09-GWRF.html#content",
+    "href": "lesson/Lesson10/Lesson09-GWRF.html#content",
+    "title": "Lesson 8: Geographically Weighted Predictive Modelling",
+    "section": "",
+    "text": "What is Predictive Modelling?\nWhat is Geospatial Predictive Modelling\nIntroducing Recursive Partitioning\nAdvanced Recursive Partitioning: Random Forest\nIntroducing Geographically Weighted Random Forest"
+  },
+  {
+    "objectID": "lesson/Lesson10/Lesson09-GWRF.html#what-is-predictive-modelling",
+    "href": "lesson/Lesson10/Lesson09-GWRF.html#what-is-predictive-modelling",
+    "title": "Lesson 8: Geographically Weighted Predictive Modelling",
+    "section": "What is Predictive Modelling?",
+    "text": "What is Predictive Modelling?\n\n\n\nPredictive modelling uses statistical learning or machine learning techniques to predict outcomes.\n\nBy and large, the event one wants to predict is in the future. However, a set of known outcome and predictors (also known as variables) will be used to calibrate the predictive models."
+  },
+  {
+    "objectID": "lesson/Lesson10/Lesson09-GWRF.html#what-is-geospatial-predictive-modelling",
+    "href": "lesson/Lesson10/Lesson09-GWRF.html#what-is-geospatial-predictive-modelling",
+    "title": "Lesson 8: Geographically Weighted Predictive Modelling",
+    "section": "What is Geospatial Predictive Modelling",
+    "text": "What is Geospatial Predictive Modelling\n\nGeospatial predictive modelling is conceptually rooted in the principle that the occurrences of events being modeled are limited in distribution.\n\nWhen geographically referenced data are used, occurrences of events are neither uniform nor random in distribution over space. There are geospatial factors (infrastructure, sociocultural, topographic, etc.) that constrain and influence where the locations of events occur.\nGeospatial predictive modeling attempts to describe those constraints and influences by spatially correlating occurrences of historical geospatial locations with environmental factors that represent those constraints and influences.\n\n\n\n\nDifferences between Explanatory Modelling and Predictive Analytics"
+  },
+  {
+    "objectID": "lesson/Lesson10/Lesson09-GWRF.html#predictive-modelling-process",
+    "href": "lesson/Lesson10/Lesson09-GWRF.html#predictive-modelling-process",
+    "title": "Lesson 8: Geographically Weighted Predictive Modelling",
+    "section": "Predictive Modelling Process",
+    "text": "Predictive Modelling Process\n\n\n\n\n\n\n\nData Sampling in Predictive Analytics\n\n\n\n\nTraining dataset: This is used to build up our prediction algorithm. Our algorithm tries to tune itself to the quirks of the training data sets. In this phase we usually create multiple algorithms in order to compare their performances during the Cross-Validation Phase.\nValidation dataset: This data set is used to give an estimate of model skill while tuning model’s hyperparameters. It aims to avoiding over-fitting the predictive model.\nTest dataset: The is also held back from the training of the model, but is instead used to give an unbiased estimate of the skill of the final tuned model when comparing or selecting between final models.\n\n\n\n\n\n\n\n\n\nComparing Predictive Performance\n\n\n\nThe need for model comparison arises from the wide choice of classifiers and predictive methods.\n\nNot only do we have several different methods, but even within a single method there are usually many options that can lead to completely different results.\n\nIn practice, modelers often use several tools, sometimes both graphical and numerical, to choose a best model.\n\n\n\n\nMean Squared Error (MSE) (also known as Average Squared Error (ASE))\nAkaike information criterion (AIC)\nBayesian Information Criterion (BIC)"
+  },
+  {
+    "objectID": "lesson/Lesson10/Lesson09-GWRF.html#introducing-recursive-partitioning",
+    "href": "lesson/Lesson10/Lesson09-GWRF.html#introducing-recursive-partitioning",
+    "title": "Lesson 8: Geographically Weighted Predictive Modelling",
+    "section": "Introducing recursive partitioning",
+    "text": "Introducing recursive partitioning\n\nA predictive methodology involving a dependent variable y and one and more predictors.\nThe dependent variable can be either a continuous or categorical scales.\nRules partition data into mutually exclusive groups.\nNo need to worry about transformations such as logs.\nNo prior distribution requirement.\n\n\n\nRecursive Partitioning as a Machine Learning engine\n\n\n\nAs a machine learning technique, recursive partitioning algorithms operate by building a model based on the training dataset and using that to make predictions or decisions, rather than following only explicitly programmed instructions.\n\n\n\n\n\n\n\n\n\nProperties of Recursive Partitioning\n\n\n\nIf the response is categorical, then it is fitting the probabilities estimated for the response levels, minimizing the residual log-likelihood chi-square [2*entropy].\n\n\n\nIf the response is continuous, then the platform fits means, minimizing the sum of squared errors. The earlier is popularly known as Classification Trees and the later is known as Regression Trees.\n\n\n\n\n\n\nProperties of Recursive Partitioning\n\n\n\nWorking with continuous predictor(s)\n\nIf a predictor is continuous, then the partition is done according to a splitting “cut” value for X. For example, Average Days Delinquent &lt; 12.3 or &gt;=12.3 as shown in the figure.\n\n\n\n\n\nWorking with categorical predictor(s)\n\nIf the predictor is categorical, then it divides the X categories into two groups of levels and considers all possible groupings into two levels.\n\n\n\n\n\n\n\n\nComponents of Classification and Regression Tree (CART)\n\n\nA CART is read from the top down starting at the root node.\n\nEach internal node represents a split based on the values of one of the inputs. The inputs can appear in any number of splits throughout the tree. Cases move down the branch that contains its input value.\nThe terminal nodes of the tree are called leaves. The leaves represent the predicted target. All cases reaching a particular leaf are given the same predicted value.\n\n\n\n\n\n\n\n\nSome useful features and advantages of Recursive Partitioning\n\nRecursive partitioning is nonparametric and therefore does not rely on data belonging to a particular type of distribution.\nRecursive partitioning is not significantly impacted by outliers in the input variables.\nYou can relax stopping rules to “overgrow” decision trees and then prune back the tree to the optimal size. This approach minimizes the probability that important structure in the data set will be overlooked by stopping too soon.\nRecursive partitioning incorporates both testing with a test data set and cross-validation to assess the goodness of fit more accurately.\nRecursive partitioning can use the same variables more than once in different parts of the tree. This capability can uncover complex interdependencies between sets of variables.\nRecursive partitioning can be used in conjunction with other prediction methods to select the input set of variables."
+  },
+  {
+    "objectID": "lesson/Lesson10/Lesson09-GWRF.html#advanced-recursive-partitioning-random-forest",
+    "href": "lesson/Lesson10/Lesson09-GWRF.html#advanced-recursive-partitioning-random-forest",
+    "title": "Lesson 8: Geographically Weighted Predictive Modelling",
+    "section": "Advanced Recursive Partitioning: Random Forest",
+    "text": "Advanced Recursive Partitioning: Random Forest\nRandom forest, like its name implies, consists of a large number of individual decision trees that operate as an ensemble.\n\nEach individual tree in the random forest spits out a class prediction and the class with the most votes becomes our model’s prediction as shown the figure."
+  },
+  {
+    "objectID": "lesson/Lesson10/Lesson09-GWRF.html#introducing-geographically-weighted-random-forest-gwrf",
+    "href": "lesson/Lesson10/Lesson09-GWRF.html#introducing-geographically-weighted-random-forest-gwrf",
+    "title": "Lesson 8: Geographically Weighted Predictive Modelling",
+    "section": "Introducing Geographically Weighted Random Forest (gwRF)",
+    "text": "Introducing Geographically Weighted Random Forest (gwRF)\n\nGeographically Weighted Random Forest (GRF) is a spatial analysis method using a local version of the famous Machine Learning algorithm.\n\nThis technique adopts the idea of the Geographically Weighted Regression.\nThe main difference between a tradition (linear) GWR and GRF is that we can model non-stationarity coupled with a flexible non-linear model which is very hard to overfit due to its bootstrapping nature, thus relaxing the assumptions of traditional Gaussian statistics."
+  },
+  {
+    "objectID": "lesson/Lesson10/Lesson10-GWRF.html#content",
+    "href": "lesson/Lesson10/Lesson10-GWRF.html#content",
+    "title": "Lesson 10: Geographically Weighted Predictive Modelling",
+    "section": "Content",
+    "text": "Content\n\nWhat is Predictive Modelling?\nWhat is Geospatial Predictive Modelling\nIntroducing Recursive Partitioning\nAdvanced Recursive Partitioning: Random Forest\nIntroducing Geographically Weighted Random Forest"
+  },
+  {
+    "objectID": "lesson/Lesson10/Lesson10-GWRF.html#what-is-predictive-modelling",
+    "href": "lesson/Lesson10/Lesson10-GWRF.html#what-is-predictive-modelling",
+    "title": "Lesson 10: Geographically Weighted Predictive Modelling",
+    "section": "What is Predictive Modelling?",
+    "text": "What is Predictive Modelling?\n\n\n\nPredictive modelling uses statistical learning or machine learning techniques to predict outcomes.\n\nBy and large, the event one wants to predict is in the future. However, a set of known outcome and predictors (also known as variables) will be used to calibrate the predictive models."
+  },
+  {
+    "objectID": "lesson/Lesson10/Lesson10-GWRF.html#what-is-geospatial-predictive-modelling",
+    "href": "lesson/Lesson10/Lesson10-GWRF.html#what-is-geospatial-predictive-modelling",
+    "title": "Lesson 10: Geographically Weighted Predictive Modelling",
+    "section": "What is Geospatial Predictive Modelling",
+    "text": "What is Geospatial Predictive Modelling\n\nGeospatial predictive modelling is conceptually rooted in the principle that the occurrences of events being modeled are limited in distribution.\n\nWhen geographically referenced data are used, occurrences of events are neither uniform nor random in distribution over space. There are geospatial factors (infrastructure, sociocultural, topographic, etc.) that constrain and influence where the locations of events occur.\nGeospatial predictive modeling attempts to describe those constraints and influences by spatially correlating occurrences of historical geospatial locations with environmental factors that represent those constraints and influences."
+  },
+  {
+    "objectID": "lesson/Lesson10/Lesson10-GWRF.html#predictive-modelling-process",
+    "href": "lesson/Lesson10/Lesson10-GWRF.html#predictive-modelling-process",
+    "title": "Lesson 10: Geographically Weighted Predictive Modelling",
+    "section": "Predictive Modelling Process",
+    "text": "Predictive Modelling Process"
+  },
+  {
+    "objectID": "lesson/Lesson10/Lesson10-GWRF.html#introducing-recursive-partitioning",
+    "href": "lesson/Lesson10/Lesson10-GWRF.html#introducing-recursive-partitioning",
+    "title": "Lesson 10: Geographically Weighted Predictive Modelling",
+    "section": "Introducing recursive partitioning",
+    "text": "Introducing recursive partitioning\n\nA predictive methodology involving a dependent variable y and one and more predictors.\nThe dependent variable can be either a continuous or categorical scales.\nRules partition data into mutually exclusive groups.\nNo need to worry about transformations such as logs.\nNo prior distribution requirement."
+  },
+  {
+    "objectID": "lesson/Lesson10/Lesson10-GWRF.html#advanced-recursive-partitioning-random-forest",
+    "href": "lesson/Lesson10/Lesson10-GWRF.html#advanced-recursive-partitioning-random-forest",
+    "title": "Lesson 10: Geographically Weighted Predictive Modelling",
+    "section": "Advanced Recursive Partitioning: Random Forest",
+    "text": "Advanced Recursive Partitioning: Random Forest\nRandom forest, like its name implies, consists of a large number of individual decision trees that operate as an ensemble.\n\nEach individual tree in the random forest spits out a class prediction and the class with the most votes becomes our model’s prediction as shown the figure."
+  },
+  {
+    "objectID": "lesson/Lesson10/Lesson10-GWRF.html#introducing-geographically-weighted-random-forest-gwrf",
+    "href": "lesson/Lesson10/Lesson10-GWRF.html#introducing-geographically-weighted-random-forest-gwrf",
+    "title": "Lesson 10: Geographically Weighted Predictive Modelling",
+    "section": "Introducing Geographically Weighted Random Forest (gwRF)",
+    "text": "Introducing Geographically Weighted Random Forest (gwRF)\n\nGeographically Weighted Random Forest (GRF) is a spatial analysis method using a local version of the famous Machine Learning algorithm.\n\nThis technique adopts the idea of the Geographically Weighted Regression.\nThe main difference between a tradition (linear) GWR and GRF is that we can model non-stationarity coupled with a flexible non-linear model which is very hard to overfit due to its bootstrapping nature, thus relaxing the assumptions of traditional Gaussian statistics."
   }
 ]
