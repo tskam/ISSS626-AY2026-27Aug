@@ -42,10 +42,8 @@ website:
         href: Take-home_Ex01.html
       - text: "Take-home Exercise 2"
         href: Take-home_Ex02.html
-      - text: "Take-home Exercise 3a"
-        href: Take-home_Ex03a.html
-      - text: "Take-home Exercise 3b"
-        href: Take-home_Ex03b.html
+      - text: "Take-home Exercise 3"
+        href: Take-home_Ex03.html
     right:
     - text: "All About R"
       menu: 

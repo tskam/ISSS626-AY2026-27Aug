@@ -1,0 +1,1016 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.26">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="dcterms.date" content="2025-09-30">
+
+<title>Take-home Exercise 3: Geospatial Analytics for Urban Sustainability – ISSS626</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-5f49f16f97b4b358d01fa7acc334a7f0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">ISSS626</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./syllabus.html"> 
+<span class="menu-text">Syllabus</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./lesson.html"> 
+<span class="menu-text">Lesson Plan</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-in-class-exercise" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">In-class Exercise</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-in-class-exercise">    
+        <li>
+    <a class="dropdown-item" href="./In-class_Ex/In-class_Ex01/In-class_Ex01.html">
+ <span class="dropdown-text">In-class Exercise 1</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./In-class_Ex/In-class_Ex02/In-class_Ex02-SPPA.html">
+ <span class="dropdown-text">In-class Exercise 2</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./In-class_Ex/In-class_Ex03/In-class_Ex03a.html">
+ <span class="dropdown-text">In-class Exercise 3a</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./In-class_Ex/In-class_Ex03/In-class_Ex03b.html">
+ <span class="dropdown-text">In-class Exercise 3b</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./In-class_Ex/In-class_Ex04/In-class_Ex04.html">
+ <span class="dropdown-text">In-class Exercise 4</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./In-class_Ex/In-class_Ex05/In-class_Ex05-GLSA.html">
+ <span class="dropdown-text">In-class Exercise 5a</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./In-class_Ex/In-class_Ex05/In-class_Ex05-EHSA.html">
+ <span class="dropdown-text">In-class Exercise 5b</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./In-class_Ex/In-class_Ex06/In-class_Ex06-KickStarter.html">
+ <span class="dropdown-text">In-class Exercise 6</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./In-class_Ex/In-class_Ex07/In-class_Ex07-accessibility.html">
+ <span class="dropdown-text">In-class Exercise 7</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./In-class_Ex/In-class_Ex08/In-class_Ex08.html">
+ <span class="dropdown-text">In-class Exercise 8</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./In-class_Ex/In-class_Ex09/In-class_Ex09.html">
+ <span class="dropdown-text">In-class Exercise 9</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./In-class_Ex/In-class_Ex10/In-class_Ex10.html">
+ <span class="dropdown-text">In-class Exercise 10</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-take-home-exercise" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Take-home Exercise</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-take-home-exercise">    
+        <li>
+    <a class="dropdown-item" href="./Take-home_Ex01.html">
+ <span class="dropdown-text">Take-home Exercise 1</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./Take-home_Ex02.html">
+ <span class="dropdown-text">Take-home Exercise 2</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./Take-home_Ex03.html">
+ <span class="dropdown-text">Take-home Exercise 3</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-all-about-r" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">All About R</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-all-about-r">    
+        <li>
+    <a class="dropdown-item" href="./R.html">
+ <span class="dropdown-text">R Resouces</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./Quarto.html">
+ <span class="dropdown-text">Quarto</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./git.html">
+ <span class="dropdown-text">git and github</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#setting-the-scene" id="toc-setting-the-scene" class="nav-link active" data-scroll-target="#setting-the-scene">Setting the Scene</a></li>
+  <li><a href="#objectives" id="toc-objectives" class="nav-link" data-scroll-target="#objectives">Objectives</a></li>
+  <li><a href="#the-task" id="toc-the-task" class="nav-link" data-scroll-target="#the-task">The Task</a></li>
+  <li><a href="#the-data" id="toc-the-data" class="nav-link" data-scroll-target="#the-data">The Data</a></li>
+  <li><a href="#grading-criteria" id="toc-grading-criteria" class="nav-link" data-scroll-target="#grading-criteria">Grading Criteria</a>
+  <ul class="collapse">
+  <li><a href="#geospatial-data-wrangling-20-marks" id="toc-geospatial-data-wrangling-20-marks" class="nav-link" data-scroll-target="#geospatial-data-wrangling-20-marks">Geospatial Data Wrangling (20 marks)</a></li>
+  <li><a href="#geospatial-analysis-30-marks" id="toc-geospatial-analysis-30-marks" class="nav-link" data-scroll-target="#geospatial-analysis-30-marks">Geospatial Analysis (30 marks)</a></li>
+  <li><a href="#geovisualisation-and-geocommunication-20-marks" id="toc-geovisualisation-and-geocommunication-20-marks" class="nav-link" data-scroll-target="#geovisualisation-and-geocommunication-20-marks">Geovisualisation and geocommunication (20 marks):</a></li>
+  <li><a href="#reproducibility-15-marks" id="toc-reproducibility-15-marks" class="nav-link" data-scroll-target="#reproducibility-15-marks">Reproducibility (15 marks)</a></li>
+  <li><a href="#bonus-value-added-analysis-15" id="toc-bonus-value-added-analysis-15" class="nav-link" data-scroll-target="#bonus-value-added-analysis-15">Bonus: Value-Added Analysis (15%)</a></li>
+  </ul></li>
+  <li><a href="#assessment-rubric" id="toc-assessment-rubric" class="nav-link" data-scroll-target="#assessment-rubric">Assessment Rubric</a></li>
+  <li><a href="#submission-requirements" id="toc-submission-requirements" class="nav-link" data-scroll-target="#submission-requirements">Submission Requirements</a>
+  <ul class="collapse">
+  <li><a href="#executive-summary" id="toc-executive-summary" class="nav-link" data-scroll-target="#executive-summary">Executive Summary</a></li>
+  <li><a href="#technical-report" id="toc-technical-report" class="nav-link" data-scroll-target="#technical-report">Technical Report</a></li>
+  <li><a href="#quarto-project-and-reproducibility" id="toc-quarto-project-and-reproducibility" class="nav-link" data-scroll-target="#quarto-project-and-reproducibility">Quarto Project and Reproducibility</a></li>
+  <li><a href="#submission-links" id="toc-submission-links" class="nav-link" data-scroll-target="#submission-links">Submission Links</a></li>
+  </ul></li>
+  <li><a href="#due-date" id="toc-due-date" class="nav-link" data-scroll-target="#due-date">Due Date</a></li>
+  <li><a href="#q-a" id="toc-q-a" class="nav-link" data-scroll-target="#q-a">Q &amp; A</a></li>
+  <li><a href="#reference" id="toc-reference" class="nav-link" data-scroll-target="#reference">Reference</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Take-home Exercise 3: Geospatial Analytics for Urban Sustainability</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">September 30, 2025</p>
+    </div>
+  </div>
+  
+    <div>
+    <div class="quarto-title-meta-heading">Modified</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date-modified">October 30, 2026</p>
+    </div>
+  </div>
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This handout provides the context, the task, the expectation and the grading criteria of Take-home Exercise 3. Students must review and understand them before getting started with the take-home exercise.</p>
+</div>
+</div>
+<section id="setting-the-scene" class="level2">
+<h2 class="anchored" data-anchor-id="setting-the-scene">Setting the Scene</h2>
+<p>Urban Rail Transit (URT), a public transportation system comprising rail-based modes such as subways, trams, and light rail plays a central role in sustainable urban development. By providing efficient, high-capacity mobility, URT promotes transit-oriented development (TOD) around stations, integrating land-use planning with transportation networks. This integration supports walkable communities, reduces traffic congestion, improves environmental quality, and enhances socioeconomic opportunities by connecting residents to employment, services, and education. URT systems also help cities manage spatial growth and optimize scarce land resources.</p>
+<p>In Singapore, the Mass Rapid Transit (MRT) system has served as the backbone of public transportation since its inception in November 1987. Designed to provide fast, reliable, and high-capacity services, the MRT mitigates road congestion and supports the island’s high-density urban form. It has shaped urban development by linking new residential towns with commercial and employment hubs, while advancing national objectives such as ensuring that most households are within a 10-minute walk of a station (Land Transport Authority, 2016).</p>
+<p>Following decades of strategic planning and sustained expansion, the MRT network now spans the length and breadth of the city-state. As of 2024, it comprises 143 operational stations across six lines arranged in a circle–radial topology, with approximately 242.6 km of fully grade-separated track. Average daily ridership reached 3.41 million in 2024 (Wikipedia).</p>
+<p>While the MRT network is globally celebrated for its efficiency and coverage, the “ghost station” phenomenon, where stations are fully built but left operationalised in darkness, reveals the high-stakes balancing act between proactive infrastructure planning and immediate operational economics.</p>
+<p>The authority intentionally build “shell stations” ahead of time to minimize future construction disruptions and massive costs. However, when economic downturns or delayed housing developments leave these areas empty, the stark reality of projected low ridership creates a dilemma for transport operators trying to manage massive daily running costs.</p>
+<p>A pertinent example is Hume MRT station, whose structural shell was completed in 2015 but whose opening was postponed due to low projected ridership and limited surrounding development. The station is opened for passenger service only on 28 February 2025, a decade after Downtown Line Stage 2 began operations. Similarly, the Buangkok and Woodleigh MRT stations remained closed when the North-East Line began operations in 2003, as the operator SBS Transit had determined that expected passenger volumes at these stations were insufficient to justify the operating costs. Addressing such challenges requires comprehensive catchment-area analysis and robust methods for predicting station-level ridership.</p>
+</section>
+<section id="objectives" class="level2">
+<h2 class="anchored" data-anchor-id="objectives">Objectives</h2>
+<p>According to Singapore’s Land Transport Authority, two additional MRT lines, namely: the Jurong Region Line and the Cross Island Line will be completed by 2030, contributing 24 and 12 stations respectively. As the network expands, increasing system complexity poses challenges, particularly the risk of imbalanced ridership and mismatches between demand and capacity. These issues may hinder the broader goal of achieving an efficient and sustainable rail system.</p>
+<p>Using probabilistic spatial interaction modelling methods, in this take-home exercise you are task to develop an analytical framework for ridership prediction at the station-level.</p>
+<p>The specific objectives the take-home exercise are:</p>
+<ul>
+<li>To calibrate a probabilistic spatial interaction model for station-level ridership <strong>estimation</strong>.</li>
+<li>To <strong>predict</strong> the potential ridership of MRT stations along the proposed Jurong Region Line and the Cross Island Line, and</li>
+<li>To evaluate the potential impact of the newly planned MRT stations on the ridership patterns of the existing stations.</li>
+</ul>
+</section>
+<section id="the-task" class="level2">
+<h2 class="anchored" data-anchor-id="the-task">The Task</h2>
+<p>The specific tasks of this take-home exercise are as follows:</p>
+<ul>
+<li>Build two spatial interaction data frames. One for the existing MRT/LRT stations and the second second one includes the proposed MRT stations. The spatial interaction data sets should include but not limited to, the origin, the destination, attraction and distance.</li>
+<li>Build a data frame containing the origins saved in a column which has the same name as in the spatial interaction data frames and additional column(s) containing the local market potential.</li>
+<li>Build a data.frame containing the destinations save in a column which has the same name as in the spatial interaction data frames, a column containing observed ridership values and additional columns containing attraction variables.</li>
+<li>Calibrating a probabilistic spatial interaction model for station-level ridership <strong>estimation</strong></li>
+<li>Using the fitted model to estimate the ridership at station level.</li>
+<li>Create appropriate statistical graphics or/and thematic maps to support geocommunication of the modelling results.</li>
+<li>Using the fitted model to predict the ridership of both the existing and the proposed stations.</li>
+<li>Create appropriate statistical graphics or/and thematic map to reveal the impact of the proposed new stations on the market area of the existing stations.</li>
+</ul>
+</section>
+<section id="the-data" class="level2">
+<h2 class="anchored" data-anchor-id="the-data">The Data</h2>
+<p>Below is a list of recommended datasets to consider; however, students are free to include other appropriate datasets.</p>
+<ul>
+<li><a href="https://datamall.lta.gov.sg/content/dam/datamall/datasets/Geospatial/TrainStation_Sep2026.zip">Train Station</a>: A point representation to indicate the location of the MRT station.</li>
+<li><a href="https://github.com/elliotwutingfeng/singapore_train_station_coordinates">Future station coordinates</a>: Geographic locations of all planned future stations and extensions.</li>
+<li><a href="https://datamall.lta.gov.sg/content/datamall/en/dynamic-data.html">Passenger Volume by Origin Destination Train Stations</a>: Provides anonymized monthly tap-in/tap-out volumes between MRT stations.</li>
+<li><a href="https://data.gov.sg/datasets/d_16b157c52ed637edd6ba1232e026258d/view">HDB Existing Building</a>: Provides geospatial information and physical attributes for all completed Housing &amp; Development Board buildings in Singapore.</li>
+<li><a href="https://datamall.lta.gov.sg/content/datamall/en/static-data.html">Bus Stop Location</a>: Static shapefiles of bus stop locations across Singapore.</li>
+<li><a href="https://download.geofabrik.de/asia/malaysia-singapore-brunei.html">Point-of-Interest (POI) from OpenStreetMap Singapore</a></li>
+</ul>
+</section>
+<section id="grading-criteria" class="level2">
+<h2 class="anchored" data-anchor-id="grading-criteria">Grading Criteria</h2>
+<p>This exercise will be graded by using the following criteria:</p>
+<section id="geospatial-data-wrangling-20-marks" class="level3">
+<h3 class="anchored" data-anchor-id="geospatial-data-wrangling-20-marks">Geospatial Data Wrangling (20 marks)</h3>
+<p>You will be assessed on your ability to prepare analysis-ready data, including:</p>
+<ul>
+<li>Correct import of tabular and geospatial data from multiple sources.</li>
+<li>Appropriate data cleaning, transformation, and derivation of new variables.</li>
+<li>Correct use of coordinate reference systems and spatial joins.</li>
+<li>Use of tidy, efficient R code and clear explanations of purpose.</li>
+</ul>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>All data are like vast grassland full of land mines. Your job is to clear those mines and not to step on them.</p>
+</div>
+</div>
+</section>
+<section id="geospatial-analysis-30-marks" class="level3">
+<h3 class="anchored" data-anchor-id="geospatial-analysis-30-marks">Geospatial Analysis (30 marks)</h3>
+<p>You will be assessed on your ability to apply spatial statistical methods rigorously, including:</p>
+<ul>
+<li>Appropriate choice and correct application of probabilistic spatial interaction modelling methods .</li>
+<li>Accurate interpretation of outputs, with evidence-based reasoning.</li>
+<li>Demonstrating awareness of assumptions, spatial scales, and limitations of chosen methods.</li>
+<li>Clear articulation of how results address the stated objectives.</li>
+</ul>
+</section>
+<section id="geovisualisation-and-geocommunication-20-marks" class="level3">
+<h3 class="anchored" data-anchor-id="geovisualisation-and-geocommunication-20-marks">Geovisualisation and geocommunication (20 marks):</h3>
+<p>You will be assessed on your ability to communicate results through effective geovisualisation, including:</p>
+<ul>
+<li>Use of clear, accurate, and professional map designs (appropriate symbology, color scales, legends, labels).</li>
+<li>Selection of visual forms that best reveal spatial patterns and support decision-making.</li>
+<li>Concise and insightful written commentary (≤200 words per visual) that explains findings in plain, non-technical language.</li>
+<li>Effective integration of visuals into a coherent narrative.</li>
+</ul>
+</section>
+<section id="reproducibility-15-marks" class="level3">
+<h3 class="anchored" data-anchor-id="reproducibility-15-marks">Reproducibility (15 marks)</h3>
+<p>You will be assessed on your ability to ensure that your analysis is fully reproducible, including:</p>
+<ul>
+<li>Use of Quarto with code chunks that run end-to-end without modification.</li>
+<li>Clear explanation of purpose for each step (not just code, but why it is done).</li>
+<li>Logical organisation of workflow, with modular structure and meaningful sectioning.</li>
+<li>Proper documentation of R packages, data sources, and dependencies to allow replication by others.</li>
+</ul>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Simply providing code chunks is insufficient. You must explain the purpose of each major analytical step, the function(s) used, the reason for the analytical decision, and any assumptions or limitations involved.</p>
+</div>
+</div>
+</section>
+<section id="bonus-value-added-analysis-15" class="level3">
+<h3 class="anchored" data-anchor-id="bonus-value-added-analysis-15">Bonus: Value-Added Analysis (15%)</h3>
+<p>Students are encouraged to explore beyond the core methods covered in class.</p>
+<p>Students may extend their analysis using an appropriate geospatial analytical method not covered in the core exercise.</p>
+<p>A qualifying value-added analysis should:</p>
+<ul>
+<li>address a meaningful analytical question;</li>
+<li>be geospatial in nature;</li>
+<li>be methodologically appropriate;</li>
+<li>be clearly justified;</li>
+<li>identify relevant assumptions and limitations; and</li>
+<li>provide substantive additional insight.</li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Simply applying an additional method or producing an additional visualisation without demonstrating its analytical contribution will not qualify for bonus marks.</p>
+</div>
+</div>
+<p>Examples may include, but are not limited to, an alternative probabilistic spatial interaction modelling method.</p>
+</section>
+</section>
+<section id="assessment-rubric" class="level2">
+<h2 class="anchored" data-anchor-id="assessment-rubric">Assessment Rubric</h2>
+<div style="font-size: 65%;">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Criterion</th>
+<th>Outstanding</th>
+<th>Excellent</th>
+<th>Good</th>
+<th>Satisfactory</th>
+<th>Needs Improvement</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Geospatial Data Wrangling &amp; Data Quality</td>
+<td>Demonstrates highly proficient and thoughtful handling of complex geospatial data. Data-quality issues are systematically identified, diagnosed and appropriately addressed. Spatial/temporal transformations and derived variables are clearly justified.</td>
+<td>Demonstrates strong proficiency in geospatial data preparation. Most important data-quality issues are identified and appropriately addressed. Transformations and derived variables are generally well justified.</td>
+<td>Data are appropriately cleaned, transformed and prepared for analysis. Most important data-quality issues are addressed, although some decisions may lack depth of justification.</td>
+<td>Data are sufficiently prepared for analysis, but important quality issues or processing decisions are incompletely addressed or documented.</td>
+<td>Data preparation is incomplete, inappropriate or poorly documented. Important data-quality problems are overlooked, potentially compromising subsequent analysis.</td>
+</tr>
+<tr class="even">
+<td>Probabilistic Spatial Interaction Modelling &amp; Interpretation</td>
+<td>Demonstrates sophisticated understanding of Huff and/or MCI. Methods are carefully selected and justified. Assumptions, parameters and reference/null models are explicitly evaluated. Results are interpreted critically, with appropriate consideration of uncertainty, limitations and alternative explanations.</td>
+<td>Demonstrates strong understanding of the analytical methods. Methods and parameters are appropriately justified. Assumptions and reference/null models are clearly addressed. Results are accurately interpreted with good critical discussion.</td>
+<td>Applies appropriate Huff and/or MCI methods correctly and provides generally sound interpretation. Some methodological choices, assumptions or limitations are discussed, but critical evaluation could be deeper.</td>
+<td>Demonstrates basic understanding and applies the principal methods with some success. Interpretation is largely descriptive and methodological justification, assumptions or limitations are limited.</td>
+<td>Methods are incorrectly applied, poorly justified or misunderstood. Interpretation is inaccurate, superficial or unsupported by the analysis.</td>
+</tr>
+<tr class="odd">
+<td>Geovisualisation &amp; Geocommunication</td>
+<td>Produces highly effective, accurate and purposeful visualisations. Visual encodings are carefully chosen to reveal important spatial/spatio-temporal patterns. Statistical graphics and maps work together to communicate a coherent analytical story.</td>
+<td>Produces clear, accurate and well-designed visualisations. Important patterns are effectively communicated and supported by appropriate analytical interpretation.</td>
+<td>Visualisations are generally appropriate and understandable. Major findings can be identified, although some visual or communication choices could be improved.</td>
+<td>Visualisations communicate basic findings but may suffer from inappropriate design, excessive complexity, weak hierarchy or limited analytical interpretation.</td>
+<td>Visualisations are unclear, misleading, inaccurate or poorly matched to the analytical questions.</td>
+</tr>
+<tr class="even">
+<td>Reproducibility &amp; Analytical Documentation</td>
+<td>Provides a highly transparent and reproducible workflow. Data sources, preparation decisions, assumptions, analytical parameters, methods, code and outputs are comprehensively documented. Explanations demonstrate clear understanding of <em>why</em> each major step is undertaken.</td>
+<td>Provides a well-documented and reproducible workflow. Code, methods and major analytical decisions are clearly documented and explained.</td>
+<td>Provides a generally reproducible workflow with appropriate code and documentation. Some analytical decisions or explanations are incomplete.</td>
+<td>Code and workflow are present but documentation is limited. Another analyst may reproduce some, but not necessarily all, aspects of the analysis.</td>
+<td>uate explanation or important components are missing.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<section id="qualitative-grading-rubric-of-value-added-analysis" class="level4">
+<h4 class="anchored" data-anchor-id="qualitative-grading-rubric-of-value-added-analysis">Qualitative grading rubric of Value-Added Analysis</h4>
+<div style="font-size: 75%;">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 35%">
+<col style="width: 64%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Level</th>
+<th>Descriptor</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Exceptional Contribution</td>
+<td>Introduces a well-chosen geospatial analytical approach beyond the core scope that addresses a meaningful additional question and generates substantive new insight. The method is appropriately justified, implemented and interpreted, with assumptions and limitations clearly considered.</td>
+</tr>
+<tr class="even">
+<td>Meaningful Contribution</td>
+<td>Extends the analysis using an appropriate additional geospatial method and provides useful additional insight. The method and findings are reasonably justified and interpreted.</td>
+</tr>
+<tr class="odd">
+<td>Limited / No Bonus</td>
+<td>The extension adds limited analytical value, lacks sufficient methodological justification, or mainly duplicates the core analysis. No bonus is awarded where the additional method does not provide meaningful new insight.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Value-Added Analysis is not awarded for simply using a more advanced R package, producing additional visualisations, or applying a method that was not covered in class. Bonus credit is awarded for demonstrating meaningful additional analytical insight through an appropriately justified geospatial approach.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="submission-requirements" class="level2">
+<h2 class="anchored" data-anchor-id="submission-requirements">Submission Requirements</h2>
+<section id="executive-summary" class="level3">
+<h3 class="anchored" data-anchor-id="executive-summary">Executive Summary</h3>
+<p>Prepare an Executive Summary of no more than 10 slides, excluding the cover page and content page.</p>
+<p>The Executive Summary must be prepared using Quarto <a href="https://quarto.org/docs/presentations/revealjs/">revealjs</a>.</p>
+<p>The presentation should communicate the essential:</p>
+<ul>
+<li>research question;</li>
+<li>study area and data;</li>
+<li>analytical approach;</li>
+<li>key findings;</li>
+<li>important visual evidence;</li>
+<li>limitations; and</li>
+<li>public-safety implications.</li>
+</ul>
+<p>You are required to publish the Executive Summary on <strong>Vercel</strong> or another appropriate web-hosting service.</p>
+</section>
+<section id="technical-report" class="level3">
+<h3 class="anchored" data-anchor-id="technical-report">Technical Report</h3>
+<p>Prepare a comprehensive Technical Report using Quarto in <strong>HTML</strong> format.</p>
+<p>The Technical Report should provide sufficient detail to document and reproduce the complete analytical workflow.</p>
+<p>It should include, where appropriate:</p>
+<ul>
+<li>Introduction and study context</li>
+<li>Research question and objectives</li>
+<li>Data and study design</li>
+<li>Data preparation and quality assessment</li>
+<li>Analytical assumptions and methodological decisions</li>
+<li>Integrated findings and discussion</li>
+<li>Geovisualisation and geocommunication</li>
+<li>Pease-keeping implications</li>
+<li>Limitations</li>
+<li>References</li>
+</ul>
+<p>You are required to publish the Technical Report on Vercel or another appropriate web-hosting service.</p>
+</section>
+<section id="quarto-project-and-reproducibility" class="level3">
+<h3 class="anchored" data-anchor-id="quarto-project-and-reproducibility">Quarto Project and Reproducibility</h3>
+<p>The complete Quarto project for the take-home exercise must be pushed to your GitHub repository.</p>
+<p>The repository should contain the necessary files to demonstrate the reproducibility of your analysis, subject to any data-licensing or redistribution restrictions.</p>
+</section>
+<section id="submission-links" class="level3">
+<h3 class="anchored" data-anchor-id="submission-links">Submission Links</h3>
+<p>Update Take-home Exercise 2 links to the:</p>
+<ul>
+<li>Executive Summary;</li>
+<li>Technical Report; and</li>
+<li>GitHub repository</li>
+</ul>
+<p>on the coursework website and provide the required links through eLearn.</p>
+</section>
+</section>
+<section id="due-date" class="level2">
+<h2 class="anchored" data-anchor-id="due-date">Due Date</h2>
+<p><strong>15th November 2026 (Sunday), 11.59pm (midnight)</strong>.</p>
+</section>
+<section id="q-a" class="level2">
+<h2 class="anchored" data-anchor-id="q-a">Q &amp; A</h2>
+<p>Please submit your questions or queries related to this take-home exercise on Piazza.</p>
+</section>
+<section id="reference" class="level2">
+<h2 class="anchored" data-anchor-id="reference">Reference</h2>
+<ul>
+<li>Zhenjun Zhu et. al.&nbsp;(2021) “<a href="https://onlinelibrary.wiley.com/doi/10.1155/2021/6374724">Improved Huff Model for Estimating Urban Rail Transit Station Catchment Areas considering Station Choices</a>” <em>Journal of Advanced Transportation</em>, Volume 2021.</li>
+<li>Mohsen Bahrami et. al.&nbsp;(2022) “Using gravity model to make store closing decisions: A data driven approach”, <em>Expert Systems With Applications</em> 205, 117703. Access via SMU eLibrary.</li>
+<li>Lingyao Bai, et. al.&nbsp;(2023) “Delineating hierarchical obstetric hospital service areas using the Huff model based on medical records”, <em>Applied Geography</em>, 153, 102903. Access via SMU eLibrary.</li>
+<li>Ting (Grace) Lin, et. al.&nbsp;(2016) “Enhanced Huff model for estimating Park and Ride (PnR) catchment areas in Perth, WA”, <em>Journal of Transport Geography</em>, vol.&nbsp;54, pp.&nbsp;336–348.</li>
+</ul>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

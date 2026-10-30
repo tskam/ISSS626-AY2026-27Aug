@@ -1,5 +1,5 @@
 ---
-title: "Take-home Exercise 1: Geospatial Analytics for Piblic Safety"
+title: "Take-home Exercise 1: Geospatial Analytics for Public Safety"
 format: html
 toc: true
 toc-depth: 4
@@ -414,13 +414,9 @@ The bonus is intended to reward **meaningful analytical exploration**, not prior
 | Limited / No Bonus | The extension adds limited analytical value, lacks sufficient methodological justification, or mainly duplicates the core analysis. No bonus is awarded where the additional method does not provide meaningful new insight. |
 :::
 
-
 ::: callout-important
 Value-Added Analysis is not awarded for simply using a more advanced R package, producing additional visualisations, or applying a method that was not covered in class. Bonus credit is awarded for demonstrating meaningful additional analytical insight through an appropriately justified geospatial approach.
 :::
-
-
-
 
 ## Submission Requirements
 
@@ -586,4 +582,3 @@ AI Use Declaration: Generative AI was used to improve the English language, gram
 :::
 
 Students who use AI for other permitted learning purposes should describe the purpose briefly.
-

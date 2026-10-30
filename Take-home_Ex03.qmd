@@ -1,0 +1,237 @@
+---
+title: "Take-home Exercise 3: Geospatial Analytics for Urban Sustainability"
+date: "September 30, 2025"
+date-modified: "last-modified"
+format: html
+toc: true
+execute: 
+  eval: true
+  echo: true
+  warning: false
+  freeze: auto
+editor: visual
+---
+
+::: callout-important
+This handout provides the context, the task, the expectation and the grading criteria of Take-home Exercise 3. Students must review and understand them before getting started with the take-home exercise.
+:::
+
+## Setting the Scene
+
+Urban Rail Transit (URT), a public transportation system comprising rail-based modes such as subways, trams, and light rail plays a central role in sustainable urban development. By providing efficient, high-capacity mobility, URT promotes transit-oriented development (TOD) around stations, integrating land-use planning with transportation networks. This integration supports walkable communities, reduces traffic congestion, improves environmental quality, and enhances socioeconomic opportunities by connecting residents to employment, services, and education. URT systems also help cities manage spatial growth and optimize scarce land resources.
+
+In Singapore, the Mass Rapid Transit (MRT) system has served as the backbone of public transportation since its inception in November 1987. Designed to provide fast, reliable, and high-capacity services, the MRT mitigates road congestion and supports the island’s high-density urban form. It has shaped urban development by linking new residential towns with commercial and employment hubs, while advancing national objectives such as ensuring that most households are within a 10-minute walk of a station (Land Transport Authority, 2016).
+
+Following decades of strategic planning and sustained expansion, the MRT network now spans the length and breadth of the city-state. As of 2024, it comprises 143 operational stations across six lines arranged in a circle–radial topology, with approximately 242.6 km of fully grade-separated track. Average daily ridership reached 3.41 million in 2024 (Wikipedia).
+
+While the MRT network is globally celebrated for its efficiency and coverage, the "ghost station" phenomenon, where stations are fully built but left operationalised in darkness, reveals the high-stakes balancing act between proactive infrastructure planning and immediate operational economics.
+
+The authority intentionally build "shell stations" ahead of time to minimize future construction disruptions and massive costs. However, when economic downturns or delayed housing developments leave these areas empty, the stark reality of projected low ridership creates a dilemma for transport operators trying to manage massive daily running costs.
+
+A pertinent example is Hume MRT station, whose structural shell was completed in 2015 but whose opening was postponed due to low projected ridership and limited surrounding development. The station is opened for passenger service only on 28 February 2025, a decade after Downtown Line Stage 2 began operations. Similarly, the Buangkok and Woodleigh MRT stations remained closed when the North-East Line began operations in 2003, as the operator SBS Transit had determined that expected passenger volumes at these stations were insufficient to justify the operating costs. Addressing such challenges requires comprehensive catchment-area analysis and robust methods for predicting station-level ridership.
+
+## Objectives
+
+According to Singapore’s Land Transport Authority, two additional MRT lines, namely: the Jurong Region Line and the Cross Island Line will be completed by 2030, contributing 24 and 12 stations respectively. As the network expands, increasing system complexity poses challenges, particularly the risk of imbalanced ridership and mismatches between demand and capacity. These issues may hinder the broader goal of achieving an efficient and sustainable rail system.
+
+Using probabilistic spatial interaction modelling methods, in this take-home exercise you are task to develop an analytical framework for ridership prediction at the station-level.
+
+The specific objectives the take-home exercise are:
+
+- To calibrate a probabilistic spatial interaction model for station-level ridership **estimation**.
+- To **predict** the potential ridership of MRT stations along the proposed Jurong Region Line and the Cross Island Line, and
+- To evaluate the potential impact of the newly planned MRT stations on the ridership patterns of the existing stations.
+
+## The Task
+
+The specific tasks of this take-home exercise are as follows:
+
+- Build two spatial interaction data frames.  One for the existing MRT/LRT stations and the second second one includes the proposed MRT stations.  The spatial interaction data sets should include but not limited to, the origin, the destination, attraction and distance.
+- Build a data frame containing the origins saved in a column which has the same name as in the spatial interaction data frames and additional column(s) containing the local market potential. 
+- Build a data.frame containing the destinations save in a column which has the same name as in the spatial interaction data frames, a column containing observed ridership values and additional columns containing attraction variables.
+- Calibrating a probabilistic spatial interaction model for station-level ridership **estimation**
+- Using the fitted model to estimate the ridership at station level.
+- Create appropriate statistical graphics or/and thematic maps to support geocommunication of the modelling results. 
+- Using the fitted model to predict the ridership of both the existing and the proposed stations.
+- Create appropriate statistical graphics or/and thematic map to reveal the impact of the proposed new stations on the market area of the existing stations.
+
+## The Data
+
+Below is a list of recommended datasets to consider;  however, students are free to include other appropriate datasets. 
+
+- [Train Station](https://datamall.lta.gov.sg/content/dam/datamall/datasets/Geospatial/TrainStation_Sep2026.zip): A point representation to indicate the location of the MRT station.
+- [Future station coordinates](https://github.com/elliotwutingfeng/singapore_train_station_coordinates): Geographic locations of all planned future stations and extensions. 
+- [Passenger Volume by Origin Destination Train Stations](https://datamall.lta.gov.sg/content/datamall/en/dynamic-data.html): Provides anonymized monthly tap-in/tap-out volumes between MRT stations.
+- [HDB Existing Building](https://data.gov.sg/datasets/d_16b157c52ed637edd6ba1232e026258d/view): Provides geospatial information and physical attributes for all completed Housing & Development Board buildings in Singapore. 
+- [Bus Stop Location](https://datamall.lta.gov.sg/content/datamall/en/static-data.html): Static shapefiles of bus stop locations across Singapore.
+- [Point-of-Interest (POI) from OpenStreetMap Singapore](https://download.geofabrik.de/asia/malaysia-singapore-brunei.html)
+
+## Grading Criteria
+
+This exercise will be graded by using the following criteria:
+
+### Geospatial Data Wrangling (20 marks)
+
+You will be assessed on your ability to prepare analysis-ready data, including:
+
+- Correct import of tabular and geospatial data from multiple sources.
+- Appropriate data cleaning, transformation, and derivation of new variables.
+- Correct use of coordinate reference systems and spatial joins.
+- Use of tidy, efficient R code and clear explanations of purpose.
+
+::: callout-warning
+All data are like vast grassland full of land mines. Your job is to clear those mines and not to step on them.
+:::
+
+### Geospatial Analysis (30 marks)
+
+You will be assessed on your ability to apply spatial statistical methods rigorously, including:
+
+- Appropriate choice and correct application of probabilistic spatial interaction modelling methods .
+- Accurate interpretation of outputs, with evidence-based reasoning.
+- Demonstrating awareness of assumptions, spatial scales, and limitations of chosen methods.
+- Clear articulation of how results address the stated objectives.
+
+### Geovisualisation and geocommunication (20 marks):
+
+You will be assessed on your ability to communicate results through effective geovisualisation, including:
+
+- Use of clear, accurate, and professional map designs (appropriate symbology, color scales, legends, labels).
+- Selection of visual forms that best reveal spatial patterns and support decision-making.
+- Concise and insightful written commentary (≤200 words per visual) that explains findings in plain, non-technical language.
+- Effective integration of visuals into a coherent narrative.
+
+### Reproducibility (15 marks)
+
+You will be assessed on your ability to ensure that your analysis is fully reproducible, including:
+
+- Use of Quarto with code chunks that run end-to-end without modification.
+- Clear explanation of purpose for each step (not just code, but why it is done).
+- Logical organisation of workflow, with modular structure and meaningful sectioning.
+- Proper documentation of R packages, data sources, and dependencies to allow replication by others.
+
+::: callout-tip
+Simply providing code chunks is insufficient. You must explain the purpose of each major analytical step, the function(s) used, the reason for the analytical decision, and any assumptions or limitations involved.
+:::
+
+### Bonus: Value-Added Analysis (15%)
+
+Students are encouraged to explore beyond the core methods covered in class.
+
+Students may extend their analysis using an appropriate geospatial analytical method not covered in the core exercise.
+
+A qualifying value-added analysis should:
+
+- address a meaningful analytical question;
+- be geospatial in nature;
+- be methodologically appropriate;
+- be clearly justified;
+- identify relevant assumptions and limitations; and
+- provide substantive additional insight.
+
+::: callout-note
+Simply applying an additional method or producing an additional visualisation without demonstrating its analytical contribution will not qualify for bonus marks.
+:::
+
+Examples may include, but are not limited to, an alternative probabilistic spatial interaction modelling method.
+
+## Assessment Rubric
+
+::: {style="font-size: 65%;"}
+| Criterion | Outstanding | Excellent | Good | Satisfactory | Needs Improvement |
+|------------|------------|------------|------------|------------|------------|
+| Geospatial Data Wrangling & Data Quality | Demonstrates highly proficient and thoughtful handling of complex geospatial data. Data-quality issues are systematically identified, diagnosed and appropriately addressed. Spatial/temporal transformations and derived variables are clearly justified. | Demonstrates strong proficiency in geospatial data preparation. Most important data-quality issues are identified and appropriately addressed. Transformations and derived variables are generally well justified. | Data are appropriately cleaned, transformed and prepared for analysis. Most important data-quality issues are addressed, although some decisions may lack depth of justification. | Data are sufficiently prepared for analysis, but important quality issues or processing decisions are incompletely addressed or documented. | Data preparation is incomplete, inappropriate or poorly documented. Important data-quality problems are overlooked, potentially compromising subsequent analysis. |
+| Probabilistic Spatial Interaction Modelling & Interpretation | Demonstrates sophisticated understanding of Huff and/or MCI. Methods are carefully selected and justified. Assumptions, parameters and reference/null models are explicitly evaluated. Results are interpreted critically, with appropriate consideration of uncertainty, limitations and alternative explanations. | Demonstrates strong understanding of the analytical methods. Methods and parameters are appropriately justified. Assumptions and reference/null models are clearly addressed. Results are accurately interpreted with good critical discussion. | Applies appropriate Huff and/or MCI methods correctly and provides generally sound interpretation. Some methodological choices, assumptions or limitations are discussed, but critical evaluation could be deeper. | Demonstrates basic understanding and applies the principal methods with some success. Interpretation is largely descriptive and methodological justification, assumptions or limitations are limited. | Methods are incorrectly applied, poorly justified or misunderstood. Interpretation is inaccurate, superficial or unsupported by the analysis. |
+| Geovisualisation & Geocommunication | Produces highly effective, accurate and purposeful visualisations. Visual encodings are carefully chosen to reveal important spatial/spatio-temporal patterns. Statistical graphics and maps work together to communicate a coherent analytical story. | Produces clear, accurate and well-designed visualisations. Important patterns are effectively communicated and supported by appropriate analytical interpretation. | Visualisations are generally appropriate and understandable. Major findings can be identified, although some visual or communication choices could be improved. | Visualisations communicate basic findings but may suffer from inappropriate design, excessive complexity, weak hierarchy or limited analytical interpretation. | Visualisations are unclear, misleading, inaccurate or poorly matched to the analytical questions. |
+| Reproducibility & Analytical Documentation | Provides a highly transparent and reproducible workflow. Data sources, preparation decisions, assumptions, analytical parameters, methods, code and outputs are comprehensively documented. Explanations demonstrate clear understanding of *why* each major step is undertaken. | Provides a well-documented and reproducible workflow. Code, methods and major analytical decisions are clearly documented and explained. | Provides a generally reproducible workflow with appropriate code and documentation. Some analytical decisions or explanations are incomplete. | Code and workflow are present but documentation is limited. Another analyst may reproduce some, but not necessarily all, aspects of the analysis. | uate explanation or important components are missing. |
+:::
+
+#### Qualitative grading rubric of Value-Added Analysis
+
+::: {style="font-size: 75%;"}
+| Level | Descriptor |
+|-------------------------|----------------------------------------------|
+| Exceptional Contribution | Introduces a well-chosen geospatial analytical approach beyond the core scope that addresses a meaningful additional question and generates substantive new insight. The method is appropriately justified, implemented and interpreted, with assumptions and limitations clearly considered. |
+| Meaningful Contribution | Extends the analysis using an appropriate additional geospatial method and provides useful additional insight. The method and findings are reasonably justified and interpreted. |
+| Limited / No Bonus | The extension adds limited analytical value, lacks sufficient methodological justification, or mainly duplicates the core analysis. No bonus is awarded where the additional method does not provide meaningful new insight. |
+:::
+
+::: callout-important
+Value-Added Analysis is not awarded for simply using a more advanced R package, producing additional visualisations, or applying a method that was not covered in class. Bonus credit is awarded for demonstrating meaningful additional analytical insight through an appropriately justified geospatial approach.
+:::
+
+## Submission Requirements
+
+### Executive Summary
+
+Prepare an Executive Summary of no more than 10 slides, excluding the cover page and content page.
+
+The Executive Summary must be prepared using Quarto [revealjs](https://quarto.org/docs/presentations/revealjs/).
+
+The presentation should communicate the essential:
+
+- research question;
+- study area and data;
+- analytical approach;
+- key findings;
+- important visual evidence;
+- limitations; and
+- public-safety implications.
+
+You are required to publish the Executive Summary on **Vercel** or another appropriate web-hosting service.
+
+### Technical Report
+
+Prepare a comprehensive Technical Report using Quarto in **HTML** format.
+
+The Technical Report should provide sufficient detail to document and reproduce the complete analytical workflow.
+
+It should include, where appropriate:
+
+- Introduction and study context
+- Research question and objectives
+- Data and study design
+- Data preparation and quality assessment
+- Analytical assumptions and methodological decisions
+- Integrated findings and discussion
+- Geovisualisation and geocommunication
+- Pease-keeping implications
+- Limitations
+- References
+
+You are required to publish the Technical Report on Vercel or another appropriate web-hosting service.
+
+### Quarto Project and Reproducibility
+
+The complete Quarto project for the take-home exercise must be pushed to your GitHub repository.
+
+The repository should contain the necessary files to demonstrate the reproducibility of your analysis, subject to any data-licensing or redistribution restrictions.
+
+### Submission Links
+
+Update Take-home Exercise 2 links to the:
+
+- Executive Summary;
+- Technical Report; and
+- GitHub repository
+
+on the coursework website and provide the required links through eLearn.
+
+## Due Date
+
+**15th November 2026 (Sunday), 11.59pm (midnight)**.
+
+## Q & A
+
+Please submit your questions or queries related to this take-home exercise on Piazza.
+
+## Reference
+
+- Zhenjun Zhu et. al. (2021) "[Improved Huff Model for Estimating Urban Rail Transit Station Catchment Areas considering Station Choices](https://onlinelibrary.wiley.com/doi/10.1155/2021/6374724)" *Journal of Advanced Transportation*, Volume 2021.
+- Mohsen Bahrami et. al. (2022) "Using gravity model to make store closing decisions: A data driven approach", *Expert Systems With Applications* 205, 117703. Access via SMU eLibrary. 
+- Lingyao Bai, et. al. (2023) "Delineating hierarchical obstetric hospital service areas using the Huff model based on medical records", *Applied Geography*, 153, 102903. Access via SMU eLibrary.
+- Ting (Grace) Lin, et. al. (2016) "Enhanced Huff model for estimating Park and Ride (PnR) catchment
+areas in Perth, WA", *Journal of Transport Geography*, vol. 54, pp. 336–348.
+
+
+
